@@ -31,5 +31,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Ingredients() {
-
+    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
 }
