@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.bdingredientes.ui.theme.BDIngredientesTheme
+import com.example.bdingredientes.ui.theme.PantallaIngredients
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,14 +23,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Ingredients()
+                    PantallaIngredients()
                 }
             }
         }
     }
-}
-
-@Composable
-fun Ingredients() {
-    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
 }
