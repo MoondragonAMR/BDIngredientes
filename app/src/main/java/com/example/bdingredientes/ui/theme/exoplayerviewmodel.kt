@@ -34,7 +34,7 @@ class ExoPlayerViewModel : ViewModel(){
     }
 
     fun hacerSonarMusica(context: Context) {
-        val mediaItem = MediaItem.fromUri(obtenerRuta(context, R.raw.BuildStation))
+        val mediaItem = MediaItem.fromUri(obtenerRuta(context, R.raw.build_station))
         _exoPlayer.value!!.setMediaItem(mediaItem)
         _exoPlayer.value!!.playWhenReady = true
         // Este listener se mantendrá mientras NO se librere el _exoPlayer
