@@ -46,6 +46,7 @@ fun PantallaIngredients(){
     }
 
     Column() {
+
         Row() {
             Text("All ingredients", fontWeight = FontWeight.Bold)
         }
@@ -57,7 +58,7 @@ fun PantallaIngredients(){
             onActiveChange = { estado = !estado }) {
             LazyColumn() {
                 items(ingredients.size) {
-                    if ((ingredients[it].name.lowercase().contains(busqueda)) || (ingredients[it].type.lowercase().contains(busqueda)) || (busqueda.isBlank())) {
+                    if ((ingredients[it].name.contains(busqueda, true)) || (ingredients[it].type.lowercase().contains(busqueda)) || (busqueda.isBlank())) {
                         ListItem(headlineContent = { Text(ingredients[it].name) }, Modifier.clickable { busqueda = ingredients[it].name })
                     }
                 }
@@ -73,25 +74,30 @@ fun PantallaIngredients(){
             else {
                 lista = ingredients
             }
+            println(" tamanyo es " + lista.size)
             items(lista.size) {
-                if ((lista[it].name.lowercase().contains(filtro)) || (filtro.isBlank())) {
+                println("Filtro es " + filtro
+                       + "y la siguiente comida es " + lista[it].name)
+                if ((lista[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())) {
                     val nombre = lista[it].name
                     val tipo = lista[it].type
                     val sabor = lista[it].flavor
                     val deCelebracion = lista[it].holidayExclusive
                     val celebracion = lista[it].holiday
-                    Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan).clickable { if (borrar) {
-                        db.borrarIngrediente(nombre)
+                    Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan).clickable {
+                        if (borrar) {
+                        //db.borrarIngrediente()
                     }
                     else if (modificar) {
-                        db.borrarIngrediente(nombre)
+                        //db.modificarIngrediente()
                     }}) {
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")
                         Text(text = "flavor = $sabor")
                         Text(text = "holiday-exclusive = $deCelebracion")
                         Text(text = "holiday = $celebracion")
-                        //AsyncImage(model = "https://android.com/sample_image.jpg", contentDescription = null)
+                        //storage.getReference($nombre).downloadUrl.
+                        AsyncImage(model = "https://android.com/sample_image.jpg", contentDescription = null)
 
                     }
                 }

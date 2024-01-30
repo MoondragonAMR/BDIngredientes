@@ -41,11 +41,16 @@ class VMBD : ViewModel() {
     fun anyadirIngrediente(
         name: String, flavor: String, type: String, holidayExclusive: Boolean, holiday: String
     ) {
-        val newIngredient = Ingredient(name, flavor, type, holidayExclusive, holiday)
+        val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday)
         conexion.collection("Ingredients").add(newIngredient)
     }
 
-    fun borrarIngrediente(name: String) {
-        conexion.collection("Ingredients").document(name).delete()
+    fun borrarIngrediente(id: String) {
+        conexion.collection("Ingredients").document(id).delete()
+    }
+
+    fun modificarIngrediente(id: String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
+        val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday)
+        conexion.collection("Ingredients").document(id).set(newIngredient)
     }
 }
