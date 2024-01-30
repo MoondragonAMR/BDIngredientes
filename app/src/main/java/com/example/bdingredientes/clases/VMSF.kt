@@ -15,11 +15,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -35,6 +30,7 @@ var modificar: Boolean = false
 fun BarraInferior(ventana : Int) {
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
+            //ir a Pantalla Añadir
             IconButton(onClick = {}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
@@ -55,20 +51,19 @@ fun BarraSuperior(ventana : Int, titulo : String) {
     var vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
-    val duracion = vm.duracion.collectAsState().value
-    val progreso = vm.progreso.collectAsState().value
 
     if(exoplayer == null){
         vm.crearExoPlayer(contexto)
         vm.hacerSonarMusica(contexto)
     }
-    var db : VMBD = viewModel()
-    ingredientsAleatorio = db.ingredients.collectAsState().value
-    var ingredients = db.ingredients.collectAsState().value
     TopAppBar(title = { Text(text = titulo) }, actions = {Row() {
         Button(onClick = {Aleatorio = !Aleatorio
-            if (Aleatorio) ingredientsAleatorio.shuffle()}){
-            Icon(painterResource(id = R.drawable.baseline_shuffle_24), contentDescription = "")
+            }){
+            if (Aleatorio) {
+                Icon(painterResource(id = R.drawable.baseline_shuffle_on_24), contentDescription = "")
+            } else {
+                Icon(painterResource(id = R.drawable.baseline_shuffle_24), contentDescription = "")
+            }
             }
         Button(onClick = {vm.PausarOSeguirMusica()}) {
             if(!vm.exoPlayer.value!!.isPlaying ){
@@ -78,9 +73,9 @@ fun BarraSuperior(ventana : Int, titulo : String) {
             }
         }
         Button(onClick = { if (ventana == 1) {
-
+            //ir a la lista general
         } else {
-
+            //ir a la lista del usuario
         }
         }) {
             Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")

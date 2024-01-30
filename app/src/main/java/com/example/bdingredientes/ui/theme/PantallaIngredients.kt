@@ -74,10 +74,7 @@ fun PantallaIngredients(){
             else {
                 lista = ingredients
             }
-            println(" tamanyo es " + lista.size)
             items(lista.size) {
-                println("Filtro es " + filtro
-                       + "y la siguiente comida es " + lista[it].name)
                 if ((lista[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())) {
                     val nombre = lista[it].name
                     val tipo = lista[it].type
@@ -89,7 +86,8 @@ fun PantallaIngredients(){
                         //db.borrarIngrediente()
                     }
                     else if (modificar) {
-                        //db.modificarIngrediente()
+                        //ir a Pantalla Modificar
+
                     }}) {
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")

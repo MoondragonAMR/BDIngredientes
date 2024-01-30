@@ -19,12 +19,12 @@ import com.example.bdingredientes.clases.VMBD
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaAñadir() {
-    var nombre by remember { mutableStateOf("")}
-    var tipo by remember { mutableStateOf("")}
-    var sabor by remember { mutableStateOf("")}
-    var deCelebracion by remember { mutableStateOf(false)}
-    var celebracion by remember { mutableStateOf("")}
+fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
+    var nombre by remember { mutableStateOf(name)}
+    var tipo by remember { mutableStateOf(type)}
+    var sabor by remember { mutableStateOf(flavor)}
+    var deCelebracion by remember { mutableStateOf(holidayExclusive)}
+    var celebracion by remember { mutableStateOf(holiday)}
     var activadoMenu by remember { mutableStateOf(false) }
     var db : VMBD = viewModel()
     Column {
@@ -233,10 +233,9 @@ fun PantallaAñadir() {
             Checkbox(checked = seleccionado, onCheckedChange = { checking ->
                 seleccionado = !seleccionado; if (seleccionado) {
                 deCelebracion = true
-            } else {
+                } else {
                 deCelebracion = false
-            }
-
+                }
             })
             DropdownMenu(expanded = activadoMenu, onDismissRequest = { activadoMenu = false }) {
                 DropdownMenuItem(
@@ -340,7 +339,7 @@ fun PantallaAñadir() {
                     onClick = { celebracion = "Volcano Gala" })
             }
         }
-        Button(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)}){
+        Button(onClick = {db.modificarIngrediente(id, nombre, tipo, sabor, deCelebracion, celebracion)}){
             Text("Confirmar")
         }
     }
