@@ -29,6 +29,7 @@ import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.borrar
 import com.example.bdingredientes.clases.ingredientsAleatorio
+import com.example.bdingredientes.clases.modificar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
