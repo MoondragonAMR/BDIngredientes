@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 class VMBD : ViewModel() {
     val conexion = FirebaseFirestore.getInstance()
     private lateinit var listener: ListenerRegistration
-    private var _ingredients = MutableStateFlow(mutableStateListOf<Ingredient>())
+    var _ingredients = MutableStateFlow(mutableStateListOf<Ingredient>())
     var ingredients = _ingredients.asStateFlow()
     fun crearListener() {
         listener = conexion.collection("Ingredients").addSnapshotListener { datos, error ->

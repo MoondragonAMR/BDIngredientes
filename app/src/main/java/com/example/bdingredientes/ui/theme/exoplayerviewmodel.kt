@@ -54,7 +54,7 @@ class ExoPlayerViewModel : ViewModel(){
                 } else if (playbackState == Player.STATE_BUFFERING) {
 
                 } else if (playbackState == Player.STATE_ENDED) {
-
+                    Player.STATE_READY
                 } else if (playbackState == Player.STATE_IDLE) {
                 }
 
