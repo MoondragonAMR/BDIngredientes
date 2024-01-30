@@ -29,14 +29,20 @@ import com.example.bdingredientes.R
 import com.example.bdingredientes.ui.theme.ExoPlayerViewModel
 var Aleatorio: Boolean = false
 var ingredientsAleatorio = SnapshotStateList<Ingredient>()
+var borrar: Boolean = false
+var modificar: Boolean = false
 @Composable
 fun BarraInferior(ventana : Int) {
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
             IconButton(onClick = {}) {
                 Icon(Icons.Default.Add, contentDescription = "")
-                if (ventana == 1) {
+            }
+            if (ventana == 1) {
+                IconButton(onClick = {borrar = true}) {
                     Icon(Icons.Default.Delete, contentDescription = "")
+                }
+                IconButton(onClick = {modificar = true}) {
                     Icon(Icons.Default.ModeEdit, contentDescription = "")
                 }
             }

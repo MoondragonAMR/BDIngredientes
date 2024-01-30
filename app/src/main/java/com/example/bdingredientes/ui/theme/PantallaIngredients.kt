@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -24,7 +25,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.bdingredientes.clases.Aleatorio
+import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.VMBD
+import com.example.bdingredientes.clases.borrar
 import com.example.bdingredientes.clases.ingredientsAleatorio
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,34 +65,26 @@ fun PantallaIngredients(){
         LazyColumn(
             //Modifier.verticalScroll(state = rememberScrollState(), enabled = true, reverseScrolling = true)
         ) {
+            var lista: SnapshotStateList<Ingredient>? = null
             if (Aleatorio){
-                items(ingredientsAleatorio.size) {
-                    if ((ingredientsAleatorio[it].name.lowercase().contains(filtro)) || (filtro.isBlank())) {
-                        val nombre = ingredientsAleatorio[it].name
-                        val tipo = ingredientsAleatorio[it].type
-                        val sabor = ingredientsAleatorio[it].flavor
-                        val deCelebracion = ingredientsAleatorio[it].holidayExclusive
-                        val celebracion = ingredientsAleatorio[it].holiday
-                        Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan)) {
-                            Text(text = "name = $nombre")
-                            Text(text = "type = $tipo")
-                            Text(text = "flavor = $sabor")
-                            Text(text = "holiday-exclusive = $deCelebracion")
-                            Text(text = "holiday = $celebracion")
-                            //AsyncImage(model = "https://android.com/sample_image.jpg", contentDescription = null)
-
-                        }
-                    }
-                }
+                lista = ingredientsAleatorio
             }
-            else{items(ingredients.size) {
-                if ((ingredients[it].name.lowercase().contains(filtro)) || (filtro.isBlank())) {
-                    val nombre = ingredients[it].name
-                    val tipo = ingredients[it].type
-                    val sabor = ingredients[it].flavor
-                    val deCelebracion = ingredients[it].holidayExclusive
-                    val celebracion = ingredients[it].holiday
-                    Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan)) {
+            else {
+                lista = ingredients
+            }
+            items(lista.size) {
+                if ((lista[it].name.lowercase().contains(filtro)) || (filtro.isBlank())) {
+                    val nombre = lista[it].name
+                    val tipo = lista[it].type
+                    val sabor = lista[it].flavor
+                    val deCelebracion = lista[it].holidayExclusive
+                    val celebracion = lista[it].holiday
+                    Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan).clickable { if (borrar) {
+                        db.borrarIngrediente(nombre)
+                    }
+                    else if (modificar) {
+                        db.borrarIngrediente(nombre)
+                    }}) {
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")
                         Text(text = "flavor = $sabor")
@@ -100,8 +95,6 @@ fun PantallaIngredients(){
                     }
                 }
             }
-            }
-
         }
         Row() {
             Text("By Aymara and Nayara Mendoza Rodríguez, 2024")

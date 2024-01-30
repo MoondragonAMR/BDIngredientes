@@ -45,7 +45,7 @@ class VMBD : ViewModel() {
         conexion.collection("Ingredients").add(newIngredient)
     }
 
-    fun borrarIngrediente(id: String) {
-        conexion.collection("Ingredients").document(id).delete()
+    fun borrarIngrediente(name: String) {
+        conexion.collection("Ingredients").document(name).delete()
     }
 }
