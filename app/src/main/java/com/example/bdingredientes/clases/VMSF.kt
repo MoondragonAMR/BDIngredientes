@@ -15,13 +15,20 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.bdingredientes.R
 import com.example.bdingredientes.ui.theme.ExoPlayerViewModel
-
+var Aleatorio: Boolean = false
+var ingredientsAleatorio = SnapshotStateList<Ingredient>()
 @Composable
 fun BarraInferior(ventana : Int) {
     BottomAppBar(Modifier.fillMaxWidth()) {
@@ -49,9 +56,12 @@ fun BarraSuperior(ventana : Int, titulo : String) {
         vm.crearExoPlayer(contexto)
         vm.hacerSonarMusica(contexto)
     }
-
+    var db : VMBD = viewModel()
+    ingredientsAleatorio = db.ingredients.collectAsState().value
+    var ingredients = db.ingredients.collectAsState().value
     TopAppBar(title = { Text(text = titulo) }, actions = {Row() {
-        Button(onClick = {}){
+        Button(onClick = {Aleatorio = !Aleatorio
+            if (Aleatorio) ingredientsAleatorio.shuffle()}){
             Icon(painterResource(id = R.drawable.baseline_shuffle_24), contentDescription = "")
             }
         Button(onClick = {vm.PausarOSeguirMusica()}) {

@@ -23,7 +23,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
+import com.example.bdingredientes.clases.Aleatorio
 import com.example.bdingredientes.clases.VMBD
+import com.example.bdingredientes.clases.ingredientsAleatorio
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -60,7 +62,27 @@ fun PantallaIngredients(){
         LazyColumn(
             //Modifier.verticalScroll(state = rememberScrollState(), enabled = true, reverseScrolling = true)
         ) {
-            items(ingredients.size) {
+            if (Aleatorio){
+                items(ingredientsAleatorio.size) {
+                    if ((ingredientsAleatorio[it].name.lowercase().contains(filtro)) || (filtro.isBlank())) {
+                        val nombre = ingredientsAleatorio[it].name
+                        val tipo = ingredientsAleatorio[it].type
+                        val sabor = ingredientsAleatorio[it].flavor
+                        val deCelebracion = ingredientsAleatorio[it].holidayExclusive
+                        val celebracion = ingredientsAleatorio[it].holiday
+                        Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan)) {
+                            Text(text = "name = $nombre")
+                            Text(text = "type = $tipo")
+                            Text(text = "flavor = $sabor")
+                            Text(text = "holiday-exclusive = $deCelebracion")
+                            Text(text = "holiday = $celebracion")
+                            //AsyncImage(model = "https://android.com/sample_image.jpg", contentDescription = null)
+
+                        }
+                    }
+                }
+            }
+            else{items(ingredients.size) {
                 if ((ingredients[it].name.lowercase().contains(filtro)) || (filtro.isBlank())) {
                     val nombre = ingredients[it].name
                     val tipo = ingredients[it].type
@@ -78,6 +100,8 @@ fun PantallaIngredients(){
                     }
                 }
             }
+            }
+
         }
         Row() {
             Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
