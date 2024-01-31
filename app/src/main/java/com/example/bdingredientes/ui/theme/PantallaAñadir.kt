@@ -1,8 +1,8 @@
 package com.example.bdingredientes.ui.theme
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -27,12 +27,20 @@ fun PantallaAñadir() {
     var celebracion by remember { mutableStateOf("")}
     var activadoMenu by remember { mutableStateOf(false) }
     var db : VMBD = viewModel()
+
+    BackHandler{
+        db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
+    }
     Column {
         Row {
+            Text ("Name (current value: $nombre): ")
             TextField(
                 value = nombre,
                 onValueChange = { texto -> nombre = texto },
-                placeholder = { Text("Introduce el nombre del ingrediente") })
+                placeholder = { Text("Insert the name of the ingredient") })
+        }
+        Row {
+            Text ("Type (current value: $tipo): ")
             DropdownMenu(expanded = activadoMenu, onDismissRequest = { activadoMenu = false }) {
                 DropdownMenuItem(
                     text = { Text("Aditive") },
@@ -221,6 +229,9 @@ fun PantallaAñadir() {
                     text = { Text("Topping") },
                     onClick = { tipo = "Topping" })
             }
+        }
+        Row {
+            Text("Flavor (current value: $sabor): ")
             DropdownMenu(expanded = activadoMenu, onDismissRequest = { activadoMenu = false }) {
                 DropdownMenuItem(
                     text = { Text("savory") },
@@ -229,22 +240,23 @@ fun PantallaAñadir() {
                     text = { Text("sweet") },
                     onClick = { sabor = "sweet" })
             }
+        }
+        Row {
+            Text("Holiday-exclusive (current value: $deCelebracion): ")
             var seleccionado by remember { mutableStateOf(false) }
-            Checkbox(checked = seleccionado, onCheckedChange = { checking ->
-                seleccionado = !seleccionado; if (seleccionado) {
-                deCelebracion = true
-            } else {
-                deCelebracion = false
-            }
-
+            Checkbox(checked = seleccionado, onCheckedChange = {
+                seleccionado = !seleccionado; deCelebracion = seleccionado
             })
+        }
+        Row {
+            Text("Holiday (current value: $celebracion): ")
             DropdownMenu(expanded = activadoMenu, onDismissRequest = { activadoMenu = false }) {
                 DropdownMenuItem(
                     text = { Text("Standard") },
                     onClick = { celebracion = "Standard" })
                 DropdownMenuItem(
-                        text = { Text("Baseball Season") },
-                onClick = { celebracion = "Baseball Season" })
+                    text = { Text("Baseball Season") },
+                    onClick = { celebracion = "Baseball Season" })
                 DropdownMenuItem(
                     text = { Text("BavariaFest") },
                     onClick = { celebracion = "BavariaFest" })
@@ -339,9 +351,6 @@ fun PantallaAñadir() {
                     text = { Text("Volcano Gala") },
                     onClick = { celebracion = "Volcano Gala" })
             }
-        }
-        Button(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)}){
-            Text("Confirmar")
         }
     }
 }
