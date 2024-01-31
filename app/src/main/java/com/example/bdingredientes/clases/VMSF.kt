@@ -28,28 +28,57 @@ var Aleatorio: Boolean = false
 var ingredientsAleatorio = SnapshotStateList<Ingredient>()
 var borrar: Boolean = false
 var modificar: Boolean = false
-var ventana: Int = 1
+var puedeBorrar: Boolean = true
+var puedeModificar: Boolean = true
 @Composable
 fun BarraInferior(navController: NavController) {
     BottomAppBar(Modifier.fillMaxWidth()) {
-        Row() {
-            IconButton(onClick = {navController.navigate(Rutas.Add.Ruta)}) {
-                Icon(Icons.Default.Add, contentDescription = "")
-            }
-            if (ventana == 1) {
-                IconButton(onClick = {borrar = true}) {
+            Row() {
+                IconButton(onClick = {navController.navigate(Rutas.Add.Ruta)}) {
+                    Icon(Icons.Default.Add, contentDescription = "")
+                }
+                IconButton(onClick = {borrar = !borrar; puedeModificar = !puedeModificar}, enabled = puedeBorrar) {
                     Icon(Icons.Default.Delete, contentDescription = "")
                 }
-                IconButton(onClick = {modificar = true}) {
+                IconButton(onClick = {modificar = true; puedeBorrar = false}, enabled = puedeModificar) {
                     Icon(Icons.Default.ModeEdit, contentDescription = "")
                 }
+            }
+    }
+}
+
+@Composable
+fun BarraInferiorAdd(navController: NavController) {
+    var db : VMBD2 = viewModel()
+    BottomAppBar(Modifier.fillMaxWidth()) {
+        Row() {
+            IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
+                navController.popBackStack()}) {
+                Icon(Icons.Default.Add, contentDescription = "")
             }
         }
     }
 }
+
+@Composable
+fun BarraInferiorUpdate(navController: NavController) {
+    var db : VMBD2 = viewModel()
+    BottomAppBar(Modifier.fillMaxWidth()) {
+        Row() {
+            IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
+                db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
+                modificar = false
+                puedeBorrar = true
+                navController.popBackStack()}) {
+                Icon(Icons.Default.ModeEdit, contentDescription = "")
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperior(navController: NavController, titulo : String) {
+fun BarraSuperiorUsuario(navController: NavController) {
     var vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
@@ -58,7 +87,7 @@ fun BarraSuperior(navController: NavController, titulo : String) {
         vm.crearExoPlayer(contexto)
         vm.hacerSonarMusica(contexto)
     }
-    TopAppBar(title = { Text(text = titulo) }, actions = {Row() {
+    TopAppBar(title = { Text(text = "My ingredients") }, actions = {Row() {
         Button(onClick = {Aleatorio = !Aleatorio
             }){
             if (Aleatorio) {
@@ -74,11 +103,43 @@ fun BarraSuperior(navController: NavController, titulo : String) {
                 Icon(painterResource(id = R.drawable.baseline_music_off_24), contentDescription = "")
             }
         }
-        Button(onClick = { if (ventana == 1) {
+        Button(onClick = {
             navController.navigate(Rutas.General.Ruta)
-        } else {
-            navController.navigate(Rutas.Usuario.Ruta)
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }}
+    } )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BarraSuperiorGeneral(navController: NavController) {
+    var vm : ExoPlayerViewModel = viewModel()
+    val contexto = LocalContext.current
+    val exoplayer = vm.exoPlayer.collectAsState().value
+
+    if(exoplayer == null){
+        vm.crearExoPlayer(contexto)
+        vm.hacerSonarMusica(contexto)
+    }
+    TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row() {
+        Button(onClick = {Aleatorio = !Aleatorio
+        }){
+            if (Aleatorio) {
+                Icon(painterResource(id = R.drawable.baseline_shuffle_on_24), contentDescription = "")
+            } else {
+                Icon(painterResource(id = R.drawable.baseline_shuffle_24), contentDescription = "")
+            }
         }
+        Button(onClick = {vm.PausarOSeguirMusica()}) {
+            if(!vm.exoPlayer.value!!.isPlaying ){
+                Icon(painterResource(id = R.drawable.baseline_music_note_24), contentDescription = "")
+            }else{
+                Icon(painterResource(id = R.drawable.baseline_music_off_24), contentDescription = "")
+            }
+        }
+        Button(onClick = {
+            navController.navigate(Rutas.Usuario.Ruta)
         }) {
             Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
         }}

@@ -50,7 +50,7 @@ fun PantallaIngredients(){
     Column() {
 
         Row() {
-            Text("All ingredients", fontWeight = FontWeight.Bold)
+            Text("Click on an ingredient to add it to your list", fontWeight = FontWeight.Bold)
         }
         SearchBar(placeholder = { Text("Search ingredients by name") },
             query = busqueda,

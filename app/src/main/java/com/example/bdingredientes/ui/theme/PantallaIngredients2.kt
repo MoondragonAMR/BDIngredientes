@@ -48,7 +48,7 @@ fun PantallaIngredients2(navController: NavController){
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero by remember { mutableStateOf (ingredients.size + 1)}
+    var numero by remember { mutableStateOf(ingredients.size)}
 
     DisposableEffect(db){
         db.crearListener()
@@ -56,9 +56,15 @@ fun PantallaIngredients2(navController: NavController){
     }
 
     Column() {
-
         Row() {
-            Text("My ingredients", fontWeight = FontWeight.Bold)
+            Text(text =
+                if (borrar) {
+                    "Click on an ingredient to delete it, click the Delete button again to stop Delete Mode"
+                } else if (modificar) {
+                    "Click on an ingredient to modify it"
+                } else {
+                    "Here are all of your ingredients"
+            }, fontWeight = FontWeight.Bold)
         }
         SearchBar(placeholder = { Text("Search ingredients by name") },
             query = busqueda,
@@ -105,7 +111,6 @@ fun PantallaIngredients2(navController: NavController){
                     }
                     else if (modificar) {
                         navController.navigate(Rutas.Update.Ruta)
-
                     }}) {
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")
