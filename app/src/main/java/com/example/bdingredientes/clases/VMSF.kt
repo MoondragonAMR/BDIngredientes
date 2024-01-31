@@ -20,18 +20,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.bdingredientes.R
 import com.example.bdingredientes.ui.theme.ExoPlayerViewModel
+
 var Aleatorio: Boolean = false
 var ingredientsAleatorio = SnapshotStateList<Ingredient>()
 var borrar: Boolean = false
 var modificar: Boolean = false
+var ventana: Int = 1
 @Composable
-fun BarraInferior(ventana : Int) {
+fun BarraInferior(navController: NavController) {
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            //ir a Pantalla Añadir
-            IconButton(onClick = {}) {
+            IconButton(onClick = {navController.navigate(Rutas.Add.Ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
             if (ventana == 1) {
@@ -47,7 +49,7 @@ fun BarraInferior(ventana : Int) {
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperior(ventana : Int, titulo : String) {
+fun BarraSuperior(navController: NavController, titulo : String) {
     var vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
@@ -73,9 +75,9 @@ fun BarraSuperior(ventana : Int, titulo : String) {
             }
         }
         Button(onClick = { if (ventana == 1) {
-            //ir a la lista general
+            navController.navigate(Rutas.General.Ruta)
         } else {
-            //ir a la lista del usuario
+            navController.navigate(Rutas.Usuario.Ruta)
         }
         }) {
             Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")

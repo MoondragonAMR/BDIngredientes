@@ -15,11 +15,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.bdingredientes.clases.VMBD2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
+fun PantallaModificar(navController: NavController, id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
     var nombre by remember { mutableStateOf(name)}
     var tipo by remember { mutableStateOf(type)}
     var sabor by remember { mutableStateOf(flavor)}
@@ -30,6 +31,7 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
 
     BackHandler{
         db.modificarIngrediente(id, nombre, tipo, sabor, deCelebracion, celebracion)
+        navController.popBackStack()
     }
 
     Column {

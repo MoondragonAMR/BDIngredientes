@@ -24,17 +24,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.bdingredientes.clases.Aleatorio
 import com.example.bdingredientes.clases.Ingredient
+import com.example.bdingredientes.clases.Rutas
 import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.borrar
+import com.example.bdingredientes.clases.celebracion
+import com.example.bdingredientes.clases.codigo
+import com.example.bdingredientes.clases.deCelebracion
 import com.example.bdingredientes.clases.ingredientsAleatorio
 import com.example.bdingredientes.clases.modificar
+import com.example.bdingredientes.clases.nombre
+import com.example.bdingredientes.clases.sabor
+import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients2(){
+fun PantallaIngredients2(navController: NavController){
     var db : VMBD2 = viewModel()
     var ingredients = db.ingredients.collectAsState().value
     var estado by remember { mutableStateOf(false) }
@@ -85,17 +93,18 @@ fun PantallaIngredients2(){
             }
             items(lista.size) {
                 if ((lista[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())) {
-                    val nombre = lista[it].name
-                    val tipo = lista[it].type
-                    val sabor = lista[it].flavor
-                    val deCelebracion = lista[it].holidayExclusive
-                    val celebracion = lista[it].holiday
+                    nombre = lista[it].name
+                    tipo = lista[it].type
+                    sabor = lista[it].flavor
+                    deCelebracion = lista[it].holidayExclusive
+                    celebracion = lista[it].holiday
+                    codigo = lista[it].id
                     Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan).clickable {
                         if (borrar) {
-                        db.borrarIngrediente(lista[it].id)
+                        db.borrarIngrediente(codigo)
                     }
                     else if (modificar) {
-                        //ir a Pantalla Modificar
+                        navController.navigate(Rutas.Update.Ruta)
 
                     }}) {
                         Text(text = "name = $nombre")

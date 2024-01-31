@@ -15,11 +15,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.bdingredientes.clases.VMBD2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaAñadir() {
+fun PantallaAñadir(navController: NavController) {
     var nombre by remember { mutableStateOf("")}
     var tipo by remember { mutableStateOf("")}
     var sabor by remember { mutableStateOf("")}
@@ -30,6 +31,7 @@ fun PantallaAñadir() {
 
     BackHandler{
         db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
+        navController.popBackStack()
     }
     Column {
         Row {
