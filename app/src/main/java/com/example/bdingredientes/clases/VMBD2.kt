@@ -8,13 +8,13 @@ import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class VMBD : ViewModel() {
+class VMBD2 : ViewModel() {
     val conexion = FirebaseFirestore.getInstance()
     private lateinit var listener: ListenerRegistration
     var _ingredients = MutableStateFlow(mutableStateListOf<Ingredient>())
     var ingredients = _ingredients.asStateFlow()
     fun crearListener() {
-        listener = conexion.collection("Ingredients").addSnapshotListener { datos, error ->
+        listener = conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").addSnapshotListener { datos, error ->
             if (error == null) {
                 datos?.documentChanges?.forEach { cambio ->
                     if (cambio.type == DocumentChange.Type.ADDED) {
@@ -42,16 +42,16 @@ class VMBD : ViewModel() {
         name: String, flavor: String, type: String, holidayExclusive: Boolean, holiday: String
     ) {
         val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday)
-        conexion.collection("Ingredients").add(newIngredient)
+        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").add(newIngredient)
     }
 
     fun borrarIngrediente(id: String) {
-        conexion.collection("Ingredients").document(id).delete()
+        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").document(id).delete()
     }
 
     fun modificarIngrediente(id: String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
         val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday)
-        conexion.collection("Ingredients").document(id).set(newIngredient)
+        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").document(id).set(newIngredient)
     }
 
 }

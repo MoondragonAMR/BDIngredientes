@@ -27,20 +27,20 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.bdingredientes.clases.Aleatorio
 import com.example.bdingredientes.clases.Ingredient
-import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.VMBD2
+import com.example.bdingredientes.clases.borrar
 import com.example.bdingredientes.clases.ingredientsAleatorio
+import com.example.bdingredientes.clases.modificar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients(){
-    var db : VMBD = viewModel()
+fun PantallaIngredients2(){
+    var db : VMBD2 = viewModel()
     var ingredients = db.ingredients.collectAsState().value
-    var db2 : VMBD2 = viewModel()
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero by remember { mutableStateOf (1334)}
+    var numero by remember { mutableStateOf (ingredients.size + 1)}
 
     DisposableEffect(db){
         db.crearListener()
@@ -50,7 +50,7 @@ fun PantallaIngredients(){
     Column() {
 
         Row() {
-            Text("All ingredients", fontWeight = FontWeight.Bold)
+            Text("My ingredients", fontWeight = FontWeight.Bold)
         }
         SearchBar(placeholder = { Text("Search ingredients by name") },
             query = busqueda,
@@ -90,13 +90,14 @@ fun PantallaIngredients(){
                     val sabor = lista[it].flavor
                     val deCelebracion = lista[it].holidayExclusive
                     val celebracion = lista[it].holiday
-                    Column(
-                        Modifier
-                            .padding(4.dp)
-                            .border(width = 2.dp, color = Color.Cyan)
-                            .clickable {
-                                db2.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
-                            }) {
+                    Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan).clickable {
+                        if (borrar) {
+                        db.borrarIngrediente(lista[it].id)
+                    }
+                    else if (modificar) {
+                        //ir a Pantalla Modificar
+
+                    }}) {
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")
                         Text(text = "flavor = $sabor")

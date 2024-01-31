@@ -15,7 +15,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.bdingredientes.clases.VMBD
+import com.example.bdingredientes.clases.VMBD2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -26,7 +26,7 @@ fun PantallaAñadir() {
     var deCelebracion by remember { mutableStateOf(false)}
     var celebracion by remember { mutableStateOf("")}
     var activadoMenu by remember { mutableStateOf(false) }
-    var db : VMBD = viewModel()
+    var db : VMBD2 = viewModel()
 
     BackHandler{
         db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
