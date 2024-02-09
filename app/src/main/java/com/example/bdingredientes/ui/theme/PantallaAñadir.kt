@@ -20,10 +20,10 @@ import androidx.compose.ui.Modifier
 @Composable
 fun PantallaAñadir() {
     var nombre by remember { mutableStateOf("")}
-    var tipo by remember { mutableStateOf("")}
-    var sabor by remember { mutableStateOf("")}
+    var tipo by remember { mutableStateOf("Topping")}
+    var sabor by remember { mutableStateOf("sweet")}
     var deCelebracion by remember { mutableStateOf(false)}
-    var celebracion by remember { mutableStateOf("")}
+    var celebracion by remember { mutableStateOf("Standard")}
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     var activado3 by remember { mutableStateOf(false) }

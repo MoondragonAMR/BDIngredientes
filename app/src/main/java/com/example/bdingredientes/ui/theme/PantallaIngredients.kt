@@ -25,15 +25,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import com.example.bdingredientes.clases.Aleatorio
 import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.VMBD2
-import com.example.bdingredientes.clases.ingredientsAleatorio
+import com.example.bdingredientes.clases.ViewModelScaffold
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients(){
+fun PantallaIngredients(viewModelScaffold: ViewModelScaffold){
     var db : VMBD = viewModel()
     var ingredients = db.ingredients.collectAsState().value
     var db2 : VMBD2 = viewModel()
@@ -77,8 +76,8 @@ fun PantallaIngredients(){
         LazyColumn(
         ) {
             var lista: SnapshotStateList<Ingredient>?
-            if (Aleatorio){
-                lista = ingredientsAleatorio
+            if (viewModelScaffold.Aleatorio){
+                lista = viewModelScaffold.ingredientsAleatorio
             }
             else {
                 lista = ingredients

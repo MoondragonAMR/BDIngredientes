@@ -26,23 +26,20 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.example.bdingredientes.clases.Aleatorio
 import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.Rutas
 import com.example.bdingredientes.clases.VMBD2
-import com.example.bdingredientes.clases.borrar
+import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.celebracion
 import com.example.bdingredientes.clases.codigo
 import com.example.bdingredientes.clases.deCelebracion
-import com.example.bdingredientes.clases.ingredientsAleatorio
-import com.example.bdingredientes.clases.modificar
 import com.example.bdingredientes.clases.nombre
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients2(navController: NavController){
+fun PantallaIngredients2(navController: NavController, viewModelScaffold: ViewModelScaffold){
     var db : VMBD2 = viewModel()
     var ingredients = db.ingredients.collectAsState().value
     var estado by remember { mutableStateOf(false) }
@@ -58,9 +55,9 @@ fun PantallaIngredients2(navController: NavController){
     Column() {
         Row() {
             Text(text =
-                if (borrar) {
+                if (viewModelScaffold.borrar) {
                     "Click on an ingredient to delete it, click the Delete button again to stop Delete Mode"
-                } else if (modificar) {
+                } else if (viewModelScaffold.modificar) {
                     "Click on an ingredient to modify it"
                 } else {
                     "Here are all of your ingredients"
@@ -91,8 +88,8 @@ fun PantallaIngredients2(navController: NavController){
         LazyColumn(
         ) {
             var lista: SnapshotStateList<Ingredient>?
-            if (Aleatorio){
-                lista = ingredientsAleatorio
+            if (viewModelScaffold.Aleatorio){
+                lista = viewModelScaffold.ingredientsAleatorio
             }
             else {
                 lista = ingredients
@@ -106,10 +103,10 @@ fun PantallaIngredients2(navController: NavController){
                     celebracion = lista[it].holiday
                     codigo = lista[it].id
                     Column(Modifier.padding(4.dp).border(width = 2.dp, color = Color.Cyan).clickable {
-                        if (borrar) {
+                        if (viewModelScaffold.borrar) {
                         db.borrarIngrediente(codigo)
                     }
-                    else if (modificar) {
+                    else if (viewModelScaffold.modificar) {
                         navController.navigate(Rutas.Update.Ruta)
                     }}) {
                         Text(text = "name = $nombre")
