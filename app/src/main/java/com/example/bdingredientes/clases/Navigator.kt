@@ -12,7 +12,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -28,12 +27,11 @@ fun Navigator() {
     val navController = rememberNavController()
     val entradaNavActual by navController.currentBackStackEntryAsState()
     val rutaActual = entradaNavActual?.destination?.route
-    val viewModelScaffold : ViewModelScaffold = viewModel()
 
     Scaffold(topBar = { if (rutaActual == Rutas.Usuario.Ruta) {
-        BarraSuperiorUsuario(navController = navController, viewModelScaffold)
+        BarraSuperiorUsuario(navController = navController)
     } else if (rutaActual == Rutas.General.Ruta) {
-        BarraSuperiorGeneral(navController = navController, viewModelScaffold)
+        BarraSuperiorGeneral(navController = navController)
     } else {
         TopAppBar(title = { Text(text = if (rutaActual == Rutas.Add.Ruta) {
             "Add a new ingredient"
@@ -44,16 +42,18 @@ fun Navigator() {
     }}, bottomBar = {
         when (rutaActual) {
             Rutas.Usuario.Ruta -> {
-                BarraInferior(navController = navController, viewModelScaffold)
+                BarraInferior(navController = navController)
             }
             Rutas.General.Ruta -> {
-                BottomAppBar{}
+                BottomAppBar{
+                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                }
             }
             Rutas.Add.Ruta -> {
                 BarraInferiorAdd(navController = navController)
             }
             else -> {
-                BarraInferiorUpdate(navController = navController, viewModelScaffold)
+                BarraInferiorUpdate(navController = navController)
             }
         }
     }, content = {
@@ -66,10 +66,10 @@ fun Navigator() {
         ) {
             NavHost(navController = navController, startDestination = Rutas.Usuario.Ruta) {
                 composable(Rutas.Usuario.Ruta) {
-                    PantallaIngredients2(navController = navController, viewModelScaffold)
+                    PantallaIngredients2(navController = navController)
                 }
                 composable(Rutas.General.Ruta) {
-                    PantallaIngredients(viewModelScaffold)
+                    PantallaIngredients()
                 }
                 composable(Rutas.Add.Ruta) {
                     PantallaAñadir()

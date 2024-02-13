@@ -33,16 +33,23 @@ import com.example.bdingredientes.ui.theme.ExoPlayerViewModel
 
 
 @Composable
-fun BarraInferior(navController: NavController, viewModelScaffold: ViewModelScaffold) {
+fun BarraInferior(navController: NavController) {
+    var sf : ViewModelScaffold = viewModel()
+    var delete = sf.borrar.collectAsState().value
+    var update = sf.modificar.collectAsState().value
+    var deleted = sf.puedeBorrar.collectAsState().value
+    var updated = sf.puedeModificar.collectAsState().value
+
     var iconoBorrar by remember {  mutableStateOf(Icons.Default.Delete) }
-    if (viewModelScaffold.borrar) {
+
+    if (delete.value) {
         iconoBorrar = Icons.Default.Delete
     } else {
         iconoBorrar = Icons.Default.DeleteForever
     //(painterResource(id = R.drawable.baseline_delete_forever_24)) as ImageVector
     }
     var iconoModificar by remember {  mutableStateOf(Icons.Default.ModeEdit) }
-    if (viewModelScaffold.modificar) {
+    if (update.value) {
         iconoModificar = Icons.Default.ModeEdit
     } else {
         iconoModificar = Icons.Default.EditOff
@@ -52,19 +59,20 @@ fun BarraInferior(navController: NavController, viewModelScaffold: ViewModelScaf
                 IconButton(onClick = {navController.navigate(Rutas.Add.Ruta)}) {
                     Icon(Icons.Default.Add, contentDescription = "")
                 }
-                IconButton(onClick = {viewModelScaffold.borrar =
-                    !viewModelScaffold.borrar;
-                    viewModelScaffold.puedeModificar =
-                        !viewModelScaffold.puedeModificar},
-                    enabled = viewModelScaffold.puedeBorrar) {
+                IconButton(onClick = {delete.value =
+                    !delete.value;
+                    updated.value =
+                        !updated.value},
+                    enabled = deleted.value) {
                     Icon(iconoBorrar, contentDescription = "")
                 }
-                IconButton(onClick = {viewModelScaffold.modificar = true;
-                    viewModelScaffold.puedeBorrar = false},
-                    enabled = viewModelScaffold.puedeModificar) {
+                IconButton(onClick = {update.value = true;
+                    deleted.value = false},
+                    enabled = updated.value) {
                     Icon(iconoModificar, contentDescription = "")
                 }
             }
+            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
     }
 }
 
@@ -77,32 +85,40 @@ fun BarraInferiorAdd(navController: NavController) {
                 navController.popBackStack()}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
+            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
         }
     }
 }
 
 @Composable
-fun BarraInferiorUpdate(navController: NavController, viewModelScaffold: ViewModelScaffold) {
+fun BarraInferiorUpdate(navController: NavController) {
     var db : VMBD2 = viewModel()
+    var sf : ViewModelScaffold = viewModel()
+    var update = sf.modificar.collectAsState().value
+    var deleted = sf.puedeBorrar.collectAsState().value
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
             IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
                 db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
-                viewModelScaffold.modificar = false
-                viewModelScaffold.puedeBorrar = true
+                update.value = false
+                deleted.value = true
                 navController.popBackStack()}) {
                 Icon(Icons.Default.ModeEdit, contentDescription = "")
             }
+            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperiorUsuario(navController: NavController, viewModelScaffold: ViewModelScaffold) {
+fun BarraSuperiorUsuario(navController: NavController) {
     var vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
+    var sf : ViewModelScaffold = viewModel()
+    var aleatorio = sf.Aleatorio.collectAsState().value
 
     if(exoplayer == null){
         vm.crearExoPlayer(contexto)
@@ -110,7 +126,7 @@ fun BarraSuperiorUsuario(navController: NavController, viewModelScaffold: ViewMo
     }
 
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
-    if (viewModelScaffold.Aleatorio) {
+    if (aleatorio.value) {
         iconoAleatorio = R.drawable.baseline_shuffle_on_24
     } else {
         iconoAleatorio = R.drawable.baseline_shuffle_24
@@ -125,7 +141,7 @@ fun BarraSuperiorUsuario(navController: NavController, viewModelScaffold: ViewMo
 
     TopAppBar(title = { Text(text = "My ingredients") }, actions = {Row() {
         IconButton(onClick = {
-            viewModelScaffold.Aleatorio = !viewModelScaffold.Aleatorio
+            aleatorio.value = !aleatorio.value
         }) {
             //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
@@ -144,10 +160,12 @@ fun BarraSuperiorUsuario(navController: NavController, viewModelScaffold: ViewMo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperiorGeneral(navController: NavController, viewModelScaffold: ViewModelScaffold) {
+fun BarraSuperiorGeneral(navController: NavController) {
     var vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
+    var sf : ViewModelScaffold = viewModel()
+    var aleatorio = sf.Aleatorio.collectAsState().value
 
     if(exoplayer == null){
         vm.crearExoPlayer(contexto)
@@ -155,7 +173,7 @@ fun BarraSuperiorGeneral(navController: NavController, viewModelScaffold: ViewMo
     }
 
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
-    if (viewModelScaffold.Aleatorio) {
+    if (aleatorio.value) {
         iconoAleatorio = R.drawable.baseline_shuffle_on_24
     } else {
         iconoAleatorio = R.drawable.baseline_shuffle_24
@@ -170,7 +188,7 @@ fun BarraSuperiorGeneral(navController: NavController, viewModelScaffold: ViewMo
 
     TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row() {
         IconButton(onClick = {
-            viewModelScaffold.Aleatorio = !viewModelScaffold.Aleatorio
+            aleatorio.value = !aleatorio.value
         }) {
             //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
