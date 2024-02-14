@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.bdingredientes.clases.Navigator
+import com.example.bdingredientes.clases.llenarImagenes
 import com.example.bdingredientes.ui.theme.BDIngredientesTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    llenarImagenes()
                     Navigator()
                 }
             }

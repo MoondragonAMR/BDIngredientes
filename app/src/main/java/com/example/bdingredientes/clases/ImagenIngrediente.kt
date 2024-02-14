@@ -1,14 +1,24 @@
 package com.example.bdingredientes.clases
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
+
 var imagenes = mutableListOf<String>()
 
 
-//@Serializable
-data class ImagenIngrediente(
-    //@SerialName(value = "img_src")
-    val imgSrc: String
-){
+@Composable
+fun ImagenIngrediente(url : String) {
+    val imagen = rememberImagePainter(url)
 
+    Image(
+        painter = imagen,
+        contentDescription = "",
+        modifier = Modifier.size(100.dp)
+    )
 }
 
 fun llenarImagenes() {

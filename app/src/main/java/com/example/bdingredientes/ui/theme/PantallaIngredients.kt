@@ -30,11 +30,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.compose.AsyncImage
+import com.example.bdingredientes.clases.ImagenIngrediente
 import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
+import com.example.bdingredientes.clases.imagenes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -53,6 +54,7 @@ fun PantallaIngredients() {
     var sf: ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
     var ingredientsRandom = sf.ingredientsAleatorio.collectAsState().value
+    var url by remember { mutableStateOf("") }
 
     DisposableEffect(db) {
         db.crearListener()
@@ -346,7 +348,7 @@ fun PantallaIngredients() {
                                 onClick = { filtroParametro = "true" })
                         }
 
-                        else -> {
+                        "Holiday" -> {
                             DropdownMenuItem(
                                 text = { Text("Standard") },
                                 onClick = { filtroParametro = "Standard" })
@@ -479,6 +481,145 @@ fun PantallaIngredients() {
                     val sabor = lista[it].flavor
                     val deCelebracion = lista[it].holidayExclusive
                     val celebracion = lista[it].holiday
+
+                    when (nombre) {
+                        "Acorn Cutter" -> {
+                            url = imagenes[0]
+                        }
+                        "Adobo" -> {
+                            url = imagenes[1]
+                        }
+                        "Aged Gouda" -> {
+                            url = imagenes[2]
+                        }
+                        "Ahi Tuna" -> {
+                            url = imagenes[3]
+                        }
+                        "Aji Amarillo" -> {
+                            url = imagenes[4]
+                        }
+                        "Akai Soy Paper" -> {
+                            url = imagenes[5]
+                        }
+                        "Alabama BBQ Sauce" -> {
+                            url = imagenes[6]
+                        }
+                        "Alexandertorte" -> {
+                            url = imagenes[7]
+                        }
+                        "Almond Snap Cookie" -> {
+                            url = imagenes[8]
+                        }
+                        "Almond Snap Powder" -> {
+                            url = imagenes[9]
+                        }
+                        "Almond Tea" -> {
+                            url = imagenes[10]
+                        }
+                        "Amarena" -> {
+                            url = imagenes[11]
+                        }
+                        "Ambrosia Ice Cream" -> {
+                            url = imagenes[12]
+                        }
+                        "American Cheese" -> {
+                            url = imagenes[13]
+                        }
+                        "Ancho Chile" -> {
+                            url = imagenes[14]
+                        }
+                        "Anchor Cookie" -> {
+                            url = imagenes[15]
+                        }
+                        "Anchovies" -> {
+                            url = imagenes[16]
+                        }
+                        "Animal Crackers" -> {
+                            url = imagenes[17]
+                        }
+                        "Anticucho" -> {
+                            url = imagenes[18]
+                        }
+                        "Apple Crumb Cake" -> {
+                            url = imagenes[19]
+                        }
+                        "Apple Filling" -> {
+                            url = imagenes[20]
+                        }
+                        "Apple Pie Filling" -> {
+                            url = imagenes[21]
+                        }
+                        "Aprajita Powder" -> {
+                            url = imagenes[22]
+                        }
+                        "Apricot Drizzle" -> {
+                            url = imagenes[23]
+                        }
+                        "Apricot Icing" -> {
+                            url = imagenes[24]
+                        }
+                        "Artichoke Dip" -> {
+                            url = imagenes[25]
+                        }
+                        "Artichoke Hearts" -> {
+                            url = imagenes[26]
+                        }
+                        "Artisanal Truffle Corn" -> {
+                            url = imagenes[27]
+                        }
+                        "Arugula Wreath" -> {
+                            url = imagenes[28]
+                        }
+                        "Asiago Cheese" -> {
+                            url = imagenes[29]
+                        }
+                        "Asparagus" -> {
+                            url = imagenes[30]
+                        }
+                        "Asteroids" -> {
+                            url = imagenes[31]
+                        }
+                        "Astro Elixir" -> {
+                            url = imagenes[32]
+                        }
+                        "Astronaut Ice Cream" -> {
+                            url = imagenes[33]
+                        }
+                        "Atomic Sauce" -> {
+                            url = imagenes[34]
+                        }
+                        "Autumn Leaves Crust" -> {
+                            url = imagenes[35]
+                        }
+                        "Autumn Leaves Sprinkles" -> {
+                            url = imagenes[36]
+                        }
+                        "Avocado" -> {
+                            url = imagenes[37]
+                        }
+                        "Awesome Sauce" -> {
+                            url = imagenes[38]
+                        }
+                        "Awesome Sauce Dip" -> {
+                            url = imagenes[39]
+                        }
+                        "Azuki Fluff" -> {
+                            url = imagenes[40]
+                        }
+                        "Azuki Icing" -> {
+                            url = imagenes[41]
+                        }
+                        "Azuki Sauce" -> {
+                            url = imagenes[42]
+                        }
+                        "Azul Ranch Taco" -> {
+                            url = imagenes[43]
+                        }
+                        else -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
+                        }
+                    }
+
                     Column(
                         Modifier
                             .padding(4.dp)
@@ -497,12 +638,7 @@ fun PantallaIngredients() {
                         Text(text = "flavor = $sabor")
                         Text(text = "holiday-exclusive = $deCelebracion")
                         Text(text = "holiday = $celebracion")
-                        //storage.getReference($nombre).downloadUrl.
-                        AsyncImage(
-                            model = "https://android.com/sample_image.jpg",
-                            contentDescription = null
-                        )
-
+                        ImagenIngrediente(url)
                     }
                 }
             }
