@@ -99,8 +99,7 @@ fun BarraInferiorUpdate(navController: NavController) {
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
-                db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
+            IconButton(onClick = {db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
                 update.value = false
                 deleted.value = true
                 navController.popBackStack()}) {
@@ -119,6 +118,7 @@ fun BarraSuperiorUsuario(navController: NavController) {
     val exoplayer = vm.exoPlayer.collectAsState().value
     var sf : ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
+    var db : VMBD2 = viewModel()
 
     if(exoplayer == null){
         vm.crearExoPlayer(contexto)
@@ -128,6 +128,8 @@ fun BarraSuperiorUsuario(navController: NavController) {
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     if (aleatorio.value) {
         iconoAleatorio = R.drawable.baseline_shuffle_on_24
+        db.mezclarIngredientes()
+
     } else {
         iconoAleatorio = R.drawable.baseline_shuffle_24
     }
@@ -166,6 +168,7 @@ fun BarraSuperiorGeneral(navController: NavController) {
     val exoplayer = vm.exoPlayer.collectAsState().value
     var sf : ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
+    var db : VMBD = viewModel()
 
     if(exoplayer == null){
         vm.crearExoPlayer(contexto)
@@ -175,6 +178,7 @@ fun BarraSuperiorGeneral(navController: NavController) {
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     if (aleatorio.value) {
         iconoAleatorio = R.drawable.baseline_shuffle_on_24
+        db.mezclarIngredientes()
     } else {
         iconoAleatorio = R.drawable.baseline_shuffle_24
     }

@@ -1,5 +1,6 @@
 package com.example.bdingredientes.clases
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.toMutableStateList
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
@@ -13,6 +14,8 @@ class VMBD : ViewModel() {
     private lateinit var listener: ListenerRegistration
     var _ingredients = MutableStateFlow(mutableStateListOf<Ingredient>())
     var ingredients = _ingredients.asStateFlow()
+    var _ingredientsAleatorio = MutableStateFlow(mutableStateListOf<Ingredient>())
+    var ingredientsAleatorio = _ingredientsAleatorio.asStateFlow()
     fun crearListener() {
         listener = conexion.collection("Ingredients").addSnapshotListener { datos, error ->
             if (error == null) {
@@ -757,6 +760,10 @@ class VMBD : ViewModel() {
 
     fun filtrarIngredientes(numero : Long, parametro : String) {
         conexion.collection("Ingredients").orderBy(parametro).limit(numero)
+    }
+
+    fun mezclarIngredientes() {
+        _ingredientsAleatorio.value = _ingredients.value.shuffled().toMutableStateList()
     }
 
 }

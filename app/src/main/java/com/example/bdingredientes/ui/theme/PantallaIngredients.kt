@@ -53,7 +53,7 @@ fun PantallaIngredients() {
     var activado2 by remember { mutableStateOf(false) }
     var sf: ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
-    var ingredientsRandom = sf.ingredientsAleatorio.collectAsState().value
+    var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
     var url by remember { mutableStateOf("") }
 
     DisposableEffect(db) {

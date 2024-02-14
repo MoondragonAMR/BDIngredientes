@@ -1,6 +1,5 @@
 package com.example.bdingredientes.clases
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -9,8 +8,6 @@ import kotlinx.coroutines.flow.asStateFlow
 class ViewModelScaffold : ViewModel() {
     var _Aleatorio = MutableStateFlow(mutableStateOf(false))
     var Aleatorio = _Aleatorio.asStateFlow()
-    var _ingredientesAleatorio = MutableStateFlow(mutableStateListOf<Ingredient>())
-    var ingredientsAleatorio = _ingredientesAleatorio.asStateFlow()
     var _borrar = MutableStateFlow(mutableStateOf(false))
     var borrar = _borrar.asStateFlow()
     var _modificar = MutableStateFlow(mutableStateOf(false))

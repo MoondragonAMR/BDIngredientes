@@ -15,28 +15,35 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.bdingredientes.clases.VMBD2
+import com.example.bdingredientes.clases.celebracion
+import com.example.bdingredientes.clases.deCelebracion
+import com.example.bdingredientes.clases.nombre
+import com.example.bdingredientes.clases.sabor
+import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
-    var nombre by remember { mutableStateOf(name)}
-    var tipo by remember { mutableStateOf(type)}
-    var sabor by remember { mutableStateOf(flavor)}
-    var deCelebracion by remember { mutableStateOf(holidayExclusive)}
-    var celebracion by remember { mutableStateOf(holiday)}
+    var nombreAdd by remember { mutableStateOf(name) }
+    nombre = nombreAdd
+    var tipoAdd by remember { mutableStateOf(type) }
+    tipo = tipoAdd
+    var saborAdd by remember { mutableStateOf(flavor) }
+    sabor = saborAdd
+    var deCelebracionAdd by remember { mutableStateOf(holidayExclusive) }
+    deCelebracion = deCelebracionAdd
+    var celebracionAdd by remember { mutableStateOf(holiday) }
+    celebracion = celebracionAdd
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     var activado3 by remember { mutableStateOf(false) }
-    var db : VMBD2 = viewModel()
 
     Column {
         Row {
             Text ("Name: ")
             TextField(
-                value = nombre,
-                onValueChange = { texto -> nombre = texto },
+                value = nombreAdd,
+                onValueChange = { texto -> nombreAdd = texto; nombre = nombreAdd },
                 placeholder = { Text("Insert the name of the ingredient") })
         }
         Row {
@@ -45,196 +52,196 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
                 onExpandedChange = {activado = !activado} ) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = tipo,
+                    value = tipoAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado, onDismissRequest = { activado = false }) {
                     DropdownMenuItem(
                         text = { Text("Aditive") },
-                        onClick = { tipo = "Aditive" })
+                        onClick = { tipoAdd = "Aditive"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Bread") },
-                        onClick = { tipo = "Bread" })
+                        onClick = { tipoAdd = "Bread"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Breading") },
-                        onClick = { tipo = "Breading" })
+                        onClick = { tipoAdd = "Breading"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Breakfast Food") },
-                        onClick = { tipo = "Breakfast Food" })
+                        onClick = { tipoAdd = "Breakfast Food"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Breakfast Mixable") },
-                        onClick = { tipo = "Breakfast Mixable" })
+                        onClick = { tipoAdd = "Breakfast Mixable"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Bubble Tea") },
-                        onClick = { tipo = "Bubble Tea" })
+                        onClick = { tipoAdd = "Bubble Tea"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Burger Bun") },
-                        onClick = { tipo = "Burger Bun" })
+                        onClick = { tipoAdd = "Burger Bun"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Burger Meat") },
-                        onClick = { tipo = "Burger Meat" })
+                        onClick = { tipoAdd = "Burger Meat"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Cake") },
-                        onClick = { tipo = "Cake" })
+                        onClick = { tipoAdd = "Cake"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Cannoli Shell") },
-                        onClick = { tipo = "Cannoli Shell" })
+                        onClick = { tipoAdd = "Cannoli Shell"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Chicken Sauce") },
-                        onClick = { tipo = "Chicken Sauce" })
+                        onClick = { tipoAdd = "Chicken Sauce"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Chicken Wings") },
-                        onClick = { tipo = "Chicken Wings" })
+                        onClick = { tipoAdd = "Chicken Wings"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Coffee") },
-                        onClick = { tipo = "Coffee" })
+                        onClick = { tipoAdd = "Coffee"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Cookie Dough") },
-                        onClick = { tipo = "Cookie Dough" })
+                        onClick = { tipoAdd = "Cookie Dough"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Cookie Mixable") },
-                        onClick = { tipo = "Cookie Mixable" })
+                        onClick = { tipoAdd = "Cookie Mixable"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Cream") },
-                        onClick = { tipo = "Cream" })
+                        onClick = { tipoAdd = "Cream"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Cream Dollop") },
-                        onClick = { tipo = "Cream Dollop" })
+                        onClick = { tipoAdd = "Cream Dollop"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Dip") },
-                        onClick = { tipo = "Dip" })
+                        onClick = { tipoAdd = "Dip"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Donut Cutter") },
-                        onClick = { tipo = "Donut Cutter" })
+                        onClick = { tipoAdd = "Donut Cutter"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Donut Dough") },
-                        onClick = { tipo = "Donut Dough" })
+                        onClick = { tipoAdd = "Donut Dough"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Donut Filling") },
-                        onClick = { tipo = "Donut Filling" })
+                        onClick = { tipoAdd = "Donut Filling"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Drink") },
-                        onClick = { tipo = "Drink" })
+                        onClick = { tipoAdd = "Drink"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Flat Topper") },
-                        onClick = { tipo = "Flat Topper" })
+                        onClick = { tipoAdd = "Flat Topper"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Fries") },
-                        onClick = { tipo = "Fries" })
+                        onClick = { tipoAdd = "Fries"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Frosting") },
-                        onClick = { tipo = "Frosting" })
+                        onClick = { tipoAdd = "Frosting"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Fry Topping") },
-                        onClick = { tipo = "Fry Topping" })
+                        onClick = { tipoAdd = "Fry Topping"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Hot Dog Bun") },
-                        onClick = { tipo = "Hot Dog Bun" })
+                        onClick = { tipoAdd = "Hot Dog Bun"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Ice") },
-                        onClick = { tipo = "Ice" })
+                        onClick = { tipoAdd = "Ice"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Ice Cream") },
-                        onClick = { tipo = "Ice Cream" })
+                        onClick = { tipoAdd = "Ice Cream"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Long Topper") },
-                        onClick = { tipo = "Long Topper" })
+                        onClick = { tipoAdd = "Long Topper"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Milk") },
-                        onClick = { tipo = "Milk" })
+                        onClick = { tipoAdd = "Milk"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Mixable") },
-                        onClick = { tipo = "Mixable" })
+                        onClick = { tipoAdd = "Mixable"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Mixable Syrup") },
-                        onClick = { tipo = "Mixable Syrup" })
+                        onClick = { tipoAdd = "Mixable Syrup"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Nacho Chips") },
-                        onClick = { tipo = "Nacho Chips" })
+                        onClick = { tipoAdd = "Nacho Chips"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Nacho Dip") },
-                        onClick = { tipo = "Nacho Dip" })
+                        onClick = { tipoAdd = "Nacho Dip"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pasta") },
-                        onClick = { tipo = "Pasta" })
+                        onClick = { tipoAdd = "Pasta"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pasta Sauce") },
-                        onClick = { tipo = "Pasta Sauce" })
+                        onClick = { tipoAdd = "Pasta Sauce"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pie Crust") },
-                        onClick = { tipo = "Pie Crust" })
+                        onClick = { tipoAdd = "Pie Crust"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pie Filling") },
-                        onClick = { tipo = "Pie Filling" })
+                        onClick = { tipoAdd = "Pie Filling"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pizza Cheese") },
-                        onClick = { tipo = "Pizza Cheese" })
+                        onClick = { tipoAdd = "Pizza Cheese"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pizza Crust") },
-                        onClick = { tipo = "Pizza Crust" })
+                        onClick = { tipoAdd = "Pizza Crust"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Pizza Sauce") },
-                        onClick = { tipo = "Pizza Sauce" })
+                        onClick = { tipoAdd = "Pizza Sauce"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Popcorn") },
-                        onClick = { tipo = "Popcorn" })
+                        onClick = { tipoAdd = "Popcorn"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Powder") },
-                        onClick = { tipo = "Powder" })
+                        onClick = { tipoAdd = "Powder"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Rice") },
-                        onClick = { tipo = "Rice" })
+                        onClick = { tipoAdd = "Rice"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Sandwich Bread") },
-                        onClick = { tipo = "Sandwich Bread" })
+                        onClick = { tipoAdd = "Sandwich Bread"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Sandwich Cheese") },
-                        onClick = { tipo = "Sandwich Cheese" })
+                        onClick = { tipoAdd = "Sandwich Cheese"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Sauce") },
-                        onClick = { tipo = "Sauce" })
+                        onClick = { tipoAdd = "Sauce"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Sausage") },
-                        onClick = { tipo = "Sausage" })
+                        onClick = { tipoAdd = "Sausage"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Shaker") },
-                        onClick = { tipo = "Shaker" })
+                        onClick = { tipoAdd = "Shaker"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Side") },
-                        onClick = { tipo = "Side" })
+                        onClick = { tipoAdd = "Side"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Slush") },
-                        onClick = { tipo = "Slush" })
+                        onClick = { tipoAdd = "Slush"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Soda") },
-                        onClick = { tipo = "Soda" })
+                        onClick = { tipoAdd = "Soda"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Soy Paper") },
-                        onClick = { tipo = "Soy Paper" })
+                        onClick = { tipoAdd = "Soy Paper"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Sushi Filling") },
-                        onClick = { tipo = "Sushi Filling" })
+                        onClick = { tipoAdd = "Sushi Filling"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Syrup") },
-                        onClick = { tipo = "Syrup" })
+                        onClick = { tipoAdd = "Syrup"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Taco Meat") },
-                        onClick = { tipo = "Taco Meat" })
+                        onClick = { tipoAdd = "Taco Meat"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Taco Shell") },
-                        onClick = { tipo = "Taco Shell" })
+                        onClick = { tipoAdd = "Taco Shell"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Tea Bubbles") },
-                        onClick = { tipo = "Tea Bubbles" })
+                        onClick = { tipoAdd = "Tea Bubbles"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Top Crust") },
-                        onClick = { tipo = "Top Crust" })
+                        onClick = { tipoAdd = "Top Crust"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Topper") },
-                        onClick = { tipo = "Topper" })
+                        onClick = { tipoAdd = "Topper"; tipo = tipoAdd })
                     DropdownMenuItem(
                         text = { Text("Topping") },
-                        onClick = { tipo = "Topping" })
+                        onClick = { tipoAdd = "Topping"; tipo = tipoAdd })
                 }
             }
         }
@@ -244,24 +251,24 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
                 onExpandedChange = {activado2 = !activado2} ) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = sabor,
+                    value = saborAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado2, onDismissRequest = { activado2 = false }) {
                     DropdownMenuItem(
                         text = { Text("savory") },
-                        onClick = { sabor = "savory" })
+                        onClick = { saborAdd = "savory"; sabor = saborAdd })
                     DropdownMenuItem(
                         text = { Text("sweet") },
-                        onClick = { sabor = "sweet" })
+                        onClick = { saborAdd = "sweet"; sabor = saborAdd })
                 }
             }
         }
         Row {
             Text("Holiday-exclusive: ")
-            var seleccionado by remember { mutableStateOf(false) }
+            var seleccionado by remember { mutableStateOf(deCelebracionAdd) }
             Checkbox(checked = seleccionado, onCheckedChange = {
-                seleccionado = !seleccionado; deCelebracion = seleccionado
+                seleccionado = !seleccionado; deCelebracionAdd = seleccionado; deCelebracion = deCelebracionAdd
             })
         }
         Row {
@@ -270,109 +277,109 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
                 onExpandedChange = {activado3 = !activado3} ) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = celebracion,
+                    value = celebracionAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado3, onDismissRequest = { activado3 = false }) {
                     DropdownMenuItem(
                         text = { Text("Standard") },
-                        onClick = { celebracion = "Standard" })
+                        onClick = { celebracionAdd = "Standard"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Baseball Season") },
-                        onClick = { celebracion = "Baseball Season" })
+                        onClick = { celebracionAdd = "Baseball Season"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("BavariaFest") },
-                        onClick = { celebracion = "BavariaFest" })
+                        onClick = { celebracionAdd = "BavariaFest"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Big Top Carnival") },
-                        onClick = { celebracion = "Big Top Carnival" })
+                        onClick = { celebracionAdd = "Big Top Carnival"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Cherry Blossom Festival") },
-                        onClick = { celebracion = "Cherry Blossom Festival" })
+                        onClick = { celebracionAdd = "Cherry Blossom Festival"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("ChiliFest") },
-                        onClick = { celebracion = "ChiliFest" })
+                        onClick = { celebracionAdd = "ChiliFest"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Christmas") },
-                        onClick = { celebracion = "Christmas" })
+                        onClick = { celebracionAdd = "Christmas"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Cinco de Mayo") },
-                        onClick = { celebracion = "Cinco de Mayo" })
+                        onClick = { celebracionAdd = "Cinco de Mayo"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Comet Con") },
-                        onClick = { celebracion = "Comet Con" })
+                        onClick = { celebracionAdd = "Comet Con"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Day of the Dead") },
-                        onClick = { celebracion = "Day of the Dead" })
+                        onClick = { celebracionAdd = "Day of the Dead"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Easter") },
-                        onClick = { celebracion = "Easter" })
+                        onClick = { celebracionAdd = "Easter"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Film Fest") },
-                        onClick = { celebracion = "Film Fest" })
+                        onClick = { celebracionAdd = "Film Fest"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Gondola") },
-                        onClick = { celebracion = "Gondola" })
+                        onClick = { celebracionAdd = "Gondola"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Groovstock") },
-                        onClick = { celebracion = "Groovstock" })
+                        onClick = { celebracionAdd = "Groovstock"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Halloween") },
-                        onClick = { celebracion = "Halloween" })
+                        onClick = { celebracionAdd = "Halloween"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Holi") },
-                        onClick = { celebracion = "Holi" })
+                        onClick = { celebracionAdd = "Holi"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Lucky Lucky Matsuri") },
-                        onClick = { celebracion = "Lucky Lucky Matsuri" })
+                        onClick = { celebracionAdd = "Lucky Lucky Matsuri"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Lunar New Year") },
-                        onClick = { celebracion = "Lunar New Year" })
+                        onClick = { celebracionAdd = "Lunar New Year"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Maple Mornings") },
-                        onClick = { celebracion = "Maple Mornings" })
+                        onClick = { celebracionAdd = "Maple Mornings"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Mardi Gras") },
-                        onClick = { celebracion = "Mardi Gras" })
+                        onClick = { celebracionAdd = "Mardi Gras"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Neptune's Feast") },
-                        onClick = { celebracion = "Neptune's Feast" })
+                        onClick = { celebracionAdd = "Neptune's Feast"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("New Year") },
-                        onClick = { celebracion = "New Year" })
+                        onClick = { celebracionAdd = "New Year"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Onionfest") },
-                        onClick = { celebracion = "Onionfest" })
+                        onClick = { celebracionAdd = "Onionfest"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Pirate Bash") },
-                        onClick = { celebracion = "Pirate Bash" })
+                        onClick = { celebracionAdd = "Pirate Bash"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Portallini Feast") },
-                        onClick = { celebracion = "Portallini Feast" })
+                        onClick = { celebracionAdd = "Portallini Feast"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Romano Wedding") },
-                        onClick = { celebracion = "Romano Wedding" })
+                        onClick = { celebracionAdd = "Romano Wedding"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Sky Ninja Returns") },
-                        onClick = { celebracion = "Sky Ninja Returns" })
+                        onClick = { celebracionAdd = "Sky Ninja Returns"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("St Paddy") },
-                        onClick = { celebracion = "St Paddy" })
+                        onClick = { celebracionAdd = "St Paddy"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Starlight") },
-                        onClick = { celebracion = "Starlight" })
+                        onClick = { celebracionAdd = "Starlight"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Summer Luau") },
-                        onClick = { celebracion = "Summer Luau" })
+                        onClick = { celebracionAdd = "Summer Luau"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Thanksgiving") },
-                        onClick = { celebracion = "Thanksgiving" })
+                        onClick = { celebracionAdd = "Thanksgiving"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Valentines") },
-                        onClick = { celebracion = "Valentines" })
+                        onClick = { celebracionAdd = "Valentines"; celebracion = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Volcano Gala") },
-                        onClick = { celebracion = "Volcano Gala" })
+                        onClick = { celebracionAdd = "Volcano Gala"; celebracion = celebracionAdd })
                 }
             }
         }
