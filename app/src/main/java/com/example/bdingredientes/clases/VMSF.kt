@@ -162,13 +162,13 @@ fun BarraSuperiorUsuario(navController: NavController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperiorGeneral(navController: NavController) {
+fun BarraSuperiorGeneral(navController: NavController,db : VMBD, sf: ViewModelScaffold ) {
     var vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
-    var sf : ViewModelScaffold = viewModel()
+    //var sf : ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
-    var db : VMBD = viewModel()
+    //var db : VMBD = viewModel()
 
     if(exoplayer == null){
         vm.crearExoPlayer(contexto)
@@ -178,7 +178,7 @@ fun BarraSuperiorGeneral(navController: NavController) {
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     if (aleatorio.value) {
         iconoAleatorio = R.drawable.baseline_shuffle_on_24
-        db.mezclarIngredientes()
+        //db.mezclarIngredientes()
     } else {
         iconoAleatorio = R.drawable.baseline_shuffle_24
     }
@@ -193,6 +193,7 @@ fun BarraSuperiorGeneral(navController: NavController) {
     TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row() {
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
+            if(aleatorio.value) db.mezclarIngredientes()
         }) {
             //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")

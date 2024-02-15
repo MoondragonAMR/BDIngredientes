@@ -39,8 +39,8 @@ import com.example.bdingredientes.clases.imagenes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients() {
-    var db: VMBD = viewModel()
+fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
+    //var db: VMBD = viewModel()
     var ingredients = db.ingredients.collectAsState().value
     var db2: VMBD2 = viewModel()
     var estado by remember { mutableStateOf(false) }
@@ -52,9 +52,10 @@ fun PantallaIngredients() {
     var filtroParametro by remember { mutableStateOf("None") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    var sf: ViewModelScaffold = viewModel()
+    //var sf: ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
     var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
+    var listaMostrar = db.listaMostrar.collectAsState().value
     var url by remember { mutableStateOf("") }
 
     DisposableEffect(db) {
@@ -464,24 +465,24 @@ fun PantallaIngredients() {
             }
         }
         LazyColumn {
-            var lista: SnapshotStateList<Ingredient>?
+
 
             if (aleatorio.value) {
-                lista = ingredientsRandom
+                listaMostrar = ingredientsRandom
             } else {
-                lista = ingredients
+                listaMostrar = ingredients
             }
-            items(lista.size) {
-                if ((lista[it].name.contains(
+            items(listaMostrar.size) {
+                if ((listaMostrar[it].name.contains(
                         filtro,
                         ignoreCase = true
                     )) || (filtro.isBlank())
                 ) {
-                    val nombre = lista[it].name
-                    val tipo = lista[it].type
-                    val sabor = lista[it].flavor
-                    val deCelebracion = lista[it].holidayExclusive
-                    val celebracion = lista[it].holiday
+                    val nombre = listaMostrar[it].name
+                    val tipo = listaMostrar[it].type
+                    val sabor = listaMostrar[it].flavor
+                    val deCelebracion = listaMostrar[it].holidayExclusive
+                    val celebracion = listaMostrar   [it].holiday
 
                     when (nombre) {
                         "Acorn Cutter" -> {

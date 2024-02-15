@@ -12,6 +12,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -27,11 +28,14 @@ fun Navigator() {
     val navController = rememberNavController()
     val entradaNavActual by navController.currentBackStackEntryAsState()
     val rutaActual = entradaNavActual?.destination?.route
+    var db : VMBD = viewModel()
+    var sf : ViewModelScaffold = viewModel()
+
 
     Scaffold(topBar = { if (rutaActual == Rutas.Usuario.Ruta) {
         BarraSuperiorUsuario(navController = navController)
     } else if (rutaActual == Rutas.General.Ruta) {
-        BarraSuperiorGeneral(navController = navController)
+        BarraSuperiorGeneral(navController = navController,db,sf)
     } else {
         TopAppBar(title = { Text(text = if (rutaActual == Rutas.Add.Ruta) {
             "Add a new ingredient"
@@ -69,7 +73,7 @@ fun Navigator() {
                     PantallaIngredients2(navController = navController)
                 }
                 composable(Rutas.General.Ruta) {
-                    PantallaIngredients()
+                    PantallaIngredients(db,sf)
                 }
                 composable(Rutas.Add.Ruta) {
                     PantallaAñadir()

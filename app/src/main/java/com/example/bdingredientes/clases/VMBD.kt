@@ -16,6 +16,9 @@ class VMBD : ViewModel() {
     var ingredients = _ingredients.asStateFlow()
     var _ingredientsAleatorio = MutableStateFlow(mutableStateListOf<Ingredient>())
     var ingredientsAleatorio = _ingredientsAleatorio.asStateFlow()
+
+    var _listaMostrar = MutableStateFlow(mutableStateListOf<Ingredient>())
+    var listaMostrar = _listaMostrar.asStateFlow()
     fun crearListener() {
         listener = conexion.collection("Ingredients").addSnapshotListener { datos, error ->
             if (error == null) {
