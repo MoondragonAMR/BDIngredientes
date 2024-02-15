@@ -34,6 +34,7 @@ import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
 import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.Rutas
+import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.celebracion
@@ -46,8 +47,8 @@ import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients2(navController: NavController){
-    var db : VMBD2 = viewModel()
+fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavController){
+    //var db : VMBD2 = viewModel()
     var ingredients = db.ingredients.collectAsState().value
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
@@ -58,11 +59,12 @@ fun PantallaIngredients2(navController: NavController){
     var filtroParametro by remember { mutableStateOf("None") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    var sf : ViewModelScaffold = viewModel()
+    //var sf : ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
     var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
     var delete = sf.borrar.collectAsState().value
     var update = sf.modificar.collectAsState().value
+    var listaMostrar = db.listaMostrar.collectAsState().value
     var url by remember { mutableStateOf("") }
 
     DisposableEffect(db){
@@ -472,24 +474,24 @@ fun PantallaIngredients2(navController: NavController){
         }
         LazyColumn(
         ) {
-            var lista: SnapshotStateList<Ingredient>?
+
             if (aleatorio.value) {
-                lista = ingredientsRandom
+                listaMostrar = ingredientsRandom
             } else {
-                lista = ingredients
+                listaMostrar = ingredients
             }
-            items(lista.size) {
-                if ((lista[it].name.contains(
+            items(listaMostrar.size) {
+                if ((listaMostrar[it].name.contains(
                         filtro,
                         ignoreCase = true
                     )) || (filtro.isBlank())
                 ) {
-                    nombre = lista[it].name
-                    tipo = lista[it].type
-                    sabor = lista[it].flavor
-                    deCelebracion = lista[it].holidayExclusive
-                    celebracion = lista[it].holiday
-                    codigo = lista[it].id
+                    nombre = listaMostrar[it].name
+                    tipo = listaMostrar[it].type
+                    sabor = listaMostrar[it].flavor
+                    deCelebracion = listaMostrar[it].holidayExclusive
+                    celebracion = listaMostrar[it].holiday
+                    codigo = listaMostrar[it].id
 
                     when (nombre) {
                         "Acorn Cutter" -> {
