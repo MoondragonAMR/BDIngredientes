@@ -29,6 +29,7 @@ fun Navigator() {
     val entradaNavActual by navController.currentBackStackEntryAsState()
     val rutaActual = entradaNavActual?.destination?.route
     var db : VMBD = viewModel()
+    var db2 : VMBD2 = viewModel()
     var sf : ViewModelScaffold = viewModel()
 
 
@@ -70,7 +71,7 @@ fun Navigator() {
         ) {
             NavHost(navController = navController, startDestination = Rutas.Usuario.Ruta) {
                 composable(Rutas.Usuario.Ruta) {
-                    PantallaIngredients2(navController = navController)
+                    PantallaIngredients2(db2, sf, navController = navController)
                 }
                 composable(Rutas.General.Ruta) {
                     PantallaIngredients(db,sf)
