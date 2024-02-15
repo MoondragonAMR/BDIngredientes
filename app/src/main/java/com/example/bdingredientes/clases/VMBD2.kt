@@ -755,11 +755,21 @@ class VMBD2 : ViewModel() {
                 valores.add("Volcano Gala")
             }
         }
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero)
+        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+            _ingredients.value.clear()
+            it.documents.forEach { docu ->
+                _ingredients.value.add(docu.toObject()!!)
+            }
+        }
     }
 
     fun filtrarIngredientes(numero : Long, parametro : String) {
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").orderBy(parametro).limit(numero)
+        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").orderBy(parametro).limit(numero).get().addOnSuccessListener {
+            _ingredients.value.clear()
+            it.documents.forEach { docu ->
+                _ingredients.value.add(docu.toObject()!!)
+            }
+        }
     }
 
     fun mezclarIngredientes() {

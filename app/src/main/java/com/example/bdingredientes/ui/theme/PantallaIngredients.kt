@@ -47,6 +47,7 @@ fun PantallaIngredients() {
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
     var numero by remember { mutableStateOf(1334L) }
+    var valor by remember { mutableStateOf(numero.toString())}
     var parametro by remember { mutableStateOf("id") }
     var filtroParametro by remember { mutableStateOf("None") }
     var activado by remember { mutableStateOf(false) }
@@ -88,7 +89,6 @@ fun PantallaIngredients() {
             }
         }
         Row() {
-            var valor = numero.toString()
             Text("Number of ingredients shown: ")
             TextField(
                 value = valor,
@@ -455,6 +455,7 @@ fun PantallaIngredients() {
         }
         Row() {
             Button(onClick = {
+                numero = valor.toLong()
                 if (filtroParametro == "None") {
                     db.filtrarIngredientes(numero, parametro)
                 } else db.filtrarIngredientes(numero, parametro, filtroParametro)
@@ -624,7 +625,7 @@ fun PantallaIngredients() {
                         Modifier
                             .padding(4.dp)
                             .border(width = 2.dp, color = Color.Cyan)
-                            .clickable {
+                            .clickable() {
                                 db2.anyadirIngrediente(
                                     nombre,
                                     tipo,
