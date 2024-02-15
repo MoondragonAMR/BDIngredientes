@@ -81,4 +81,5 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("androidx.compose.material:material-icons-extended:1.6.1")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
 }

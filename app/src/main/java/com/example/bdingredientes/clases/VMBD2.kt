@@ -3,6 +3,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.runtime.toMutableStateList
 import androidx.lifecycle.ViewModel
+import com.example.bdingredientes.ui.theme.usuario
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
@@ -21,7 +22,7 @@ class VMBD2 : ViewModel() {
     var _listaMostrar = MutableStateFlow(mutableStateListOf<Ingredient>())
     var listaMostrar = _listaMostrar.asStateFlow()
     fun crearListener() {
-        listener = conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").addSnapshotListener { datos, error ->
+        listener = conexion.collection("Customers/$usuario/MyIngredients").addSnapshotListener { datos, error ->
             if (error == null) {
                 datos?.documentChanges?.forEach { cambio ->
                     if (cambio.type == DocumentChange.Type.ADDED) {
@@ -46,19 +47,19 @@ class VMBD2 : ViewModel() {
     }
 
     fun anyadirIngrediente(
-        name: String, flavor: String, type: String, holidayExclusive: Boolean, holiday: String
+        name: String, type: String, flavor: String, holidayExclusive: Boolean, holiday: String
     ) {
         val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday)
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").add(newIngredient)
+        conexion.collection("Customers/$usuario/MyIngredients").add(newIngredient)
     }
 
     fun borrarIngrediente(id: String) {
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").document(id).delete()
+        conexion.collection("Customers/$usuario/MyIngredients").document(id).delete()
     }
 
     fun modificarIngrediente(id: String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
         val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday)
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").document(id).set(newIngredient)
+        conexion.collection("Customers/$usuario/MyIngredients").document(id).set(newIngredient)
     }
 
     fun filtrarIngredientes(numero : Long, parametro : String, valor : String) {
@@ -759,7 +760,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Volcano Gala")
             }
         }
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+        conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _ingredients.value.clear()
             it.documents.forEach { docu ->
                 _ingredients.value.add(docu.toObject()!!)
@@ -768,7 +769,7 @@ class VMBD2 : ViewModel() {
     }
 
     fun filtrarIngredientes(numero : Long, parametro : String) {
-        conexion.collection("Customers/RDTQ7Q7OmNbcvu6n1hiC/MyIngredients").orderBy(parametro).limit(numero).get().addOnSuccessListener {
+        conexion.collection("Customers/$usuario/MyIngredients").orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _ingredients.value.clear()
             it.documents.forEach { docu ->
                 _ingredients.value.add(docu.toObject()!!)

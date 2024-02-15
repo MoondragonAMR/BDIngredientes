@@ -20,6 +20,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.bdingredientes.ui.theme.PantallaAñadir
 import com.example.bdingredientes.ui.theme.PantallaIngredients
 import com.example.bdingredientes.ui.theme.PantallaIngredients2
+import com.example.bdingredientes.ui.theme.PantallaLogin
 import com.example.bdingredientes.ui.theme.PantallaModificar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,9 +41,12 @@ fun Navigator() {
     } else {
         TopAppBar(title = { Text(text = if (rutaActual == Rutas.Add.Ruta) {
             "Add a new ingredient"
-        } else {
+        } else if (rutaActual == Rutas.Update.Ruta) {
             "Modify the selected ingredient"
-        })
+        } else {
+            "Log in with your Firebase account"
+        }
+        )
         })
     }}, bottomBar = {
         when (rutaActual) {
@@ -57,8 +61,13 @@ fun Navigator() {
             Rutas.Add.Ruta -> {
                 BarraInferiorAdd(navController = navController)
             }
-            else -> {
+            Rutas.Update.Ruta -> {
                 BarraInferiorUpdate(navController = navController)
+            }
+            else -> {
+                BottomAppBar{
+                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                }
             }
         }
     }, content = {
@@ -69,7 +78,7 @@ fun Navigator() {
                 .padding(paddingValues),
             color = MaterialTheme.colorScheme.background
         ) {
-            NavHost(navController = navController, startDestination = Rutas.Usuario.Ruta) {
+            NavHost(navController = navController, startDestination = Rutas.Login.Ruta) {
                 composable(Rutas.Usuario.Ruta) {
                     PantallaIngredients2(db2, sf, navController = navController)
                 }
@@ -81,6 +90,9 @@ fun Navigator() {
                 }
                 composable(Rutas.Update.Ruta) {
                     PantallaModificar(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
+                }
+                composable(Rutas.Login.Ruta) {
+                    PantallaLogin(navController = navController)
                 }
             }
         }
