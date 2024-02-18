@@ -44,7 +44,7 @@ fun PantallaLogin(navController: NavController) {
                     usuario = "RDTQ7Q7OmNbcvu6n1hiC"
                 } else if (user?.email == "nayaragamer14@gmail.com") {
                     usuario = "53VeNd9JZizsabjCLtrM"
-                } else if (user?.email == "lasaraylacharo@gmail.com") {
+                } else if (user?.email == "anavarroprofe96@gmail.com") {
                     usuario = "5k8EK1sExXOs0twUjZWD"
                 } else {
                     usuario = "uRxr15PTS2TISErKZ8Hw"
