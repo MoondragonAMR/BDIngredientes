@@ -617,6 +617,357 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Azul Ranch Taco" -> {
                             url = imagenes[43]
                         }
+                        "BBQ Ribs" -> {
+                            url = imagenes[44]
+                        }
+                        "BBQ Rub" -> {
+                            url = imagenes[45]
+                        }
+                        "BBQ Sauce" -> {
+                            url = imagenes[46]
+                        }
+                        "Baby Blots" -> {
+                            url = imagenes[47]
+                        }
+                        "Bacobites" -> {
+                            url = imagenes[48]
+                        }
+                        "Bacon" -> {
+                            url = imagenes[49]
+                        }
+                        "Bacon Jack" -> {
+                            url = imagenes[50]
+                        }
+                        "Bacon Mix" -> {
+                            url = imagenes[51]
+                        }
+                        "Bagel" -> {
+                            url = imagenes[52]
+                        }
+                        "Baked Beans" -> {
+                            url = imagenes[53]
+                        }
+                        "Balsamic Dressing" -> {
+                            url = imagenes[54]
+                        }
+                        "Banana" -> {
+                            url = imagenes[55]
+                        }
+                        "Banana Filling" -> {
+                            url = imagenes[56]
+                        }
+                        "Banana Peppers" -> {
+                            url = imagenes[57]
+                        }
+                        "Banana Syrup" -> {
+                            url = imagenes[58]
+                        }
+                        "Barmbrack Bread" -> {
+                            url = imagenes[59]
+                        }
+                        "Barmbrack Bun" -> {
+                            url = imagenes[60]
+                        }
+                        "Basil Leaves" -> {
+                            url = imagenes[61]
+                        }
+                        "Battenberg Cake" -> {
+                            url = imagenes[62]
+                        }
+                        "Battenberg Shell" -> {
+                            url = imagenes[63]
+                        }
+                        "Battered Perch" -> {
+                            url = imagenes[64]
+                        }
+                        "Bearclaw" -> {
+                            url = imagenes[65]
+                        }
+                        "Beef" -> {
+                            url = imagenes[66]
+                        }
+                        "Beef Brisket" -> {
+                            url = imagenes[67]
+                        }
+                        "Beefy Bolognese" -> {
+                            url = imagenes[68]
+                        }
+                        "Beer Batter" -> {
+                            url = imagenes[69]
+                        }
+                        "Beetbread" -> {
+                            url = imagenes[70]
+                        }
+                        "Beetbread Bun" -> {
+                            url = imagenes[71]
+                        }
+                        "Bellulli Chutney" -> {
+                            url = imagenes[72]
+                        }
+                        "Beni Shoga" -> {
+                            url = imagenes[73]
+                        }
+                        "Bierkase Dip" -> {
+                            url = imagenes[74]
+                        }
+                        "Bierkase Sauce" -> {
+                            url = imagenes[75]
+                        }
+                        "Birch Beer Topping" -> {
+                            url = imagenes[76]
+                        }
+                        "Birthday Cake" -> {
+                            url = imagenes[77]
+                        }
+                        "Black Beans" -> {
+                            url = imagenes[78]
+                        }
+                        "Black Cherry Slush" -> {
+                            url = imagenes[79]
+                        }
+                        "Black Forest Tea" -> {
+                            url = imagenes[80]
+                        }
+                        "Black Frosting" -> {
+                            url = imagenes[81]
+                        }
+                        "Black Mist" -> {
+                            url = imagenes[82]
+                        }
+                        "Black Mist Topping" -> {
+                            url = imagenes[83]
+                        }
+                        "Black Olives" -> {
+                            url = imagenes[84]
+                        }
+                        "Black Pearl Crisps" -> {
+                            url = imagenes[85]
+                        }
+                        "Black Pepper" -> {
+                            url = imagenes[86]
+                        }
+                        "Black Rice" -> {
+                            url = imagenes[87]
+                        }
+                        "Blackberries" -> {
+                            url = imagenes[88]
+                        }
+                        "Blackberry Bark" -> {
+                            url = imagenes[89]
+                        }
+                        "Blackberry Jelly" -> {
+                            url = imagenes[90]
+                        }
+                        "Blackberry Remoulade" -> {
+                            url = imagenes[91]
+                        }
+                        "Blazeberry Sauce" -> {
+                            url = imagenes[92]
+                        }
+                        "Blockbuster Butter" -> {
+                            url = imagenes[93]
+                        }
+                        "Blockmalz Slush" -> {
+                            url = imagenes[94]
+                        }
+                        "Blondie" -> {
+                            url = imagenes[95]
+                        }
+                        "Blossom Cookie" -> {
+                            url = imagenes[96]
+                        }
+                        "Blot" -> {
+                            url = imagenes[97]
+                        }
+                        "Blue Cheese" -> {
+                            url = imagenes[98]
+                        }
+                        "Blue Cheese Crumbles" -> {
+                            url = imagenes[99]
+                        }
+                        "Blue Cheese Dip" -> {
+                            url = imagenes[100]
+                        }
+                        "Blue Corn Chips" -> {
+                            url = imagenes[101]
+                        }
+                        "Blue Moon Ice Cream" -> {
+                            url = imagenes[102]
+                        }
+                        "Blue Moon Syrup" -> {
+                            url = imagenes[103]
+                        }
+                        "Blue Nimbus Icing" -> {
+                            url = imagenes[104]
+                        }
+                        "Blue Nimbus Syrup" -> {
+                            url = imagenes[105]
+                        }
+                        "Blue Raspberry Cream" -> {
+                            url = imagenes[106]
+                        }
+                        "Blue Raspberry Slush" -> {
+                            url = imagenes[107]
+                        }
+                        "Blue Star Sprinkles" -> {
+                            url = imagenes[108]
+                        }
+                        "Blueberries" -> {
+                            url = imagenes[109]
+                        }
+                        "Blueberry Cake" -> {
+                            url = imagenes[110]
+                        }
+                        "Blueberry Custard" -> {
+                            url = imagenes[111]
+                        }
+                        "Blueberry Filling" -> {
+                            url = imagenes[112]
+                        }
+                        "Blueberry Milk" -> {
+                            url = imagenes[113]
+                        }
+                        "Blueberry Mix" -> {
+                            url = imagenes[114]
+                        }
+                        "Blueberry Pie-Tarts" -> {
+                            url = imagenes[115]
+                        }
+                        "Blueberry Swizzle" -> {
+                            url = imagenes[116]
+                        }
+                        "Blueberry Syrup" -> {
+                            url = imagenes[117]
+                        }
+                        "Blueberry Tea" -> {
+                            url = imagenes[118]
+                        }
+                        "Blueberry Wave Syrup" -> {
+                            url = imagenes[119]
+                        }
+                        "Blues-Berry Cream" -> {
+                            url = imagenes[120]
+                        }
+                        "Boba Bubbles" -> {
+                            url = imagenes[121]
+                        }
+                        "Bolillo Bun" -> {
+                            url = imagenes[122]
+                        }
+                        "Bolivian Chiles" -> {
+                            url = imagenes[123]
+                        }
+                        "Boneless Wings" -> {
+                            url = imagenes[124]
+                        }
+                        "Bonfire Toffee" -> {
+                            url = imagenes[125]
+                        }
+                        "Bonito Flakes" -> {
+                            url = imagenes[126]
+                        }
+                        "Boston Beanies" -> {
+                            url = imagenes[127]
+                        }
+                        "Boston Cream" -> {
+                            url = imagenes[128]
+                        }
+                        "Botamochi Cake" -> {
+                            url = imagenes[129]
+                        }
+                        "Bottarga" -> {
+                            url = imagenes[130]
+                        }
+                        "Bouquet Blend" -> {
+                            url = imagenes[131]
+                        }
+                        "Bowtie" -> {
+                            url = imagenes[132]
+                        }
+                        "Bratwurst" -> {
+                            url = imagenes[133]
+                        }
+                        "Breakfast Blast" -> {
+                            url = imagenes[134]
+                        }
+                        "Brezn" -> {
+                            url = imagenes[135]
+                        }
+                        "Brioche Bun" -> {
+                            url = imagenes[136]
+                        }
+                        "Broccoli" -> {
+                            url = imagenes[137]
+                        }
+                        "Brown Rice" -> {
+                            url = imagenes[138]
+                        }
+                        "Brownie Batter" -> {
+                            url = imagenes[139]
+                        }
+                        "Bubble Gum Cream" -> {
+                            url = imagenes[140]
+                        }
+                        "Bubble Planet" -> {
+                            url = imagenes[141]
+                        }
+                        "Bubblegum Slush" -> {
+                            url = imagenes[142]
+                        }
+                        "Bubblegum Whip" -> {
+                            url = imagenes[143]
+                        }
+                        "Buckeye" -> {
+                            url = imagenes[144]
+                        }
+                        "Buffalo Sauce" -> {
+                            url = imagenes[145]
+                        }
+                        "Bunny Ear Candy" -> {
+                            url = imagenes[146]
+                        }
+                        "Burgundy Truffle" -> {
+                            url = imagenes[147]
+                        }
+                        "Buriti Topping" -> {
+                            url = imagenes[148]
+                        }
+                        "Burnt Ends" -> {
+                            url = imagenes[149]
+                        }
+                        "Butter" -> {
+                            url = imagenes[150]
+                        }
+                        "Butter Pecan Cake" -> {
+                            url = imagenes[151]
+                        }
+                        "Buttered Popcorn" -> {
+                            url = imagenes[152]
+                        }
+                        "Buttermilk Biscuit" -> {
+                            url = imagenes[153]
+                        }
+                        "Buttermilk Syrup" -> {
+                            url = imagenes[154]
+                        }
+                        "Butterscotch Bubbles" -> {
+                            url = imagenes[155]
+                        }
+                        "Butterscotch Cream" -> {
+                            url = imagenes[156]
+                        }
+                        "Butterscotch Smooches" -> {
+                            url = imagenes[157]
+                        }
+                        "Butterscotch Syrup" -> {
+                            url = imagenes[158]
+                        }
+                        "Butterzinger Bits" -> {
+                            url = imagenes[159]
+                        }
+                        "Butterzinger Syrup" -> {
+                            url = imagenes[160]
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }

@@ -228,5 +228,4 @@ fun llenarImagenes() {
     imagenes.add("https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cathedral_Carbonara.png?alt=media&token=9fdeff82-bbff-4fc4-a225-2a72b8b5d174")
     imagenes.add("https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cauldron_Powder.png?alt=media&token=885d9006-428a-41df-8031-645ec3310640")
     imagenes.add("https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Caviar.png?alt=media&token=2db890b6-472a-42db-b973-e08fba3fa646")
-    
 }
