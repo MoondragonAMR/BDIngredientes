@@ -1,6 +1,7 @@
 package com.example.bdingredientes.ui.theme
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -44,7 +45,7 @@ fun PantallaLogin(navController: NavController) {
                     usuario = "RDTQ7Q7OmNbcvu6n1hiC"
                 } else if (user?.email == "nayaragamer14@gmail.com") {
                     usuario = "53VeNd9JZizsabjCLtrM"
-                } else if (user?.email == "anavarroprofe96@gmail.com") {
+                } else if (user?.email == "alejandro@falso.com") {
                     usuario = "5k8EK1sExXOs0twUjZWD"
                 } else {
                     usuario = "uRxr15PTS2TISErKZ8Hw"
@@ -57,6 +58,12 @@ fun PantallaLogin(navController: NavController) {
                 }
         } }) {
             Text("Log in")
+        }
+        Row() {
+            Text("You are not autenticated?")
+            Button(onClick = { navController.navigate(Rutas.Auth.Ruta) }) {
+                Text("Sign in")
+            }
         }
     }
 }

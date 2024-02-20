@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.bdingredientes.ui.theme.PantallaAuth
 import com.example.bdingredientes.ui.theme.PantallaAñadir
 import com.example.bdingredientes.ui.theme.PantallaIngredients
 import com.example.bdingredientes.ui.theme.PantallaIngredients2
@@ -43,8 +44,10 @@ fun Navigator() {
             "Add a new ingredient"
         } else if (rutaActual == Rutas.Update.Ruta) {
             "Modify the selected ingredient"
-        } else {
+        } else if (rutaActual == Rutas.Login.Ruta) {
             "Log in with your Firebase account"
+        } else {
+            "Create a new Firebase user"
         }
         )
         })
@@ -93,6 +96,9 @@ fun Navigator() {
                 }
                 composable(Rutas.Login.Ruta) {
                     PantallaLogin(navController = navController)
+                }
+                composable(Rutas.Auth.Ruta) {
+                    PantallaAuth(navController = navController)
                 }
             }
         }
