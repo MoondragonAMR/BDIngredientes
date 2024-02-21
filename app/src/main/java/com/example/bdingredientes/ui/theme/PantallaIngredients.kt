@@ -1661,6 +1661,99 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Curveball Crunch" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Curveball_Crunch.png?alt=media&token=04917cb7-72a4-4da5-8f03-6068bfc206c9"
                         }
+                        "Dark Blue Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dark_Blue_Frosting.png?alt=media&token=5f127462-6677-4db2-b7d3-25d226fbb497"
+                        }
+                        "Datemaki" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Datemaki.png?alt=media&token=c7dad735-d318-4154-8539-a9e357898d69"
+                        }
+                        "Decaf" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Decaf_Roast.png?alt=media&token=4907afac-7ba3-42b1-a377-c36de3618a8a"
+                        }
+                        "Deep Purple Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Deep_Purple_Frosting.png?alt=media&token=29243c3d-3b13-4295-bfea-9a4383566dce"
+                        }
+                        "Deep-Fried Pickles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/deep-fried_pickles.png?alt=media&token=a9c13735-ac33-481e-a549-19670e7afe91"
+                        }
+                        "Deli Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Deli_Soy_Paper.png?alt=media&token=d68d2879-58f3-4feb-90ea-995bff24a78a"
+                        }
+                        "Diced Green Chiles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Diced_Green_chills.png?alt=media&token=6815ffed-52bf-4eaf-9fb8-4f2fe55a063b"
+                        }
+                        "Diced Habaneros" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Diced_Habanero.png?alt=media&token=90980fae-d2be-4a9b-8134-fc4680526030"
+                        }
+                        "Diet Fizzo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Diet_Fizzo.png?alt=media&token=1499b674-8f66-4a70-9125-f629c84dfb7e"
+                        }
+                        "Dipped Pretzel" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/DippedPretzels.png?alt=media&token=bd197a5f-d687-4e20-81f4-2689a6ab35e0"
+                        }
+                        "Dipped Strawberry" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dipped_strawberry.png?alt=media&token=ba4f13b6-768f-4c60-8036-7ff203346105"
+                        }
+                        "Dirt Cake Shell" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dirt_Cake_Shell.png?alt=media&token=9368a5a4-4508-4c4b-8c2d-798248a83459"
+                        }
+                        "Doberge Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Doberge_Drizzle.png?alt=media&token=3533bfbe-e290-4157-a0f5-6628527f7dfb"
+                        }
+                        "Donut Pieces" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Donut_Pieces.png?alt=media&token=d2eba482-2496-40cb-bb87-a66fa04ce76e"
+                        }
+                        "Doppelbock Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Doppelbock_Sauce.png?alt=media&token=1c38ab7f-1aa7-48a6-bf77-bda10a6f4770"
+                        }
+                        "Dr Cherry" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dr._Cherry.png?alt=media&token=ac8cac7b-7d45-452c-b284-22c104ffd011"
+                        }
+                        "Dr Cherry Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dr._Cherry_Dri.png?alt=media&token=815469a0-0bde-4eab-982b-97b6ff4f48b3"
+                        }
+                        "Dr Cherry Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dr._Cherry_Powder.png?alt=media&token=eb45e10e-00cc-4fa2-85e4-18151db8807c"
+                        }
+                        "Dr Dasher" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dr._Dasher.png?alt=media&token=16044ac6-92d4-4c06-aba1-e2a0df830c2a"
+                        }
+                        "Dr Dasher Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dr._Dasher_Slush.png?alt=media&token=759254ff-da7a-4142-8d0b-52b1c442cb88"
+                        }
+                        "Dragonfruit Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dragonfruit_Division.png?alt=media&token=7c5dc6fc-b727-4f85-aa4b-1a11306cec4b"
+                        }
+                        "Dragonfruit Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dragonfruit_Slush.png?alt=media&token=70ff5a37-a12d-4dca-b24e-3e0a157a5faa"
+                        }
+                        "Dream Cream Soda" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dream_Cream_Soda.png?alt=media&token=7b91e0f9-b5db-4c78-8f4e-0bb6ff128e18"
+                        }
+                        "Dreamsicle Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dreamsicle_drizzle.png?alt=media&token=22e41c4d-ba32-4644-bca7-06d3e4fc8dba"
+                        }
+                        "Dried Jackfruit" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dried_Jackfruit.png?alt=media&token=f1664b93-c9cb-4b6d-925a-8d27409e8c42"
+                        }
+                        "Dried Kiwis" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dried_Kiwi.png?alt=media&token=54e68600-606e-4ba4-be7f-70f65259fc00"
+                        }
+                        "Dual Licorice Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dual_Licorice_Drizzle.png?alt=media&token=f4adbf4a-f0ea-49d8-972c-01f0f38ed3e6"
+                        }
+                        "Dual Licorice Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dual_Licorice_Filling.png?alt=media&token=0307aadd-fa6c-4e65-82b3-d9e45d090f44"
+                        }
+                        "Dual Licorice Whip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dual_Licorice_Whip.png?alt=media&token=7f0c7fd4-df44-4a7e-8f33-09d1c8924d9e"
+                        }
+                        "Duck Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Duck_Sauce.png?alt=media&token=1aff0f8b-536c-4d27-9b27-4992e405c38e"
+                        }
+                        "Dark Blue Frosting" -> {
+                            url = ""
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
