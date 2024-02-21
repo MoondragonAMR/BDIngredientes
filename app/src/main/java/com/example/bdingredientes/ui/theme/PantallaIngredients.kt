@@ -1751,7 +1751,55 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Duck Sauce" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Duck_Sauce.png?alt=media&token=1aff0f8b-536c-4d27-9b27-4992e405c38e"
                         }
-                        "Dark Blue Frosting" -> {
+                        "Ecto Bread" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ecto.png?alt=media&token=40a16e4e-7f41-43f3-972a-0f59e030be57"
+                        }
+                        "Ecto Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ecto_Sauce.png?alt=media&token=83fce95d-7dd0-4b1d-a836-a5eb8d3a39e8"
+                        }
+                        "Ecto Stuffed Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ecto_Crust.png?alt=media&token=0bd9abcb-cc64-41fc-a6f6-419ab8b015e5"
+                        }
+                        "Egg Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/EggDonut.png?alt=media&token=78426e3c-af98-45ff-a1d4-01759b6d9ae9"
+                        }
+                        "Egg Waffle Shell" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Egg_Waffle_Shell.png?alt=media&token=a77cbed4-b5cf-4a67-8d66-f556a7aaa614"
+                        }
+                        "Eggnog" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eggnog.png?alt=media&token=93cf8fce-11e2-4c55-8c92-dfbc5766eaf9"
+                        }
+                        "Eggnog Alfredo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eggnog_Alfredo.png?alt=media&token=be99db7c-b856-4513-8632-6b526b69eddc"
+                        }
+                        "Eggnog Alioli" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eggnog_Aioli.png?alt=media&token=14310b18-c391-41e5-9908-1d46af241e1e"
+                        }
+                        "Eggnog Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eggnog_Cream.png?alt=media&token=119a843d-52e5-401d-9c44-4aae5f37bd16"
+                        }
+                        "Eggplant" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eggplant.png?alt=media&token=91a2aef2-81ac-4a50-83e6-12f39ce23a32"
+                        }
+                        "Eiskaffee" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eiskaffee.png?alt=media&token=a45aa0a4-8d7a-4c94-b705-93dfe69d9387"
+                        }
+                        "Elf Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Elf_Soy_Paper.png?alt=media&token=624bfb90-6999-4e9a-a9bd-88183ca12b43"
+                        }
+                        "Elf Sugar" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Elf_Sugar.png?alt=media&token=22ad8d7f-a82b-4d45-80c9-7d316f0876ad"
+                        }
+                        "Enchilada Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Enchilada_Sauce.png?alt=media&token=cbafeedd-ca7b-4305-ba5b-7bba8b7bd6be"
+                        }
+                        "English Breakfast Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/English_Breakfast_Tea.png?alt=media&token=98ef2015-5c40-475d-a2a7-d2e8d51403f5"
+                        }
+                        "Espresso Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Espresso_Drizzle.png?alt=media&token=1ddd4da6-3e79-44d2-9251-c151ca50e075"
+                        }
+                        "F" -> {
                             url = ""
                         }
                         else -> {
