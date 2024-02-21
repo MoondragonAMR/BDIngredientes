@@ -2135,6 +2135,171 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Gyro Meat" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Guro_meat.png?alt=media&token=fa356d54-15c7-4aad-a8cd-9833ef137feb"
                         }
+                        "Hakuto Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hakuto_Ice_Cream.png?alt=media&token=3f3bb478-1bc6-4234-b57e-73954e4e7bf5"
+                        }
+                        "Hakuto Jelly" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hakuto_Jelly_Donuteria.png?alt=media&token=a89b9a3f-53cb-4e58-b972-11fabc9f258f"
+                        }
+                        "Hakuto Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hakuto_Tea.png?alt=media&token=75712a61-fd84-4347-8411-d4c382530117"
+                        }
+                        "Ham" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ham.png?alt=media&token=d5dc9d13-5504-495b-99fe-0925bbd97b73"
+                        }
+                        "Hamburger Patty" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Papa's_Burgeria_-_Medium_Burger.png?alt=media&token=1de5e0d3-1e2d-48f7-83a4-526969978480"
+                        }
+                        "Hard Shell" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hard_Taco.png?alt=media&token=ca7ae5cd-4f23-4904-a27e-bfa5502b3402"
+                        }
+                        "Harvest Leaf Cookies" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Harvest_Leaf_Cookie.png?alt=media&token=3372932d-302f-43c8-8910-324cc10e8283"
+                        }
+                        "Harvest Stripe Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Harvest_Stripe_Cookie.png?alt=media&token=42915018-0e91-47af-9828-6043e9ef35b0"
+                        }
+                        "Harvest Stripe Shell" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Harvest_Stripe_Shell.png?alt=media&token=972fa774-b461-474a-8aeb-fea0a729ae31"
+                        }
+                        "Harvest Tortellini" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Harvest_Tortellini.png?alt=media&token=56222448-d073-469e-8ff5-02f21a8dbf82"
+                        }
+                        "Hash Brown Patty" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hash_Brown_Patty.png?alt=media&token=fefe557a-5bf3-45b7-a73d-c143d6fc715d"
+                        }
+                        "Hash Browns" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hashbrowns.png?alt=media&token=bc6d0c0b-d005-4add-949b-dd10ecb25c78"
+                        }
+                        "Havarti Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Havarti.png?alt=media&token=69a9b80d-164b-4d68-a11d-d634dd0bf0c6"
+                        }
+                        "Hawaiian Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hawaiian_Bun.png?alt=media&token=fac4f12a-159c-4b74-826e-7b9c03786cd9"
+                        }
+                        "Hawaiian Roll" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hawaiian_Roll.png?alt=media&token=c950493b-8758-4a08-8245-c48277805db1"
+                        }
+                        "Haystack" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Haystack.png?alt=media&token=45c89439-ae9f-4d47-a4b3-523959d9b00d"
+                        }
+                        "Hazelnut Swizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/HazelNut.png?alt=media&token=9981f47c-e8ac-409d-ae85-b32c8df4e33c"
+                        }
+                        "Heart Cookies" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Heart_Cookie.png?alt=media&token=63b7a381-9dc8-4f2a-8fae-f713fd30ba32"
+                        }
+                        "Heart Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Heart_Crust.png?alt=media&token=157f8614-51ab-43e4-be39-e852c503f6d2"
+                        }
+                        "Heart Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Heart_Cutter.png?alt=media&token=6579f857-dfe3-493d-84d7-eb0275f44460"
+                        }
+                        "Heartbeet Arrabbiata" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Heartbeet_Arrabbiata.png?alt=media&token=87f25689-c38c-43c3-9c9a-128c7cd445f5"
+                        }
+                        "Hibachi Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hibachi_Sauce.png?alt=media&token=7f615b97-6d30-425c-901a-b7a8e16ad211"
+                        }
+                        "Hibiscus Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hibiscus_Powder.png?alt=media&token=0b0ef89f-7b8d-48de-817e-438a30cdbb7e"
+                        }
+                        "Hoagie Roll" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hoagie_Roll.png?alt=media&token=ee128956-ab51-43ab-b3e9-2062cffff1fd"
+                        }
+                        "Hog Wings" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/HogWings.png?alt=media&token=7dbfc456-7464-441a-ad1e-6db76c734265"
+                        }
+                        "Hokey Pokey" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hokey_Pokey.png?alt=media&token=9cb3c828-15ee-40c2-b153-d5222c28d4bb"
+                        }
+                        "Hokkigai" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hokkigai.png?alt=media&token=dc7bd30b-fe09-420c-a8f3-840f4416a8f0"
+                        }
+                        "Holi Sugar" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/HoliSugar.png?alt=media&token=7726fd78-019c-40ef-8dca-efa16f933a55"
+                        }
+                        "Holiday Yum n'Ms" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Holiday_Yum_n'_ms.png?alt=media&token=388aedf2-e938-4df3-8190-f943ef84d7ca"
+                        }
+                        "Hollandaise Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hollandaise.png?alt=media&token=66c7f8d3-0a27-4d8f-bc55-ff62b1140f9e"
+                        }
+                        "Holly Jolly Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Holly_Jolly_Cake.png?alt=media&token=06d3040b-72e7-49b6-9f59-a5d169af1460"
+                        }
+                        "Holly Tartz" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Holly_Tarts.png?alt=media&token=106a802a-d8ba-4b14-9ecb-889171982d62"
+                        }
+                        "Hollywood Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hollywood_Bun.png?alt=media&token=938611a7-d839-43e6-981e-cfa5ecd2189c"
+                        }
+                        "Home Fries" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Home_Fries.png?alt=media&token=cb964790-d5c9-4df7-988a-8a712df051f2"
+                        }
+                        "Honey" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Honey.png?alt=media&token=ce0bc08a-e311-420b-8c45-42dbf0ac6fe2"
+                        }
+                        "Honey Mustard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Honey_Mustard.png?alt=media&token=9e46266a-8d5a-4913-9d93-b9477491b122"
+                        }
+                        "Honeydew Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Honeydew_Syrup.png?alt=media&token=1b66dccf-aa41-43b1-a66b-337672612d76"
+                        }
+                        "Honeydew Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Honeydew_Tea.png?alt=media&token=992213c1-d117-4cff-8450-4338a744727c"
+                        }
+                        "Horchata" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Horchata.png?alt=media&token=30860eeb-adde-4021-ae5b-3c290ccfa9e9"
+                        }
+                        "Horchata Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/horchata_cake.png?alt=media&token=13614aaf-9efb-4827-ac2d-5d485370130d"
+                        }
+                        "Horchata Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Horchata_Tea.png?alt=media&token=03397fdf-1caa-4474-8229-67ce3a299355"
+                        }
+                        "Hot Dog Bites Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/HotDogBitesCrust.png?alt=media&token=7380f4b1-f45b-4372-be50-53808f4b4c21"
+                        }
+                        "Hot Dog Sausage" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hot_Dog.png?alt=media&token=e3910761-a058-4e4b-a0fb-99c221167edb"
+                        }
+                        "Hot Rods" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hot_Rods.png?alt=media&token=711937c7-3775-4c20-a12f-749eee6cb292"
+                        }
+                        "Hot Rods Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hot_Rods_Slush.png?alt=media&token=8721f5d5-5f52-4ba0-a825-9c9bdee1d85f"
+                        }
+                        "Hot Rods Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hot_Rods_Syrup.png?alt=media&token=d30bc804-2beb-4e6f-b131-fd7e259ca123"
+                        }
+                        "Hot Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/HotSauce.png?alt=media&token=f0ca833f-142d-4f8f-81a0-f5ea0a2f3e3c"
+                        }
+                        "Huckleberry Bubbles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Huckleberry_Bubbles.png?alt=media&token=357c32b1-9705-4277-8d4a-d2df6a981352"
+                        }
+                        "Huckleberry Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Huckleberry_Syrup.png?alt=media&token=6b4c525f-fb92-48f2-b2b3-9bfd71cb022e"
+                        }
+                        "Hula Hula Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hula_Hula_Sauce.png?alt=media&token=53bea499-5548-4a9d-994d-f50bf6508eb0"
+                        }
+                        "Hummus" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hummus.png?alt=media&token=a78b29a1-4cb4-4d28-aab2-c36a8ea2340d"
+                        }
+                        "Hurry Curry" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hurry_Curry.png?alt=media&token=b8c8caf7-e958-49ab-8866-ccf9ece9a388"
+                        }
+                        "Hyper Green" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hyper_Green.png?alt=media&token=6d0070df-e60f-4c55-bac9-c20eba5bde80"
+                        }
+                        "Hyper Green Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hyper_Green_Drizzle.png?alt=media&token=794f9a4d-9143-4ed6-8527-d0a0274d5438"
+                        }
+                        "Hyper Green Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hyper_Green_Sauce.png?alt=media&token=abf13d81-5df7-4019-8685-47693546a6cf"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
