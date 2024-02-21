@@ -1799,7 +1799,172 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Espresso Syrup" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Espresso_Drizzle.png?alt=media&token=1ddd4da6-3e79-44d2-9251-c151ca50e075"
                         }
-                        "F" -> {
+                        "Fajita Peppers" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fajita_Peppers.png?alt=media&token=4187aee8-26c0-48b9-87fb-df0dd58954ec"
+                        }
+                        "Far Out Shell" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Far_Out_Shell.png?alt=media&token=61f44e87-2475-4de0-834c-adfb951b3f1b"
+                        }
+                        "Feather Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Feather_Cookie.png?alt=media&token=81a1a2a6-1d3c-4777-bcd4-d334af6baf48"
+                        }
+                        "Festive Flag" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Festive_Flag.png?alt=media&token=c5d72ef4-9a1f-42b9-b961-7c0644029587"
+                        }
+                        "Festive Rotini" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Festive_Rotini.png?alt=media&token=875efcb0-a549-4b67-800d-d9a84893be49"
+                        }
+                        "Festive Swirl Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/FestiveSwirlIcing.png?alt=media&token=44b6632a-d324-4043-8cf2-df76a9082370"
+                        }
+                        "Feta Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Feta.png?alt=media&token=afc9afb2-e864-4003-b8ba-ae44bafa3839"
+                        }
+                        "Fettuccine" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fettuccine.png?alt=media&token=4eb11c13-d840-4c87-a3ce-41ed2ca9fb37"
+                        }
+                        "Fiesta Chips" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fiest.png?alt=media&token=89804c71-6647-4f24-8d9b-ca2410423016"
+                        }
+                        "Film Reel Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Film_Reel_Crust.png?alt=media&token=c62ca692-0431-4d0e-8e40-b23b9c504072"
+                        }
+                        "Fiori Risoni" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fiori_Risoni.png?alt=media&token=54dad4cc-1921-43fc-8700-88db60df5d90"
+                        }
+                        "Fire Tortilla Strips" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Firetortilla.png?alt=media&token=9c061bbe-9f33-4572-a52c-4863260c1bcb"
+                        }
+                        "Fish Filet" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fish_Filet.png?alt=media&token=409d4574-66b2-44ef-986e-59aecad6df6b"
+                        }
+                        "Fizzo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fizzo.png?alt=media&token=646822ef-1d1f-42d2-b097-9b9fe55ed3a7"
+                        }
+                        "Fizzo Gold" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fizzo_Gold.png?alt=media&token=1845c9b0-60da-462a-a192-3a9815bd5fc5"
+                        }
+                        "Fizzo Quartz" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fizzo_Quartz.png?alt=media&token=00bb144b-2c72-4686-ac0b-ecc680bd629d"
+                        }
+                        "Flatbread" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Flatbread.png?alt=media&token=36609ce9-3b85-458d-843a-5a1e703a4828"
+                        }
+                        "Flavor X" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/FlavorXDrizzle.png?alt=media&token=1871dad8-3c80-4f16-8444-17ea27fff604"
+                        }
+                        "Fleur de Lis Sprinkles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fleur_De_Lis_Sprinkles.png?alt=media&token=3e4ee324-465d-448b-b293-f441c6b0cf81"
+                        }
+                        "Flower Bloom Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Flower_Bloom_Crust.png?alt=media&token=1235916f-7b59-4c8b-b459-07648e74ac96"
+                        }
+                        "Focaccia" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Focaccia.png?alt=media&token=f76dcafd-688b-4b23-90c8-94ca60b0d978"
+                        }
+                        "Forest Green Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Forest_Green_Frosting.png?alt=media&token=b938079d-cdb9-44c9-89a7-b57fdd58b7df"
+                        }
+                        "Frankennoli" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frankennoli.png?alt=media&token=c467f65d-38db-4598-b3b9-a2aef0664bd3"
+                        }
+                        "French Cruller" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/French_Cruller.png?alt=media&token=f9ab6a7f-9fc3-4802-8baf-8a4cea0638a4"
+                        }
+                        "French Fries" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/French_Fries.png?alt=media&token=0c793d20-60cc-429a-84a8-9568be2bccc1"
+                        }
+                        "French Onion Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/French_Onion.png?alt=media&token=3a3e0a93-5b6c-4950-8c05-e1a098bd92b4"
+                        }
+                        "French Roast" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/French_Roast.png?alt=media&token=0a28426b-d9d8-46ac-a38f-89c55d96a546"
+                        }
+                        "French Toast" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/French_Toast.png?alt=media&token=516493b2-ffd3-4c6b-89e1-49a96d7ab024"
+                        }
+                        "French Toast Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/French_Toast_Bun.png?alt=media&token=efcfd4cd-a34d-4c3f-a242-6e3e2afb9fbe"
+                        }
+                        "Fresh Garlic" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/FreshGarlic.png?alt=media&token=18fdfbc4-1228-478d-a123-bf05f808ae0b"
+                        }
+                        "Fried Calamari" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fried_Calamari.png?alt=media&token=a4b24e3c-eaa9-411b-b0fa-ba25374281ff"
+                        }
+                        "Fried Chicken Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fried_Chicken_Bun.png?alt=media&token=3391c779-15e4-47ce-86ea-564bcaca8515"
+                        }
+                        "Fried Crispy Noodles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/FriedCrispy.png?alt=media&token=aca32500-c2d0-487f-9dec-c9a802912066"
+                        }
+                        "Fried Egg" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/fried_egg.png?alt=media&token=dfb359d2-b0dd-4852-914b-df9ca42381c4"
+                        }
+                        "Fried Onion Strings" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fried_Onion_Strings.png?alt=media&token=f77cd55b-00df-4f1a-a4ab-46b94a875178"
+                        }
+                        "Fried Ravioli" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fried_Ravioli.png?alt=media&token=6f4b1aca-9d90-44da-a14b-930cf194983d"
+                        }
+                        "Frostcap Crunch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frostcap_Crunch.png?alt=media&token=72f1c355-ae7a-48e3-beb9-a8587aea6bf3"
+                        }
+                        "Frostcaps" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frostcaps.png?alt=media&token=7349f17a-5492-42fe-8ce1-1d528728afbc"
+                        }
+                        "Frosted Flower" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frosted_flower.png?alt=media&token=2f30fbe5-8231-4570-a8ae-6e626f54d5d5"
+                        }
+                        "Frosted Onion" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frosted_Onion.png?alt=media&token=14ced217-66a4-42b9-8f98-e520d4fb924f"
+                        }
+                        "Frosted Rose" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frosted_Rose.png?alt=media&token=a40433d1-85c6-4837-a4ea-c18b91d32b83"
+                        }
+                        "Frosted Sugar Crunch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frosted_Sugar_Crunch.png?alt=media&token=d9475a70-76b1-425e-9690-ea61c36bd430"
+                        }
+                        "Frosted Wreaths" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frosted_Wreath.png?alt=media&token=bdf6bdfe-4b89-4a99-9155-cbb6da2d758b"
+                        }
+                        "Fruitcake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/fruitcake.png?alt=media&token=9f3f3bf1-3c54-4ff2-8274-38c69e372c5c"
+                        }
+                        "Fruitcake Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fruitcake_Bun.png?alt=media&token=9f790338-5ab0-4a03-a3dd-8aa898c08690"
+                        }
+                        "Fruity Hoops" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fruity_Hoops.png?alt=media&token=ef5b2f30-8496-4a3f-8b5b-9a96e899f69a"
+                        }
+                        "Fry Seasoning" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fry_Seasoning.png?alt=media&token=980173b5-5f8f-4573-9c4d-5b2cf2b7794a"
+                        }
+                        "Frybread" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Frybread.png?alt=media&token=498f416a-389e-49d4-ade5-89e4c610e187"
+                        }
+                        "Fudge Brownie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fudge_Brownie.png?alt=media&token=fa4f9d35-e49f-4bf8-b29c-673e6cefad09"
+                        }
+                        "Fudge Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fudge_Cookie.png?alt=media&token=8d450c05-d4c2-4b61-8811-dd45af68ade2"
+                        }
+                        "Fudge Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fudge_Filling.png?alt=media&token=6ff11f16-9d5c-4967-864b-452fbd21d1e3"
+                        }
+                        "Fudge Swirl Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fudge_Swirl_Drizzle.png?alt=media&token=b353ee76-ecca-4f14-96e2-d857a1019ac9"
+                        }
+                        "Full Moon Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Full_Moon_Icing.png?alt=media&token=3d581537-7b41-4d32-8c7e-0508e2b0421b"
+                        }
+                        "Funnel Cake Shell" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Funnel_Cake_Shell.png?alt=media&token=c6061794-a8fd-4606-879c-a2554cabb7c3"
+                        }
+                        "Furikake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Furikake.png?alt=media&token=c2297569-aa58-4da6-b710-cc7170918958"
+                        }
+                        "G" -> {
                             url = ""
                         }
                         else -> {
