@@ -2363,6 +2363,96 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Jubilee Popcorn" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jubilee_Popcorn.png?alt=media&token=da2f16ec-6d55-49b9-b31c-7dbb22bb5317"
                         }
+                        "Kaiser Onion Roll" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kaiser_Onion_Roll.png?alt=media&token=bf25488a-cb66-46d5-bec3-22d1ad72c029"
+                        }
+                        "Kaju Katli" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kaju_Katli.png?alt=media&token=eab673b9-ddb4-4eec-bdeb-89f812976dd3"
+                        }
+                        "Kale" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kale.png?alt=media&token=3be3f164-bf6d-45e4-94d2-22a4d914fe63"
+                        }
+                        "Kalua Ham" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kalua_Ham.png?alt=media&token=9fb2fcc6-85eb-434d-adae-b4de0ba08216"
+                        }
+                        "Kampachi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kampachi.png?alt=media&token=afa56d5a-5689-483f-9131-0f7a064b1c47"
+                        }
+                        "Kanji Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kanjisyrup.png?alt=media&token=d8b4a9d6-62b2-47a6-8f61-e74006015d2f"
+                        }
+                        "Kanpyo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kanpyo.png?alt=media&token=1fce18e7-c95d-4437-a75c-accb13d840cf"
+                        }
+                        "Karashi Mayo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Karashi_Mayo.png?alt=media&token=58049f1e-f606-410f-90e2-eb6b45a5951a"
+                        }
+                        "Karmic Korma Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Karmic_Korma.png?alt=media&token=1d3486ef-448f-4f52-94f2-e6770e669c1f"
+                        }
+                        "Ketchup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ketchup.png?alt=media&token=67c45dd7-d67b-46dc-9873-7d6e03f9ac72"
+                        }
+                        "Kettle Corn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kettle_Corn.png?alt=media&token=a47f73d5-090d-4b23-aecd-0dd836ee89bc"
+                        }
+                        "Key Lime Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Keylime_burned.png?alt=media&token=2b61f19e-ba11-414c-b01b-89f5f2bfa88d"
+                        }
+                        "Key Lime Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Key_Lime_Filling.png?alt=media&token=e658554b-e7a5-4d34-a08d-7e19920084c3"
+                        }
+                        "Kielbasa" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kielbasa.png?alt=media&token=ff6ee5b6-426f-48fb-8eff-72a813d2900e"
+                        }
+                        "Kiiroi Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kiiroi_Soy_Paper.png?alt=media&token=1ae25983-d279-42fe-8720-ef966af05e9d"
+                        }
+                        "Kilauea Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kilauea_Sauce.png?alt=media&token=204a479d-6a87-4e68-be78-059fef5d3ff3"
+                        }
+                        "Kimchi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kimchi.png?alt=media&token=4400f422-a7c2-42cf-813e-04518d761d72"
+                        }
+                        "King Cake Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/King_Cake.png?alt=media&token=b0ce2203-a08e-4e70-85e3-5eec014af8d7"
+                        }
+                        "Kiwi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kiwi.png?alt=media&token=5257110b-9661-42af-856b-970483d47aef"
+                        }
+                        "Kiwi Bubbles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kiwi_Bubbles.png?alt=media&token=6dfd7e1f-e598-4fe8-8d69-d7e44035be7e"
+                        }
+                        "Kiwi Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kiwi_Cake.png?alt=media&token=eb5f6a39-6972-499f-8a82-ce6f1186a408"
+                        }
+                        "Kiwi Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kiwi_Filling.png?alt=media&token=1b218389-e205-47c5-9dfc-6a06d2f5e1dd"
+                        }
+                        "Kiwi Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kiwi_Slush.png?alt=media&token=25095174-6e7a-4e5c-a8a5-00486e0c5beb"
+                        }
+                        "Kobumaki" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kobumaki.png?alt=media&token=4b4a8e68-44fc-42ac-b915-358655e0de7f"
+                        }
+                        "Konpeito" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Konpeito.png?alt=media&token=5fce3c10-270f-4042-93af-1bf2bcc1b7a6"
+                        }
+                        "Krampus Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Krampus_Sauce.png?alt=media&token=978a7d8c-2ca0-48db-81c8-c5d56a97c3df"
+                        }
+                        "Kumquats" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kumquat.png?alt=media&token=1196b95f-dc79-44b7-8899-5d7f7a16bd37"
+                        }
+                        "Kung Pao" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kung_Pao.png?alt=media&token=ffd62c5a-b60a-4871-9f47-561fbf0d703a"
+                        }
+                        "Kuri Kinton" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kuri_kinton.png?alt=media&token=7df6f800-a172-4e7f-acd7-71305e6e12b8"
+                        }
+                        "Kuromitsu Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kuromitsu_Drizzle.png?alt=media&token=b60b6a75-5663-4d60-a1f7-351a2b7604e6"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
