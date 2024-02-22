@@ -2333,6 +2333,36 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Iyokan Tea" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Iyokan_Tea.png?alt=media&token=d8d421f3-00bc-4abe-9d3b-6f9ffcda11fb"
                         }
+                        "Jack Frost Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jack_Frost_Bun.png?alt=media&token=9c0aafe1-bee8-4ca4-9fdb-78b3608c5e9b"
+                        }
+                        "Jack-o-Mole" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jackomole.png?alt=media&token=7c8366da-8e9f-4d1d-ae64-d9e4e8889b68"
+                        }
+                        "Jalapeños" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/jalapenos.png?alt=media&token=033444ac-6aeb-49f0-8384-348fc2a575de"
+                        }
+                        "Jambalaya Rice" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jambalaya_Rice.png?alt=media&token=a17079e4-b79f-4566-803b-4248df39fece"
+                        }
+                        "Jelly Beans" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jelly_Beans.png?alt=media&token=f1361e9f-a600-492e-9b24-d2b31a9d7b2e"
+                        }
+                        "Jellybean Jam" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jellybean_Jam.png?alt=media&token=4a9354cb-a97c-4c3c-8e3e-c38f168665f1"
+                        }
+                        "Jolly Roger" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jolly_Roger.png?alt=media&token=ef4518f3-786b-467c-a311-b558f29126d8"
+                        }
+                        "Jubilee Jelly" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jubilee_Jelly.png?alt=media&token=8204db08-4a82-4645-90cd-3c57a072ff18"
+                        }
+                        "Jubilee Jelly Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jubilee_Jelly_Syrup.png?alt=media&token=2b8bcfbd-f653-443a-bffb-6b7c15f58cbd"
+                        }
+                        "Jubilee Popcorn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jubilee_Popcorn.png?alt=media&token=da2f16ec-6d55-49b9-b31c-7dbb22bb5317"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
