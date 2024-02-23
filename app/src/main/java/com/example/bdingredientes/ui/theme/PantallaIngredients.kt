@@ -2591,7 +2591,247 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Lychee Bubbles" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lychee_Bubbles.png?alt=media&token=d378e524-212e-472a-8eb6-2f56ff4b5a85"
                         }
-                        "M" -> {
+                        "Mac n'Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/mac_n_cheese.png?alt=media&token=da59ec8f-9c92-4848-9bca-b90eafdc3e66"
+                        }
+                        "Macaroni" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Macaroni.png?alt=media&token=784c8abd-cff6-469f-8154-392b1d25e426"
+                        }
+                        "Macarons" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Macaron.png?alt=media&token=44a9109d-daab-4958-850d-25ad938f55ed"
+                        }
+                        "Madeleines" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Madeleines.png?alt=media&token=4af9cfc8-9751-4010-98cb-41a430dd2469"
+                        }
+                        "Mafaldine" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mafaldine.png?alt=media&token=253f657c-a516-41cf-8a9a-9b49298fabb8"
+                        }
+                        "Mambo Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mambo_Sauce.png?alt=media&token=38be2640-7f08-47dc-84e4-7615604120d4"
+                        }
+                        "Mamey Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mamey_Syrup.png?alt=media&token=003c4a04-3949-4aae-b3bb-e46c2c63375d"
+                        }
+                        "Mango Bubbles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Bubbles.png?alt=media&token=54fab4f5-c894-4868-af86-b356b7e7aaac"
+                        }
+                        "Mango Chili Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Chili_Dip.png?alt=media&token=780ea651-f1f2-42e8-9423-040e7774bd06"
+                        }
+                        "Mango Chili Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_chili_sauce.png?alt=media&token=79edcb9b-5132-4af5-8d84-cdf449dcb7ba"
+                        }
+                        "Mango Cream Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Cheese.png?alt=media&token=79276df0-b423-4f96-afee-80ff36489ef7"
+                        }
+                        "Mango Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Drizzle.png?alt=media&token=34556d5a-1e9b-42d7-bf81-499d3f56495b"
+                        }
+                        "Mango Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Powder.png?alt=media&token=d2ac3645-9471-435e-9bed-67ba8f4c8aa3"
+                        }
+                        "Mango Slices" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Slices.png?alt=media&token=24f554f5-dd78-4f6c-bac6-d8a60adb69b4"
+                        }
+                        "Mango de Mayo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_de_Mayo.png?alt=media&token=b68f053c-cd20-4404-98a1-35c8732cd488"
+                        }
+                        "Manicotti" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Manicotti_.png?alt=media&token=fda5cd0c-2dde-44be-a326-e3aa2b74c97d"
+                        }
+                        "Maple Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Frosting.png?alt=media&token=9069378c-0261-46e8-981a-a263387e78b7"
+                        }
+                        "Maple Jack Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Jack.png?alt=media&token=6c69300c-f570-4b6b-aa7a-3205cd0c3588"
+                        }
+                        "Maple Mini Sausages" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Mini.png?alt=media&token=71807b23-675a-41cf-8c37-6d71cec5c03a"
+                        }
+                        "Maple Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Syrup.png?alt=media&token=8767136d-834b-4b6f-a01b-3873e69cae9d"
+                        }
+                        "Marble Rye" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marble_Rye_Bread.png?alt=media&token=cc7305af-2798-4ae9-a2ee-0338bbf96e0b"
+                        }
+                        "Marinara Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marinara_Sauce.png?alt=media&token=b6b10a68-3087-4b87-94b2-948701e2c95c"
+                        }
+                        "Marshmallow Cheep" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marshmallow_Cheep.png?alt=media&token=b5eac7ca-3e25-4f00-8ae3-96a0049945d3"
+                        }
+                        "Marshmallow Cheep Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/MarshmallowCheepsCream.png?alt=media&token=679ed2e5-b716-4068-97d6-e70d4465d921"
+                        }
+                        "Marshmallow Drums" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marshmallow_Drum.png?alt=media&token=2d2cd01f-c6f9-4f93-b0a5-5c97dd1fd82d"
+                        }
+                        "Marshmallow Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marshmallow_Filling.png?alt=media&token=4b3101dc-97a5-46f5-bc5a-a80866e57368"
+                        }
+                        "Marshmallow Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marshmallow_Syrup.png?alt=media&token=5baca54d-9a40-41b3-b391-e10bb8d33a29"
+                        }
+                        "Marshmallows" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marshmallows.png?alt=media&token=9b59d0a0-c478-4e8f-aea1-85d5c82ca26a"
+                        }
+                        "Marzen Mustard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Marzen_Mustard.png?alt=media&token=6e8d8feb-85e7-4367-9d3d-5962e6a29721"
+                        }
+                        "Mashed Potatoes" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mashed_Potatoes.png?alt=media&token=919be285-8794-4f94-865b-22f5ff938529"
+                        }
+                        "Masquerade Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Masquerade_Powder.png?alt=media&token=fdbe63a9-6f0e-4a45-9b60-bcd4e4ba9861"
+                        }
+                        "Matcha Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Matcha_Drizzle.png?alt=media&token=ad71f103-04cf-4806-b862-3ed461da3bc5"
+                        }
+                        "Matcha Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Matcha_Powder.png?alt=media&token=0b1c9210-df08-4844-8bc3-938133a06546"
+                        }
+                        "Matcha Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Matcha_Tea.png?alt=media&token=617a15df-535f-4bc8-8f1f-a735be343772"
+                        }
+                        "Maui Meringue" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maui_Meringue.png?alt=media&token=5dd0d26b-9b18-4b17-8784-db84071e17e1"
+                        }
+                        "Maui Meringue Dollops" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maui_meringue_dollops.png?alt=media&token=798ae2b8-7194-4173-a586-fb5e7b5be5c5"
+                        }
+                        "Mayo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mayo.png?alt=media&token=c7f4db70-0fa9-433d-ac47-4317f1cc75ee"
+                        }
+                        "Meatballs" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Meatballs.png?alt=media&token=87120d6e-af44-478a-83e6-ed11094ecea3"
+                        }
+                        "Medium Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Medium_Sauce.png?alt=media&token=df3c3db1-5a11-4f71-95b6-22cf2611a3b3"
+                        }
+                        "Melon Pan Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Melon_Pan_Bun.png?alt=media&token=987e3157-e462-4df5-a089-816c427a1f97"
+                        }
+                        "Meringue Topping" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Meringue_Topping.png?alt=media&token=8cb41dec-f6a2-4119-ac87-01db7ae545f2"
+                        }
+                        "Merry Masago" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Merry_Masago.png?alt=media&token=e107b290-873f-4fc2-88db-6db9901ce274"
+                        }
+                        "Meteor Blastor Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Meteor_Blastor.png?alt=media&token=00386d7b-ceb1-4657-8198-a2b3ebc2934a"
+                        }
+                        "Midnight Crunch Taco" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Midnight_Crunch_Taco.png?alt=media&token=f79213f2-043d-4145-a1f4-d4a41440bda0"
+                        }
+                        "Midnight Marsala" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Midnight_Marsala.png?alt=media&token=736a6180-0b0b-478d-b19c-68c197508aa7"
+                        }
+                        "Midnight Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/MidnightPowder.png?alt=media&token=fabc6e23-b08a-4bd8-ba01-f23fdfba3fb3"
+                        }
+                        "Midnight Shimmer Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Midnight_Shimmer_Powder.png?alt=media&token=9947d8cc-8371-4275-8348-7c40b7255d0e"
+                        }
+                        "Mild Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mild_Sauce.png?alt=media&token=3834cb80-1e81-4f23-82cc-d4be742dfd17"
+                        }
+                        "Milk" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Milk.png?alt=media&token=2307d7cc-72ec-4936-a2bc-45c1fe745beb"
+                        }
+                        "Mini Donut" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mini_Donut.png?alt=media&token=661cbbb1-918c-4339-8a38-80e8b6d100ff"
+                        }
+                        "Mini Mallows" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mini_Mallows.png?alt=media&token=2fb862d9-ae89-4e0c-9443-de238aeb7388"
+                        }
+                        "Mint Bar Chunks" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mint_Bar_Chunks.png?alt=media&token=589d1b25-64cc-4e00-8709-3ba17d40917f"
+                        }
+                        "Mint Chocolate Chip Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mint_Chocolate_Chip_Ice_Cream.png?alt=media&token=c327348a-9c55-4fcd-8148-9e6da98cae3d"
+                        }
+                        "Mint Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mint_Cream.png?alt=media&token=0058287c-3d6d-4126-aae8-676ee02a3f57"
+                        }
+                        "Mint Creameo Cookies" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mint_Creameo_Cookies.png?alt=media&token=7104779a-f4f4-4eb8-ba0d-98847590a433"
+                        }
+                        "Mint Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/MintDrizzle.png?alt=media&token=ece433f9-2fb7-4d49-b96b-47b8ff0fd064"
+                        }
+                        "Mission Fig Jam" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mission_Fig_icon.png?alt=media&token=bdcc642c-a875-457e-8f55-32b74b728835"
+                        }
+                        "Mission Figs" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Misson_Figs.png?alt=media&token=f41e81a8-73aa-4fb2-97db-3a6b3a8651f8"
+                        }
+                        "Mixed Microgreens" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mixed_Microgreens.png?alt=media&token=79d2863e-b673-4a6b-af33-2f1c7f0519df"
+                        }
+                        "Mizuiro Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mizuiro_Soy_Paper.png?alt=media&token=04801423-309d-4a96-8480-2a99626aba72"
+                        }
+                        "Mocha Chocolate Chunk" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mocha_Chocolate_Chunk.png?alt=media&token=5b41c8ce-dd21-478b-b8bc-e753bb0753fb"
+                        }
+                        "Mocha Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mocha_Cream.png?alt=media&token=4064f321-7117-40ac-bd55-67b5289aeaa1"
+                        }
+                        "Mocha Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mocha_Frosting.png?alt=media&token=0b5e4383-45d2-4165-802e-01b94b1f1866"
+                        }
+                        "Mocha Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mocha_Tea.png?alt=media&token=e6c02cd4-2933-48da-9de3-c47a81ef1847"
+                        }
+                        "Mole Mistica" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mole_Mistica.png?alt=media&token=652943f1-8fb2-41b0-bf14-a6d1195fc980"
+                        }
+                        "Momoiro Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Momoiro_Soy_Paper.png?alt=media&token=13909c40-9fb5-44ab-8778-e832bd108b3b"
+                        }
+                        "Monster Muester" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Monster_Muester.png?alt=media&token=26cae1a7-ba23-4256-868f-e7ce2085682b"
+                        }
+                        "Moon Mist Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Moon_Mist_Cream.png?alt=media&token=6f97c810-c99e-4949-8469-6d059a44a636"
+                        }
+                        "Moon Mist Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Moon_Mist.png?alt=media&token=6adf5a43-ed65-4b92-8ca4-bacee47a255b"
+                        }
+                        "Moon Mist Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Moon_Mist_Syrup.png?alt=media&token=7dc4bc33-c7bd-4f91-ace3-28a04a04b120"
+                        }
+                        "Muffuletta Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Muffuletta_Sauce.png?alt=media&token=6ae133d6-fa00-4d04-b883-c8b9b4e89579"
+                        }
+                        "Mulberry Medley" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mulberry_Medley_Mixable.png?alt=media&token=487d4881-7619-400a-b0ba-e2f384b95d00"
+                        }
+                        "Multi-Grain Chips" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Muti_multu.png?alt=media&token=f102e33a-4a10-4685-8616-4d8c23693377"
+                        }
+                        "Multigrain Bread" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Multigrain_Bread.png?alt=media&token=1e0de9da-1abe-4fcb-8b7c-41732b434662"
+                        }
+                        "Multigrain Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Multigrain_Bun.png?alt=media&token=a2652399-507c-4f34-a964-180f49f2b156"
+                        }
+                        "Mummy Dog" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mummy_Dog.png?alt=media&token=10e654b6-2115-4d61-aab8-a085ca091895"
+                        }
+                        "Mushrooms" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mushroom.png?alt=media&token=573969a8-4a94-40e6-99a0-3126ffe41dc5"
+                        }
+                        "Music Notes" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Music_note.png?alt=media&token=0d130d77-f26f-489f-9eab-761aeccc4ca2"
+                        }
+                        "Mussel" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mussels.png?alt=media&token=d5651495-4f33-4133-84a5-f1752f5bff4e"
+                        }
+                        "Mustard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mustardd.png?alt=media&token=8a07c150-1ed4-4235-b952-5fd313fa7704"
+                        }
+                        "N" -> {
                             url = ""
                         }
                         else -> {
