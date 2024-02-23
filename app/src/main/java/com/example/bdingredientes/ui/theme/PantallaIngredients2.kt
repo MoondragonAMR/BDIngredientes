@@ -2453,6 +2453,153 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Kuromitsu Drizzle" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Kuromitsu_Drizzle.png?alt=media&token=b60b6a75-5663-4d60-a1f7-351a2b7604e6"
                         }
+                        "La Catrina Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/La_Catrina_Sauce.png?alt=media&token=3a0f2b98-8386-4de6-9e8b-2d52cc98a108"
+                        }
+                        "Ladyfinger" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ladyfinger.png?alt=media&token=b53cae2c-b3cb-4b2c-a33c-c26b39194e1d"
+                        }
+                        "Ladyfingers Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ladyfingers_Crust.png?alt=media&token=751ad88a-ae22-4dc3-897c-3c1b1a079bce"
+                        }
+                        "Lattice Top" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lattice_Top.png?alt=media&token=3413b99a-b067-414b-94b7-1505de47eb3b"
+                        }
+                        "Lava Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lava_Cake.png?alt=media&token=a48bc41a-6de9-4027-8923-0e1a322cd555"
+                        }
+                        "Lava MunchMelt" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lavatsco.png?alt=media&token=0cf5eaf3-cb1c-49ff-81d4-151f6b9a71b3"
+                        }
+                        "Lavender Cheeps" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lavender_Cheep.png?alt=media&token=a1ae5d4e-5061-4922-a173-dc0afa0a0989"
+                        }
+                        "Lavender Frost" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lavender_Frost.png?alt=media&token=1d1e0729-366a-4161-a39d-f4a8df6cf6f8"
+                        }
+                        "Lavender Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lavender_Icing.png?alt=media&token=2eecd416-8def-46f0-af45-a0420863d0ae"
+                        }
+                        "Lavender Lemonade Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lavender_Lemonade_Syrup.png?alt=media&token=5e9eb44a-c84e-41b1-aa48-1132c84289e2"
+                        }
+                        "Lavender Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lavender_Powder.png?alt=media&token=fa5b39dd-c2a1-47f7-9906-46b4a5509ee4"
+                        }
+                        "Lemon Butter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Butter.png?alt=media&token=3126c5e0-3429-4433-ad9b-16b18b5ec36f"
+                        }
+                        "Lemon Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Cake.png?alt=media&token=f9cde266-c7d5-4296-9d9e-6d67c8a432ea"
+                        }
+                        "Lemon Chiffon" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Chiffon.png?alt=media&token=9053049a-2ff4-434f-b12a-ebf070b535ee"
+                        }
+                        "Lemon Crinkle Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Crinkle_Cookie.png?alt=media&token=1841d23f-3dcd-432a-8394-0408293fcaa7"
+                        }
+                        "Lemon Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Filling.png?alt=media&token=3bff1521-1e2b-49ae-8ba2-5d6f804b73f5"
+                        }
+                        "Lemon Herb" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Herb.png?alt=media&token=37935622-cb4f-48dd-af9c-ea0243f4cb6d"
+                        }
+                        "Lemon Mist" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Mist.png?alt=media&token=a1cffcfc-bedb-4e79-abc6-f324a28603ed"
+                        }
+                        "Lemon Wedge" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Wedge.png?alt=media&token=1512be38-a9fc-4db3-ab42-52ab2a58eacd"
+                        }
+                        "Lemonade Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemonade_Drizzle.png?alt=media&token=02b45b1a-34ce-4e47-ad5b-21ee3c0f0ddd"
+                        }
+                        "Lemonade Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemonade_Slush.png?alt=media&token=25e62fde-112b-4e1e-856a-fad8adbadb30"
+                        }
+                        "Letterbox Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Letterbox_Donut.png?alt=media&token=fafc30a0-ace5-4393-9a93-3e89b9757010"
+                        }
+                        "Lettuce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lettuce.png?alt=media&token=6df8fa93-4199-4b13-a30d-bd35363704d9"
+                        }
+                        "Licorice Allsorts" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Licorice.Allsorts.png?alt=media&token=34aa5390-ef12-4487-bb16-1eeb771a0b64"
+                        }
+                        "Licorice Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Licoricedrizzle.png?alt=media&token=e401c45c-8ddd-49a2-9070-ed6c43add652"
+                        }
+                        "Lightning Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lightning_Crust.png?alt=media&token=573cfbd2-6d7c-4dcd-b36b-67a0b2736642"
+                        }
+                        "Linzer Augen" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Linzer_Augen.png?alt=media&token=9080512b-33f9-4fe4-89a1-af16837ffb9a"
+                        }
+                        "Lobster" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lobster.png?alt=media&token=6b8d38df-bbd9-4654-b125-901f07c39cd0"
+                        }
+                        "Lobster Chunks" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lobster_chunks.png?alt=media&token=9a310f59-e002-46e7-bf86-e3eae4fbde4d"
+                        }
+                        "Loco Mystery Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/LocoMysterySauce.png?alt=media&token=538af8a1-f925-46e5-a9e4-d3ea28fe8fea"
+                        }
+                        "Lollipop Bits" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lollipop_Bits.png?alt=media&token=1456ea2e-3625-45a3-92f3-dd7abede4f07"
+                        }
+                        "Lollipop Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lollipop_Drizzle.png?alt=media&token=d66b24ca-8e93-4d3c-b88a-88772eb15050"
+                        }
+                        "Lollipop Milk" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lollipop_Milk.png?alt=media&token=7055dc10-a888-4d24-8000-9705429d6c9b"
+                        }
+                        "Lone Star Pit Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lone_Star_Pit_Sauce.png?alt=media&token=e8211c39-d194-48bf-bc68-1dce73b0324c"
+                        }
+                        "Long John Shape Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Long_John.png?alt=media&token=d0ea1de0-86e1-4e9c-99f8-6295d1c6e9f1"
+                        }
+                        "Longevity Noodles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Longevity_Noodles.png?alt=media&token=f0be204f-2cdc-4306-83cd-fa9df78d21cb"
+                        }
+                        "Lotus Root" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/LotusRoot.png?alt=media&token=7c60ede7-0dde-43f9-a97c-ac7275392ef1"
+                        }
+                        "Love Potion Topping" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Love_potion.png?alt=media&token=d981fa15-5b93-41f6-a00e-9e53efe525ed"
+                        }
+                        "Luau Musubi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Luau_Musubi.png?alt=media&token=a5113aa8-6126-4182-8a89-403fee5406d2"
+                        }
+                        "Luau Punch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Luau_Punch.png?alt=media&token=ef5542e7-a8c7-4022-9950-122fe48165ca"
+                        }
+                        "Luau Punch Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Luau_Punch_Drizzle.png?alt=media&token=805eb4f9-01fe-4847-9baf-45c51d783e13"
+                        }
+                        "Luau Punch Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Luau_Punch_Slush.png?alt=media&token=bcf635b3-ecbf-4c9f-91c8-ec9f9055e2e9"
+                        }
+                        "Luau Punch Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Luau_Punch_Tea.png?alt=media&token=e16fa41c-dbc5-4933-aa04-934ecb40053f"
+                        }
+                        "Lucky Dust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lucky_Dust.png?alt=media&token=f4bc80b1-cafc-4bf1-ae82-4929b665cb91"
+                        }
+                        "Lucky Sevens" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lucky_Sevens.png?alt=media&token=acd98cae-f94f-4250-9122-108b402da069"
+                        }
+                        "Lucky Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lucky_Soy_Paper.png?alt=media&token=232f5d13-5b53-49d4-98c4-b05115012d34"
+                        }
+                        "Lunar Jerky" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lunar_Jerky.png?alt=media&token=65f134f9-392d-495d-923a-0ea38b8d01d0"
+                        }
+                        "Lunar Loaf" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lunar_Loaf_Bun.png?alt=media&token=09aea8cb-7e21-4fed-822b-a2a0fb9cc0cc"
+                        }
+                        "Lychee Bubbles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lychee_Bubbles.png?alt=media&token=d378e524-212e-472a-8eb6-2f56ff4b5a85"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
