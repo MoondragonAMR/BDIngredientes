@@ -2876,6 +2876,45 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Nutty Butter Cup" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nutty_Butter_Cup.png?alt=media&token=6cb68711-2a7a-4e67-88df-af8be822cff6"
                         }
+                        "Oatmeal Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Oatmeal_Cookie.png?alt=media&token=e2472c1b-8c6c-463b-a384-28c39154d395"
+                        }
+                        "Oaxaca Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Oaxaca.png?alt=media&token=61d88601-2c61-469f-b3ee-bc41f95fe57d"
+                        }
+                        "Octopus" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Octopus.png?alt=media&token=d52c5128-4634-46c6-9c2d-919c7ff3c162"
+                        }
+                        "Oiri" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Oiri.png?alt=media&token=710b4f64-5203-4b11-9c86-1484d23141e6"
+                        }
+                        "Olive Oil" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/OliveOil.png?alt=media&token=5d876b3b-4cba-48ea-ac00-04b616e80c19"
+                        }
+                        "Onion Overdrive Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Onion_Overdrive.png?alt=media&token=047b8482-3046-4a97-b316-2877c1762aff"
+                        }
+                        "Onion Rings" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/OnionRings.png?alt=media&token=8df2aacb-4410-44e2-bcc5-af5fd40a3425"
+                        }
+                        "Onion Zest" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/OnionZest.png?alt=media&token=952de42f-6fdf-48c3-9fc4-258ad4fcd3b1"
+                        }
+                        "Onions" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Onions.png?alt=media&token=77d79573-f65e-4d93-a92c-42cb140691a4"
+                        }
+                        "Orange Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Orange_Frosting.png?alt=media&token=537a5453-e924-44b3-b968-27393d5e9bac"
+                        }
+                        "Orange Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Orange_Icing.png?alt=media&token=eb5ecbac-aa2c-463e-bc50-49d1c3f0ec0e"
+                        }
+                        "Orange Juice" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Orange_Juice.png?alt=media&token=c2b4ed8f-fe7f-46bb-bc27-b43a8a5f1906"
+                        }
+                        "Orange Mocha Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Orange_Mocha_Syrup.png?alt=media&token=b4ce12ee-197a-441b-b91b-7916772b065e"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
