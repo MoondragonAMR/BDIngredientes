@@ -2840,6 +2840,42 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Mustard" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mustardd.png?alt=media&token=8a07c150-1ed4-4235-b952-5fd313fa7704"
                         }
+                        "Naan Bread" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Naan.png?alt=media&token=62a124ee-a89c-4e9d-b392-d2e9117b8980"
+                        }
+                        "Nacho Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/NachoCheese.png?alt=media&token=55b8d937-ed92-4eda-8a72-5b4c85c2cf91"
+                        }
+                        "Nacho Cheese Chips" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nacho_octagon.png?alt=media&token=a6aed161-ccdf-4b5f-93c0-3539d612cdd5"
+                        }
+                        "Narutomaki" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Narutomaki.png?alt=media&token=7ea08d05-fc70-4e5d-8aae-37e494d2262e"
+                        }
+                        "Nashville Hot Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nashville_Hot_Sauce.png?alt=media&token=0c14c303-a749-479b-9318-4c6232101af0"
+                        }
+                        "Neapolitan Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Neapolitan_Cream.png?alt=media&token=7ba6a37b-4879-437e-874e-40595653e0ca"
+                        }
+                        "Neapolitan Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Neapolitan_Drizzle.png?alt=media&token=e9515c75-1dab-4916-a1c5-a7cca238a613"
+                        }
+                        "New England Roast" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/New_England_Roast.png?alt=media&token=b2d25bba-b690-4bd8-9201-d46d0a700bfa"
+                        }
+                        "New Year Topper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/New_Year_Topper.png?alt=media&token=41853e04-6898-48f5-b91c-3df28c904a9a"
+                        }
+                        "Nogada Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nogada.png?alt=media&token=2da0ef78-bec5-45d3-8da9-81eca250cb8f"
+                        }
+                        "Nori" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nori.png?alt=media&token=0b8e57c9-0bdf-4cd3-a98c-629b61d1cd99"
+                        }
+                        "Nutty Butter Cup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nutty_Butter_Cup.png?alt=media&token=6cb68711-2a7a-4e67-88df-af8be822cff6"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
