@@ -3326,7 +3326,235 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Queso Blanco" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/QuesoBlanco.png?alt=media&token=c875bbfd-a626-4b0d-af76-d49c4ef6540c"
                         }
-                        "R" -> {
+                        "Radiatori" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Radiatori.png?alt=media&token=20009670-3b89-458c-a37a-bc46129e91b2"
+                        }
+                        "Radicchio" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Radicchio.png?alt=media&token=f5f7969e-5c07-4c3b-85c4-d8027bdc3c7e"
+                        }
+                        "Radish Sprouts" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Radish_Sprouts.png?alt=media&token=302e5f44-f0dd-4386-95c1-aee501186188"
+                        }
+                        "Rainbow Gramigna" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Gramigna.png?alt=media&token=bb08d7ab-c99b-42c1-ad85-e6d5f1e50b3f"
+                        }
+                        "Rainbow Meringue" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Meringue.png?alt=media&token=18618d85-4cb4-4190-b6d2-ca7aed003e74"
+                        }
+                        "Rainbow Meringue Dollops" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Meringue_Dollop.png?alt=media&token=6915cef6-9593-471f-b6e3-dc600bb2aab2"
+                        }
+                        "Rainbow Peppercorn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Peppercorn.png?alt=media&token=22be8859-9014-4404-af9c-14bd0d412674"
+                        }
+                        "Rainbow Rye Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Rye_Bun.png?alt=media&token=1cc477b8-0352-4d30-bde5-17bcfe9ac6bf"
+                        }
+                        "Rainbow Sherbet Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Freezeria_Rainbow_Sherbet_Syrup_(Transparent).png?alt=media&token=fd01a00c-fa94-47fa-aadf-a22c6bb36687"
+                        }
+                        "Rainbow Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Soy_Paper.png?alt=media&token=1ec1ad34-4d40-4c39-94fa-c6110bf806c7"
+                        }
+                        "Rainbow Sprinkles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Sprinkles.png?alt=media&token=99725856-3431-4b03-82b4-ce91052ca33e"
+                        }
+                        "Rainbow Whip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Whip.png?alt=media&token=557eb2a5-4ccc-48d5-ab05-bca7f0b25382"
+                        }
+                        "Rainbow Yokan" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow_Yokan.png?alt=media&token=33783887-fac0-4dc8-9af1-b7b3b02323cc"
+                        }
+                        "Rainbow-livian Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainbow-livian_Sauce.png?alt=media&token=4699090a-5f56-4788-a7d9-af504943c2ac"
+                        }
+                        "Rainforest Whip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rainforest_Whip.png?alt=media&token=4e57a6e4-dd3a-4761-ad9d-575e01caa22a"
+                        }
+                        "Raisin Duds" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raisin_Duds.png?alt=media&token=cdb7cf56-91bd-44e3-a86f-9eeead3fa5e6"
+                        }
+                        "Raisin Duds Popcorn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raisin_Duds_Popcorn.png?alt=media&token=7c23e106-52f6-4699-9de6-d1f5eb1d0277"
+                        }
+                        "Raisins" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raisins.png?alt=media&token=148b96e6-24d2-445b-89fb-527e36f147ad"
+                        }
+                        "Ramen Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/RamenCrust.png?alt=media&token=cca8d901-a9fc-4eb0-9221-79ee790e56d2"
+                        }
+                        "Ranch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ranch.png?alt=media&token=70c65923-4e3d-48bc-97f5-628ce1892044"
+                        }
+                        "Ranch Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ranch_Dip.png?alt=media&token=e6587f8c-70a3-4b1e-8f32-3429aa6a6e21"
+                        }
+                        "Raspberries" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raspberries.png?alt=media&token=673fb44f-31ea-4ab9-a70d-6df3708ebbd1"
+                        }
+                        "Raspberry Bark" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/RaspberryBark.png?alt=media&token=83b6ed07-4222-43d3-b964-230855eeeafb"
+                        }
+                        "Raspberry Crumble" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raspberry_Crumble.png?alt=media&token=5a1ce89d-582b-4402-a0e2-eb417c83dcda"
+                        }
+                        "Raspberry Ripple Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raspberry_Ripple.png?alt=media&token=179c8b57-4f86-483d-9384-f63beceabbeb"
+                        }
+                        "Raspberry Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raspberry_Tea.png?alt=media&token=fc576f75-85b6-4398-9c01-c9c208c70564"
+                        }
+                        "Raspberry White Chocolate Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Raspberry_White_Chocolate_Cake.png?alt=media&token=9515dc06-498f-4234-8e15-9a1303dae673"
+                        }
+                        "Rautenflagge Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rautenflagge_Soy_Paper.png?alt=media&token=d9a8b425-6cf9-4d44-9c03-445ee35e64c4"
+                        }
+                        "Ravioli" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ravioli.png?alt=media&token=f7a36e30-a138-4d5b-8c12-c4199b4b4d73"
+                        }
+                        "Razzle Dazzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Razzle_Dazzle.png?alt=media&token=0a893a8e-1515-44f8-aa24-49617a02aca6"
+                        }
+                        "Recado Rojo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Recado_Rojo.png?alt=media&token=428cdef1-702e-4e29-b19a-299d4e506b65"
+                        }
+                        "Red Cabbage Slaw" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Cabbage_Slaw.png?alt=media&token=de21575b-aab7-4343-94da-39a8a45d4d0d"
+                        }
+                        "Red Cinnamon Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/RedCinnamonDrizzle.png?alt=media&token=860199ca-cc01-494d-baae-3b2aa38240bc"
+                        }
+                        "Red Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Frosting.png?alt=media&token=3c258532-5320-4882-ad9c-895ad4773ad7"
+                        }
+                        "Red Hot Popcorn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Hot_Popcorn.png?alt=media&token=1a6fa60a-7c76-4ea1-95c6-a061064c0859"
+                        }
+                        "Red Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Rose_Icing.png?alt=media&token=6a11866d-fcf3-4273-8b83-a4c86eeed23f"
+                        }
+                        "Red Licorice" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Licorice.png?alt=media&token=de7f6ac6-beb4-44ce-9404-d1e268b2af63"
+                        }
+                        "Red Pepper Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Pepper_Crust.png?alt=media&token=3c1a3dea-1af3-4a1c-acad-aa71be041c3a"
+                        }
+                        "Red Peppers" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Peppers.png?alt=media&token=33a59998-ae47-4c39-81a2-f37347091930"
+                        }
+                        "Red Rice" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Rice.png?alt=media&token=ab38c6f6-422c-43b2-8f66-3af9316d7639"
+                        }
+                        "Red Velvet Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Velvet_Cake.png?alt=media&token=f093b770-da85-4fc7-8ee4-7b5d43f18f88"
+                        }
+                        "Red Velvet Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Velvet_Cookie.png?alt=media&token=e0ef6e9e-d2ec-4899-b9d4-cf37e721983c"
+                        }
+                        "Red Velvet Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Velvet_Crust.png?alt=media&token=8d882ce3-bbec-4f4a-be0e-0cfd908765a7"
+                        }
+                        "Red Velvet Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Velvet_Syrup.png?alt=media&token=ab258e29-2736-4de1-ae43-715b40217ee4"
+                        }
+                        "Red Windsor Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Windsor_cheese.png?alt=media&token=0a033ce3-a455-4633-8f3b-c415da231280"
+                        }
+                        "Refried Beans" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Refried_Beans.png?alt=media&token=c7badd8e-145c-42b4-99e9-2443d0ce48c0"
+                        }
+                        "Regular Dough" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Regular_Dough.png?alt=media&token=52bc50d6-43ba-4ce8-bd08-c4d134484b6f"
+                        }
+                        "Regular Hot Dog Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Regular_Bun.png?alt=media&token=5992a573-edae-4465-9cd8-808336a8386d"
+                        }
+                        "Relish" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Relish.png?alt=media&token=c52c88b0-d712-400c-8e4f-b5f408bf18fb"
+                        }
+                        "Rhubarb Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rhubarb_Filling.png?alt=media&token=4df80f55-bda7-4381-a3c0-a80e927ebe2c"
+                        }
+                        "Ricotta Balls" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/RicottaBalls.png?alt=media&token=5f2e91c9-61dc-4491-abf7-8fa01ff11804"
+                        }
+                        "Ricotta Cheese" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ricotta_cheese.png?alt=media&token=da1f1e5a-de95-4ef0-9136-741361cceecb"
+                        }
+                        "Ring Shape Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ring_Dough.png?alt=media&token=f13bfd47-d186-488b-ac47-cf889eed3ca1"
+                        }
+                        "Risalamande" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Risalamande.png?alt=media&token=ca94ad3b-e83d-45c5-ad22-bc338ebc01f7"
+                        }
+                        "Roasted Asparagus" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Roasted_Asparagus.png?alt=media&token=2f831045-e996-41a2-8edb-ec968b2c8dc7"
+                        }
+                        "Roasted Chili-Corn Salsa" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Roasted_Chili-Corn_Salsa.png?alt=media&token=6ca67542-7e3d-459c-9d35-279759d888f7"
+                        }
+                        "Roasted Pumpkin Seeds" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Roasted_Pumpkin_Seeds.png?alt=media&token=5c747312-9acd-448d-9746-9623e3700a55"
+                        }
+                        "Roasted Romana" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Roasted_Romana.png?alt=media&token=2850a97e-dd3d-403d-8bf4-3fe75d79969d"
+                        }
+                        "Roasted Turkey" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Roasted_Turkey.png?alt=media&token=4a4968be-eb35-4109-8850-a287bcb0c836"
+                        }
+                        "Rock Candy" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rock_Candy.png?alt=media&token=a79bdf94-e230-46ba-86c1-19ef0edb9dda"
+                        }
+                        "Rocket Ragu" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rocket_Ragu.png?alt=media&token=da9c8c7b-1272-4654-b66e-21b80d07ad61"
+                        }
+                        "Rocket Whip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rocket_Whip.png?alt=media&token=5c1a889c-197b-4398-8739-e79a11404b80"
+                        }
+                        "Rockin' Rooibos Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rockin'_Rooibos_Powder.png?alt=media&token=b73166f0-6b55-4b8b-878b-b5d23b51545d"
+                        }
+                        "Rocky Road" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rocky_Road_Ice_Cream.png?alt=media&token=6c0ef8f7-db1d-488e-8d30-3bb7394d066d"
+                        }
+                        "Roll Shape Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Roll_shape_cutter.png?alt=media&token=8373335b-555c-407a-8450-cb95cc7ed629"
+                        }
+                        "Romaine Lettuce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Romaine_lettuce.png?alt=media&token=5d653976-97de-47ee-ad53-da2df730635d"
+                        }
+                        "Root Beer" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Root_Beer.png?alt=media&token=c5e9ee42-d68c-4aa5-9694-adbbb13fe2dd"
+                        }
+                        "Root Beer Float" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Root_Beer_Float.png?alt=media&token=76021358-c7a3-43c3-832f-fc7f91de7574"
+                        }
+                        "Root Beer Float Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Root_Beer_Float_Cake.png?alt=media&token=213ca590-9119-4718-a587-55900220f92f"
+                        }
+                        "Root Beer Float Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Root_Beer_Float_Filling.png?alt=media&token=d2d44293-3d76-4f00-b273-b74e3d07164a"
+                        }
+                        "Root Beer Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Root_Beer_Slush.png?alt=media&token=adc4fe16-a982-4fe7-9ff2-bc62fdaadac8"
+                        }
+                        "Rose Hip Whip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rose_hIp_whip.png?alt=media&token=c0e7a0e7-35d6-4661-b803-cfa7f26f8c28"
+                        }
+                        "Rosemary" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rosemary.png?alt=media&token=c25a2b1d-7d7e-4447-92b2-911c05950b7e"
+                        }
+                        "Rosemary Focaccia" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rosemary_Focaccia.png?alt=media&token=bca9d1ed-b346-4200-b66e-49bf03531b66"
+                        }
+                        "Round Shape Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Round_Dough.png?alt=media&token=e49468ea-4540-4c2c-8000-12a044784b88"
+                        }
+                        "Rustic Romana" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rustic_Romana.png?alt=media&token=abcbfbdb-b66a-42c2-a4f4-c69a9ab473ac"
+                        }
+                        "S" -> {
                             url = ""
                         }
                         else -> {
