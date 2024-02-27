@@ -4454,6 +4454,48 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Wurzig Sauce" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Wurzig_Sauce.png?alt=media&token=d828cf1d-6297-4af3-9498-7fce215c360d"
                         }
+                        "X Puffs" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/X_Puffs.png?alt=media&token=e3a4aa8f-ce04-41ef-91e0-17426f2c7d4f"
+                        }
+                        "X and O Sprinkles" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/X_and_O_Sprinkles.png?alt=media&token=6a340ff0-3db1-4dab-8aab-5b4a81f7848f"
+                        }
+                        "XO Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/XO_Sauce.png?alt=media&token=3ef18ba4-eb91-4e33-b615-b600b19e64fc"
+                        }
+                        "Yellowtail" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yellowtail.png?alt=media&token=7ef19799-7259-4be0-9bd7-47bcef6b05c3"
+                        }
+                        "Yomogi Popcorn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yomogi_Popcorn.png?alt=media&token=8991c4e4-de6b-4cf2-b430-cb5e8988ed91"
+                        }
+                        "Yule Spice" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yule_Spice.png?alt=media&token=532ff129-cece-42f6-a647-f3684aae3bbf"
+                        }
+                        "Yule Spice Sizzler" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yulespiceslizzer.png?alt=media&token=ea284234-bda2-4231-bd0c-cdb43141c40d"
+                        }
+                        "Yum Yum Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yum_Yum_Sauce.png?alt=media&token=4e98e52f-0f6a-4c23-9321-b9d45d9df76a"
+                        }
+                        "Yum n'M Cookies" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yum_n'_M_Cookie.png?alt=media&token=df7996e6-ce6e-490e-a1fd-64e8ee6a4357"
+                        }
+                        "Yum n'Ms" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yum_n_Ms.png?alt=media&token=5f4b5b6f-69a2-4c00-b949-3f1e3397af73"
+                        }
+                        "Yuzu Kosho" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yuzu_Kosho.png?alt=media&token=ae2dcf42-edc2-49f4-ba88-10d7a5cd86a2"
+                        }
+                        "Zebra Stripe Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Zebra_Stripe_Cake.png?alt=media&token=1f40b9f1-4aa9-4d1b-bbbb-7923751e73cc"
+                        }
+                        "Zesty Pesto" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Zesty_Pesto.png?alt=media&token=355ebfc7-61b6-457c-915a-9342c557001f"
+                        }
+                        "Zydeco Gumbo" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Zydeco_Gumbo.png?alt=media&token=e50dd999-515c-4d3a-81df-d6f9a9fea19d"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
