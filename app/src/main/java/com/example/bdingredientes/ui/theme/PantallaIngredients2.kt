@@ -4271,6 +4271,51 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Unicorn Milk" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Unicorn_Milk.png?alt=media&token=5caab50c-f6bb-4cf8-abc9-058a4f611e7b"
                         }
+                        "Valentine Powder" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/ValentinePowder.png?alt=media&token=5c4ab593-3549-4aef-a600-efbf7c31cd5b"
+                        }
+                        "Valentini" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Valentini.png?alt=media&token=2cecdc64-1fb7-45de-8113-7938dd23184f"
+                        }
+                        "Vanilla Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_cupcake.png?alt=media&token=007fd21d-68f3-40d5-9581-d714075f2a92"
+                        }
+                        "Vanilla Crispies Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_Crispies_Crust.png?alt=media&token=8910c55a-8696-4760-92c6-90f608108474"
+                        }
+                        "Vanilla Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_Ice_Cream.png?alt=media&token=b2958bcb-0000-4de5-bc7d-bcb7dbc0be69"
+                        }
+                        "Vanilla Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_Icing.png?alt=media&token=9f27d17e-926f-49be-b775-5aa23bb9e041"
+                        }
+                        "Vanilla Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_Drizzle.png?alt=media&token=e1b18409-cb75-4ba7-a255-0978c5c63992"
+                        }
+                        "Veggie Dog" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Veggie_Dog.png?alt=media&token=d9ab6d69-0348-41f2-99a7-913f4127e07b"
+                        }
+                        "Veggie Patty" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Veggie_Patty.png?alt=media&token=d333bfd4-66f7-4a8c-99d0-6fc487f87cb7"
+                        }
+                        "Venetian Vongole" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Venetian_Vongole.png?alt=media&token=6c9eaa9d-b3c8-46f0-a444-4b7b234ad27b"
+                        }
+                        "Vented Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vented_Crust.png?alt=media&token=9fa0da43-e97e-40e6-89f2-a15006302f73"
+                        }
+                        "Verde Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/VerdeSauce.png?alt=media&token=78c9e842-65af-4235-8594-8bd116ed407a"
+                        }
+                        "Vermicelli" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vermicelli.png?alt=media&token=b8399e61-d010-49c6-95fb-1efcfe1ca8fe"
+                        }
+                        "Vieux Carre Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vieux_Carre_Sauce.png?alt=media&token=5a071c9f-8abf-48e4-b4b3-7b63d98813a9"
+                        }
+                        "Violet Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Violet_Frosting.png?alt=media&token=61de6160-10d3-4a28-b891-a406d7a0a351"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
