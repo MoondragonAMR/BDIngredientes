@@ -4061,7 +4061,187 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Swiss Cheese" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Swiss_cheese.png?alt=media&token=0a497729-3fdf-4b90-b9b8-44dbfc61e521"
                         }
-                        "T" -> {
+                        "Tai" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tai.png?alt=media&token=d4df35d8-37f9-469a-a50b-ff20f83aefa8"
+                        }
+                        "Tamago" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tamago.png?alt=media&token=12d7828f-73b5-49d3-9658-403e0e8081c2"
+                        }
+                        "Tamalito" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tamalito.png?alt=media&token=6b114221-943e-4e80-a5e4-f114e1d9a00f"
+                        }
+                        "Tangerine Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tangerine_Pop.png?alt=media&token=3b6ef76a-6bd1-4f1d-8570-e2a23946ccda"
+                        }
+                        "Tangerine Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tangerine_Slush.png?alt=media&token=f78ce26a-583d-46a9-9808-eba25c1dfc4c"
+                        }
+                        "Tangerine Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tangerine_Tea.png?alt=media&token=8f747546-06fa-4735-8185-8e27d261497f"
+                        }
+                        "Tapioca Pearls" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tapioca_Pearls.png?alt=media&token=8946d96c-0df6-47cb-9650-768d37398582"
+                        }
+                        "Taquitos" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Taquito.png?alt=media&token=87b162fc-0a1c-4b91-88d9-255d214bc72b"
+                        }
+                        "Tarantula Cake" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tarantula_Cake.png?alt=media&token=34840ff8-7f63-4ead-acd9-8470f6f755b4"
+                        }
+                        "Tarantula Puffs" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tarantula_Puffs.png?alt=media&token=e180ebf4-b4e0-4203-9b2c-484b867a2624"
+                        }
+                        "Tarantula Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tarantula_Soy_Paper.png?alt=media&token=b9eea8f0-42a0-4112-9235-1e4c4d247376"
+                        }
+                        "Taro Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Taro_Tea.png?alt=media&token=f0c74a04-7b6c-4557-8b48-8049a2322f11"
+                        }
+                        "Tartar Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tartar_Sauce.png?alt=media&token=4d2409c3-6238-4d0d-97a5-7d99cef62bd7"
+                        }
+                        "Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tea.png?alt=media&token=ce2010ac-877b-4b52-b574-652bf00b3ef6"
+                        }
+                        "Teal Frosting" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Teal_Frosting.png?alt=media&token=dae968dd-08c9-42e3-8ffd-1457787adf2f"
+                        }
+                        "Tempura Batter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tempura%20Batter.png?alt=media&token=8c33f0fa-9882-4df5-b4ae-294d88d13df1"
+                        }
+                        "Tempura Crunch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tempura_Crunch.png?alt=media&token=111eb75a-0d2c-426f-a0d1-a57e9e4c8d02"
+                        }
+                        "Tent Top Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tent_Top_Crust.png?alt=media&token=d8af70d2-9d37-427c-af23-35e3fb165074"
+                        }
+                        "Teriyaki Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Teriyaki_sauce.png?alt=media&token=9ff1f589-9173-4cd1-b211-317f331f0621"
+                        }
+                        "Texas Toast" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Texan_Toast.png?alt=media&token=56737399-1b0f-4090-b9e0-d49c66896fd1"
+                        }
+                        "Thai Chili Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Thai_Chili_Sauce.png?alt=media&token=c894fde2-c64a-481b-95ae-c97984eecdae"
+                        }
+                        "Thick Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/ThickCrust.png?alt=media&token=6cf42c0f-4d07-40a2-b224-5de3e40a242f"
+                        }
+                        "Three Cheese Bread" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/three_cheese_bread.png?alt=media&token=4486f7fa-cafa-4d99-a872-2962e29528e1"
+                        }
+                        "Three Cheese Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Three_Cheeze_Sauce.png?alt=media&token=af9eb619-6a4f-4a2f-a603-b9c54f4b348d"
+                        }
+                        "Tiger Tail Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TigerTail_Ice_Cream.png?alt=media&token=e8f8ee4f-7520-4de1-b8be-a574ec482fd2"
+                        }
+                        "Tiger Tail Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TigerTail_Syrup.png?alt=media&token=b80b1f98-ec34-47f3-9061-fff470eb1ef1"
+                        }
+                        "Tikka Masala Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tikka_Masala_Sauce.png?alt=media&token=bed4d5f3-ef34-469a-b6f6-072e988d2344"
+                        }
+                        "Tiramisu" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tiramisu.png?alt=media&token=e211f571-1c0a-4c45-af70-778487a3fff4"
+                        }
+                        "Tobiko" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tobiko.png?alt=media&token=013136d3-ca5e-44d8-af25-fad85428481c"
+                        }
+                        "Toffee Chunks" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Toffee_Chunks.png?alt=media&token=f300a755-ad05-4a6c-9b01-6368699daac7"
+                        }
+                        "Toffee Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Toffee_Filling.png?alt=media&token=05c0b547-c952-4d36-b4b9-7292ee5fc43d"
+                        }
+                        "Tofu" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tofu.png?alt=media&token=3227f120-d7f6-4814-bf6e-e088b2836a54"
+                        }
+                        "Tofu Skewers" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TofuSkewers.png?alt=media&token=771f9a23-9ee9-461c-af6b-2cbf75eaa344"
+                        }
+                        "Tomato" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tomatoes.png?alt=media&token=4de1b23c-c21c-4282-a925-7ab021a852e6"
+                        }
+                        "Tomato Basil Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TomatoBasilCrust.png?alt=media&token=dbf28660-f570-4018-afdc-1f732bfdd995"
+                        }
+                        "Tonkatsu Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tonkatsu_Sauce.png?alt=media&token=8a9d34df-e3e6-4caa-a44f-68ca47389b70"
+                        }
+                        "Torigai" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Torigai.png?alt=media&token=a0d40bee-92a3-4865-bf83-eaf03245f509"
+                        }
+                        "Tortilla" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tortilla.png?alt=media&token=b0360af8-07ee-4509-880d-10dc09550832"
+                        }
+                        "Tostada" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tostada.png?alt=media&token=c5d899f6-9309-4004-8164-2b9d986edf16"
+                        }
+                        "Traditional Chips" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Traditional_Chips.png?alt=media&token=8df6818f-c23c-4bea-8a9c-443ef5b9eb81"
+                        }
+                        "Traditional Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Traditional_Cookie.png?alt=media&token=2e0fc30c-2101-42cf-971e-8c75a0e3ebc0"
+                        }
+                        "Traditional Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Traditional_Crust_Pizzeria_HD.png?alt=media&token=5c8398bc-f7c5-47e7-aba2-4b4b16811ef9"
+                        }
+                        "Traditional Pie Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Traditional_Crust.png?alt=media&token=44856488-5c82-48ba-991d-a9d83e06aee5"
+                        }
+                        "Trail Mix" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TrailMix.png?alt=media&token=d88e7308-ac2e-4558-9c7b-cbb0a5f0d58c"
+                        }
+                        "Tree Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tree_Cookie.png?alt=media&token=e25e724a-ef5b-403b-b176-e3e00efbf934"
+                        }
+                        "Tree Cutter" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tree_Cutter.png?alt=media&token=ba2e59fc-85c4-4fc7-a472-ec8434a5b3d2"
+                        }
+                        "Tres Leches Whip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tres_Leches_Whip.png?alt=media&token=e69dee8c-4138-47b4-8c74-a1b7a371110e"
+                        }
+                        "Tropical Charms" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tropical_charms.png?alt=media&token=1ff2ca86-ba1f-448d-adb5-3bdbabf7b598"
+                        }
+                        "Tropical Charms Popcorn" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tropical_Charms_Popcorn.png?alt=media&token=c6c82bbe-6504-42bc-90c2-0c83deba3b21"
+                        }
+                        "Tulip Cookie" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tulip_Cookie.png?alt=media&token=62ee75f3-97c4-4a06-a0ef-f0fffa5c5d2a"
+                        }
+                        "Tuna" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tuna.png?alt=media&token=bb4b3853-17d3-4226-bdff-ea6c1a75c7be"
+                        }
+                        "Turducken" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Turducken.png?alt=media&token=745cb50d-f799-4652-9f6b-ae8e835aca1e"
+                        }
+                        "Turkey" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Turkey.png?alt=media&token=9c820d13-adbd-4275-b9e0-05db0bc34d7c"
+                        }
+                        "Tutti Frutti Filling" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tutti_Frutti_icon.png?alt=media&token=d0d0b590-3d77-4582-8b5e-b484fa7e967a"
+                        }
+                        "Tutti Frutti Ice Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TuttiFruttiIce.png?alt=media&token=49d3c92b-79a2-48c2-a22d-f4a81c240dd1"
+                        }
+                        "Tutti Frutti Jelly" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tutti_Frutti_Jellyy.png?alt=media&token=9465ce36-e993-4ca2-8290-7de11ef6d59a"
+                        }
+                        "Tutti Frutti Slush" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tutti_Frutti_Slush.png?alt=media&token=57cb4f44-6867-4bef-9186-9d604036e3a0"
+                        }
+                        "Tutti Frutti Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tutti_Frutti_Syrup.png?alt=media&token=005489e7-deeb-4732-b141-b3e505310a47"
+                        }
+                        "Tutti Frutti Tea" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tutti_Frutti_Tea.png?alt=media&token=fee91fd8-bc88-4b1e-bc1e-e87ff537c178"
+                        }
+                        "Tzatziki Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TzatzikiSauce.png?alt=media&token=c2e3e79f-53da-460e-9a9e-2af770d739df"
+                        }
+                        "U" -> {
                             url = ""
                         }
                         else -> {
