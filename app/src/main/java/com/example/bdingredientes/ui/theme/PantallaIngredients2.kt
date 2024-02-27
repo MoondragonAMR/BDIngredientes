@@ -4250,6 +4250,27 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Tzatziki Sauce" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/TzatzikiSauce.png?alt=media&token=c2e3e79f-53da-460e-9a9e-2af770d739df"
                         }
+                        "UFO Wafer" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/UFO_Wafer.png?alt=media&token=7b48b336-de31-4d60-8080-daf96e3d7bb3"
+                        }
+                        "Ube Syrup" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ube_Syrup.png?alt=media&token=cf1f0d3c-7bf4-4f52-a133-e41c0cb4a240"
+                        }
+                        "Uiro" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Uiro.png?alt=media&token=b2361ee3-8aef-4337-af57-8466c3858f50"
+                        }
+                        "Ukoniro Soy Paper" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ukoniro_Soy_Paper.png?alt=media&token=324e9e79-eccf-4fe7-9c8a-66326d67f3b6"
+                        }
+                        "Unagi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Unagi.png?alt=media&token=7e21a766-6688-4dda-b56c-68d82f7067d4"
+                        }
+                        "Uni" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Uni.png?alt=media&token=787dc58b-4af6-45c1-8972-06ff489abbe9"
+                        }
+                        "Unicorn Milk" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Unicorn_Milk.png?alt=media&token=5caab50c-f6bb-4cf8-abc9-058a4f611e7b"
+                        }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
                         }
