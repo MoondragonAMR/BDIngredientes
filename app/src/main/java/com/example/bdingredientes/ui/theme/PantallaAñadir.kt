@@ -242,6 +242,18 @@ fun PantallaAñadir() {
                     DropdownMenuItem(
                         text = { Text("Topping") },
                         onClick = { tipoAdd = "Topping"; tipo = tipoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleta Shape") },
+                        onClick = { tipoAdd = "Paleta Shape"; tipo = tipoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chunky Filling") },
+                        onClick = { tipoAdd = "Chunky Filling"; tipo = tipoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cream Filling") },
+                        onClick = { tipoAdd = "Cream Filling"; tipo = tipoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleta Dip") },
+                        onClick = { tipoAdd = "Paleta Dip"; tipo = tipoAdd })
                 }
             }
         }

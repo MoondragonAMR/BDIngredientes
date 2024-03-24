@@ -135,14 +135,20 @@ class VMBD2 : ViewModel() {
                 valores.add("Cookie Mixable")
                 valores.add("Cookie Mixable/Shaker")
                 valores.add("Mixable/Cookie Mixable")
+                valores.add("Mixable/Cookie Mixable/Chunky Filling")
                 valores.add("Mixable/Cookie Mixable/Shaker")
+                valores.add("Mixable/Cookie Mixable/Shaker/Chunky Filling")
                 valores.add("Pie Filling/Cookie Mixable")
                 valores.add("Popcorn/Shaker/Cookie Mixable")
+                valores.add("Popcorn/Shaker/Cookie Mixable/Chunky Filling")
                 valores.add("Shaker/Cookie Mixable")
+                valores.add("Shaker/Cookie Mixable/Chunky Filling")
                 valores.add("Tea Bubbles/Cookie Mixable")
                 valores.add("Topper/Cookie Mixable/Shaker")
+                valores.add("Topper/Cookie Mixable/Shaker/Chunky Filling")
                 valores.add("Topping/Cookie Mixable")
                 valores.add("Topping/Cookie Mixable/Shaker/Topper")
+                valores.add("Cookie Mixable/Chunky Filling")
             }
             "Cream" -> {
                 valores.add("Cream")
@@ -158,6 +164,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Cream/Cream Dollop/Donut Filling")
                 valores.add("Cream/Donut Filling/Cream Dollop")
                 valores.add("Topper/Cream Dollop")
+                valores.add("Cream Dollop/Cream Filling")
             }
             "Dip" -> {
                 valores.add("Dip")
@@ -168,6 +175,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Sauce/Dip/Fry Topping")
                 valores.add("Topping/Dip")
                 valores.add("Topping/Sauce/Fry Topping/Dip/Nacho Dip")
+                valores.add("Dip/Cream Filling")
             }
             "Donut Cutter" -> {
                 valores.add("Donut Cutter")
@@ -196,6 +204,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Flat Topper")
                 valores.add("Flat Topper/Mixable")
                 valores.add("Mixable/Flat Topper/Topping")
+                valores.add("Mixable/Flat Topper/Topping/Chunky Filling")
                 valores.add("Topper/Flat Topper")
                 valores.add("Topper/Long Topper/Topping/Flat Topper")
                 valores.add("Topping/Flat Topper")
@@ -261,15 +270,20 @@ class VMBD2 : ViewModel() {
                 valores.add("Cake/Mixable")
                 valores.add("Flat Topper/Mixable")
                 valores.add("Mixable/Cookie Mixable")
+                valores.add("Mixable/Cookie Mixable/Chunky Filling")
                 valores.add("Mixable/Cookie Mixable/Shaker")
+                valores.add("Mixable/Cookie Mixable/Shaker/Chunky Filling")
                 valores.add("Mixable/Flat Topper/Topping")
+                valores.add("Mixable/Flat Topper/Topping/Chunky Filling")
                 valores.add("Mixable/Popcorn")
                 valores.add("Mixable/Shaker")
                 valores.add("Mixable/Sushi Filling/Topping")
+                valores.add("Mixable/Sushi Filling/Topping/Chunky Filling")
                 valores.add("Mixable/Topper")
                 valores.add("Mixable/Topping/Sushi Filling")
                 valores.add("Pie Filling/Mixable")
                 valores.add("Topping/Mixable")
+                valores.add("Mixable/Chunky Filling")
             }
             "Mixable Syrup" -> {
                 valores.add("Mixable Syrup")
@@ -333,6 +347,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Popcorn")
                 valores.add("Mixable/Popcorn")
                 valores.add("Popcorn/Shaker/Cookie Mixable")
+                valores.add("Popcorn/Shaker/Cookie Mixable/Chunky Filling")
                 valores.add("Popcorn/Topping")
                 valores.add("Topper/Shaker/Popcorn")
             }
@@ -387,15 +402,20 @@ class VMBD2 : ViewModel() {
                 valores.add("Shaker")
                 valores.add("Cookie Mixable/Shaker")
                 valores.add("Mixable/Cookie Mixable/Shaker")
+                valores.add("Mixable/Cookie Mixable/Shaker/Chunky Filling")
                 valores.add("Mixable/Shaker")
                 valores.add("Popcorn/Shaker/Cookie Mixable")
+                valores.add("Popcorn/Shaker/Cookie Mixable/Chunky Filling")
                 valores.add("Icing/Shaker")
                 valores.add("Shaker/Cookie Mixable")
+                valores.add("Shaker/Cookie Mixable/Chunky Filling")
                 valores.add("Shaker/Fry Topping")
                 valores.add("Shaker/Icing")
                 valores.add("Shaker/Topper")
+                valores.add("Shaker/Chunky Filling")
                 valores.add("Top Crust/Shaker")
                 valores.add("Topper/Cookie Mixable/Shaker")
+                valores.add("Topper/Cookie Mixable/Shaker/Chunky Filling")
                 valores.add("Topper/Shaker/Popcorn")
                 valores.add("Topping/Cookie Mixable/Shaker/Topper")
                 valores.add("Topping/Fry Topping/Shaker")
@@ -427,6 +447,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Sushi Filling")
                 valores.add("Fries/Topping/Sushi Filling/Side")
                 valores.add("Mixable/Sushi Filling/Topping")
+                valores.add("Mixable/Sushi Filling/Topping/Chunky Filling")
                 valores.add("Mixable/Topping/Sushi Filling")
                 valores.add("Side/Sushi Filling")
                 valores.add("Sushi Filling/Burger Meat")
@@ -458,6 +479,7 @@ class VMBD2 : ViewModel() {
             "Tea Bubbles" -> {
                 valores.add("Tea Bubbles")
                 valores.add("Tea Bubbles/Cookie Mixable")
+                valores.add("Tea Bubbles/Chunky Filling")
             }
             "Top Crust" -> {
                 valores.add("Top Crust")
@@ -467,6 +489,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Topper")
                 valores.add("Mixable/Topper")
                 valores.add("Topper/Cookie Mixable/Shaker")
+                valores.add("Topper/Cookie Mixable/Shaker/Chunky Filling")
                 valores.add("Topper/Cream Dollop")
                 valores.add("Topper/Flat Topper")
                 valores.add("Topper/Long Topper")
@@ -485,6 +508,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Taco Meat/Topping")
                 valores.add("Fries/Topping/Sushi Filling/Side")
                 valores.add("Mixable/Sushi Filling/Topping")
+                valores.add("Mixable/Sushi Filling/Topping/Chunky Filling")
                 valores.add("Mixable/Topping/Sushi Filling")
                 valores.add("Sushi Filling/Topping")
                 valores.add("Side/Topping/Fry Topping")
@@ -494,6 +518,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Popcorn/Topping")
                 valores.add("Sauce/Pasta Sauce/Pizza Sauce/Topping")
                 valores.add("Mixable/Flat Topper/Topping")
+                valores.add("Mixable/Flat Topper/Topping/Chunky Filling")
                 valores.add("Chicken Wings/Topping")
                 valores.add("Topping/Burger Meat")
                 valores.add("Topping/Cookie Mixable")
@@ -519,7 +544,34 @@ class VMBD2 : ViewModel() {
                 valores.add("Topping/Sushi Filling/Taco Meat")
                 valores.add("Topping/Taco Meat")
                 valores.add("Topping/Topper")
+                valores.add("Topping/Chunky Filling")
                 valores.add("Topping/Topper/Long Topper/Sushi Filling/Side")
+            }
+            "Paleta Shape" -> {
+                valores.add("Paleta Shape")
+            }
+            "Chunky Filling" -> {
+                valores.add("Chunky Filling")
+                valores.add("Shaker/Cookie Mixable/Chunky Filling")
+                valores.add("Mixable/Flat Topper/Topping/Chunky Filling")
+                valores.add("Mixable/Cookie Mixable/Shaker/Chunky Filling")
+                valores.add("Mixable/Sushi Filling/Topping/Chunky Filling")
+                valores.add("Topping/Chunky Filling")
+                valores.add("Cookie Mixable/Chunky Filling")
+                valores.add("Popcorn/Shaker/Cookie Mixable/Chunky Filling")
+                valores.add("Shaker/Chunky Filling")
+                valores.add("Tea Bubbles/Chunky Filling")
+                valores.add("Topper/Cookie Mixable/Shaker/Chunky Filling")
+                valores.add("Mixable/Cookie Mixable/Chunky Filling")
+                valores.add("Mixable/Chunky Filling")
+            }
+            "Cream Filling" -> {
+                valores.add("Cream Filling")
+                valores.add("Dip/Cream Filling")
+                valores.add("Cream Dollop/Cream Filling")
+            }
+            "Paleta Dip" -> {
+                valores.add("Paleta Dip")
             }
             "savory" -> {
                 valores.add("savory")
@@ -576,6 +628,11 @@ class VMBD2 : ViewModel() {
                 valores.add("Onionfest/New Year/Standard")
                 valores.add("Onionfest/Mardi Gras/Standard")
                 valores.add("St Paddy/Cinco de Mayo/Standard")
+                valores.add("Standard/Big Top Carnival")
+                valores.add("Big Top Carnival/Baseball Season/Standard")
+                valores.add("Standard/New Year")
+                valores.add("Big Top Carnival/Valentines/Standard")
+                valores.add("Standard/Easter")
             }
             "Baseball Season" -> {
                 valores.add("Baseball Season")
@@ -584,6 +641,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Baseball Season/Standard")
                 valores.add("Baseball Season/Maple Mornings/Standard")
                 valores.add("Baseball Season/Big Top Carnival/Film Fest/Standard")
+                valores.add("Big Top Carnival/Baseball Season/Standard")
             }
             "Bavaria Fest" -> {
                 valores.add("Bavaria Fest")
@@ -596,8 +654,11 @@ class VMBD2 : ViewModel() {
                 valores.add("Easter/Big Top Carnival")
                 valores.add("New Year/Big Top Carnival")
                 valores.add("Big Top Carnival/Standard")
+                valores.add("Big Top Carnival/Baseball Season/Standard")
                 valores.add("Easter/Big Top Carnival/Standard")
                 valores.add("Baseball Season/Big Top Carnival/Film Fest/Standard")
+                valores.add("Standard/Big Top Carnival")
+                valores.add("Big Top Carnival/Valentines/Standard")
             }
             "Cherry Blossom Festival" -> {
                 valores.add("Cherry Blossom Festival")
@@ -636,12 +697,14 @@ class VMBD2 : ViewModel() {
                 valores.add("Easter/Starlight")
                 valores.add("Easter/Standard")
                 valores.add("Easter/Big Top Carnival/Standard")
+                valores.add("Standard/Easter")
             }
             "Film Fest" -> {
                 valores.add("Film Fest")
                 valores.add("Baseball Season/Big Top Carnival/Film Fest")
                 valores.add("Film Fest/Standard")
                 valores.add("Baseball Season/Big Top Carnival/Film Fest/Standard")
+                valores.add("Film Fest/Valentines")
             }
             "Gondola" -> {
                 valores.add("Gondola")
@@ -655,6 +718,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Halloween/Day of the Dead")
                 valores.add("Halloween/Thanksgiving")
                 valores.add("Halloween/Standard")
+                valores.add("Halloween/New Year")
             }
             "Holi" -> {
                 valores.add("Holi")
@@ -700,6 +764,8 @@ class VMBD2 : ViewModel() {
                 valores.add("Onionfest/New Year")
                 valores.add("New Year/Standard")
                 valores.add("Onionfest/New Year/Standard")
+                valores.add("Halloween/New Year")
+                valores.add("Standard/New Year")
             }
             "Onionfest" -> {
                 valores.add("Onionfest")
@@ -755,15 +821,17 @@ class VMBD2 : ViewModel() {
             "Valentines" -> {
                 valores.add("Valentines")
                 valores.add("Valentines/Standard")
+                valores.add("Film Fest/Valentines")
+                valores.add("Big Top Carnival/Valentines/Standard")
             }
             "Volcano Gala" -> {
                 valores.add("Volcano Gala")
             }
         }
-        conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+        conexion.collection("Ingredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _ingredients.value.clear()
-            it.documents.forEach { docu ->
-                _ingredients.value.add(docu.toObject()!!)
+            it.documents.forEach {
+                    docu->_ingredients.value.add(docu.toObject()!!)
             }
         }
     }

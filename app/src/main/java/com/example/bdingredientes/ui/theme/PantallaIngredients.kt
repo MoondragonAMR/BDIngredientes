@@ -329,6 +329,18 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                             DropdownMenuItem(
                                 text = { Text("Topping") },
                                 onClick = { filtroParametro = "Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Paleta Shape") },
+                                onClick = { filtroParametro = "Paleta Shape" })
+                            DropdownMenuItem(
+                                text = { Text("Chunky Filling") },
+                                onClick = { filtroParametro = "Chunky Filling" })
+                            DropdownMenuItem(
+                                text = { Text("Cream Filling") },
+                                onClick = { filtroParametro = "Cream Filling" })
+                            DropdownMenuItem(
+                                text = { Text("Paleta Dip") },
+                                onClick = { filtroParametro = "Paleta Dip" })
                         }
 
                         "flavor" -> {
@@ -968,7 +980,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Butterzinger Syrup" -> {
                             url = imagenes[160]
                         }
-                        "Cajeta" -> {
+                        "Cajeta Syrup" -> {
                             url = imagenes[161]
                         }
                         "Cajun Shrimp" -> {
@@ -1850,7 +1862,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         "Flatbread" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Flatbread.png?alt=media&token=36609ce9-3b85-458d-843a-5a1e703a4828"
                         }
-                        "Flavor X" -> {
+                        "Flavor X Syrup" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/FlavorXDrizzle.png?alt=media&token=1871dad8-3c80-4f16-8444-17ea27fff604"
                         }
                         "Fleur de Lis Sprinkles" -> {
@@ -4486,6 +4498,264 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         }
                         "Zydeco Gumbo" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Zydeco_Gumbo.png?alt=media&token=e50dd999-515c-4d3a-81df-d6f9a9fea19d"
+                        }
+                        "Bottom Bun" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/BTG_Buns.png?alt=media&token=5b24a4f5-38fe-4d17-bb2d-5939201d3268"
+                        }
+                        "Bar Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Bar_Pop.png?alt=media&token=1a0ce7cb-0f51-43b1-9927-00ef8bf91429"
+                        }
+                        "Chuckle Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Chuckle_Pop.png?alt=media&token=8369d0ee-51c0-43b3-85e4-6d6734b48119"
+                        }
+                        "Twin Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Twin_Pop.png?alt=media&token=9bd73afe-17ea-4489-967e-3bca0029d0c7"
+                        }
+                        "Banana Custard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Banana_Custard.png?alt=media&token=457ae620-8177-4b7f-8d41-7f7afe7ac3cc"
+                        }
+                        "Strawberry Puree" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Strawberry_Puree.png?alt=media&token=6afc6e9e-540c-4b63-9525-ad015d859c2d"
+                        }
+                        "Chocolate Pudding" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Chocolate_Pudding.png?alt=media&token=666bc7cc-5ef9-45e3-9d0b-ec2266356612"
+                        }
+                        "Blueberry Yogurt" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Blueberry_Yogurt.png?alt=media&token=2146b9be-9367-4d8e-9439-a87b7e2c34fc"
+                        }
+                        "Vanilla Custard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_Custard.png?alt=media&token=edda36fd-46c6-4d92-84db-c9e5af3fbeac"
+                        }
+                        "Cloudberry Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cloudberry_Dip.png?alt=media&token=ac1f8253-ee77-4da9-9ff3-730dfdb2677e"
+                        }
+                        "White Chocolate Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/White_Chocolate_Dip.png?alt=media&token=54173421-cf81-4eba-b2a1-cac855b9b085"
+                        }
+                        "Chocolate Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Chocolate_Dip.png?alt=media&token=1f617bfd-678c-4c20-a0e6-176e41546178"
+                        }
+                        "Lemon Mist Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Mist_Drizzle.png?alt=media&token=9f124b7f-25c8-4c08-8dac-60c60aa32799"
+                        }
+                        "Vanilla Wafers" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Vanilla_Wafers.png?alt=media&token=9473fdd4-2416-457f-9451-4aa18b925829"
+                        }
+                        "Orange Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Orange_Cream.png?alt=media&token=4326e234-df0e-4ed0-83c0-966d8620c5bd"
+                        }
+                        "Hazelnut Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hazelnut_Drizzle.png?alt=media&token=19969e17-e53a-42cc-964f-5515713deb21"
+                        }
+                        "Rocket Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Rocket_Pop.png?alt=media&token=fc7ff6d0-4822-4eb6-a5cf-7eba9812bef3"
+                        }
+                        "Cajeta" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cajeta%20(2).png?alt=media&token=f7340013-f0dd-4344-b529-14da38fcba0c"
+                        }
+                        "Pineapple Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Pineapple_Pop.png?alt=media&token=35d46a34-44d0-44fe-8716-e2500d99e18d"
+                        }
+                        "Passionfruit Puree" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Passionfruit_Puree.png?alt=media&token=de5cb5f4-4b6a-46ca-b518-8e38f0cb5bbc"
+                        }
+                        "Luau Punch Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Luau_Punch_Dip.png?alt=media&token=38330a0d-b1b0-4750-9bee-7c04f2979d7e"
+                        }
+                        "Piña Colada Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Pi%C3%B1a_Colada_Drizzle.png?alt=media&token=cb430de1-ac56-45f4-8c6e-37b1ee8d4056"
+                        }
+                        "Coconut Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Coconut_Cream.png?alt=media&token=ff2e28d2-b68b-452b-bd32-e8b18795f79c"
+                        }
+                        "Blue Moon Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Blue_Moon_Dip.png?alt=media&token=d688b27c-54c3-4b3b-9cf3-9b83b6bcd821"
+                        }
+                        "Star Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Star_Pop.png?alt=media&token=66dd7d4b-ac38-4bc5-8fed-3cc682811ad0"
+                        }
+                        "Cherrybomb Ripple" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cherrybomb_Ripple.png?alt=media&token=d3c84a48-0761-41a2-b58d-8ccd5062594f"
+                        }
+                        "Jubilee Jelly Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jubilee_Jelly_Dip.png?alt=media&token=cd2133f2-4052-4ec3-a0e7-028093d965f7"
+                        }
+                        "Gummy Stars" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Gummy_Stars.png?alt=media&token=78dfce5d-369c-4517-9169-38d5480e9691"
+                        }
+                        "Shortcake Crunch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Shortcake_Crunch.png?alt=media&token=5c9c2bd2-e977-4645-bc09-2081b8e5f6d2"
+                        }
+                        "Strawberry Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Strawberry_Dip.png?alt=media&token=a236ada7-0363-477d-8d02-c8123c607940"
+                        }
+                        "Mamey Sorbet" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mamey_Sorbet.png?alt=media&token=16de3a40-697b-4242-9f49-f1a3db02fb1e"
+                        }
+                        "Balloon Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Balloon_Pop.png?alt=media&token=dd2439ea-8463-4ffb-8bea-d68ecd84f12f"
+                        }
+                        "Cotton Candy Yogurt" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cotton_Candy_Yogurt.png?alt=media&token=9bb6b819-7ed3-411d-bf70-8c55a1a609f5"
+                        }
+                        "Candy Apple Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Candy_Apple_Dip.png?alt=media&token=5b865b06-dbf1-4a2e-838e-c062037854c2"
+                        }
+                        "Caramel Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Caramel_Dip.png?alt=media&token=33374eb4-67b9-43e5-ab45-1789920abe72"
+                        }
+                        "Anchor Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Anchor_Pop.png?alt=media&token=ea0b0d8e-229c-44d6-a527-8240813274b3"
+                        }
+                        "Sunken Treasure Custard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Sunken_Treasure_Custard.png?alt=media&token=e5a9bb60-882d-46f2-bcb9-fc0639041559"
+                        }
+                        "Maelstrom Swirl Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maelstrom_Swirl_Dip.png?alt=media&token=6ba403ae-f2cb-498f-a04a-9eefa2a54f01"
+                        }
+                        "Silver Doubloons" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Silver_Doubloons.png?alt=media&token=dbe9ee77-5e8f-4364-9c5c-2c24e228948f"
+                        }
+                        "Jack-o-Lantern Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jack-o-Lantern_Pop.png?alt=media&token=eaae1700-8b59-4ac3-b64c-9c434d0db5f2"
+                        }
+                        "Tiger Tail Cream" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tiger_Tail_Cream.png?alt=media&token=89e7eafb-6060-483a-ab15-aee9c36b9a05"
+                        }
+                        "Ichabod Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Ichabod_Icing.png?alt=media&token=5b6b96dc-ba23-496e-ab4c-b70929cca593"
+                        }
+                        "Dr Bones" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dr_Bones.png?alt=media&token=27a1efdf-6e4e-4876-b6c5-8d9b734136ed"
+                        }
+                        "Taro Tapioca" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Taro_Tapioca.png?alt=media&token=74c38e2e-5d37-4ef3-add4-d2efbf0c4934"
+                        }
+                        "Chamoy Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Chamoy_Drizzle.png?alt=media&token=b45244fc-160d-46ff-9770-426c37dcc075"
+                        }
+                        "Feather Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Feather_Pop.png?alt=media&token=5db6459a-d60c-4b62-a8d6-0acb013cdc0a"
+                        }
+                        "Buffaloberry Sxusem" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Buffaloberry_Sxusem.png?alt=media&token=287edb46-4012-476f-af51-bd3737d5b83d"
+                        }
+                        "Pumpkin Spice Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Pumpkin_Spice_Dip.png?alt=media&token=144c4199-8b36-4085-bf23-67c2277cdd6d"
+                        }
+                        "Nutty Butter Cup Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nutty_Butter_Cup_Drizzle.png?alt=media&token=0120524d-a885-4e1c-990e-87ffe48d407b"
+                        }
+                        "Wedge Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Wedge_Pop.png?alt=media&token=6a251e7e-45e6-4e9d-8b77-2c0af7b284d8"
+                        }
+                        "Maple Creemee" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Creemee.png?alt=media&token=4bf24578-535e-48d7-9821-2fd2c80bfdd7"
+                        }
+                        "Honeydew Gelato" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Honeydew_Gelato.png?alt=media&token=915cae6d-de6c-4ec4-8f54-e67e7a825055"
+                        }
+                        "Tree Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Tree_Pop.png?alt=media&token=acd882f9-1b78-41a4-bf43-3125d3775b4a"
+                        }
+                        "Eggnog Icing" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Eggnog_Icing.png?alt=media&token=24882c3d-33fb-49d1-ba33-fd1031849326"
+                        }
+                        "Peppermint Bark" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Peppermint_Bark.png?alt=media&token=616d4a99-8454-4740-a814-3781622da583"
+                        }
+                        "Cherry Cordial Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cherry_Cordial_Drizzle.png?alt=media&token=d65fe8a4-cf23-4ef6-820f-c2e8767c62a0"
+                        }
+                        "Nougat" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Nougat.png?alt=media&token=0dd48774-f3c8-4f8a-9cc5-07877cbf41bd"
+                        }
+                        "Key Lime Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Key_Lime_Dip.png?alt=media&token=66e806b8-36c1-4640-a5ae-54b5d75d2762"
+                        }
+                        "Infinity Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Infinity_Pop.png?alt=media&token=c6a766fa-b452-42a4-b42f-d96bfa655c78"
+                        }
+                        "Sesame Gelato" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Sesame_Gelato.png?alt=media&token=b34737e6-b09d-4840-b622-d5420b60bd4e"
+                        }
+                        "Flavor X Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Flavor_X_Dip.png?alt=media&token=32d16138-622e-424a-979a-7a1c16328ee9"
+                        }
+                        "Freezin' Flecks" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Freezin'_Flecks.png?alt=media&token=ce4252fd-9a00-45a4-b0d1-9123f98b861f"
+                        }
+                        "Sourbatch Bears" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Sourbatch_Bears.png?alt=media&token=c768d301-9c7f-49c9-9081-93f331038a61"
+                        }
+                        "Heart Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Heart_Pop.png?alt=media&token=7a415ead-660d-4c4b-aedd-4758a7af8128"
+                        }
+                        "Red Velvet Custard" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Red_Velvet_Custard.png?alt=media&token=15a6e4eb-eeae-4936-9050-7968eb1951c9"
+                        }
+                        "Cherry Cheesecake Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cherry_Cheesecake_Dip.png?alt=media&token=3bced50e-86e0-4b1b-81a6-e882f79128ca"
+                        }
+                        "Paddle Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Paddle_Pop.png?alt=media&token=95466e89-9298-4749-8f6e-9b5945df68f9"
+                        }
+                        "Dragonfruit" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Dragonfruit.png?alt=media&token=b277baa5-da12-4d26-8b9c-053f1fefcbf3"
+                        }
+                        "Mandala Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mandala_Pop.png?alt=media&token=6279160e-5254-4063-b7b8-3a99ee27de4f"
+                        }
+                        "Saffron Kulfi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Saffron_Kulfi%20(2).png?alt=media&token=fc4e765d-92c8-400b-abc5-39fa276dc484"
+                        }
+                        "Gulab Jamun Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Gulab_Jamun_Dip.png?alt=media&token=7abd6e1f-9130-4fb0-9bd1-39ae7ed08c8a"
+                        }
+                        "Jalebi" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jalebi.png?alt=media&token=7b0c5fca-f060-442f-aacb-7b727c8e4487"
+                        }
+                        "Jackfruit Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Jackfruit_Drizzle.png?alt=media&token=dd237a50-1143-4d46-92a2-d898abca33f0"
+                        }
+                        "Mango Puree" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Mango_Puree.png?alt=media&token=c0010368-a6dd-4186-aff5-8f4f614131c1"
+                        }
+                        "Honeycomb Crunch" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Honeycomb_Crunch.png?alt=media&token=53526552-b789-4ab9-b4cb-b4f5d10999fa"
+                        }
+                        "Bunny Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Bunny_Pop.png?alt=media&token=5ca5027f-4d2d-4592-bb56-c0792ddc5d81"
+                        }
+                        "Lemon Chiffon Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Lemon_Chiffon_Dip.png?alt=media&token=d8900c7c-9577-498e-ad2a-4995d81bb300"
+                        }
+                        "Gooseberry Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Gooseberry_Drizzle.png?alt=media&token=b8b606ca-e1df-4201-8504-0bd4fcf429c8"
+                        }
+                        "Blossom Pop" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Blossom_Pop.png?alt=media&token=357d7a40-bb1a-4062-a5fe-f8a86f6de63a"
+                        }
+                        "Pineberry Pudding" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Pineberry_Pudding.png?alt=media&token=45fde865-9132-4d4e-9a93-c2306a0ccadf"
+                        }
+                        "Matcha Dip" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Matcha_Dip.png?alt=media&token=c95577ce-c270-4bbd-af4a-ed2b1a42c355"
+                        }
+                        "Azuki" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Azuki.png?alt=media&token=92aec4e2-24ec-4fd2-bde5-3741c5ed18fd"
+                        }
+                        "Hakuto Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Hakuto_Drizzle.png?alt=media&token=28bc6caf-4d52-4e4d-94a7-ed0db3452937"
+                        }
+                        "Grapefruit Drizzle" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Grapefruit_Drizzle.png?alt=media&token=589236f9-81d3-4a72-a11f-14d8b6639f60"
+                        }
+                        "Flavor X Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Flavor_X_Sauce.png?alt=media&token=8fb31721-7a06-40a7-a983-6f7f1b83815b"
+                        }
+                        "Maple Glaze" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Glaze.png?alt=media&token=1b37c665-fe3f-4fb7-83f5-5049c1cdfbcf"
                         }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
