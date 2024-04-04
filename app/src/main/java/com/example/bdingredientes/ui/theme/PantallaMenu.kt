@@ -13,13 +13,16 @@ import com.example.bdingredientes.clases.Rutas
 fun PantallaMenu(navController: NavController) {
     Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         Button(onClick = { navController.navigate(Rutas.Usuario.Ruta) }) {
-            Text("All ingredients")
-        }
-        Button(onClick = { navController.navigate(Rutas.Random.Ruta)}) {
-            Text("Random orders")
+            Text("Ingredients")
         }
         Button(onClick = {}) {
-            Text("Random holiday ingredients")
+            Text("Equipment")
+        }
+        Button(onClick = { navController.navigate(Rutas.Random.Ruta)}) {
+            Text("Orders")
+        }
+        Button(onClick = {}) {
+            Text("Holiday Ingredients")
         }
     }
 }

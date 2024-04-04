@@ -1572,7 +1572,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cranberry_Juice.png?alt=media&token=7d059a19-f274-405f-93b5-dc7f542bc0e5"
                         }
                         "Cranberry Sauce" -> {
-                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cranberry_sauce.png?alt=media&token=62bdf6e0-92e5-4b0d-bcdf-a20526b42fa3"
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cranberry_sauce_2.png?alt=media&token=a78cdb49-10c3-4183-a51a-dd3d5951b2c6"
                         }
                         "Crater Crust" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/crater_crust.png?alt=media&token=fc33757a-41b4-4d9d-9e0b-66295e2edb89"
