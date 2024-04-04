@@ -23,23 +23,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
-import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
+import androidx.activity.compose.BackHandler
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
+fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavController) {
     //var db: VMBD = viewModel()
     var ingredients = db.ingredients.collectAsState().value
     var db2: VMBD2 = viewModel()
@@ -57,6 +57,10 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
     var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
     var listaMostrar = db.listaMostrar.collectAsState().value
     var url by remember { mutableStateOf("") }
+
+    BackHandler{
+        navController.popBackStack()
+    }
 
     DisposableEffect(db) {
         db.crearListener()
@@ -4756,6 +4760,9 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold) {
                         }
                         "Maple Glaze" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Glaze.png?alt=media&token=1b37c665-fe3f-4fb7-83f5-5049c1cdfbcf"
+                        }
+                        "Cranberry Chili Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cranberry_Chili_Sauce.png?alt=media&token=265bce1f-ca31-408f-b7af-8533a123532e"
                         }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"

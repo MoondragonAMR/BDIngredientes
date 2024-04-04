@@ -50,7 +50,7 @@ fun PantallaLogin(navController: NavController) {
                 } else {
                     usuario = "uRxr15PTS2TISErKZ8Hw"
                 }
-                navController.navigate(Rutas.Usuario.Ruta)
+                navController.navigate(Rutas.Menu.Ruta)
                 } else {
                     texto = "Username and/or password incorrect. Please introduce them again"
                     email = ""

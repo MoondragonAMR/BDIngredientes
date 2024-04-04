@@ -2,8 +2,13 @@ package com.example.bdingredientes.clases
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Logout
+import androidx.compose.material.icons.filled.Logout
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -22,7 +27,10 @@ import com.example.bdingredientes.ui.theme.PantallaAñadir
 import com.example.bdingredientes.ui.theme.PantallaIngredients
 import com.example.bdingredientes.ui.theme.PantallaIngredients2
 import com.example.bdingredientes.ui.theme.PantallaLogin
+import com.example.bdingredientes.ui.theme.PantallaMenu
 import com.example.bdingredientes.ui.theme.PantallaModificar
+import com.example.bdingredientes.ui.theme.PantallaRandom
+import com.example.bdingredientes.ui.theme.auth
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -40,14 +48,25 @@ fun Navigator() {
     } else if (rutaActual == Rutas.General.Ruta) {
         BarraSuperiorGeneral(navController = navController,db,sf)
     } else {
-        TopAppBar(title = { Text(text = if (rutaActual == Rutas.Add.Ruta) {
-            "Add a new ingredient"
-        } else if (rutaActual == Rutas.Update.Ruta) {
-            "Modify the selected ingredient"
-        } else if (rutaActual == Rutas.Login.Ruta) {
-            "Log in with your Firebase account"
-        } else {
-            "Create a new Firebase user"
+        TopAppBar(title = { Text(text = when (rutaActual) {
+            Rutas.Add.Ruta -> {
+                "Add a new ingredient"
+            }
+            Rutas.Update.Ruta -> {
+                "Modify the selected ingredient"
+            }
+            Rutas.Login.Ruta -> {
+                "Log in with your Firebase account"
+            }
+            Rutas.Auth.Ruta -> {
+                "Create a new Firebase user"
+            }
+            Rutas.Menu.Ruta -> {
+                "Choose a mode"
+            }
+            else -> {
+                "Choose a game"
+            }
         }
         )
         })
@@ -66,6 +85,14 @@ fun Navigator() {
             }
             Rutas.Update.Ruta -> {
                 BarraInferiorUpdate(navController = navController)
+            }
+            Rutas.Menu.Ruta -> {
+                BottomAppBar{
+                    IconButton(onClick = { navController.navigate(Rutas.Login.Ruta)}) {
+                        Icon(Icons.AutoMirrored.Filled.Logout, "")
+                    }
+                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                }
             }
             else -> {
                 BottomAppBar{
@@ -86,7 +113,7 @@ fun Navigator() {
                     PantallaIngredients2(db2, sf, navController = navController)
                 }
                 composable(Rutas.General.Ruta) {
-                    PantallaIngredients(db,sf)
+                    PantallaIngredients(db,sf, navController = navController)
                 }
                 composable(Rutas.Add.Ruta) {
                     PantallaAñadir()
@@ -99,6 +126,12 @@ fun Navigator() {
                 }
                 composable(Rutas.Auth.Ruta) {
                     PantallaAuth(navController = navController)
+                }
+                composable(Rutas.Menu.Ruta) {
+                    PantallaMenu(navController = navController)
+                }
+                composable(Rutas.Random.Ruta) {
+                    PantallaRandom(navController = navController)
                 }
             }
         }

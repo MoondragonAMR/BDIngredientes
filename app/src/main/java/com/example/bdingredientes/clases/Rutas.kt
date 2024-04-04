@@ -7,4 +7,6 @@ sealed class Rutas(val Ruta: String) {
     object Update : Rutas("PantallaModificar")
     object Login : Rutas("PantallaLogin")
     object Auth : Rutas("PantallaAuth")
+    object Menu : Rutas("PantallaMenu")
+    object Random : Rutas("PantallaRandom")
 }

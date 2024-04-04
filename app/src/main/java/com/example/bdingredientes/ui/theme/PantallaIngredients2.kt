@@ -1,5 +1,6 @@
 package com.example.bdingredientes.ui.theme
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -29,12 +30,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
 import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.Rutas
-import com.example.bdingredientes.clases.VMBD
 import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.celebracion
@@ -64,8 +63,12 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
     var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
     var delete = sf.borrar.collectAsState().value
     var update = sf.modificar.collectAsState().value
-    var listaMostrar = db.listaMostrar.collectAsState().value
+    var listaMostrar: SnapshotStateList<Ingredient>
     var url by remember { mutableStateOf("") }
+
+    BackHandler{
+        navController.popBackStack()
+    }
 
     DisposableEffect(db){
         db.crearListener()
@@ -4765,6 +4768,9 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         }
                         "Maple Glaze" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Maple_Glaze.png?alt=media&token=1b37c665-fe3f-4fb7-83f5-5049c1cdfbcf"
+                        }
+                        "Cranberry Chili Sauce" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cranberry_Chili_Sauce.png?alt=media&token=265bce1f-ca31-408f-b7af-8533a123532e"
                         }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
