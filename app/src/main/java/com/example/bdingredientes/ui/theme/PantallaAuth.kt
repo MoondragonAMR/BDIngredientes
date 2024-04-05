@@ -17,9 +17,10 @@ import com.example.bdingredientes.clases.Rutas
 fun PantallaAuth(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var texto by remember { mutableStateOf("Insert the new user's email and password")}
 
     Column() {
-        Text("Insert the new user's email and password")
+        Text(texto)
         Text("Email: ")
         TextField(
             value = email,
@@ -32,8 +33,15 @@ fun PantallaAuth(navController: NavController) {
             visualTransformation = PasswordVisualTransformation(),
             placeholder = { Text("Insert your password") })
         Button(onClick = {
-            auth.createUserWithEmailAndPassword(email, password)
-            navController.navigate(Rutas.Login.Ruta)
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() {
+                    task -> if (task.isSuccessful) {
+                        navController.navigate(Rutas.Login.Ruta)
+                    } else {
+                    texto = "Email must contain an @. Password must contain a number. Please introduce them again"
+                    email = ""
+                    password = ""
+                    }
+            }
         }) {
             Text("Confirm")
         }

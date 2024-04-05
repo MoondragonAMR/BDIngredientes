@@ -828,7 +828,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Volcano Gala")
             }
         }
-        conexion.collection("Ingredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+        conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _ingredients.value.clear()
             it.documents.forEach {
                     docu->_ingredients.value.add(docu.toObject()!!)
