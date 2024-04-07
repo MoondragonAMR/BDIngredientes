@@ -61,8 +61,8 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
     //var sf : ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
     var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
-    var delete = sf.borrar.collectAsState().value
-    var update = sf.modificar.collectAsState().value
+    var delete = sf.borrar2.collectAsState().value
+    var update = sf.modificar2.collectAsState().value
     var listaMostrar: SnapshotStateList<Ingredient>
     var url by remember { mutableStateOf("") }
 

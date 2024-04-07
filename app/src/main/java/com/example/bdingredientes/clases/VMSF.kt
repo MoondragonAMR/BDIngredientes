@@ -82,7 +82,7 @@ fun BarraInferiorAdd(navController: NavController) {
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
             IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
-                navController.popBackStack()}) {
+                navController.navigate(Rutas.Usuario.Ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
             Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
@@ -102,7 +102,85 @@ fun BarraInferiorUpdate(navController: NavController) {
             IconButton(onClick = {db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
                 update.value = false
                 deleted.value = true
-                navController.popBackStack()}) {
+                navController.navigate(Rutas.Usuario.Ruta)}) {
+                Icon(Icons.Default.ModeEdit, contentDescription = "")
+            }
+            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+        }
+    }
+}
+
+@Composable
+fun BarraInferiorEquipment(navController: NavController) {
+    var sf : ViewModelScaffold = viewModel()
+    var delete = sf.borrar2.collectAsState().value
+    var update = sf.modificar2.collectAsState().value
+    var deleted = sf.puedeBorrar2.collectAsState().value
+    var updated = sf.puedeModificar2.collectAsState().value
+
+    var iconoBorrar by remember {  mutableStateOf(Icons.Default.Delete) }
+
+    if (delete.value) {
+        iconoBorrar = Icons.Default.Delete
+    } else {
+        iconoBorrar = Icons.Default.DeleteForever
+        //(painterResource(id = R.drawable.baseline_delete_forever_24)) as ImageVector
+    }
+    var iconoModificar by remember {  mutableStateOf(Icons.Default.ModeEdit) }
+    if (update.value) {
+        iconoModificar = Icons.Default.ModeEdit
+    } else {
+        iconoModificar = Icons.Default.EditOff
+    }
+    BottomAppBar(Modifier.fillMaxWidth()) {
+        Row() {
+            IconButton(onClick = {navController.navigate(Rutas.EquipmentAdd.Ruta)}) {
+                Icon(Icons.Default.Add, contentDescription = "")
+            }
+            IconButton(onClick = {delete.value =
+                !delete.value;
+                updated.value =
+                    !updated.value},
+                enabled = deleted.value) {
+                Icon(iconoBorrar, contentDescription = "")
+            }
+            IconButton(onClick = {update.value = true;
+                deleted.value = false},
+                enabled = updated.value) {
+                Icon(iconoModificar, contentDescription = "")
+            }
+        }
+        Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+    }
+}
+
+@Composable
+fun BarraInferiorEquipmentAdd(navController: NavController) {
+    var db : VMBD4 = viewModel()
+    BottomAppBar(Modifier.fillMaxWidth()) {
+        Row() {
+            IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, comida, juego2, celebracion2, parte)
+                navController.navigate(Rutas.UtensiliosUsuario.Ruta)}) {
+                Icon(Icons.Default.Add, contentDescription = "")
+            }
+            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+        }
+    }
+}
+
+@Composable
+fun BarraInferiorEquipmentUpdate(navController: NavController) {
+    var db : VMBD4 = viewModel()
+    var sf : ViewModelScaffold = viewModel()
+    var update = sf.modificar2.collectAsState().value
+    var deleted = sf.puedeBorrar2.collectAsState().value
+
+    BottomAppBar(Modifier.fillMaxWidth()) {
+        Row() {
+            IconButton(onClick = {db.modificarUtensilio(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte)
+                update.value = false
+                deleted.value = true
+                navController.navigate(Rutas.UtensiliosUsuario.Ruta)}) {
                 Icon(Icons.Default.ModeEdit, contentDescription = "")
             }
             Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
@@ -153,6 +231,105 @@ fun BarraSuperiorUsuario(navController: NavController) {
         }
         IconButton(onClick = {
             navController.navigate(Rutas.General.Ruta)
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
+    }
+    })
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BarraSuperiorUtensiliosGeneral(navController: NavController,db : VMBD3, sf: ViewModelScaffold ) {
+    var vm : ExoPlayerViewModel = viewModel()
+    val contexto = LocalContext.current
+    val exoplayer = vm.exoPlayer.collectAsState().value
+    //var sf : ViewModelScaffold = viewModel()
+    var aleatorio = sf.Aleatorio2.collectAsState().value
+    //var db : VMBD = viewModel()
+
+    if(exoplayer == null){
+        vm.crearExoPlayer(contexto)
+        vm.hacerSonarMusica(contexto)
+    }
+
+    var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
+    if (aleatorio.value) {
+        iconoAleatorio = R.drawable.baseline_shuffle_on_24
+        //db.mezclarIngredientes()
+    } else {
+        iconoAleatorio = R.drawable.baseline_shuffle_24
+    }
+
+    var iconoMusica by remember {  mutableStateOf(R.drawable.baseline_music_off_24) }
+    if (!vm.exoPlayer.value!!.isPlaying) {
+        iconoMusica = R.drawable.baseline_music_off_24
+    } else {
+        iconoMusica = R.drawable.baseline_music_note_24
+    }
+
+    TopAppBar(title = { Text(text = "All equipment") }, actions = {Row() {
+        IconButton(onClick = {
+            aleatorio.value = !aleatorio.value
+            if(aleatorio.value) db.mezclarUtensilios()
+        }) {
+            //Icon(iconoAleatorio, contentDescription = "")
+            Icon(painterResource(iconoAleatorio), contentDescription = "")
+        }
+        IconButton(onClick = { vm.PausarOSeguirMusica() }) {
+            Icon(painterResource(iconoMusica), contentDescription = "")
+        }
+        IconButton(onClick = {
+            navController.navigate(Rutas.UtensiliosUsuario.Ruta)
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
+    }
+    })
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BarraSuperiorUtensiliosUsuario(navController: NavController) {
+    var vm : ExoPlayerViewModel = viewModel()
+    val contexto = LocalContext.current
+    val exoplayer = vm.exoPlayer.collectAsState().value
+    var sf : ViewModelScaffold = viewModel()
+    var aleatorio = sf.Aleatorio2.collectAsState().value
+    var db : VMBD4 = viewModel()
+
+    if(exoplayer == null){
+        vm.crearExoPlayer(contexto)
+        vm.hacerSonarMusica(contexto)
+    }
+
+    var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
+    if (aleatorio.value) {
+        iconoAleatorio = R.drawable.baseline_shuffle_on_24
+        db.mezclarUtensilios()
+
+    } else {
+        iconoAleatorio = R.drawable.baseline_shuffle_24
+    }
+
+    var iconoMusica by remember {  mutableStateOf(R.drawable.baseline_music_off_24) }
+    if (!vm.exoPlayer.value!!.isPlaying) {
+        iconoMusica = R.drawable.baseline_music_off_24
+    } else {
+        iconoMusica = R.drawable.baseline_music_note_24
+    }
+
+    TopAppBar(title = { Text(text = "My equipment") }, actions = {Row() {
+        IconButton(onClick = {
+            aleatorio.value = !aleatorio.value
+        }) {
+            //Icon(iconoAleatorio, contentDescription = "")
+            Icon(painterResource(iconoAleatorio), contentDescription = "")
+        }
+        IconButton(onClick = { vm.PausarOSeguirMusica() }) {
+            Icon(painterResource(iconoMusica), contentDescription = "")
+        }
+        IconButton(onClick = {
+            navController.navigate(Rutas.UtensiliosGeneral.Ruta)
         }) {
             Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
         }

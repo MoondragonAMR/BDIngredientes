@@ -840,7 +840,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                 if (delete.value) {
                                     db.borrarUtensilio(codigo2)
                                 } else if (update.value) {
-                                    navController.navigate(Rutas.Update.Ruta)
+                                    navController.navigate(Rutas.EquipmentUpdate.Ruta)
                                 }
                             }) {
                         Text(text = "name = $nombre2")

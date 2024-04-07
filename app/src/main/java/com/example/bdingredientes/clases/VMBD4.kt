@@ -452,7 +452,7 @@ class VMBD4 : ViewModel() {
         }
     }
 
-    fun mezclarUtensilio() {
+    fun mezclarUtensilios() {
         _equipmentAleatorio.value = _equipment.value.shuffled().toMutableStateList()
     }
 

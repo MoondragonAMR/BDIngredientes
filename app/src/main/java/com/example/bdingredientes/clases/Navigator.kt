@@ -24,11 +24,15 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.bdingredientes.ui.theme.PantallaAuth
 import com.example.bdingredientes.ui.theme.PantallaAñadir
+import com.example.bdingredientes.ui.theme.PantallaAñadir2
+import com.example.bdingredientes.ui.theme.PantallaEquipment
+import com.example.bdingredientes.ui.theme.PantallaEquipment2
 import com.example.bdingredientes.ui.theme.PantallaIngredients
 import com.example.bdingredientes.ui.theme.PantallaIngredients2
 import com.example.bdingredientes.ui.theme.PantallaLogin
 import com.example.bdingredientes.ui.theme.PantallaMenu
 import com.example.bdingredientes.ui.theme.PantallaModificar
+import com.example.bdingredientes.ui.theme.PantallaModificar2
 import com.example.bdingredientes.ui.theme.PantallaRandom
 import com.example.bdingredientes.ui.theme.auth
 
@@ -40,6 +44,8 @@ fun Navigator() {
     val rutaActual = entradaNavActual?.destination?.route
     var db : VMBD = viewModel()
     var db2 : VMBD2 = viewModel()
+    var db3 : VMBD3 = viewModel()
+    var db4 : VMBD4 = viewModel()
     var sf : ViewModelScaffold = viewModel()
 
 
@@ -47,6 +53,10 @@ fun Navigator() {
         BarraSuperiorUsuario(navController = navController)
     } else if (rutaActual == Rutas.General.Ruta) {
         BarraSuperiorGeneral(navController = navController,db,sf)
+    } else if (rutaActual == Rutas.UtensiliosUsuario.Ruta) {
+        BarraSuperiorUtensiliosUsuario(navController = navController)
+    } else if (rutaActual == Rutas.UtensiliosGeneral.Ruta) {
+        BarraSuperiorUtensiliosGeneral(navController = navController,db3,sf)
     } else {
         TopAppBar(title = { Text(text = when (rutaActual) {
             Rutas.Add.Ruta -> {
@@ -63,6 +73,12 @@ fun Navigator() {
             }
             Rutas.Menu.Ruta -> {
                 "Choose a mode"
+            }
+            Rutas.EquipmentAdd.Ruta -> {
+                "Add a new equipment"
+            }
+            Rutas.EquipmentUpdate.Ruta -> {
+                "Modify the selected equipment"
             }
             else -> {
                 "Choose a game"
@@ -93,6 +109,20 @@ fun Navigator() {
                     }
                     Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
                 }
+            }
+            Rutas.UtensiliosUsuario.Ruta -> {
+                BarraInferiorEquipment(navController = navController)
+            }
+            Rutas.UtensiliosGeneral.Ruta -> {
+                BottomAppBar{
+                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                }
+            }
+            Rutas.EquipmentAdd.Ruta -> {
+                BarraInferiorEquipmentAdd(navController = navController)
+            }
+            Rutas.EquipmentUpdate.Ruta -> {
+                BarraInferiorEquipmentUpdate(navController = navController)
             }
             else -> {
                 BottomAppBar{
@@ -132,6 +162,18 @@ fun Navigator() {
                 }
                 composable(Rutas.Random.Ruta) {
                     PantallaRandom(navController = navController)
+                }
+                composable(Rutas.UtensiliosUsuario.Ruta) {
+                    PantallaEquipment2(db4, sf, navController = navController)
+                }
+                composable(Rutas.UtensiliosGeneral.Ruta) {
+                    PantallaEquipment(db3,sf, navController = navController)
+                }
+                composable(Rutas.EquipmentUpdate.Ruta) {
+                    PantallaModificar2(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte)
+                }
+                composable(Rutas.EquipmentAdd.Ruta) {
+                    PantallaAñadir2()
                 }
             }
         }
