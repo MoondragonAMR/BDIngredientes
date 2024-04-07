@@ -442,7 +442,7 @@ class VMBD3 : ViewModel() {
         }
     }
 
-    fun filtrarUtensilios(numero : Long, parametro : String) {
+    fun filtrarUtensilio(numero : Long, parametro : String) {
         conexion.collection("Equipment").orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _equipment.value.clear()
             it.documents.forEach { docu ->
