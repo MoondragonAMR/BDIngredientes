@@ -443,7 +443,7 @@ class VMBD4 : ViewModel() {
         }
     }
 
-    fun filtrarUtensilios(numero : Long, parametro : String) {
+    fun filtrarUtensilio(numero : Long, parametro : String) {
         conexion.collection("Customers/$usuario/MyEquipment").orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _equipment.value.clear()
             it.documents.forEach { docu ->
@@ -452,7 +452,7 @@ class VMBD4 : ViewModel() {
         }
     }
 
-    fun mezclarUtensilios() {
+    fun mezclarUtensilio() {
         _equipmentAleatorio.value = _equipment.value.shuffled().toMutableStateList()
     }
 

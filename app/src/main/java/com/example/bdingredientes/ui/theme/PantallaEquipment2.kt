@@ -36,25 +36,34 @@ import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
+import com.example.bdingredientes.clases.Rutas
 import com.example.bdingredientes.clases.VMBD3
 import com.example.bdingredientes.clases.VMBD4
+import com.example.bdingredientes.clases.celebracion2
+import com.example.bdingredientes.clases.codigo
+import com.example.bdingredientes.clases.codigo2
+import com.example.bdingredientes.clases.comida
+import com.example.bdingredientes.clases.juego2
+import com.example.bdingredientes.clases.nombre2
+import com.example.bdingredientes.clases.parte
+import com.example.bdingredientes.clases.tipo2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavController) {
+fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavController) {
     var equipment = db.equipment.collectAsState().value
-    var db4: VMBD4 = viewModel()
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero by remember { mutableStateOf(119L) }
+    var numero by remember { mutableStateOf(1L) }
     var valor by remember { mutableStateOf(numero.toString())}
     var parametro by remember { mutableStateOf("id") }
     var filtroParametro by remember { mutableStateOf("None") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    //var sf: ViewModelScaffold = viewModel()
     var aleatorio = sf.Aleatorio.collectAsState().value
+    var delete = sf.borrar.collectAsState().value
+    var update = sf.modificar.collectAsState().value
     var utensiliosRandom = db.equipmentAleatorio.collectAsState().value
     var listaMostrar = db.listaMostrar.collectAsState().value
     var url by remember { mutableStateOf("") }
@@ -71,7 +80,14 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
     Column() {
 
         Row() {
-            Text("Click on an equipment to add it to your list", fontWeight = FontWeight.Bold)
+            Text(text =
+            if (delete.value) {
+                "Click on an equipment to delete it, click the Delete button again to stop Delete Mode"
+            } else if (update.value) {
+                "Click on an equipment to modify it"
+            } else {
+                "Here is all of your equipment"
+            }, fontWeight = FontWeight.Bold)
         }
         SearchBar(placeholder = { Text("Search equipment by name") },
             query = busqueda,
@@ -445,14 +461,15 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                         ignoreCase = true
                     )) || (filtro.isBlank())
                 ) {
-                    val nombre = listaMostrar[it].name
-                    val tipo = listaMostrar[it].type
-                    val comida = listaMostrar[it].food
-                    val juego = listaMostrar[it].game
-                    val celebracion = listaMostrar[it].holiday
-                    val parte = listaMostrar[it].orderPart
+                    nombre2 = listaMostrar[it].name
+                    tipo2 = listaMostrar[it].type
+                    comida = listaMostrar[it].food
+                    juego2 = listaMostrar[it].game
+                    celebracion2 = listaMostrar[it].holiday
+                    parte = listaMostrar[it].orderPart
+                    codigo2 = listaMostrar[it].id
 
-                    when (nombre) {
+                    when (nombre2) {
                         "4-Cut" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Equipment%2F4-Cut.png?alt=media&token=042653a2-226a-4dfc-9d50-b226c7ec32b9"
                         }
@@ -820,20 +837,17 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                             .padding(4.dp)
                             .border(width = 2.dp, color = Color.Cyan)
                             .clickable() {
-                                db4.anyadirUtensilio(
-                                    nombre,
-                                    tipo,
-                                    celebracion,
-                                    comida,
-                                    juego,
-                                    parte
-                                )
+                                if (delete.value) {
+                                    db.borrarUtensilio(codigo2)
+                                } else if (update.value) {
+                                    navController.navigate(Rutas.Update.Ruta)
+                                }
                             }) {
-                        Text(text = "name = $nombre")
-                        Text(text = "type = $tipo")
-                        Text(text = "holiday = $celebracion")
+                        Text(text = "name = $nombre2")
+                        Text(text = "type = $tipo2")
+                        Text(text = "holiday = $celebracion2")
                         Text(text = "food = $comida")
-                        Text(text = "game = $juego")
+                        Text(text = "game = $juego2")
                         Text(text = "order part = $parte")
                         ImagenIngrediente(url)
                     }
