@@ -36,6 +36,8 @@ import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
+import androidx.compose.runtime.snapshots.SnapshotStateList
+import com.example.bdingredientes.clases.Equipment
 import com.example.bdingredientes.clases.Rutas
 import com.example.bdingredientes.clases.VMBD3
 import com.example.bdingredientes.clases.VMBD4
@@ -58,14 +60,14 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
     var numero by remember { mutableStateOf(1L) }
     var valor by remember { mutableStateOf(numero.toString())}
     var parametro by remember { mutableStateOf("id") }
-    var filtroParametro by remember { mutableStateOf("None") }
+    var filtroParametro by remember { mutableStateOf("none") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    var aleatorio = sf.Aleatorio.collectAsState().value
-    var delete = sf.borrar.collectAsState().value
-    var update = sf.modificar.collectAsState().value
+    var aleatorio = sf.Aleatorio2.collectAsState().value
+    var delete = sf.borrar2.collectAsState().value
+    var update = sf.modificar2.collectAsState().value
     var utensiliosRandom = db.equipmentAleatorio.collectAsState().value
-    var listaMostrar = db.listaMostrar.collectAsState().value
+    var listaMostrar: SnapshotStateList<Equipment>
     var url by remember { mutableStateOf("") }
 
     BackHandler{
@@ -138,17 +140,17 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                         text = { Text("type") },
                         onClick = { parametro = "type" })
                     DropdownMenuItem(
-                        text = { Text("Holiday") },
-                        onClick = { parametro = "Holiday" })
+                        text = { Text("holiday") },
+                        onClick = { parametro = "holiday" })
                     DropdownMenuItem(
-                        text = { Text("Food") },
-                        onClick = { parametro = "Food" })
+                        text = { Text("food") },
+                        onClick = { parametro = "food" })
                     DropdownMenuItem(
-                        text = { Text("Game") },
-                        onClick = { parametro = "Game" })
+                        text = { Text("game") },
+                        onClick = { parametro = "game" })
                     DropdownMenuItem(
-                        text = { Text("OrderPart") },
-                        onClick = { parametro = "OrderPart" })
+                        text = { Text("orderPart") },
+                        onClick = { parametro = "orderPart" })
                 }
             }
         }
@@ -163,8 +165,8 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 )
                 DropdownMenu(expanded = activado2, onDismissRequest = { activado2 = false }) {
                     DropdownMenuItem(
-                        text = { Text("None") },
-                        onClick = { filtroParametro = "None" })
+                        text = { Text("none") },
+                        onClick = { filtroParametro = "none" })
                     when (parametro) {
                         "type" -> {
                             DropdownMenuItem(
@@ -186,7 +188,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                 text = { Text("Position") },
                                 onClick = { filtroParametro = "Position" })
                         }
-                        "Holiday" -> {
+                        "holiday" -> {
                             DropdownMenuItem(
                                 text = { Text("Standard") },
                                 onClick = { filtroParametro = "Standard" })
@@ -245,7 +247,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                 text = { Text("Valentines") },
                                 onClick = { filtroParametro = "Valentines" })
                         }
-                        "Food" -> {
+                        "food" -> {
                             DropdownMenuItem(
                                 text = { Text("Breakfast") },
                                 onClick = { filtroParametro = "Breakfast" })
@@ -286,7 +288,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                 text = { Text("Sundae") },
                                 onClick = { filtroParametro = "Sundae" })
                         }
-                        "Game" -> {
+                        "game" -> {
                             DropdownMenuItem(
                                 text = { Text("Bakeria") },
                                 onClick = { filtroParametro = "Bakeria" })
@@ -381,7 +383,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                 text = { Text("Wingeria To Go") },
                                 onClick = { filtroParametro = "Wingeria To Go" })
                         }
-                        "OrderPart" -> {
+                        "orderPart" -> {
                             DropdownMenuItem(
                                 text = { Text("Bag Size") },
                                 onClick = { filtroParametro = "Bag Size" })
@@ -441,7 +443,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
         Row() {
             Button(onClick = {
                 numero = valor.toLong()
-                if (filtroParametro == "None") {
+                if (filtroParametro == "none") {
                     db.filtrarUtensilio(numero, parametro)
                 } else db.filtrarUtensilio(numero, parametro, filtroParametro)
             }) {

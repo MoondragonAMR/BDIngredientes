@@ -8,6 +8,7 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.forEach
 
 class VMBD3 : ViewModel() {
     val conexion = FirebaseFirestore.getInstance()
