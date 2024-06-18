@@ -2,6 +2,7 @@ package com.example.bdingredientes.clases
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.toMutableStateList
 import androidx.lifecycle.ViewModel
+import com.example.bdingredientes.ui.theme.usuario
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
@@ -830,6 +831,24 @@ class VMBD : ViewModel() {
             _ingredients.value.clear()
             it.documents.forEach {
                 docu->_ingredients.value.add(docu.toObject()!!)
+            }
+        }
+    }
+
+    fun filtrarIngredientesHE(numero : Long, parametro : String, valor : Boolean) {
+        val valores = mutableListOf<Boolean>()
+        when (valor) {
+            true -> {
+                valores.add(true)
+            }
+            false -> {
+                valores.add(false)
+            }
+        }
+        conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+            _ingredients.value.clear()
+            it.documents.forEach {
+                    docu->_ingredients.value.add(docu.toObject()!!)
             }
         }
     }

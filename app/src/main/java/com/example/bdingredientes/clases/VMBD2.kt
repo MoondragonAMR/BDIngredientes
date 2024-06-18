@@ -836,6 +836,24 @@ class VMBD2 : ViewModel() {
         }
     }
 
+    fun filtrarIngredientesHE(numero : Long, parametro : String, valor : Boolean) {
+        val valores = mutableListOf<Boolean>()
+        when (valor) {
+            true -> {
+                valores.add(true)
+            }
+            false -> {
+                valores.add(false)
+            }
+        }
+        conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+            _ingredients.value.clear()
+            it.documents.forEach {
+                    docu->_ingredients.value.add(docu.toObject()!!)
+            }
+        }
+    }
+
     fun filtrarIngredientes(numero : Long, parametro : String) {
         conexion.collection("Customers/$usuario/MyIngredients").orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _ingredients.value.clear()

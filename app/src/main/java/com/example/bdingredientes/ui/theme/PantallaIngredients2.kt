@@ -52,7 +52,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero by remember { mutableStateOf(1L)}
+    var numero by remember { mutableStateOf(10L)}
     var valor by remember { mutableStateOf(numero.toString())}
     var parametro by remember { mutableStateOf("id")}
     var filtroParametro by remember { mutableStateOf("None") }
@@ -94,8 +94,23 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
             onActiveChange = { estado = !estado }) {
             LazyColumn() {
                 items(ingredients.size) {
-                    if ((ingredients[it].name.contains(busqueda, true)) || (ingredients[it].type.lowercase().contains(busqueda)) || (busqueda.isBlank())) {
-                        ListItem(headlineContent = { Text(ingredients[it].name) }, Modifier.clickable { busqueda = ingredients[it].name })
+
+                    var mostrar = false
+
+                    if (busqueda.length == 1) {
+                        mostrar = ingredients[it].name.startsWith(busqueda, true)
+                    } else {
+                        mostrar = (ingredients[it].name.contains(
+                            busqueda,
+                            true
+                        )) || (ingredients[it].type.lowercase()
+                            .contains(busqueda.lowercase())) || (busqueda.isBlank())
+                    }
+
+                    if (mostrar) {
+                        ListItem(
+                            headlineContent = { Text(ingredients[it].name) },
+                            Modifier.clickable { busqueda = ingredients[it].name })
                     }
                 }
             }
@@ -131,11 +146,11 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         text = { Text("flavor") },
                         onClick = { parametro = "flavor" })
                     DropdownMenuItem(
-                        text = { Text("Holiday-exclusive") },
-                        onClick = { parametro = "Holiday-exclusive" })
+                        text = { Text("holidayExclusive") },
+                        onClick = { parametro = "holidayExclusive" })
                     DropdownMenuItem(
-                        text = { Text("Holiday") },
-                        onClick = { parametro = "Holiday" })
+                        text = { Text("holiday") },
+                        onClick = { parametro = "holiday" })
                 }
             }
         }
@@ -363,7 +378,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                                 onClick = { filtroParametro = "sweet" })
                         }
 
-                        "Holiday-exclusive" -> {
+                        "holidayExclusive" -> {
                             DropdownMenuItem(
                                 text = { Text("false") },
                                 onClick = { filtroParametro = "false" })
@@ -372,7 +387,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                                 onClick = { filtroParametro = "true" })
                         }
 
-                        "Holiday" -> {
+                        "holiday" -> {
                             DropdownMenuItem(
                                 text = { Text("Standard") },
                                 onClick = { filtroParametro = "Standard" })
@@ -482,7 +497,13 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 numero = valor.toLong()
                 if (filtroParametro == "None") {
                     db.filtrarIngredientes(numero, parametro)
-                } else db.filtrarIngredientes(numero, parametro, filtroParametro)
+                } else {
+                    if (parametro == "holidayExclusive") {
+                        db.filtrarIngredientesHE(numero, parametro, filtroParametro.toBoolean())
+                    } else {
+                        db.filtrarIngredientes(numero, parametro, filtroParametro)
+                    }
+                }
             }) {
                 Text("Apply conditions")
             }
@@ -496,11 +517,16 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 listaMostrar = ingredients
             }
             items(listaMostrar.size) {
-                if ((listaMostrar[it].name.contains(
-                        filtro,
-                        ignoreCase = true
-                    )) || (filtro.isBlank())
-                ) {
+
+                var mostrar = false
+
+                mostrar = if (filtro.length == 1) {
+                    (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
+                } else {
+                    (listaMostrar[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
+                }
+
+                if (mostrar) {
                     nombre = listaMostrar[it].name
                     tipo = listaMostrar[it].type
                     sabor = listaMostrar[it].flavor

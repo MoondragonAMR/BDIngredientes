@@ -36,6 +36,7 @@ import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
+import com.example.bdingredientes.clases.nombre
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -80,12 +81,20 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
             onActiveChange = { estado = !estado }) {
             LazyColumn() {
                 items(ingredients.size) {
-                    if ((ingredients[it].name.contains(
+
+                    var mostrar = false
+
+                    if (busqueda.length == 1) {
+                        mostrar = ingredients[it].name.startsWith(busqueda, true)
+                    } else {
+                        mostrar = (ingredients[it].name.contains(
                             busqueda,
                             true
                         )) || (ingredients[it].type.lowercase()
-                            .contains(busqueda)) || (busqueda.isBlank())
-                    ) {
+                            .contains(busqueda.lowercase())) || (busqueda.isBlank())
+                    }
+
+                    if (mostrar) {
                         ListItem(
                             headlineContent = { Text(ingredients[it].name) },
                             Modifier.clickable { busqueda = ingredients[it].name })
@@ -124,11 +133,11 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                         text = { Text("flavor") },
                         onClick = { parametro = "flavor" })
                     DropdownMenuItem(
-                        text = { Text("Holiday-exclusive") },
-                        onClick = { parametro = "Holiday-exclusive" })
+                        text = { Text("holidayExclusive") },
+                        onClick = { parametro = "holidayExclusive" })
                     DropdownMenuItem(
-                        text = { Text("Holiday") },
-                        onClick = { parametro = "Holiday" })
+                        text = { Text("holiday") },
+                        onClick = { parametro = "holiday" })
                 }
             }
         }
@@ -356,7 +365,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                                 onClick = { filtroParametro = "sweet" })
                         }
 
-                        "Holiday-exclusive" -> {
+                        "holidayExclusive" -> {
                             DropdownMenuItem(
                                 text = { Text("false") },
                                 onClick = { filtroParametro = "false" })
@@ -365,7 +374,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                                 onClick = { filtroParametro = "true" })
                         }
 
-                        "Holiday" -> {
+                        "holiday" -> {
                             DropdownMenuItem(
                                 text = { Text("Standard") },
                                 onClick = { filtroParametro = "Standard" })
@@ -475,30 +484,42 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                 numero = valor.toLong()
                 if (filtroParametro == "None") {
                     db.filtrarIngredientes(numero, parametro)
-                } else db.filtrarIngredientes(numero, parametro, filtroParametro)
+                } else {
+                    if (parametro == "holidayExclusive") {
+                        db.filtrarIngredientesHE(numero, parametro, filtroParametro.toBoolean())
+                    } else {
+                        db.filtrarIngredientes(numero, parametro, filtroParametro)
+                    }
+                }
             }) {
                 Text("Apply conditions")
             }
         }
         LazyColumn {
 
-
-            if (aleatorio.value) {
-                listaMostrar = ingredientsRandom
+            listaMostrar = if (aleatorio.value) {
+                ingredientsRandom
             } else {
-                listaMostrar = ingredients
+                ingredients
             }
+
             items(listaMostrar.size) {
-                if ((listaMostrar[it].name.contains(
-                        filtro,
-                        ignoreCase = true
-                    )) || (filtro.isBlank())
-                ) {
-                    val nombre = listaMostrar[it].name
-                    val tipo = listaMostrar[it].type
-                    val sabor = listaMostrar[it].flavor
-                    val deCelebracion = listaMostrar[it].holidayExclusive
-                    val celebracion = listaMostrar   [it].holiday
+
+                val nombre = listaMostrar[it].name
+                val tipo = listaMostrar[it].type
+                val sabor = listaMostrar[it].flavor
+                val celebracion = listaMostrar[it].holiday
+                val deCelebracion = listaMostrar[it].holidayExclusive
+
+                var mostrar = false
+
+                mostrar = if (filtro.length == 1) {
+                        (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
+                    } else {
+                        (listaMostrar[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
+                    }
+
+                if (mostrar) {
 
                     when (nombre) {
                         "Acorn Cutter" -> {
