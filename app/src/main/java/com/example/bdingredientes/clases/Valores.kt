@@ -6,6 +6,7 @@ var tipo : String = ""
 var sabor : String = ""
 var deCelebracion : Boolean = false
 var celebracion : String = ""
+var comida2 : String = ""
 var codigo2 : String = ""
 var nombre2 : String = ""
 var tipo2 : String = ""

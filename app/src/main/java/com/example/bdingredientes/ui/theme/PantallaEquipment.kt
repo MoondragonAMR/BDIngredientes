@@ -82,12 +82,20 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
             onActiveChange = { estado = !estado }) {
             LazyColumn() {
                 items(equipment.size) {
-                    if ((equipment[it].name.contains(
+
+                    var mostrar = false
+
+                    mostrar = if (busqueda.length == 1) {
+                        equipment[it].name.startsWith(busqueda, true)
+                    } else {
+                        (equipment[it].name.contains(
                             busqueda,
                             true
                         )) || (equipment[it].type.lowercase()
-                            .contains(busqueda)) || (busqueda.isBlank())
-                    ) {
+                            .contains(busqueda.lowercase())) || (busqueda.isBlank())
+                    }
+
+                    if (mostrar) {
                         ListItem(
                             headlineContent = { Text(equipment[it].name) },
                             Modifier.clickable { busqueda = equipment[it].name })
@@ -442,11 +450,16 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                 listaMostrar = equipment
             }
             items(listaMostrar.size) {
-                if ((listaMostrar[it].name.contains(
-                        filtro,
-                        ignoreCase = true
-                    )) || (filtro.isBlank())
-                ) {
+
+                var mostrar = false
+
+                mostrar = if (filtro.length == 1) {
+                    (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
+                } else {
+                    (listaMostrar[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
+                }
+
+                if (mostrar) {
                     val nombre = listaMostrar[it].name
                     val tipo = listaMostrar[it].type
                     val comida = listaMostrar[it].food

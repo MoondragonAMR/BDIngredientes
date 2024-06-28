@@ -73,7 +73,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
         Row() {
             Text("Click on an ingredient to add it to your list", fontWeight = FontWeight.Bold)
         }
-        SearchBar(placeholder = { Text("Search ingredients by name") },
+        SearchBar(placeholder = { Text("Search ingredients by name or type") },
             query = busqueda,
             onQueryChange = { textoIntroducido -> busqueda = textoIntroducido },
             onSearch = { filtro = it; estado = false },
@@ -84,10 +84,10 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
 
                     var mostrar = false
 
-                    if (busqueda.length == 1) {
-                        mostrar = ingredients[it].name.startsWith(busqueda, true)
+                    mostrar = if (busqueda.length == 1) {
+                        ingredients[it].name.startsWith(busqueda, true)
                     } else {
-                        mostrar = (ingredients[it].name.contains(
+                        (ingredients[it].name.contains(
                             busqueda,
                             true
                         )) || (ingredients[it].type.lowercase()
@@ -138,6 +138,9 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                     DropdownMenuItem(
                         text = { Text("holiday") },
                         onClick = { parametro = "holiday" })
+                    DropdownMenuItem(
+                        text = { Text("food") },
+                        onClick = { parametro = "food" })
                 }
             }
         }
@@ -475,6 +478,61 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                                 text = { Text("Volcano Gala") },
                                 onClick = { filtroParametro = "Volcano Gala" })
                         }
+
+                        "food" -> {
+                            DropdownMenuItem(
+                                text = { Text("Pizza") },
+                                onClick = { filtroParametro = "Pizza" })
+                            DropdownMenuItem(
+                                text = { Text("Burger") },
+                                onClick = { filtroParametro = "Burger" })
+                            DropdownMenuItem(
+                                text = { Text("Taco") },
+                                onClick = { filtroParametro = "Taco" })
+                            DropdownMenuItem(
+                                text = { Text("Sundae") },
+                                onClick = { filtroParametro = "Sundae" })
+                            DropdownMenuItem(
+                                text = { Text("Breakfast") },
+                                onClick = { filtroParametro = "Breakfast" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Wings") },
+                                onClick = { filtroParametro = "Chicken Wings" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Dog") },
+                                onClick = { filtroParametro = "Hot Dog" })
+                            DropdownMenuItem(
+                                text = { Text("Cupcakes") },
+                                onClick = { filtroParametro = "Cupcakes" })
+                            DropdownMenuItem(
+                                text = { Text("Pasta") },
+                                onClick = { filtroParametro = "Pasta" })
+                            DropdownMenuItem(
+                                text = { Text("Donuts") },
+                                onClick = { filtroParametro = "Donuts" })
+                            DropdownMenuItem(
+                                text = { Text("Sandwich") },
+                                onClick = { filtroParametro = "Sandwich" })
+                            DropdownMenuItem(
+                                text = { Text("Pie") },
+                                onClick = { filtroParametro = "Pie" })
+                            DropdownMenuItem(
+                                text = { Text("Sushi") },
+                                onClick = { filtroParametro = "Sushi" })
+                            DropdownMenuItem(
+                                text = { Text("Cookie Sundae") },
+                                onClick = { filtroParametro = "Cookie Sundae" })
+                            DropdownMenuItem(
+                                text = { Text("Mocha") },
+                                onClick = { filtroParametro = "Mocha" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Sandwich") },
+                                onClick = { filtroParametro = "Chicken Sandwich" })
+                            DropdownMenuItem(
+                                text = { Text("Paleta") },
+                                onClick = { filtroParametro = "Paleta" })
+                        }
+
                     }
                 }
             }
@@ -510,6 +568,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                 val sabor = listaMostrar[it].flavor
                 val celebracion = listaMostrar[it].holiday
                 val deCelebracion = listaMostrar[it].holidayExclusive
+                val comida = listaMostrar[it].food
 
                 var mostrar = false
 
@@ -4800,7 +4859,8 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                                     tipo,
                                     sabor,
                                     deCelebracion,
-                                    celebracion
+                                    celebracion,
+                                    comida
                                 )
                             }) {
                         Text(text = "name = $nombre")
@@ -4808,6 +4868,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                         Text(text = "flavor = $sabor")
                         Text(text = "holiday-exclusive = $deCelebracion")
                         Text(text = "holiday = $celebracion")
+                        Text(text = "food = $comida")
                         ImagenIngrediente(url)
                     }
                 }

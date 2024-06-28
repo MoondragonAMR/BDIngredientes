@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.example.bdingredientes.clases.celebracion
+import com.example.bdingredientes.clases.comida2
 import com.example.bdingredientes.clases.deCelebracion
 import com.example.bdingredientes.clases.nombre
 import com.example.bdingredientes.clases.sabor
@@ -23,7 +24,7 @@ import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String) {
+fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String, food : String) {
     var nombreAdd by remember { mutableStateOf(name) }
     nombre = nombreAdd
     var tipoAdd by remember { mutableStateOf(type) }
@@ -34,9 +35,12 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
     deCelebracion = deCelebracionAdd
     var celebracionAdd by remember { mutableStateOf(holiday) }
     celebracion = celebracionAdd
+    var comidaAdd by remember { mutableStateOf(food) }
+    comida2 = comidaAdd
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     var activado3 by remember { mutableStateOf(false) }
+    var activado4 by remember { mutableStateOf(false) }
 
     Column {
         Row {
@@ -392,6 +396,70 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
                     DropdownMenuItem(
                         text = { Text("Volcano Gala") },
                         onClick = { celebracionAdd = "Volcano Gala"; celebracion = celebracionAdd })
+                }
+            }
+        }
+        Row {
+            Text("Food: ")
+            ExposedDropdownMenuBox(expanded = activado4,
+                onExpandedChange = {activado4 = !activado4} ) {
+                TextField(modifier = Modifier.menuAnchor(),
+                    readOnly = true,
+                    value = comidaAdd,
+                    onValueChange = {}
+                )
+                DropdownMenu(expanded = activado4, onDismissRequest = { activado4 = false }) {
+                    DropdownMenuItem(
+                        text = { Text("Pizza") },
+                        onClick = { comidaAdd = "Pizza"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Burger") },
+                        onClick = { comidaAdd = "Burger"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco") },
+                        onClick = { comidaAdd = "Taco"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sundae") },
+                        onClick = { comidaAdd = "Sundae"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Breakfast") },
+                        onClick = { comidaAdd = "Breakfast"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Wings") },
+                        onClick = { comidaAdd = "Chicken Wings"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Dog") },
+                        onClick = { comidaAdd = "Hot Dog"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cupcakes") },
+                        onClick = { comidaAdd = "Cupcakes"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pasta") },
+                        onClick = { comidaAdd = "Pasta"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donuts") },
+                        onClick = { comidaAdd = "Donuts"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sandwich") },
+                        onClick = { comidaAdd = "Sandwich"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pie") },
+                        onClick = { comidaAdd = "Pie"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sushi") },
+                        onClick = { comidaAdd = "Sushi"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cookie Sundae") },
+                        onClick = { comidaAdd = "Cookie Sundae"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mocha") },
+                        onClick = { comidaAdd = "Mocha"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Sandwich") },
+                        onClick = { comidaAdd = "Chicken Sandwich"; comida2 = comidaAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleta") },
+                        onClick = { comidaAdd = "Paleta"; comida2 = comidaAdd })
                 }
             }
         }

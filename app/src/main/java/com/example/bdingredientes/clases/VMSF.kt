@@ -81,7 +81,7 @@ fun BarraInferiorAdd(navController: NavController) {
     var db : VMBD2 = viewModel()
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion)
+            IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion, comida2)
                 navController.navigate(Rutas.Usuario.Ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
@@ -99,7 +99,7 @@ fun BarraInferiorUpdate(navController: NavController) {
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion)
+            IconButton(onClick = {db.modificarIngrediente(codigo, nombre, tipo, sabor, deCelebracion, celebracion, comida2)
                 update.value = false
                 deleted.value = true
                 navController.navigate(Rutas.Usuario.Ruta)}) {
