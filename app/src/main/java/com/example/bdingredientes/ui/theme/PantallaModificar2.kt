@@ -22,6 +22,7 @@ import com.example.bdingredientes.clases.deCelebracion
 import com.example.bdingredientes.clases.juego2
 import com.example.bdingredientes.clases.nombre
 import com.example.bdingredientes.clases.nombre2
+import com.example.bdingredientes.clases.numero2
 import com.example.bdingredientes.clases.parte
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
@@ -29,7 +30,7 @@ import com.example.bdingredientes.clases.tipo2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaModificar2(id : String, name : String, type : String, food : String, game : String, holiday : String, part : String) {
+fun PantallaModificar2(id : String, name : String, type : String, food : String, game : String, holiday : String, part : String, number : Int) {
     var nombreAdd by remember { mutableStateOf(name) }
     nombre2 = nombreAdd
     var tipoAdd by remember { mutableStateOf(type) }
@@ -42,6 +43,7 @@ fun PantallaModificar2(id : String, name : String, type : String, food : String,
     celebracion2 = celebracionAdd
     var parteAdd by remember { mutableStateOf(part) }
     parte = parteAdd
+    numero2 = number
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     var activado3 by remember { mutableStateOf(false) }

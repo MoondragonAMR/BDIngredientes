@@ -18,13 +18,17 @@ import androidx.compose.ui.Modifier
 import com.example.bdingredientes.clases.celebracion
 import com.example.bdingredientes.clases.comida2
 import com.example.bdingredientes.clases.deCelebracion
+import com.example.bdingredientes.clases.juego3
 import com.example.bdingredientes.clases.nombre
+import com.example.bdingredientes.clases.numero
+import com.example.bdingredientes.clases.parte2
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String, food : String) {
+fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String, food : String
+, number : Int, game : String, part : String) {
     var nombreAdd by remember { mutableStateOf(name) }
     nombre = nombreAdd
     var tipoAdd by remember { mutableStateOf(type) }
@@ -37,10 +41,17 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
     celebracion = celebracionAdd
     var comidaAdd by remember { mutableStateOf(food) }
     comida2 = comidaAdd
+    var juegoAdd by remember { mutableStateOf(game) }
+    juego3 = juegoAdd
+    var parteAdd by remember { mutableStateOf(part) }
+    parte2 = parteAdd
+    numero = number
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     var activado3 by remember { mutableStateOf(false) }
     var activado4 by remember { mutableStateOf(false) }
+    var activado5 by remember { mutableStateOf(false) }
+    var activado6 by remember { mutableStateOf(false) }
 
     Column {
         Row {
@@ -460,6 +471,401 @@ fun PantallaModificar(id : String, name : String, type : String, flavor : String
                     DropdownMenuItem(
                         text = { Text("Paleta") },
                         onClick = { comidaAdd = "Paleta"; comida2 = comidaAdd })
+                }
+            }
+        }
+        Row {
+            Text("Game: ")
+            ExposedDropdownMenuBox(expanded = activado5,
+                onExpandedChange = {activado5 = !activado5} ) {
+                TextField(modifier = Modifier.menuAnchor(),
+                    readOnly = true,
+                    value = saborAdd,
+                    onValueChange = {}
+                )
+                DropdownMenu(expanded = activado5, onDismissRequest = { activado5 = false }) {
+                    DropdownMenuItem(
+                        text = { Text("Pizzeria") },
+                        onClick = { juegoAdd = "Pizzeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pizzeria To Go") },
+                        onClick = { juegoAdd = "Pizzeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pizzeria HD") },
+                        onClick = { juegoAdd = "Pizzeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Burgeria") },
+                        onClick = { juegoAdd = "Burgeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Burgeria HD") },
+                        onClick = { juegoAdd = "Burgeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Burgeria To Go") },
+                        onClick = { juegoAdd = "Burgeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco Mia") },
+                        onClick = { juegoAdd = "Taco Mia"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco Mia HD") },
+                        onClick = { juegoAdd = "Taco Mia HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco Mia To Go") },
+                        onClick = { juegoAdd = "Taco Mia To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Freezeria") },
+                        onClick = { juegoAdd = "Freezeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Freezeria HD") },
+                        onClick = { juegoAdd = "Freezeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Freezeria To Go") },
+                        onClick = { juegoAdd = "Freezeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Freezeria Deluxe") },
+                        onClick = { juegoAdd = "Freezeria Deluxe"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pancakeria") },
+                        onClick = { juegoAdd = "Pancakeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pancakeria HD") },
+                        onClick = { juegoAdd = "Pancakeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pancakeria To Go") },
+                        onClick = { juegoAdd = "Pancakeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Wingeria") },
+                        onClick = { juegoAdd = "Wingeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Wingeria HD") },
+                        onClick = { juegoAdd = "Wingeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Wingeria To Go") },
+                        onClick = { juegoAdd = "Wingeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Doggeria") },
+                        onClick = { juegoAdd = "Hot Doggeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Doggeria HD") },
+                        onClick = { juegoAdd = "Hot Doggeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Doggeria To Go") },
+                        onClick = { juegoAdd = "Hot Doggeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cupcakeria") },
+                        onClick = { juegoAdd = "Cupcakeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cupcakeria HD") },
+                        onClick = { juegoAdd = "Cupcakeria HD"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cupcakeria To Go") },
+                        onClick = { juegoAdd = "Cupcakeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pastaria") },
+                        onClick = { juegoAdd = "Pastaria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pastaria To Go") },
+                        onClick = { juegoAdd = "Pastaria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donuteria") },
+                        onClick = { juegoAdd = "Donuteria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donuteria To Go") },
+                        onClick = { juegoAdd = "Donuteria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cheeseria") },
+                        onClick = { juegoAdd = "Cheeseria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cheeseria To Go") },
+                        onClick = { juegoAdd = "Cheeseria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Bakeria") },
+                        onClick = { juegoAdd = "Bakeria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Bakeria To Go") },
+                        onClick = { juegoAdd = "Bakeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sushiria") },
+                        onClick = { juegoAdd = "Sushiria"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sushiria To Go") },
+                        onClick = { juegoAdd = "Sushiria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Scooperia") },
+                        onClick = { juegoAdd = "Scooperia"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Scooperia To Go") },
+                        onClick = { juegoAdd = "Scooperia To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mocharia To Go") },
+                        onClick = { juegoAdd = "Mocharia To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cluckeria To Go") },
+                        onClick = { juegoAdd = "Cluckeria To Go"; juego3 = juegoAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleteria To Go") },
+                        onClick = { juegoAdd = "Paleteria To Go"; juego3 = juegoAdd })
+                }
+            }
+        }
+        Row {
+            Text("Order Part: ")
+            ExposedDropdownMenuBox(expanded = activado6,
+                onExpandedChange = {activado6 = !activado6} ) {
+                TextField(modifier = Modifier.menuAnchor(),
+                    readOnly = true,
+                    value = saborAdd,
+                    onValueChange = {}
+                )
+                DropdownMenu(expanded = activado6, onDismissRequest = { activado6 = false }) {
+                    DropdownMenuItem(
+                        text = { Text("Aditive") },
+                        onClick = { parteAdd = "Aditive"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Bread") },
+                        onClick = { parteAdd = "Bread"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Breading") },
+                        onClick = { parteAdd = "Breading"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Breakfast Food") },
+                        onClick = { parteAdd = "Breakfast Food"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Breakfast Mixable") },
+                        onClick = { parteAdd = "Breakfast Mixable"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Breakfast Topping") },
+                        onClick = { parteAdd = "Breakfast Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Bubble Tea") },
+                        onClick = { parteAdd = "Bubble Tea"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Burger Meat") },
+                        onClick = { parteAdd = "Burger Meat"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Burger Topping") },
+                        onClick = { parteAdd = "Burger Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cake") },
+                        onClick = { parteAdd = "Cake"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cannoli Shell") },
+                        onClick = { parteAdd = "Cannoli Shell"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cannoli Topping") },
+                        onClick = { parteAdd = "Cannoli Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Sandwich Bun") },
+                        onClick = { parteAdd = "Chicken Sandwich Bun"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Sandwich Meat") },
+                        onClick = { parteAdd = "Chicken Sandwich Meat"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Sandwich Topping") },
+                        onClick = { parteAdd = "Chicken Sandwich Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Sauce") },
+                        onClick = { parteAdd = "Chicken Sauce"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Chicken Wings") },
+                        onClick = { parteAdd = "Chicken Wings"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Coffee") },
+                        onClick = { parteAdd = "Coffee"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cookie Dough") },
+                        onClick = { parteAdd = "Cookie Dough"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cookie Mixable") },
+                        onClick = { parteAdd = "Cookie Mixable"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cookie Sundae Long Topper") },
+                        onClick = { parteAdd = "Cookie Sundae Long Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cookie Sundae Topper") },
+                        onClick = { parteAdd = "Cookie Sundae Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cookie Sundae Topping") },
+                        onClick = { parteAdd = "Cookie Sundae Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cream") },
+                        onClick = { parteAdd = "Cream"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cream Dollop") },
+                        onClick = { parteAdd = "Cream Dollop"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cupcake Topper") },
+                        onClick = { parteAdd = "Cupcake Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Cupcake Topping") },
+                        onClick = { parteAdd = "Cupcake Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Dip") },
+                        onClick = { parteAdd = "Dip"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donut Cutter") },
+                        onClick = { parteAdd = "Donut Cutter"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donut Dough") },
+                        onClick = { parteAdd = "Donut Dough"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donut Filling") },
+                        onClick = { parteAdd = "Donut Filling"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Donut Topping") },
+                        onClick = { parteAdd = "Donut Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Drink") },
+                        onClick = { parteAdd = "Drink"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Fries") },
+                        onClick = { parteAdd = "Fries"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Frosting") },
+                        onClick = { parteAdd = "Frosting"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Fry Topping") },
+                        onClick = { parteAdd = "Fry Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Dog Bun") },
+                        onClick = { parteAdd = "Hot Dog Bun"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Dog Long Topper") },
+                        onClick = { parteAdd = "Hot Dog Long Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Dog Topper") },
+                        onClick = { parteAdd = "Hot Dog Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Hot Dog Topping") },
+                        onClick = { parteAdd = "Hot Dog Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Ice") },
+                        onClick = { parteAdd = "Ice"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Ice Cream") },
+                        onClick = { parteAdd = "Ice Cream"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Icing") },
+                        onClick = { parteAdd = "Icing"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Milk") },
+                        onClick = { parteAdd = "Milk"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mixable") },
+                        onClick = { parteAdd = "Mixable"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mixable Syrup") },
+                        onClick = { parteAdd = "Mixable Syrup"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mocha Syrup") },
+                        onClick = { parteAdd = "Mocha Syrup"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mocha Topper") },
+                        onClick = { parteAdd = "Mocha Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Mocha Topping") },
+                        onClick = { parteAdd = "Mocha Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Nacho Chips") },
+                        onClick = { parteAdd = "Nacho Chips"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Nacho Dip") },
+                        onClick = { parteAdd = "Nacho Dip"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleta Filling") },
+                        onClick = { parteAdd = "Paleta Filling"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleta Shape") },
+                        onClick = { parteAdd = "Paleta Shape"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Paleta Topping") },
+                        onClick = { parteAdd = "Paleta Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pasta") },
+                        onClick = { parteAdd = "Pasta"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pasta Sauce") },
+                        onClick = { parteAdd = "Pasta Sauce"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pasta Topping") },
+                        onClick = { parteAdd = "Pasta Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pie Crust") },
+                        onClick = { parteAdd = "Pie Crust"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pie Filling") },
+                        onClick = { parteAdd = "Pie Filling"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pie Topping") },
+                        onClick = { parteAdd = "Pie Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pizza Cheese") },
+                        onClick = { parteAdd = "Pizza Cheese"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pizza Crust") },
+                        onClick = { parteAdd = "Pizza Crust"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pizza Sauce") },
+                        onClick = { parteAdd = "Pizza Sauce"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Pizza Topping") },
+                        onClick = { parteAdd = "Pizza Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Popcorn") },
+                        onClick = { parteAdd = "Popcorn"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Rice") },
+                        onClick = { parteAdd = "Rice"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sandwich Bread") },
+                        onClick = { parteAdd = "Sandwich Bread"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sandwich Cheese") },
+                        onClick = { parteAdd = "Sandwich Cheese"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sandwich Topping") },
+                        onClick = { parteAdd = "Sandwich Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sausage") },
+                        onClick = { parteAdd = "Sausage"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Side") },
+                        onClick = { parteAdd = "Side"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Slush") },
+                        onClick = { parteAdd = "Slush"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Soda") },
+                        onClick = { parteAdd = "Soda"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Soy Paper") },
+                        onClick = { parteAdd = "Soy Paper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sundae Topper") },
+                        onClick = { parteAdd = "Sundae Topper"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sundae Topping") },
+                        onClick = { parteAdd = "Sundae Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sushi Filling") },
+                        onClick = { parteAdd = "Sushi Filling"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Sushi Topping") },
+                        onClick = { parteAdd = "Sushi Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco Meat") },
+                        onClick = { parteAdd = "Taco Meat"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco Shell") },
+                        onClick = { parteAdd = "Taco Shell"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Taco Topping") },
+                        onClick = { parteAdd = "Taco Topping"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Tea Bubbles") },
+                        onClick = { parteAdd = "Tea Bubbles"; parte2 = parteAdd })
+                    DropdownMenuItem(
+                        text = { Text("Top Crust") },
+                        onClick = { parteAdd = "Top Crust"; parte2 = parteAdd })
                 }
             }
         }

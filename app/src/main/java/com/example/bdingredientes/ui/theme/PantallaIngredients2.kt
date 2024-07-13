@@ -41,7 +41,10 @@ import com.example.bdingredientes.clases.codigo
 import com.example.bdingredientes.clases.comida2
 import com.example.bdingredientes.clases.deCelebracion
 import com.example.bdingredientes.clases.imagenes
+import com.example.bdingredientes.clases.juego3
 import com.example.bdingredientes.clases.nombre
+import com.example.bdingredientes.clases.numero
+import com.example.bdingredientes.clases.parte2
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
 
@@ -53,8 +56,8 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero by remember { mutableStateOf(10L)}
-    var valor by remember { mutableStateOf(numero.toString())}
+    var numero2 by remember { mutableStateOf(10L)}
+    var valor by remember { mutableStateOf(numero2.toString())}
     var parametro by remember { mutableStateOf("id")}
     var filtroParametro by remember { mutableStateOf("None") }
     var activado by remember { mutableStateOf(false) }
@@ -87,7 +90,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                     "Here are all of your ingredients"
             }, fontWeight = FontWeight.Bold)
         }
-        SearchBar(placeholder = { Text("Search ingredients by name or type") },
+        SearchBar(placeholder = { Text("Search by name, type or number") },
             query = busqueda,
             onQueryChange = { textoIntroducido -> busqueda = textoIntroducido },
             onSearch = { filtro = it; estado = false },
@@ -97,18 +100,19 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 items(ingredients.size) {
 
                     var mostrar = false
+                    var mostrar2 = false
 
                     mostrar = if (busqueda.length == 1) {
                         ingredients[it].name.startsWith(busqueda, true)
                     } else {
                         (ingredients[it].name.contains(
-                            busqueda,
-                            true
-                        )) || (ingredients[it].type.lowercase()
-                            .contains(busqueda.lowercase())) || (busqueda.isBlank())
+                            busqueda, true
+                        )) || (ingredients[it].type.lowercase().contains(busqueda.lowercase())) || (busqueda.isBlank())
                     }
 
-                    if (mostrar) {
+                    mostrar2 = ((ingredients[it].number.toString() == busqueda) || (busqueda.isBlank()))
+
+                    if (mostrar || mostrar2) {
                         ListItem(
                             headlineContent = { Text(ingredients[it].name) },
                             Modifier.clickable { busqueda = ingredients[it].name })
@@ -138,6 +142,9 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         text = { Text("id") },
                         onClick = { parametro = "id" })
                     DropdownMenuItem(
+                        text = { Text("number") },
+                        onClick = { parametro = "number" })
+                    DropdownMenuItem(
                         text = { Text("name") },
                         onClick = { parametro = "name" })
                     DropdownMenuItem(
@@ -155,6 +162,12 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                     DropdownMenuItem(
                         text = { Text("food") },
                         onClick = { parametro = "food" })
+                    DropdownMenuItem(
+                        text = { Text("game") },
+                        onClick = { parametro = "game" })
+                    DropdownMenuItem(
+                        text = { Text("orderPart") },
+                        onClick = { parametro = "orderPart" })
                 }
             }
         }
@@ -547,20 +560,395 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                                 onClick = { filtroParametro = "Paleta" })
                         }
 
+                        "game" -> {
+                            DropdownMenuItem(
+                                text = { Text("Pizzeria") },
+                                onClick = { filtroParametro = "Pizzeria" })
+                            DropdownMenuItem(
+                                text = { Text("Pizzeria To Go") },
+                                onClick = { filtroParametro = "Pizzeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Pizzeria HD") },
+                                onClick = { filtroParametro = "Pizzeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Burgeria") },
+                                onClick = { filtroParametro = "Burgeria" })
+                            DropdownMenuItem(
+                                text = { Text("Burgeria HD") },
+                                onClick = { filtroParametro = "Burgeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Burgeria To Go") },
+                                onClick = { filtroParametro = "Burgeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Taco Mia") },
+                                onClick = { filtroParametro = "Taco Mia" })
+                            DropdownMenuItem(
+                                text = { Text("Taco Mia HD") },
+                                onClick = { filtroParametro = "Taco Mia HD" })
+                            DropdownMenuItem(
+                                text = { Text("Taco Mia To Go") },
+                                onClick = { filtroParametro = "Taco Mia To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Freezeria") },
+                                onClick = { filtroParametro = "Freezeria" })
+                            DropdownMenuItem(
+                                text = { Text("Freezeria HD") },
+                                onClick = { filtroParametro = "Freezeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Freezeria To Go") },
+                                onClick = { filtroParametro = "Freezeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Freezeria Deluxe") },
+                                onClick = { filtroParametro = "Freezeria Deluxe" })
+                            DropdownMenuItem(
+                                text = { Text("Pancakeria") },
+                                onClick = { filtroParametro = "Pancakeria" })
+                            DropdownMenuItem(
+                                text = { Text("Pancakeria HD") },
+                                onClick = { filtroParametro = "Pancakeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Pancakeria To Go") },
+                                onClick = { filtroParametro = "Pancakeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Wingeria") },
+                                onClick = { filtroParametro = "Wingeria" })
+                            DropdownMenuItem(
+                                text = { Text("Wingeria HD") },
+                                onClick = { filtroParametro = "Wingeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Wingeria To Go") },
+                                onClick = { filtroParametro = "Wingeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Doggeria") },
+                                onClick = { filtroParametro = "Hot Doggeria" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Doggeria HD") },
+                                onClick = { filtroParametro = "Hot Doggeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Doggeria To Go") },
+                                onClick = { filtroParametro = "Hot Doggeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Cupcakeria") },
+                                onClick = { filtroParametro = "Cupcakeria" })
+                            DropdownMenuItem(
+                                text = { Text("Cupcakeria HD") },
+                                onClick = { filtroParametro = "Cupcakeria HD" })
+                            DropdownMenuItem(
+                                text = { Text("Cupcakeria To Go") },
+                                onClick = { filtroParametro = "Cupcakeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Pastaria") },
+                                onClick = { filtroParametro = "Pastaria" })
+                            DropdownMenuItem(
+                                text = { Text("Pastaria To Go") },
+                                onClick = { filtroParametro = "Pastaria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Donuteria") },
+                                onClick = { filtroParametro = "Donuteria" })
+                            DropdownMenuItem(
+                                text = { Text("Donuteria To Go") },
+                                onClick = { filtroParametro = "Donuteria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Cheeseria") },
+                                onClick = { filtroParametro = "Cheeseria" })
+                            DropdownMenuItem(
+                                text = { Text("Cheeseria To Go") },
+                                onClick = { filtroParametro = "Cheeseria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Bakeria") },
+                                onClick = { filtroParametro = "Bakeria" })
+                            DropdownMenuItem(
+                                text = { Text("Bakeria To Go") },
+                                onClick = { filtroParametro = "Bakeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Sushiria") },
+                                onClick = { filtroParametro = "Sushiria" })
+                            DropdownMenuItem(
+                                text = { Text("Sushiria To Go") },
+                                onClick = { filtroParametro = "Sushiria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Scooperia") },
+                                onClick = { filtroParametro = "Scooperia" })
+                            DropdownMenuItem(
+                                text = { Text("Scooperia To Go") },
+                                onClick = { filtroParametro = "Scooperia To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Mocharia To Go") },
+                                onClick = { filtroParametro = "Mocharia To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Cluckeria To Go") },
+                                onClick = { filtroParametro = "Cluckeria To Go" })
+                            DropdownMenuItem(
+                                text = { Text("Paleteria To Go") },
+                                onClick = { filtroParametro = "Paleteria To Go" })
+                        }
+
+                        "OrderPart" -> {
+                            DropdownMenuItem(
+                                text = { Text("Aditive") },
+                                onClick = { filtroParametro = "Aditive" })
+                            DropdownMenuItem(
+                                text = { Text("Bread") },
+                                onClick = { filtroParametro = "Bread" })
+                            DropdownMenuItem(
+                                text = { Text("Breading") },
+                                onClick = { filtroParametro = "Breading" })
+                            DropdownMenuItem(
+                                text = { Text("Breakfast Food") },
+                                onClick = { filtroParametro = "Breakfast Food" })
+                            DropdownMenuItem(
+                                text = { Text("Breakfast Mixable") },
+                                onClick = { filtroParametro = "Breakfast Mixable" })
+                            DropdownMenuItem(
+                                text = { Text("Breakfast Topping") },
+                                onClick = { filtroParametro = "Breakfast Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Bubble Tea") },
+                                onClick = { filtroParametro = "Bubble Tea" })
+                            DropdownMenuItem(
+                                text = { Text("Burger Meat") },
+                                onClick = { filtroParametro = "Burger Meat" })
+                            DropdownMenuItem(
+                                text = { Text("Burger Topping") },
+                                onClick = { filtroParametro = "Burger Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Cake") },
+                                onClick = { filtroParametro = "Cake" })
+                            DropdownMenuItem(
+                                text = { Text("Cannoli Shell") },
+                                onClick = { filtroParametro = "Cannoli Shell" })
+                            DropdownMenuItem(
+                                text = { Text("Cannoli Topping") },
+                                onClick = { filtroParametro = "Cannoli Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Sandwich Bun") },
+                                onClick = { filtroParametro = "Chicken Sandwich Bun" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Sandwich Meat") },
+                                onClick = { filtroParametro = "Chicken Sandwich Meat" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Sandwich Topping") },
+                                onClick = { filtroParametro = "Chicken Sandwich Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Sauce") },
+                                onClick = { filtroParametro = "Chicken Sauce" })
+                            DropdownMenuItem(
+                                text = { Text("Chicken Wings") },
+                                onClick = { filtroParametro = "Chicken Wings" })
+                            DropdownMenuItem(
+                                text = { Text("Coffee") },
+                                onClick = { filtroParametro = "Coffee" })
+                            DropdownMenuItem(
+                                text = { Text("Cookie Dough") },
+                                onClick = { filtroParametro = "Cookie Dough" })
+                            DropdownMenuItem(
+                                text = { Text("Cookie Mixable") },
+                                onClick = { filtroParametro = "Cookie Mixable" })
+                            DropdownMenuItem(
+                                text = { Text("Cookie Sundae Long Topper") },
+                                onClick = { filtroParametro = "Cookie Sundae Long Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Cookie Sundae Topper") },
+                                onClick = { filtroParametro = "Cookie Sundae Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Cookie Sundae Topping") },
+                                onClick = { filtroParametro = "Cookie Sundae Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Cream") },
+                                onClick = { filtroParametro = "Cream" })
+                            DropdownMenuItem(
+                                text = { Text("Cream Dollop") },
+                                onClick = { filtroParametro = "Cream Dollop" })
+                            DropdownMenuItem(
+                                text = { Text("Cupcake Topper") },
+                                onClick = { filtroParametro = "Cupcake Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Cupcake Topping") },
+                                onClick = { filtroParametro = "Cupcake Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Dip") },
+                                onClick = { filtroParametro = "Dip" })
+                            DropdownMenuItem(
+                                text = { Text("Donut Cutter") },
+                                onClick = { filtroParametro = "Donut Cutter" })
+                            DropdownMenuItem(
+                                text = { Text("Donut Dough") },
+                                onClick = { filtroParametro = "Donut Dough" })
+                            DropdownMenuItem(
+                                text = { Text("Donut Filling") },
+                                onClick = { filtroParametro = "Donut Filling" })
+                            DropdownMenuItem(
+                                text = { Text("Donut Topping") },
+                                onClick = { filtroParametro = "Donut Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Drink") },
+                                onClick = { filtroParametro = "Drink" })
+                            DropdownMenuItem(
+                                text = { Text("Fries") },
+                                onClick = { filtroParametro = "Fries" })
+                            DropdownMenuItem(
+                                text = { Text("Frosting") },
+                                onClick = { filtroParametro = "Frosting" })
+                            DropdownMenuItem(
+                                text = { Text("Fry Topping") },
+                                onClick = { filtroParametro = "Fry Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Dog Bun") },
+                                onClick = { filtroParametro = "Hot Dog Bun" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Dog Long Topper") },
+                                onClick = { filtroParametro = "Hot Dog Long Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Dog Topper") },
+                                onClick = { filtroParametro = "Hot Dog Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Hot Dog Topping") },
+                                onClick = { filtroParametro = "Hot Dog Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Ice") },
+                                onClick = { filtroParametro = "Ice" })
+                            DropdownMenuItem(
+                                text = { Text("Ice Cream") },
+                                onClick = { filtroParametro = "Ice Cream" })
+                            DropdownMenuItem(
+                                text = { Text("Icing") },
+                                onClick = { filtroParametro = "Icing" })
+                            DropdownMenuItem(
+                                text = { Text("Milk") },
+                                onClick = { filtroParametro = "Milk" })
+                            DropdownMenuItem(
+                                text = { Text("Mixable") },
+                                onClick = { filtroParametro = "Mixable" })
+                            DropdownMenuItem(
+                                text = { Text("Mixable Syrup") },
+                                onClick = { filtroParametro = "Mixable Syrup" })
+                            DropdownMenuItem(
+                                text = { Text("Mocha Syrup") },
+                                onClick = { filtroParametro = "Mocha Syrup" })
+                            DropdownMenuItem(
+                                text = { Text("Mocha Topper") },
+                                onClick = { filtroParametro = "Mocha Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Mocha Topping") },
+                                onClick = { filtroParametro = "Mocha Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Nacho Chips") },
+                                onClick = { filtroParametro = "Nacho Chips" })
+                            DropdownMenuItem(
+                                text = { Text("Nacho Dip") },
+                                onClick = { filtroParametro = "Nacho Dip" })
+                            DropdownMenuItem(
+                                text = { Text("Paleta Filling") },
+                                onClick = { filtroParametro = "Paleta Filling" })
+                            DropdownMenuItem(
+                                text = { Text("Paleta Shape") },
+                                onClick = { filtroParametro = "Paleta Shape" })
+                            DropdownMenuItem(
+                                text = { Text("Paleta Topping") },
+                                onClick = { filtroParametro = "Paleta Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Pasta") },
+                                onClick = { filtroParametro = "Pasta" })
+                            DropdownMenuItem(
+                                text = { Text("Pasta Sauce") },
+                                onClick = { filtroParametro = "Pasta Sauce" })
+                            DropdownMenuItem(
+                                text = { Text("Pasta Topping") },
+                                onClick = { filtroParametro = "Pasta Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Pie Crust") },
+                                onClick = { filtroParametro = "Pie Crust" })
+                            DropdownMenuItem(
+                                text = { Text("Pie Filling") },
+                                onClick = { filtroParametro = "Pie Filling" })
+                            DropdownMenuItem(
+                                text = { Text("Pie Topping") },
+                                onClick = { filtroParametro = "Pie Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Pizza Cheese") },
+                                onClick = { filtroParametro = "Pizza Cheese" })
+                            DropdownMenuItem(
+                                text = { Text("Pizza Crust") },
+                                onClick = { filtroParametro = "Pizza Crust" })
+                            DropdownMenuItem(
+                                text = { Text("Pizza Sauce") },
+                                onClick = { filtroParametro = "Pizza Sauce" })
+                            DropdownMenuItem(
+                                text = { Text("Pizza Topping") },
+                                onClick = { filtroParametro = "Pizza Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Popcorn") },
+                                onClick = { filtroParametro = "Popcorn" })
+                            DropdownMenuItem(
+                                text = { Text("Rice") },
+                                onClick = { filtroParametro = "Rice" })
+                            DropdownMenuItem(
+                                text = { Text("Sandwich Bread") },
+                                onClick = { filtroParametro = "Sandwich Bread" })
+                            DropdownMenuItem(
+                                text = { Text("Sandwich Cheese") },
+                                onClick = { filtroParametro = "Sandwich Cheese" })
+                            DropdownMenuItem(
+                                text = { Text("Sandwich Topping") },
+                                onClick = { filtroParametro = "Sandwich Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Sausage") },
+                                onClick = { filtroParametro = "Sausage" })
+                            DropdownMenuItem(
+                                text = { Text("Side") },
+                                onClick = { filtroParametro = "Side" })
+                            DropdownMenuItem(
+                                text = { Text("Slush") },
+                                onClick = { filtroParametro = "Slush" })
+                            DropdownMenuItem(
+                                text = { Text("Soda") },
+                                onClick = { filtroParametro = "Soda" })
+                            DropdownMenuItem(
+                                text = { Text("Soy Paper") },
+                                onClick = { filtroParametro = "Soy Paper" })
+                            DropdownMenuItem(
+                                text = { Text("Sundae Topper") },
+                                onClick = { filtroParametro = "Sundae Topper" })
+                            DropdownMenuItem(
+                                text = { Text("Sundae Topping") },
+                                onClick = { filtroParametro = "Sundae Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Sushi Filling") },
+                                onClick = { filtroParametro = "Sushi Filling" })
+                            DropdownMenuItem(
+                                text = { Text("Sushi Topping") },
+                                onClick = { filtroParametro = "Sushi Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Taco Meat") },
+                                onClick = { filtroParametro = "Taco Meat" })
+                            DropdownMenuItem(
+                                text = { Text("Taco Shell") },
+                                onClick = { filtroParametro = "Taco Shell" })
+                            DropdownMenuItem(
+                                text = { Text("Taco Topping") },
+                                onClick = { filtroParametro = "Taco Topping" })
+                            DropdownMenuItem(
+                                text = { Text("Tea Bubbles") },
+                                onClick = { filtroParametro = "Tea Bubbles" })
+                            DropdownMenuItem(
+                                text = { Text("Top Crust") },
+                                onClick = { filtroParametro = "Top Crust" })
+                        }
+
                     }
                 }
             }
         }
         Row() {
             Button(onClick = {
-                numero = valor.toLong()
+                numero2 = valor.toLong()
                 if (filtroParametro == "None") {
-                    db.filtrarIngredientes(numero, parametro)
+                    db.filtrarIngredientes(numero2, parametro)
                 } else {
                     if (parametro == "holidayExclusive") {
-                        db.filtrarIngredientesHE(numero, parametro, filtroParametro.toBoolean())
+                        db.filtrarIngredientesHE(numero2, parametro, filtroParametro.toBoolean())
                     } else {
-                        db.filtrarIngredientes(numero, parametro, filtroParametro)
+                        db.filtrarIngredientes(numero2, parametro, filtroParametro)
                     }
                 }
             }) {
@@ -578,6 +966,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
             items(listaMostrar.size) {
 
                 var mostrar = false
+                var mostrar2 = false
 
                 mostrar = if (filtro.length == 1) {
                     (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
@@ -585,7 +974,9 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                     (listaMostrar[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
                 }
 
-                if (mostrar) {
+                mostrar2 = ((listaMostrar[it].number.toString() == busqueda) || (filtro.isBlank()))
+
+                if (mostrar || mostrar2) {
                     nombre = listaMostrar[it].name
                     tipo = listaMostrar[it].type
                     sabor = listaMostrar[it].flavor
@@ -593,6 +984,9 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                     celebracion = listaMostrar[it].holiday
                     comida2 = listaMostrar[it].food
                     codigo = listaMostrar[it].id
+                    numero = listaMostrar[it].number
+                    juego3 = listaMostrar[it].game
+                    parte2 = listaMostrar[it].orderPart
 
                     when (nombre) {
                         "Acorn Cutter" -> {
@@ -4874,12 +5268,15 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                                     navController.navigate(Rutas.Update.Ruta)
                                 }
                             }) {
+                        Text(text = "number = $numero")
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")
                         Text(text = "flavor = $sabor")
                         Text(text = "holiday-exclusive = $deCelebracion")
                         Text(text = "holiday = $celebracion")
                         Text(text = "food = $comida2")
+                        Text(text = "game = $juego3")
+                        Text(text = "order part = $parte2")
                         ImagenIngrediente(url)
                     }
                 }

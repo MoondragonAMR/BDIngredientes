@@ -47,6 +47,7 @@ class VMBD : ViewModel() {
 
     fun anyadirIngrediente(
         name: String, flavor: String, type: String, holidayExclusive: Boolean, holiday: String, food : String
+        , number : Int, game : String, part : String
     ) {
         val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday, food)
         conexion.collection("Ingredients").add(newIngredient)
@@ -56,8 +57,9 @@ class VMBD : ViewModel() {
         conexion.collection("Ingredients").document(id).delete()
     }
 
-    fun modificarIngrediente(id: String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String, food : String) {
-        val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday, food)
+    fun modificarIngrediente(id: String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String, food : String
+                             , number : Int, game : String, part : String) {
+        val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday, food, number, game, part)
         conexion.collection("Ingredients").document(id).set(newIngredient)
     }
 

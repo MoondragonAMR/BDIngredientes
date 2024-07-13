@@ -149,7 +149,7 @@ fun Navigator() {
                     PantallaAñadir()
                 }
                 composable(Rutas.Update.Ruta) {
-                    PantallaModificar(codigo, nombre, tipo, sabor, deCelebracion, celebracion, comida2)
+                    PantallaModificar(codigo, nombre, tipo, sabor, deCelebracion, celebracion, comida2, numero, juego3, parte2)
                 }
                 composable(Rutas.Login.Ruta) {
                     PantallaLogin(navController = navController)
@@ -170,7 +170,7 @@ fun Navigator() {
                     PantallaEquipment(db3,sf, navController = navController)
                 }
                 composable(Rutas.EquipmentUpdate.Ruta) {
-                    PantallaModificar2(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte)
+                    PantallaModificar2(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
                 }
                 composable(Rutas.EquipmentAdd.Ruta) {
                     PantallaAñadir2()

@@ -22,6 +22,7 @@ import com.example.bdingredientes.clases.deCelebracion
 import com.example.bdingredientes.clases.juego2
 import com.example.bdingredientes.clases.nombre
 import com.example.bdingredientes.clases.nombre2
+import com.example.bdingredientes.clases.numero2
 import com.example.bdingredientes.clases.parte
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
@@ -42,6 +43,7 @@ fun PantallaAñadir2() {
     celebracion2 = celebracionAdd
     var parteAdd by remember { mutableStateOf("Cut") }
     parte = parteAdd
+    numero2 = 0
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     var activado3 by remember { mutableStateOf(false) }

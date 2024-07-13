@@ -46,9 +46,9 @@ class VMBD4 : ViewModel() {
     }
 
     fun anyadirUtensilio(
-        name: String, type: String, holiday: String, food : String, game : String, orderPart : String
+        name: String, type: String, holiday: String, food : String, game : String, orderPart : String, number : Int
     ) {
-        val newEquipment = Equipment(name, type, holiday, food, game, orderPart)
+        val newEquipment = Equipment(name, type, holiday, food, game, orderPart, number)
         conexion.collection("Customers/$usuario/MyEquipment").add(newEquipment)
     }
 
@@ -56,8 +56,8 @@ class VMBD4 : ViewModel() {
         conexion.collection("Customers/$usuario/MyEquipment").document(id).delete()
     }
 
-    fun modificarUtensilio(id: String, name: String, type: String, holiday: String, food : String, game : String, orderPart : String) {
-        val newEquipment = Equipment(name, type, holiday, food, game, orderPart)
+    fun modificarUtensilio(id: String, name: String, type: String, holiday: String, food : String, game : String, orderPart : String, number : Int) {
+        val newEquipment = Equipment(name, type, holiday, food, game, orderPart, number)
         conexion.collection("Customers/$usuario/MyEquipment").document(id).set(newEquipment)
     }
 

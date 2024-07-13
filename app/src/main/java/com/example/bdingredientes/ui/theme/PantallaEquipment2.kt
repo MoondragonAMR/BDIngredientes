@@ -47,6 +47,7 @@ import com.example.bdingredientes.clases.codigo2
 import com.example.bdingredientes.clases.comida
 import com.example.bdingredientes.clases.juego2
 import com.example.bdingredientes.clases.nombre2
+import com.example.bdingredientes.clases.numero2
 import com.example.bdingredientes.clases.parte
 import com.example.bdingredientes.clases.tipo2
 
@@ -57,7 +58,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero by remember { mutableStateOf(1L) }
+    var numero by remember { mutableStateOf(10L) }
     var valor by remember { mutableStateOf(numero.toString())}
     var parametro by remember { mutableStateOf("id") }
     var filtroParametro by remember { mutableStateOf("none") }
@@ -91,7 +92,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 "Here is all of your equipment"
             }, fontWeight = FontWeight.Bold)
         }
-        SearchBar(placeholder = { Text("Search equipment by name") },
+        SearchBar(placeholder = { Text("Search equipment by number or name") },
             query = busqueda,
             onQueryChange = { textoIntroducido -> busqueda = textoIntroducido },
             onSearch = { filtro = it; estado = false },
@@ -101,6 +102,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 items(equipment.size) {
 
                     var mostrar = false
+                    var mostrar2 = false
 
                     mostrar = if (busqueda.length == 1) {
                         equipment[it].name.startsWith(busqueda, true)
@@ -112,7 +114,9 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                             .contains(busqueda.lowercase())) || (busqueda.isBlank())
                     }
 
-                    if (mostrar) {
+                    mostrar2 = ((equipment[it].number.toString() == busqueda) || (busqueda.isBlank()))
+
+                    if (mostrar || mostrar2) {
                         ListItem(
                             headlineContent = { Text(equipment[it].name) },
                             Modifier.clickable { busqueda = equipment[it].name })
@@ -141,6 +145,9 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                     DropdownMenuItem(
                         text = { Text("id") },
                         onClick = { parametro = "id" })
+                    DropdownMenuItem(
+                        text = { Text("number") },
+                        onClick = { parametro = "number" })
                     DropdownMenuItem(
                         text = { Text("name") },
                         onClick = { parametro = "name" })
@@ -468,6 +475,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
             items(listaMostrar.size) {
 
                 var mostrar = false
+                var mostrar2 = false
 
                 mostrar = if (filtro.length == 1) {
                     (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
@@ -475,7 +483,10 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                     (listaMostrar[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
                 }
 
-                if (mostrar) {
+                mostrar2 = ((listaMostrar[it].number.toString() == busqueda) || (filtro.isBlank()))
+
+                if (mostrar || mostrar2) {
+                    numero2 = listaMostrar[it].number
                     nombre2 = listaMostrar[it].name
                     tipo2 = listaMostrar[it].type
                     comida = listaMostrar[it].food
@@ -858,6 +869,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                     navController.navigate(Rutas.EquipmentUpdate.Ruta)
                                 }
                             }) {
+                        Text(text = "number = $numero2")
                         Text(text = "name = $nombre2")
                         Text(text = "type = $tipo2")
                         Text(text = "holiday = $celebracion2")
