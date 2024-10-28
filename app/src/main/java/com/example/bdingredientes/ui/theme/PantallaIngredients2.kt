@@ -2714,7 +2714,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Holi Sugar" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/HoliSugar.png?alt=media&token=7726fd78-019c-40ef-8dca-efa16f933a55"
                         }
-                        "Holiday Yum n'Ms" -> {
+                        "Holiday Yum n' Ms" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Holiday_Yum_n'_ms.png?alt=media&token=388aedf2-e938-4df3-8190-f943ef84d7ca"
                         }
                         "Hollandaise Sauce" -> {
@@ -4973,10 +4973,10 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                         "Yum Yum Sauce" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yum_Yum_Sauce.png?alt=media&token=4e98e52f-0f6a-4c23-9321-b9d45d9df76a"
                         }
-                        "Yum n'M Cookies" -> {
+                        "Yum n' M Cookies" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yum_n'_M_Cookie.png?alt=media&token=df7996e6-ce6e-490e-a1fd-64e8ee6a4357"
                         }
-                        "Yum n'Ms" -> {
+                        "Yum n' Ms" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Yum_n_Ms.png?alt=media&token=5f4b5b6f-69a2-4c00-b949-3f1e3397af73"
                         }
                         "Yuzu Kosho" -> {
