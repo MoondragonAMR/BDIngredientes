@@ -13,4 +13,10 @@ sealed class Rutas(val Ruta: String) {
     object UtensiliosGeneral : Rutas("PantallaEquipment")
     object EquipmentUpdate : Rutas("PantallaModificar2")
     object EquipmentAdd : Rutas("PantallaAñadir2")
+    object Admin : Rutas("PantallaIngredientsAdmin")
+    object AdminUpdate : Rutas("PantallaModificarAdmin")
+    object AdminAdd : Rutas("PantallaAñadirAdmin")
+    object UtensiliosAdmin : Rutas("PantallaEquipmentAdmin")
+    object EquipmentAdminUpdate : Rutas("PantallaModificarAdmin2")
+    object EquipmentAdminAdd : Rutas("PantallaAñadirAdmin2")
 }

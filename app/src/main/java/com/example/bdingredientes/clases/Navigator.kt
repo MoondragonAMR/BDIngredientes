@@ -25,14 +25,20 @@ import androidx.navigation.compose.rememberNavController
 import com.example.bdingredientes.ui.theme.PantallaAuth
 import com.example.bdingredientes.ui.theme.PantallaAñadir
 import com.example.bdingredientes.ui.theme.PantallaAñadir2
+import com.example.bdingredientes.ui.theme.PantallaAñadirAdmin
+import com.example.bdingredientes.ui.theme.PantallaAñadirAdmin2
 import com.example.bdingredientes.ui.theme.PantallaEquipment
 import com.example.bdingredientes.ui.theme.PantallaEquipment2
+import com.example.bdingredientes.ui.theme.PantallaEquipmentAdmin
 import com.example.bdingredientes.ui.theme.PantallaIngredients
 import com.example.bdingredientes.ui.theme.PantallaIngredients2
+import com.example.bdingredientes.ui.theme.PantallaIngredientsAdmin
 import com.example.bdingredientes.ui.theme.PantallaLogin
 import com.example.bdingredientes.ui.theme.PantallaMenu
 import com.example.bdingredientes.ui.theme.PantallaModificar
 import com.example.bdingredientes.ui.theme.PantallaModificar2
+import com.example.bdingredientes.ui.theme.PantallaModificarAdmin
+import com.example.bdingredientes.ui.theme.PantallaModificarAdmin2
 import com.example.bdingredientes.ui.theme.PantallaRandom
 import com.example.bdingredientes.ui.theme.auth
 
@@ -49,47 +55,87 @@ fun Navigator() {
     var sf : ViewModelScaffold = viewModel()
 
 
-    Scaffold(topBar = { if (rutaActual == Rutas.Usuario.Ruta) {
-        BarraSuperiorUsuario(navController = navController)
-    } else if (rutaActual == Rutas.General.Ruta) {
-        BarraSuperiorGeneral(navController = navController,db,sf)
-    } else if (rutaActual == Rutas.UtensiliosUsuario.Ruta) {
-        BarraSuperiorUtensiliosUsuario(navController = navController)
-    } else if (rutaActual == Rutas.UtensiliosGeneral.Ruta) {
-        BarraSuperiorUtensiliosGeneral(navController = navController,db3,sf)
-    } else {
-        TopAppBar(title = { Text(text = when (rutaActual) {
-            Rutas.Add.Ruta -> {
-                "Add a new ingredient"
+    Scaffold(topBar = {
+        when (rutaActual) {
+            Rutas.Usuario.Ruta -> {
+                BarraSuperiorUsuario(navController = navController)
             }
-            Rutas.Update.Ruta -> {
-                "Modify the selected ingredient"
+            Rutas.General.Ruta -> {
+                BarraSuperiorGeneral(navController = navController,db,sf)
             }
-            Rutas.Login.Ruta -> {
-                "Log in with your Firebase account"
+            Rutas.UtensiliosUsuario.Ruta -> {
+                BarraSuperiorUtensiliosUsuario(navController = navController)
             }
-            Rutas.Auth.Ruta -> {
-                "Create a new Firebase user"
+            Rutas.UtensiliosGeneral.Ruta -> {
+                BarraSuperiorUtensiliosGeneral(navController = navController,db3,sf)
             }
-            Rutas.Menu.Ruta -> {
-                "Choose a mode"
+            Rutas.UtensiliosAdmin.Ruta -> {
+                BarraSuperiorUtensiliosAdmin(navController = navController,db3,sf)
             }
-            Rutas.EquipmentAdd.Ruta -> {
-                "Add a new equipment"
-            }
-            Rutas.EquipmentUpdate.Ruta -> {
-                "Modify the selected equipment"
+            Rutas.Admin.Ruta -> {
+                BarraSuperiorAdmin(navController = navController,db,sf)
             }
             else -> {
-                "Choose a game"
+                TopAppBar(title = { Text(text = when (rutaActual) {
+                    Rutas.Add.Ruta -> {
+                        "Add a new ingredient"
+                    }
+
+                    Rutas.Update.Ruta -> {
+                        "Modify the selected ingredient"
+                    }
+
+                    Rutas.Login.Ruta -> {
+                        "Log in with your Firebase account"
+                    }
+
+                    Rutas.Auth.Ruta -> {
+                        "Create a new Firebase user"
+                    }
+
+                    Rutas.Menu.Ruta -> {
+                        "Choose a mode"
+                    }
+
+                    Rutas.EquipmentAdd.Ruta -> {
+                        "Add a new equipment"
+                    }
+
+                    Rutas.EquipmentUpdate.Ruta -> {
+                        "Modify the selected equipment"
+                    }
+
+                    Rutas.AdminUpdate.Ruta -> {
+                        "Modify the selected ingredient"
+                    }
+
+                    Rutas.AdminAdd.Ruta -> {
+                        "Add a new ingredient"
+                    }
+
+                    Rutas.EquipmentAdminUpdate.Ruta -> {
+                        "Modify the selected equipment"
+                    }
+
+                    Rutas.EquipmentAdminAdd.Ruta -> {
+                        "Add a new equipment"
+                    }
+
+                    else -> {
+                        "Choose a game"
+                    }
+                }
+                )
+                })
             }
         }
-        )
-        })
-    }}, bottomBar = {
+    }, bottomBar = {
         when (rutaActual) {
             Rutas.Usuario.Ruta -> {
                 BarraInferior(navController = navController)
+            }
+            Rutas.Admin.Ruta -> {
+                BarraInferiorAdmin(navController = navController)
             }
             Rutas.General.Ruta -> {
                 BottomAppBar{
@@ -99,8 +145,14 @@ fun Navigator() {
             Rutas.Add.Ruta -> {
                 BarraInferiorAdd(navController = navController)
             }
+            Rutas.AdminAdd.Ruta -> {
+                BarraInferiorAdminAdd(navController = navController)
+            }
             Rutas.Update.Ruta -> {
                 BarraInferiorUpdate(navController = navController)
+            }
+            Rutas.AdminUpdate.Ruta -> {
+                BarraInferiorAdminUpdate(navController = navController)
             }
             Rutas.Menu.Ruta -> {
                 BottomAppBar{
@@ -123,6 +175,15 @@ fun Navigator() {
             }
             Rutas.EquipmentUpdate.Ruta -> {
                 BarraInferiorEquipmentUpdate(navController = navController)
+            }
+            Rutas.UtensiliosAdmin.Ruta -> {
+                BarraInferiorEquipmentAdmin(navController = navController)
+            }
+            Rutas.EquipmentAdminUpdate.Ruta -> {
+                BarraInferiorEquipmentAdminUpdate(navController = navController)
+            }
+            Rutas.EquipmentAdminAdd.Ruta -> {
+                BarraInferiorEquipmentAdminAdd(navController = navController)
             }
             else -> {
                 BottomAppBar{
@@ -174,6 +235,24 @@ fun Navigator() {
                 }
                 composable(Rutas.EquipmentAdd.Ruta) {
                     PantallaAñadir2()
+                }
+                composable(Rutas.Admin.Ruta) {
+                    PantallaIngredientsAdmin(db,sf, navController = navController)
+                }
+                composable(Rutas.AdminUpdate.Ruta) {
+                    PantallaModificarAdmin(codigo, nombre, tipo, sabor, deCelebracion, celebracion, comida2, numero, juego3, parte2)
+                }
+                composable(Rutas.AdminAdd.Ruta) {
+                    PantallaAñadirAdmin()
+                }
+                composable(Rutas.UtensiliosAdmin.Ruta) {
+                    PantallaEquipmentAdmin(db3,sf, navController = navController)
+                }
+                composable(Rutas.EquipmentAdminUpdate.Ruta) {
+                    PantallaModificarAdmin2(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
+                }
+                composable(Rutas.EquipmentAdminAdd.Ruta) {
+                    PantallaAñadirAdmin2()
                 }
             }
         }

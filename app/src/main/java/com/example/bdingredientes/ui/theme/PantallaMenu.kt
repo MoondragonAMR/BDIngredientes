@@ -15,8 +15,14 @@ fun PantallaMenu(navController: NavController) {
         Button(onClick = { navController.navigate(Rutas.Usuario.Ruta) }) {
             Text("Ingredients")
         }
+        Button(onClick = { navController.navigate(Rutas.Admin.Ruta) }) {
+            Text("Ingredients Admin")
+        }
         Button(onClick = { navController.navigate(Rutas.UtensiliosUsuario.Ruta)}) {
             Text("Equipment")
+        }
+        Button(onClick = { navController.navigate(Rutas.UtensiliosAdmin.Ruta)}) {
+            Text("Equipment Admin")
         }
         Button(onClick = { navController.navigate(Rutas.Random.Ruta)}) {
             Text("Orders")
