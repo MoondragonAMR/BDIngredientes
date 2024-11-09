@@ -683,7 +683,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                                 onClick = { filtroParametro = "Paleteria To Go" })
                         }
 
-                        "OrderPart" -> {
+                        "orderPart" -> {
                             DropdownMenuItem(
                                 text = { Text("Aditive") },
                                 onClick = { filtroParametro = "Aditive" })
