@@ -573,6 +573,9 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                                 text = { Text("Pizzeria HD") },
                                 onClick = { filtroParametro = "Pizzeria HD" })
                             DropdownMenuItem(
+                                text = { Text("Pizzeria Deluxe") },
+                                onClick = { filtroParametro = "Pizzeria Deluxe" })
+                            DropdownMenuItem(
                                 text = { Text("Burgeria") },
                                 onClick = { filtroParametro = "Burgeria" })
                             DropdownMenuItem(
