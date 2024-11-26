@@ -383,6 +383,9 @@ fun PantallaEquipmentAdmin(db : VMBD3, sf: ViewModelScaffold, navController: Nav
                                 text = { Text("Pizzeria") },
                                 onClick = { filtroParametro = "Pizzeria" })
                             DropdownMenuItem(
+                                text = { Text("Pizzeria Deluxe") },
+                                onClick = { filtroParametro = "Pizzeria Deluxe" })
+                            DropdownMenuItem(
                                 text = { Text("Pizzeria HD") },
                                 onClick = { filtroParametro = "Pizzeria HD" })
                             DropdownMenuItem(

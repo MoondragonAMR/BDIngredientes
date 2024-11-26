@@ -493,6 +493,9 @@ fun PantallaAñadir() {
                         text = { Text("Pizzeria HD") },
                         onClick = { juegoAdd = "Pizzeria HD"; juego3 = juegoAdd })
                     DropdownMenuItem(
+                        text = { Text("Pizzeria Deluxe") },
+                        onClick = { juegoAdd = "Pizzeria Deluxe"; juego3 = juegoAdd })
+                    DropdownMenuItem(
                         text = { Text("Burgeria") },
                         onClick = { juegoAdd = "Burgeria"; juego3 = juegoAdd })
                     DropdownMenuItem(

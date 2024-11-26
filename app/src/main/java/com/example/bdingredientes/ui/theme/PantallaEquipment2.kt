@@ -383,6 +383,9 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                                 text = { Text("Pizzeria") },
                                 onClick = { filtroParametro = "Pizzeria" })
                             DropdownMenuItem(
+                                text = { Text("Pizzeria Deluxe") },
+                                onClick = { filtroParametro = "Pizzeria Deluxe" })
+                            DropdownMenuItem(
                                 text = { Text("Pizzeria HD") },
                                 onClick = { filtroParametro = "Pizzeria HD" })
                             DropdownMenuItem(

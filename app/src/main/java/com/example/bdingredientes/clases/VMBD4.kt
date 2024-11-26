@@ -143,11 +143,13 @@ class VMBD4 : ViewModel() {
                 valores.add("Bakeria")
                 valores.add("Bakeria/Bakeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Bakeria To Go" -> {
                 valores.add("Bakeria To Go")
                 valores.add("Bakeria/Bakeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Cupcakeria" -> {
                 valores.add("Cupcakeria")
@@ -167,6 +169,7 @@ class VMBD4 : ViewModel() {
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pancakeria/Pancakeria HD/Pancakeria To Go/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Freezeria Deluxe" -> {
                 valores.add("Freezeria Deluxe")
@@ -174,6 +177,7 @@ class VMBD4 : ViewModel() {
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pancakeria/Pancakeria HD/Pancakeria To Go/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Freezeria HD" -> {
                 valores.add("Freezeria HD")
@@ -181,6 +185,7 @@ class VMBD4 : ViewModel() {
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pancakeria/Pancakeria HD/Pancakeria To Go/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Freezeria To Go" -> {
                 valores.add("Freezeria To Go")
@@ -188,6 +193,7 @@ class VMBD4 : ViewModel() {
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pancakeria/Pancakeria HD/Pancakeria To Go/Hot Doggeria/Hot Doggeria HD/Hot Doggeria To Go/Mocharia To Go/Cluckeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Hot Doggeria" -> {
                 valores.add("Hot Doggeria")
@@ -232,16 +238,19 @@ class VMBD4 : ViewModel() {
             "Paleteria To Go" -> {
                 valores.add("Paleteria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Paleteria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Paleteria To Go")
             }
             "Pastaria" -> {
                 valores.add("Pastaria")
                 valores.add("Pastaria/Pastaria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Pastaria To Go" -> {
                 valores.add("Pastaria To Go")
                 valores.add("Pastaria/Pastaria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Pizzeria" -> {
                 valores.add("Pizzeria")
@@ -250,6 +259,20 @@ class VMBD4 : ViewModel() {
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Paleteria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Paleteria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
+            }
+            "Pizzeria Deluxe" -> {
+                valores.add("Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Paleteria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Pizzeria HD" -> {
                 valores.add("Pizzeria HD")
@@ -259,6 +282,12 @@ class VMBD4 : ViewModel() {
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Paleteria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
+                valores.add("Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Paleteria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Pizzeria To Go" -> {
                 valores.add("Pizzeria To Go")
@@ -268,46 +297,65 @@ class VMBD4 : ViewModel() {
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Paleteria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
+                valores.add("Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Paleteria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Burgeria" -> {
                 valores.add("Burgeria")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Burgeria HD" -> {
                 valores.add("Burgeria HD")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Burgeria To Go" -> {
                 valores.add("Burgeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Cheeseria" -> {
                 valores.add("Cheeseria")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Cheeseria To Go" -> {
                 valores.add("Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Cheeseria/Cheeseria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Burgeria/Burgeria HD/Burgeria To Go/Freezeria/Freezeria HD/Freezeria To Go/Freezeria Deluxe/Pastaria/Pastaria To Go/Cheeseria/Cheeseria To Go")
             }
             "Wingeria" -> {
                 valores.add("Wingeria")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
                 valores.add("Wingeria/Wingeria HD/Wingeria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Wingeria HD" -> {
                 valores.add("Wingeria HD")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
                 valores.add("Wingeria/Wingeria HD/Wingeria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Wingeria To Go" -> {
                 valores.add("Wingeria To Go")
                 valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
                 valores.add("Wingeria/Wingeria HD/Wingeria To Go")
+                valores.add("Pizzeria/Pizzeria To Go/Pizzeria HD/Pizzeria Deluxe/Wingeria/Wingeria HD/Wingeria To Go/Bakeria/Bakeria To Go")
             }
             "Chicken Wings" -> {
                 valores.add("Chicken Wings")

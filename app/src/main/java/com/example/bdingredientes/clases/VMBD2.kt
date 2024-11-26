@@ -50,7 +50,7 @@ class VMBD2 : ViewModel() {
         name: String, type: String, flavor: String, holidayExclusive: Boolean, holiday: String, food: String
         , number : Int, game : String, part : String
     ) {
-        val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday, food)
+        val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday, food, number, game, part)
         conexion.collection("Customers/$usuario/MyIngredients").add(newIngredient)
     }
 
@@ -125,6 +125,46 @@ class VMBD2 : ViewModel() {
             "Chicken Wings" -> {
                 valores.add("Chicken Wings")
                 valores.add("Chicken Wings/Topping")
+                valores.add("Pizza/Burger/Chicken Wings")
+                valores.add("Pizza/Burger/Taco/Chicken Wings")
+                valores.add("Pizza/Taco/Chicken Wings")
+                valores.add("Pizza/Chicken Wings")
+                valores.add("Taco/Chicken Wings")
+                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog")
+                valores.add("Pizza/Chicken Wings/Hot Dog")
+                valores.add("Taco/Chicken Wings/Hot Dog")
+                valores.add("Chicken Wings/Hot Dog")
+                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes")
+                valores.add("Pizza/Chicken Wings/Pasta")
+                valores.add("Chicken Wings/Pasta")
+                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes/Sandwich")
+                valores.add("Pizza/Burger/Chicken Wings/Sandwich")
+                valores.add("Pizza/Taco/Chicken Wings/Sandwich")
+                valores.add("Pizza/Chicken Wings/Sandwich")
+                valores.add("Pizza/Chicken Wings/Hot Dog/Sandwich")
+                valores.add("Taco/Chicken Wings/Sandwich")
+                valores.add("Taco/Chicken Wings/Hot Dog/Sandwich")
+                valores.add("Chicken Wings/Hot Dog/Sandwich")
+                valores.add("Chicken Wings/Pasta/Sandwich")
+                valores.add("Chicken Wings/Sandwich")
+                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes/Sandwich/Sushi")
+                valores.add("Pizza/Taco/Chicken Wings/Sandwich/Sushi")
+                valores.add("Pizza/Chicken Wings/Hot Dog/Sandwich/Sushi")
+                valores.add("Taco/Chicken Wings/Hot Dog/Sandwich/Sushi")
+                valores.add("Chicken Wings/Hot Dog/Sandwich/Sushi")
+                valores.add("Chicken Wings/Sushi")
+                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes/Sandwich/Sushi/Chicken Sandwich")
+                valores.add("Pizza/Burger/Chicken Wings/Sandwich/Chicken Sandwich")
+                valores.add("Pizza/Chicken Wings/Sandwich/Chicken Sandwich")
+                valores.add("Taco/Chicken Wings/Hot Dog/Chicken Sandwich")
+                valores.add("Taco/Chicken Wings/Hot Dog/Sandwich/Sushi/Chicken Sandwich")
+                valores.add("Taco/Chicken Wings/Sandwich/Chicken Sandwich")
+                valores.add("Chicken Wings/Hot Dog/Sandwich/Chicken Sandwich")
+                valores.add("Chicken Wings/Hot Dog/Sandwich/Sushi/Chicken Sandwich")
+                valores.add("Chicken Wings/Sandwich/Chicken Sandwich")
+                valores.add("Chicken Wings/Sushi/Chicken Sandwich")
+                valores.add("Chicken Wings/Chicken Sandwich")
+                valores.add("Chicken Wings/Paleta")
             }
             "Coffee" -> {
                 valores.add("Coffee")
@@ -305,6 +345,34 @@ class VMBD2 : ViewModel() {
             }
             "Pasta" -> {
                 valores.add("Pasta")
+                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta")
+                valores.add("Pizza/Burger/Hot Dog/Pasta")
+                valores.add("Pizza/Taco/Pasta")
+                valores.add("Pizza/Chicken Wings/Pasta")
+                valores.add("Pizza/Hot Dog/Pasta")
+                valores.add("Pizza/Pasta")
+                valores.add("Taco/Hot Dog/Pasta")
+                valores.add("Chicken Wings/Pasta")
+                valores.add("Hot Dog/Pasta")
+                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta/Sandwich")
+                valores.add("Pizza/Burger/Hot Dog/Pasta/Sandwich")
+                valores.add("Pizza/Taco/Pasta/Sandwich")
+                valores.add("Pizza/Hot Dog/Pasta/Sandwich")
+                valores.add("Pizza/Pasta/Sandwich")
+                valores.add("Taco/Hot Dog/Pasta/Sandwich")
+                valores.add("Chicken Wings/Pasta/Sandwich")
+                valores.add("Hot Dog/Pasta/Sandwich")
+                valores.add("Pasta/Sandwich")
+                valores.add("Pizza/Hot Dog/Pasta/Sandwich/Sushi")
+                valores.add("Pizza/Pasta/Sushi")
+                valores.add("Pasta/Sandwich/Sushi")
+                valores.add("Pasta/Sushi")
+                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta/Chicken Sandwich")
+                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta/Sandwich/Chicken Sandwich")
+                valores.add("Pizza/Hot Dog/Pasta/Sandwich/Sushi/Chicken Sandwich")
+                valores.add("Pizza/Pasta/Chicken Sandwich")
+                valores.add("Taco/Hot Dog/Pasta/Sandwich/Chicken Sandwich")
+                valores.add("Pasta/Chicken Sandwich")
             }
             "Pasta Sauce" -> {
                 valores.add("Pasta Sauce")
@@ -1116,49 +1184,6 @@ class VMBD2 : ViewModel() {
                 valores.add("Breakfast/Cookie Sundae/Paleta")
                 valores.add("Breakfast/Paleta")
             }
-            "Chicken Wings" -> {
-                valores.add("Chicken Wings")
-                valores.add("Pizza/Burger/Chicken Wings")
-                valores.add("Pizza/Burger/Taco/Chicken Wings")
-                valores.add("Pizza/Taco/Chicken Wings")
-                valores.add("Pizza/Chicken Wings")
-                valores.add("Taco/Chicken Wings")
-                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog")
-                valores.add("Pizza/Chicken Wings/Hot Dog")
-                valores.add("Taco/Chicken Wings/Hot Dog")
-                valores.add("Chicken Wings/Hot Dog")
-                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes")
-                valores.add("Pizza/Chicken Wings/Pasta")
-                valores.add("Chicken Wings/Pasta")
-                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes/Sandwich")
-                valores.add("Pizza/Burger/Chicken Wings/Sandwich")
-                valores.add("Pizza/Taco/Chicken Wings/Sandwich")
-                valores.add("Pizza/Chicken Wings/Sandwich")
-                valores.add("Pizza/Chicken Wings/Hot Dog/Sandwich")
-                valores.add("Taco/Chicken Wings/Sandwich")
-                valores.add("Taco/Chicken Wings/Hot Dog/Sandwich")
-                valores.add("Chicken Wings/Hot Dog/Sandwich")
-                valores.add("Chicken Wings/Pasta/Sandwich")
-                valores.add("Chicken Wings/Sandwich")
-                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes/Sandwich/Sushi")
-                valores.add("Pizza/Taco/Chicken Wings/Sandwich/Sushi")
-                valores.add("Pizza/Chicken Wings/Hot Dog/Sandwich/Sushi")
-                valores.add("Taco/Chicken Wings/Hot Dog/Sandwich/Sushi")
-                valores.add("Chicken Wings/Hot Dog/Sandwich/Sushi")
-                valores.add("Chicken Wings/Sushi")
-                valores.add("Pizza/Burger/Taco/Chicken Wings/Hot Dog/Cupcakes/Sandwich/Sushi/Chicken Sandwich")
-                valores.add("Pizza/Burger/Chicken Wings/Sandwich/Chicken Sandwich")
-                valores.add("Pizza/Chicken Wings/Sandwich/Chicken Sandwich")
-                valores.add("Taco/Chicken Wings/Hot Dog/Chicken Sandwich")
-                valores.add("Taco/Chicken Wings/Hot Dog/Sandwich/Sushi/Chicken Sandwich")
-                valores.add("Taco/Chicken Wings/Sandwich/Chicken Sandwich")
-                valores.add("Chicken Wings/Hot Dog/Sandwich/Chicken Sandwich")
-                valores.add("Chicken Wings/Hot Dog/Sandwich/Sushi/Chicken Sandwich")
-                valores.add("Chicken Wings/Sandwich/Chicken Sandwich")
-                valores.add("Chicken Wings/Sushi/Chicken Sandwich")
-                valores.add("Chicken Wings/Chicken Sandwich")
-                valores.add("Chicken Wings/Paleta")
-            }
             "Hot Dog" -> {
                 valores.add("Hot Dog")
                 valores.add("Pizza/Burger/Hot Dog")
@@ -1284,37 +1309,6 @@ class VMBD2 : ViewModel() {
                 valores.add("Cupcakes/Donuts/Cookie Sundae/Paleta")
                 valores.add("Cupcakes/Cookie Sundae/Paleta")
                 valores.add("Cupcakes/Paleta")
-            }
-            "Pasta" -> {
-                valores.add("Pasta")
-                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta")
-                valores.add("Pizza/Burger/Hot Dog/Pasta")
-                valores.add("Pizza/Taco/Pasta")
-                valores.add("Pizza/Chicken Wings/Pasta")
-                valores.add("Pizza/Hot Dog/Pasta")
-                valores.add("Pizza/Pasta")
-                valores.add("Taco/Hot Dog/Pasta")
-                valores.add("Chicken Wings/Pasta")
-                valores.add("Hot Dog/Pasta")
-                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta/Sandwich")
-                valores.add("Pizza/Burger/Hot Dog/Pasta/Sandwich")
-                valores.add("Pizza/Taco/Pasta/Sandwich")
-                valores.add("Pizza/Hot Dog/Pasta/Sandwich")
-                valores.add("Pizza/Pasta/Sandwich")
-                valores.add("Taco/Hot Dog/Pasta/Sandwich")
-                valores.add("Chicken Wings/Pasta/Sandwich")
-                valores.add("Hot Dog/Pasta/Sandwich")
-                valores.add("Pasta/Sandwich")
-                valores.add("Pizza/Hot Dog/Pasta/Sandwich/Sushi")
-                valores.add("Pizza/Pasta/Sushi")
-                valores.add("Pasta/Sandwich/Sushi")
-                valores.add("Pasta/Sushi")
-                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta/Chicken Sandwich")
-                valores.add("Pizza/Burger/Taco/Hot Dog/Pasta/Sandwich/Chicken Sandwich")
-                valores.add("Pizza/Hot Dog/Pasta/Sandwich/Sushi/Chicken Sandwich")
-                valores.add("Pizza/Pasta/Chicken Sandwich")
-                valores.add("Taco/Hot Dog/Pasta/Sandwich/Chicken Sandwich")
-                valores.add("Pasta/Chicken Sandwich")
             }
             "Donuts" -> {
                 valores.add("Donuts")
@@ -1704,6 +1698,129 @@ class VMBD2 : ViewModel() {
                 valores.add("Cookie Sundae/Mocha/Paleta")
                 valores.add("Cookie Sundae/Paleta")
                 valores.add("Mocha/Paleta")
+            }
+            "Pizzeria" -> {
+                valores.add("Pizzeria")
+            }
+            "Pizzeria To Go" -> {
+                valores.add("Pizzeria To Go")
+            }
+            "Pizzeria HD" -> {
+                valores.add("Pizzeria HD")
+            }
+            "Pizzeria Deluxe" -> {
+                valores.add("Pizzeria Deluxe")
+            }
+            "Burgeria" -> {
+                valores.add("Burgeria")
+            }
+            "Burgeria HD" -> {
+                valores.add("Burgeria HD")
+            }
+            "Burgeria To Go" -> {
+                valores.add("Burgeria To Go")
+            }
+            "Taco Mia" -> {
+                valores.add("Taco Mia")
+            }
+            "Taco Mia HD" -> {
+                valores.add("Taco Mia HD")
+            }
+            "Taco Mia To Go" -> {
+                valores.add("Taco Mia To Go")
+            }
+            "Freezeria" -> {
+                valores.add("Freezeria")
+            }
+            "Freezeria HD" -> {
+                valores.add("Freezeria HD")
+            }
+            "Freezeria To Go" -> {
+                valores.add("Freezeria To Go")
+            }
+            "Freezeria Deluxe" -> {
+                valores.add("Freezeria Deluxe")
+            }
+            "Pancakeria" -> {
+                valores.add("Pancakeria")
+            }
+            "Pancakeria HD" -> {
+                valores.add("Pancakeria HD")
+            }
+            "Pancakeria To Go" -> {
+                valores.add("Pancakeria To Go")
+            }
+            "Wingeria" -> {
+                valores.add("Wingeria")
+            }
+            "Wingeria HD" -> {
+                valores.add("Wingeria HD")
+            }
+            "Wingeria To Go" -> {
+                valores.add("Wingeria To Go")
+            }
+            "Hot Doggeria" -> {
+                valores.add("Hot Doggeria")
+            }
+            "Hot Doggeria HD" -> {
+                valores.add("Hot Doggeria HD")
+            }
+            "Hot Doggeria To Go" -> {
+                valores.add("Hot Doggeria To Go")
+            }
+            "Cupcakeria" -> {
+                valores.add("Cupcakeria")
+            }
+            "Cupcakeria HD" -> {
+                valores.add("Cupcakeria HD")
+            }
+            "Cupcakeria To Go" -> {
+                valores.add("Cupcakeria To Go")
+            }
+            "Pastaria" -> {
+                valores.add("Pastaria")
+            }
+            "Pastaria To Go" -> {
+                valores.add("Pastaria To Go")
+            }
+            "Donuteria" -> {
+                valores.add("Donuteria")
+            }
+            "Donuteria To Go" -> {
+                valores.add("Donuteria To Go")
+            }
+            "Cheeseria" -> {
+                valores.add("Cheeseria")
+            }
+            "Cheeseria To Go" -> {
+                valores.add("Cheeseria To Go")
+            }
+            "Bakeria" -> {
+                valores.add("Bakeria")
+            }
+            "Bakeria To Go" -> {
+                valores.add("Bakeria To Go")
+            }
+            "Sushiria" -> {
+                valores.add("Sushiria")
+            }
+            "Sushiria To Go" -> {
+                valores.add("Sushiria To Go")
+            }
+            "Scooperia" -> {
+                valores.add("Scooperia")
+            }
+            "Scooperia To Go" -> {
+                valores.add("Scooperia To Go")
+            }
+            "Mocharia To Go" -> {
+                valores.add("Mocharia To Go")
+            }
+            "Cluckeria To Go" -> {
+                valores.add("Cluckeria To Go")
+            }
+            "Paleteria To Go" -> {
+                valores.add("Paleteria To Go")
             }
         }
         conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
