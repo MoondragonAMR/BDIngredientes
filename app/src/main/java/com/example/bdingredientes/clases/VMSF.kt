@@ -281,7 +281,7 @@ fun BarraInferiorEquipmentAdd(navController: NavController) {
     var db : VMBD4 = viewModel()
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
+            IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, celebracion2, comida, juego2, parte, numero2)
                 navController.navigate(Rutas.UtensiliosUsuario.Ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
@@ -295,7 +295,7 @@ fun BarraInferiorEquipmentAdminAdd(navController: NavController) {
     var db : VMBD3 = viewModel()
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
+            IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, celebracion2, comida, juego2, parte, numero2)
                 navController.navigate(Rutas.UtensiliosAdmin.Ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
@@ -313,7 +313,7 @@ fun BarraInferiorEquipmentUpdate(navController: NavController) {
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.modificarUtensilio(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
+            IconButton(onClick = {db.modificarUtensilio(codigo2, nombre2, tipo2, celebracion2, comida, juego2, parte, numero2)
                 update.value = false
                 deleted.value = true
                 navController.navigate(Rutas.UtensiliosUsuario.Ruta)}) {
@@ -333,7 +333,7 @@ fun BarraInferiorEquipmentAdminUpdate(navController: NavController) {
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row() {
-            IconButton(onClick = {db.modificarUtensilio(codigo2, nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
+            IconButton(onClick = {db.modificarUtensilio(codigo2, nombre2, tipo2, celebracion2, comida, juego2, parte, numero2)
                 update.value = false
                 deleted.value = true
                 navController.navigate(Rutas.UtensiliosAdmin.Ruta)}) {
