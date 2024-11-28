@@ -121,6 +121,7 @@ class VMBD2 : ViewModel() {
                 valores.add("Sauce/Chicken Sauce/Pizza Sauce")
                 valores.add("Sauce/Fry Topping/Chicken Sauce")
                 valores.add("Syrup/Sauce/Chicken Sauce")
+                valores.add("Sauce/Chicken Sauce/Pizza Sauce/Fry Topping")
             }
             "Chicken Wings" -> {
                 valores.add("Chicken Wings")
@@ -277,6 +278,8 @@ class VMBD2 : ViewModel() {
                 valores.add("Topping/Pasta Sauce/Fry Topping")
                 valores.add("Topping/Sauce/Fry Topping")
                 valores.add("Topping/Sauce/Fry Topping/Dip/Nacho Dip")
+                valores.add("Sauce/Fry Topping/Pizza Sauce")
+                valores.add("Sauce/Chicken Sauce/Pizza Sauce/Fry Topping")
             }
             "Hot Dog Bun" -> {
                 valores.add("Hot Dog Bun")
@@ -412,6 +415,8 @@ class VMBD2 : ViewModel() {
                 valores.add("Sauce/Pasta Sauce/Pizza Sauce")
                 valores.add("Sauce/Pasta Sauce/Pizza Sauce/Topping")
                 valores.add("Sauce/Pizza Sauce")
+                valores.add("Sauce/Fry Topping/Pizza Sauce")
+                valores.add("Sauce/Chicken Sauce/Pizza Sauce/Fry Topping")
             }
             "Popcorn" -> {
                 valores.add("Popcorn")
@@ -464,6 +469,8 @@ class VMBD2 : ViewModel() {
                 valores.add("Topping/Nacho Dip/Sauce")
                 valores.add("Topping/Sauce/Fry Topping")
                 valores.add("Topping/Sauce/Fry Topping/Dip/Nacho Dip")
+                valores.add("Sauce/Fry Topping/Pizza Sauce")
+                valores.add("Sauce/Chicken Sauce/Pizza Sauce/Fry Topping")
             }
             "Sausage" -> {
                 valores.add("Sausage")
@@ -1699,131 +1706,8 @@ class VMBD2 : ViewModel() {
                 valores.add("Cookie Sundae/Paleta")
                 valores.add("Mocha/Paleta")
             }
-            "Pizzeria" -> {
-                valores.add("Pizzeria")
-            }
-            "Pizzeria To Go" -> {
-                valores.add("Pizzeria To Go")
-            }
-            "Pizzeria HD" -> {
-                valores.add("Pizzeria HD")
-            }
-            "Pizzeria Deluxe" -> {
-                valores.add("Pizzeria Deluxe")
-            }
-            "Burgeria" -> {
-                valores.add("Burgeria")
-            }
-            "Burgeria HD" -> {
-                valores.add("Burgeria HD")
-            }
-            "Burgeria To Go" -> {
-                valores.add("Burgeria To Go")
-            }
-            "Taco Mia" -> {
-                valores.add("Taco Mia")
-            }
-            "Taco Mia HD" -> {
-                valores.add("Taco Mia HD")
-            }
-            "Taco Mia To Go" -> {
-                valores.add("Taco Mia To Go")
-            }
-            "Freezeria" -> {
-                valores.add("Freezeria")
-            }
-            "Freezeria HD" -> {
-                valores.add("Freezeria HD")
-            }
-            "Freezeria To Go" -> {
-                valores.add("Freezeria To Go")
-            }
-            "Freezeria Deluxe" -> {
-                valores.add("Freezeria Deluxe")
-            }
-            "Pancakeria" -> {
-                valores.add("Pancakeria")
-            }
-            "Pancakeria HD" -> {
-                valores.add("Pancakeria HD")
-            }
-            "Pancakeria To Go" -> {
-                valores.add("Pancakeria To Go")
-            }
-            "Wingeria" -> {
-                valores.add("Wingeria")
-            }
-            "Wingeria HD" -> {
-                valores.add("Wingeria HD")
-            }
-            "Wingeria To Go" -> {
-                valores.add("Wingeria To Go")
-            }
-            "Hot Doggeria" -> {
-                valores.add("Hot Doggeria")
-            }
-            "Hot Doggeria HD" -> {
-                valores.add("Hot Doggeria HD")
-            }
-            "Hot Doggeria To Go" -> {
-                valores.add("Hot Doggeria To Go")
-            }
-            "Cupcakeria" -> {
-                valores.add("Cupcakeria")
-            }
-            "Cupcakeria HD" -> {
-                valores.add("Cupcakeria HD")
-            }
-            "Cupcakeria To Go" -> {
-                valores.add("Cupcakeria To Go")
-            }
-            "Pastaria" -> {
-                valores.add("Pastaria")
-            }
-            "Pastaria To Go" -> {
-                valores.add("Pastaria To Go")
-            }
-            "Donuteria" -> {
-                valores.add("Donuteria")
-            }
-            "Donuteria To Go" -> {
-                valores.add("Donuteria To Go")
-            }
-            "Cheeseria" -> {
-                valores.add("Cheeseria")
-            }
-            "Cheeseria To Go" -> {
-                valores.add("Cheeseria To Go")
-            }
-            "Bakeria" -> {
-                valores.add("Bakeria")
-            }
-            "Bakeria To Go" -> {
-                valores.add("Bakeria To Go")
-            }
-            "Sushiria" -> {
-                valores.add("Sushiria")
-            }
-            "Sushiria To Go" -> {
-                valores.add("Sushiria To Go")
-            }
-            "Scooperia" -> {
-                valores.add("Scooperia")
-            }
-            "Scooperia To Go" -> {
-                valores.add("Scooperia To Go")
-            }
-            "Mocharia To Go" -> {
-                valores.add("Mocharia To Go")
-            }
-            "Cluckeria To Go" -> {
-                valores.add("Cluckeria To Go")
-            }
-            "Paleteria To Go" -> {
-                valores.add("Paleteria To Go")
-            }
         }
-        conexion.collection("Customers/$usuario/MyIngredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
+        conexion.collection("Ingredients").whereIn(parametro, valores).orderBy(parametro).limit(numero).get().addOnSuccessListener {
             _ingredients.value.clear()
             it.documents.forEach {
                     docu->_ingredients.value.add(docu.toObject()!!)

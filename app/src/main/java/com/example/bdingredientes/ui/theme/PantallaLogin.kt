@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 var auth = FirebaseAuth.getInstance()
 var user = auth.currentUser
 var usuario = ""
+var admin = false
 
 @Composable
 fun PantallaLogin(navController: NavController) {
@@ -43,12 +44,16 @@ fun PantallaLogin(navController: NavController) {
                 user = auth.currentUser
                 if (user?.email == "aymaragamer14@gmail.com") {
                     usuario = "RDTQ7Q7OmNbcvu6n1hiC"
+                    admin = true
                 } else if (user?.email == "nayaragamer14@gmail.com") {
                     usuario = "53VeNd9JZizsabjCLtrM"
+                    admin = true
                 } else if (user?.email == "alejandro@falso.com") {
                     usuario = "5k8EK1sExXOs0twUjZWD"
+                    admin = false
                 } else {
                     usuario = "uRxr15PTS2TISErKZ8Hw"
+                    admin = false
                 }
                 navController.navigate(Rutas.Menu.Ruta)
                 } else {
