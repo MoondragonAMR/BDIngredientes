@@ -36,12 +36,14 @@ import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import com.example.bdingredientes.clases.Equipment
 import com.example.bdingredientes.clases.VMBD3
 import com.example.bdingredientes.clases.VMBD4
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavController) {
     var equipment = db.equipment.collectAsState().value
@@ -847,7 +849,7 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                         Modifier
                             .padding(4.dp)
                             .border(width = 2.dp, color = Color.Cyan)
-                            .clickable() {
+                            .combinedClickable {
                                 db4.anyadirUtensilio(
                                     nombre,
                                     tipo,

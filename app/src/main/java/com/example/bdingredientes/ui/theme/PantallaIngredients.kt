@@ -36,9 +36,11 @@ import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.combinedClickable
 import com.example.bdingredientes.clases.nombre
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavController) {
     //var db: VMBD = viewModel()
@@ -931,10 +933,16 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                 if (filtroParametro == "None") {
                     db.filtrarIngredientes(numero, parametro)
                 } else {
-                    if (parametro == "holidayExclusive") {
-                        db.filtrarIngredientesHE(numero, parametro, filtroParametro.toBoolean())
-                    } else {
-                        db.filtrarIngredientes(numero, parametro, filtroParametro)
+                    when (parametro) {
+                        "holidayExclusive" -> {
+                            db.filtrarIngredientesHE(numero, parametro, filtroParametro.toBoolean())
+                        }
+                        "game", "orderPart" -> {
+                            //db.filtrarIngredientes2(numero, parametro, filtroParametro)
+                        }
+                        else -> {
+                            db.filtrarIngredientes(numero, parametro, filtroParametro)
+                        }
                     }
                 }
             }) {
@@ -957,7 +965,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                 val celebracion = listaMostrar[it].holiday
                 val deCelebracion = listaMostrar[it].holidayExclusive
                 val comida = listaMostrar[it].food
-                val numero = listaMostrar[it].number
+                val numero2 = listaMostrar[it].number
                 val juego = listaMostrar[it].game
                 val parte = listaMostrar[it].orderPart
 
@@ -5247,7 +5255,7 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                         Modifier
                             .padding(4.dp)
                             .border(width = 2.dp, color = Color.Cyan)
-                            .clickable() {
+                            .combinedClickable {
                                 db2.anyadirIngrediente(
                                     nombre,
                                     tipo,
@@ -5255,12 +5263,12 @@ fun PantallaIngredients(db : VMBD, sf: ViewModelScaffold, navController: NavCont
                                     deCelebracion,
                                     celebracion,
                                     comida,
-                                    numero,
+                                    numero2,
                                     juego,
                                     parte
                                 )
                             }) {
-                        Text(text = "number = $numero")
+                        Text(text = "number = $numero2")
                         Text(text = "name = $nombre")
                         Text(text = "type = $tipo")
                         Text(text = "flavor = $sabor")

@@ -950,10 +950,16 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                 if (filtroParametro == "None") {
                     db.filtrarIngredientes(numero2, parametro)
                 } else {
-                    if (parametro == "holidayExclusive") {
-                        db.filtrarIngredientesHE(numero2, parametro, filtroParametro.toBoolean())
-                    } else {
-                        db.filtrarIngredientes(numero2, parametro, filtroParametro)
+                    when (parametro) {
+                        "holidayExclusive" -> {
+                            db.filtrarIngredientesHE(numero2, parametro, filtroParametro.toBoolean())
+                        }
+                        "game", "orderPart" -> {
+                            //db.filtrarIngredientes2(numero2, parametro, filtroParametro)
+                        }
+                        else -> {
+                            db.filtrarIngredientes(numero2, parametro, filtroParametro)
+                        }
                     }
                 }
             }) {
