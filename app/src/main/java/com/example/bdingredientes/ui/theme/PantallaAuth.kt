@@ -19,7 +19,7 @@ fun PantallaAuth(navController: NavController) {
     var password by remember { mutableStateOf("") }
     var texto by remember { mutableStateOf("Insert the new user's email and password")}
 
-    Column() {
+    Column {
         Text(texto)
         Text("Email: ")
         TextField(
@@ -33,9 +33,9 @@ fun PantallaAuth(navController: NavController) {
             visualTransformation = PasswordVisualTransformation(),
             placeholder = { Text("Insert your password") })
         Button(onClick = {
-            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() {
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                     task -> if (task.isSuccessful) {
-                        navController.navigate(Rutas.Login.Ruta)
+                        navController.navigate(Rutas.Login.ruta)
                     } else {
                     texto = "Email must contain an @. Password must contain a number. Please introduce them again"
                     email = ""

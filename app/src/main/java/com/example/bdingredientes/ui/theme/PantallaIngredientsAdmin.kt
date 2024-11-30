@@ -28,14 +28,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
 import com.example.bdingredientes.clases.VMBD
-import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
+import androidx.compose.runtime.snapshots.SnapshotStateList
+import com.example.bdingredientes.clases.Ingredient
 import com.example.bdingredientes.clases.Rutas
 import com.example.bdingredientes.clases.celebracion
 import com.example.bdingredientes.clases.codigo
@@ -51,9 +51,7 @@ import com.example.bdingredientes.clases.tipo
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: NavController) {
-    //var db: VMBD = viewModel()
-    var ingredients = db.ingredients.collectAsState().value
-    var db2: VMBD2 = viewModel()
+    val ingredients = db.ingredients.collectAsState().value
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
@@ -64,11 +62,11 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
     //var sf: ViewModelScaffold = viewModel()
-    var aleatorio = sf.Aleatorio3.collectAsState().value
-    var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
-    var delete = sf.borrar3.collectAsState().value
-    var update = sf.modificar3.collectAsState().value
-    var listaMostrar = db.listaMostrar.collectAsState().value
+    val aleatorio = sf.aleatorio3.collectAsState().value
+    val ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
+    val delete = sf.borrar3.collectAsState().value
+    val update = sf.modificar3.collectAsState().value
+    var listaMostrar: SnapshotStateList<Ingredient>
     var url by remember { mutableStateOf("") }
 
     BackHandler{
@@ -80,9 +78,9 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
         onDispose { db.borrarListener() }
     }
 
-    Column() {
+    Column {
 
-        Row() {
+        Row {
             Text(text =
             if (delete.value) {
                 "Click on an ingredient to delete it, click the Delete button again to stop Delete Mode"
@@ -98,11 +96,11 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
             onSearch = { filtro = it; estado = false },
             active = estado,
             onActiveChange = { estado = !estado }) {
-            LazyColumn() {
+            LazyColumn {
                 items(ingredients.size) {
 
-                    var mostrar = false
-                    var mostrar2 = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                     mostrar = if (busqueda.length == 1) {
                         ingredients[it].name.startsWith(busqueda, true)
@@ -122,7 +120,7 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                 }
             }
         }
-        Row() {
+        Row {
             Text("Number of ingredients shown: ")
             TextField(
                 value = valor,
@@ -130,7 +128,7 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 placeholder = { Text("Insert a number") })
         }
-        Row() {
+        Row {
             Text("Order by: ")
             ExposedDropdownMenuBox(expanded = activado,
                 onExpandedChange = { activado = !activado }) {
@@ -173,7 +171,7 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                 }
             }
         }
-        Row() {
+        Row {
             Text("Filter: ")
             ExposedDropdownMenuBox(expanded = activado2,
                 onExpandedChange = { activado2 = !activado2 }) {
@@ -944,7 +942,7 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                 }
             }
         }
-        Row() {
+        Row {
             Button(onClick = {
                 numero2 = valor.toLong()
                 if (filtroParametro == "None") {
@@ -976,8 +974,8 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
 
             items(listaMostrar.size) {
 
-                var mostrar = false
-                var mostrar2 = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                 mostrar = if (filtro.length == 1) {
                     (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
@@ -5277,7 +5275,7 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                                 if (delete.value) {
                                     db.borrarIngrediente(codigo)
                                 } else if (update.value) {
-                                    navController.navigate(Rutas.AdminUpdate.Ruta)
+                                    navController.navigate(Rutas.AdminUpdate.ruta)
                                 }
                             }) {
                         Text(text = "number = $numero")

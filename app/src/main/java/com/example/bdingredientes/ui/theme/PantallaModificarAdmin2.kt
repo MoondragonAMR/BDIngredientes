@@ -3,11 +3,6 @@ package com.example.bdingredientes.ui.theme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -15,28 +10,24 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
-import com.example.bdingredientes.clases.celebracion
 import com.example.bdingredientes.clases.celebracion2
 import com.example.bdingredientes.clases.comida
-import com.example.bdingredientes.clases.comida2
-import com.example.bdingredientes.clases.deCelebracion
 import com.example.bdingredientes.clases.juego2
-import com.example.bdingredientes.clases.juego3
-import com.example.bdingredientes.clases.nombre
 import com.example.bdingredientes.clases.nombre2
-import com.example.bdingredientes.clases.numero
 import com.example.bdingredientes.clases.numero2
 import com.example.bdingredientes.clases.parte
-import com.example.bdingredientes.clases.parte2
-import com.example.bdingredientes.clases.sabor
-import com.example.bdingredientes.clases.tipo
 import com.example.bdingredientes.clases.tipo2
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaModificarAdmin2(id : String, name : String, type : String, holiday : String, food : String, game : String, part : String, number : Int) {
+fun PantallaModificarAdmin2(
+    name: String,
+    type: String,
+    holiday: String,
+    food: String,
+    game: String,
+    part: String,
+    number: Int
+) {
     var nombreAdd by remember { mutableStateOf(name) }
     nombre2 = nombreAdd
     var tipoAdd by remember { mutableStateOf(type) }

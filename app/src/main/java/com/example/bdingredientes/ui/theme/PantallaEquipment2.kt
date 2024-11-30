@@ -28,21 +28,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
-import com.example.bdingredientes.clases.VMBD
-import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
-import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import com.example.bdingredientes.clases.Equipment
 import com.example.bdingredientes.clases.Rutas
-import com.example.bdingredientes.clases.VMBD3
 import com.example.bdingredientes.clases.VMBD4
 import com.example.bdingredientes.clases.celebracion2
-import com.example.bdingredientes.clases.codigo
 import com.example.bdingredientes.clases.codigo2
 import com.example.bdingredientes.clases.comida
 import com.example.bdingredientes.clases.juego2
@@ -54,7 +48,7 @@ import com.example.bdingredientes.clases.tipo2
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavController) {
-    var equipment = db.equipment.collectAsState().value
+    val equipment = db.equipment.collectAsState().value
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
@@ -64,10 +58,10 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
     var filtroParametro by remember { mutableStateOf("none") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    var aleatorio = sf.Aleatorio2.collectAsState().value
-    var delete = sf.borrar2.collectAsState().value
-    var update = sf.modificar2.collectAsState().value
-    var utensiliosRandom = db.equipmentAleatorio.collectAsState().value
+    val aleatorio = sf.aleatorio2.collectAsState().value
+    val delete = sf.borrar2.collectAsState().value
+    val update = sf.modificar2.collectAsState().value
+    val utensiliosRandom = db.equipmentAleatorio.collectAsState().value
     var listaMostrar: SnapshotStateList<Equipment>
     var url by remember { mutableStateOf("") }
 
@@ -80,9 +74,9 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
         onDispose { db.borrarListener() }
     }
 
-    Column() {
+    Column {
 
-        Row() {
+        Row {
             Text(text =
             if (delete.value) {
                 "Click on an equipment to delete it, click the Delete button again to stop Delete Mode"
@@ -98,11 +92,11 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
             onSearch = { filtro = it; estado = false },
             active = estado,
             onActiveChange = { estado = !estado }) {
-            LazyColumn() {
+            LazyColumn {
                 items(equipment.size) {
 
-                    var mostrar = false
-                    var mostrar2 = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                     mostrar = if (busqueda.length == 1) {
                         equipment[it].name.startsWith(busqueda, true)
@@ -124,7 +118,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 }
             }
         }
-        Row() {
+        Row {
             Text("Number of equipment shown: ")
             TextField(
                 value = valor,
@@ -132,7 +126,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 placeholder = { Text("Insert a number") })
         }
-        Row() {
+        Row {
             Text("Order by: ")
             ExposedDropdownMenuBox(expanded = activado,
                 onExpandedChange = { activado = !activado }) {
@@ -169,7 +163,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 }
             }
         }
-        Row() {
+        Row {
             Text("Filter: ")
             ExposedDropdownMenuBox(expanded = activado2,
                 onExpandedChange = { activado2 = !activado2 }) {
@@ -458,7 +452,7 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                 }
             }
         }
-        Row() {
+        Row {
             Button(onClick = {
                 numero = valor.toLong()
                 if (filtroParametro == "none") {
@@ -470,15 +464,15 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
         }
         LazyColumn {
 
-            if (aleatorio.value) {
-                listaMostrar = utensiliosRandom
+            listaMostrar = if (aleatorio.value) {
+                utensiliosRandom
             } else {
-                listaMostrar = equipment
+                equipment
             }
             items(listaMostrar.size) {
 
-                var mostrar = false
-                var mostrar2 = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                 mostrar = if (filtro.length == 1) {
                     (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
@@ -865,11 +859,11 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                         Modifier
                             .padding(4.dp)
                             .border(width = 2.dp, color = Color.Cyan)
-                            .clickable() {
+                            .clickable {
                                 if (delete.value) {
                                     db.borrarUtensilio(codigo2)
                                 } else if (update.value) {
-                                    navController.navigate(Rutas.EquipmentUpdate.Ruta)
+                                    navController.navigate(Rutas.EquipmentUpdate.ruta)
                                 }
                             }) {
                         Text(text = "number = $numero2")

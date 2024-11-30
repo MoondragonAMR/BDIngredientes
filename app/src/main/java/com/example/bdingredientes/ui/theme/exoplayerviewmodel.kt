@@ -22,10 +22,10 @@ class ExoPlayerViewModel : ViewModel(){
     val exoPlayer = _exoPlayer.asStateFlow()
 
     private val _duracion  = MutableStateFlow(0)
-    val duracion = _duracion.asStateFlow()
+    //val duracion = _duracion.asStateFlow()
 
     private val _progreso = MutableStateFlow(0)
-    val progreso = _progreso.asStateFlow()
+    //val progreso = _progreso.asStateFlow()
 
     fun crearExoPlayer(context: Context){
         _exoPlayer.value = ExoPlayer.Builder(context).build()
@@ -37,25 +37,29 @@ class ExoPlayerViewModel : ViewModel(){
         val mediaItem = MediaItem.fromUri(obtenerRuta(context, R.raw.build_station))
         _exoPlayer.value!!.setMediaItem(mediaItem)
         _exoPlayer.value!!.playWhenReady = true
-        // Este listener se mantendrá mientras NO se librere el _exoPlayer
-        // Asi que no hace falta crearlo más de una vez.
+
         _exoPlayer.value!!.addListener(object : Player.Listener{
             override fun onPlaybackStateChanged(playbackState: Int) {
-                if (playbackState == Player.STATE_READY) {
+                when (playbackState) {
+                    Player.STATE_READY -> {
 
-                    _duracion.value = _exoPlayer.value!!.duration.toInt()
+                        _duracion.value = _exoPlayer.value!!.duration.toInt()
 
-                    viewModelScope.launch {
-                        while (isActive) {
-                            _progreso.value = _exoPlayer.value!!.currentPosition.toInt()
-                            delay(1000)
+                        viewModelScope.launch {
+                            while (isActive) {
+                                _progreso.value = _exoPlayer.value!!.currentPosition.toInt()
+                                delay(1000)
+                            }
                         }
                     }
-                } else if (playbackState == Player.STATE_BUFFERING) {
+                    Player.STATE_BUFFERING -> {
 
-                } else if (playbackState == Player.STATE_ENDED) {
-                    Player.STATE_READY
-                } else if (playbackState == Player.STATE_IDLE) {
+                    }
+                    Player.STATE_ENDED -> {
+                        Player.STATE_READY
+                    }
+                    Player.STATE_IDLE -> {
+                    }
                 }
 
             }
@@ -67,14 +71,13 @@ class ExoPlayerViewModel : ViewModel(){
         super.onCleared()
     }
 
-    fun PausarOSeguirMusica() {
+    fun pausarOSeguirMusica() {
         if(!_exoPlayer.value!!.isPlaying ){
             _exoPlayer.value!!.play()
         }else{
             _exoPlayer.value!!.pause()
         }
     }
-// Funcion auxiliar que devuelve la ruta de un fichero a partir de su ID
 @Throws(Resources.NotFoundException::class)
 fun obtenerRuta(context: Context, @AnyRes resId: Int): Uri {
     val res: Resources = context.resources

@@ -5,14 +5,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 
 var imagenes = mutableListOf<String>()
 
 
 @Composable
 fun ImagenIngrediente(url : String) {
-    val imagen = rememberImagePainter(url)
+    val imagen = rememberAsyncImagePainter(url)
 
     Image(
         painter = imagen,

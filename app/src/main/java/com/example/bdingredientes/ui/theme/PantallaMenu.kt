@@ -12,19 +12,19 @@ import com.example.bdingredientes.clases.Rutas
 @Composable
 fun PantallaMenu(navController: NavController) {
     Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-        Button(onClick = { navController.navigate(Rutas.Usuario.Ruta) }) {
+        Button(onClick = { navController.navigate(Rutas.Usuario.ruta) }) {
             Text("Ingredients")
         }
-        Button(onClick = { navController.navigate(Rutas.Admin.Ruta) }, enabled = admin) {
+        Button(onClick = { navController.navigate(Rutas.Admin.ruta) }, enabled = admin) {
             Text("Ingredients Admin")
         }
-        Button(onClick = { navController.navigate(Rutas.UtensiliosUsuario.Ruta) }) {
+        Button(onClick = { navController.navigate(Rutas.UtensiliosUsuario.ruta) }) {
             Text("Equipment")
         }
-        Button(onClick = { navController.navigate(Rutas.UtensiliosAdmin.Ruta) }, enabled = admin) {
+        Button(onClick = { navController.navigate(Rutas.UtensiliosAdmin.ruta) }, enabled = admin) {
             Text("Equipment Admin")
         }
-        Button(onClick = { navController.navigate(Rutas.Random.Ruta) }) {
+        Button(onClick = { navController.navigate(Rutas.Random.ruta) }) {
             Text("Orders")
         }
         Button(onClick = {}) {

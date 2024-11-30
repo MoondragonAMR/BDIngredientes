@@ -1,6 +1,6 @@
 package com.example.bdingredientes.clases
 
-sealed class Rutas(val Ruta: String) {
+sealed class Rutas(val ruta: String) {
     object Usuario : Rutas("PantallaIngredients2")
     object General : Rutas("PantallaIngredients")
     object Add : Rutas("PantallaAñadir")

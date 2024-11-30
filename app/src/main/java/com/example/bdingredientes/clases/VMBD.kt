@@ -13,28 +13,32 @@ import kotlinx.coroutines.flow.asStateFlow
 class VMBD : ViewModel() {
     val conexion = FirebaseFirestore.getInstance()
     private lateinit var listener: ListenerRegistration
-    var _ingredients = MutableStateFlow(mutableStateListOf<Ingredient>())
+    private var _ingredients = MutableStateFlow(mutableStateListOf<Ingredient>())
     var ingredients = _ingredients.asStateFlow()
-    var _ingredientsAleatorio = MutableStateFlow(mutableStateListOf<Ingredient>())
+    private var _ingredientsAleatorio = MutableStateFlow(mutableStateListOf<Ingredient>())
     var ingredientsAleatorio = _ingredientsAleatorio.asStateFlow()
 
-    var _listaMostrar = MutableStateFlow(mutableStateListOf<Ingredient>())
+    private var _listaMostrar = MutableStateFlow(mutableStateListOf<Ingredient>())
     var listaMostrar = _listaMostrar.asStateFlow()
     fun crearListener() {
         listener = conexion.collection("Ingredients").addSnapshotListener { datos, error ->
             if (error == null) {
                 datos?.documentChanges?.forEach { cambio ->
-                    if (cambio.type == DocumentChange.Type.ADDED) {
-                        var ingrediente = cambio.document.toObject<Ingredient>()
-                        ingrediente.id = cambio.document.id
+                    when (cambio.type) {
+                        DocumentChange.Type.ADDED -> {
+                            val ingrediente = cambio.document.toObject<Ingredient>()
+                            ingrediente.id = cambio.document.id
 
-                        _ingredients.value.add(ingrediente)
-                    } else if (cambio.type == DocumentChange.Type.MODIFIED) {
-                        var ingrediente = cambio.document.toObject<Ingredient>()
-                        _ingredients.value[cambio.newIndex] = ingrediente
-                    } else {
-                        var ingrediente = cambio.document.toObject<Ingredient>()
-                        _ingredients.value.remove(ingrediente)
+                            _ingredients.value.add(ingrediente)
+                        }
+                        DocumentChange.Type.MODIFIED -> {
+                            val ingrediente = cambio.document.toObject<Ingredient>()
+                            _ingredients.value[cambio.newIndex] = ingrediente
+                        }
+                        else -> {
+                            val ingrediente = cambio.document.toObject<Ingredient>()
+                            _ingredients.value.remove(ingrediente)
+                        }
                     }
                 }
             }

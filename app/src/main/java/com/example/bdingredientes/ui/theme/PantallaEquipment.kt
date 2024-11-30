@@ -31,10 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
-import com.example.bdingredientes.clases.VMBD
-import com.example.bdingredientes.clases.VMBD2
 import com.example.bdingredientes.clases.ViewModelScaffold
-import com.example.bdingredientes.clases.imagenes
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -46,8 +43,8 @@ import com.example.bdingredientes.clases.VMBD4
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavController) {
-    var equipment = db.equipment.collectAsState().value
-    var db4: VMBD4 = viewModel()
+    val equipment = db.equipment.collectAsState().value
+    val db4: VMBD4 = viewModel()
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
@@ -57,8 +54,8 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
     var filtroParametro by remember { mutableStateOf("none") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    var aleatorio = sf.Aleatorio2.collectAsState().value
-    var utensiliosRandom = db.equipmentAleatorio.collectAsState().value
+    val aleatorio = sf.aleatorio2.collectAsState().value
+    val utensiliosRandom = db.equipmentAleatorio.collectAsState().value
     var listaMostrar: SnapshotStateList<Equipment>
     var url by remember { mutableStateOf("") }
 
@@ -71,9 +68,9 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
         onDispose { db.borrarListener() }
     }
 
-    Column() {
+    Column {
 
-        Row() {
+        Row {
             Text("Click on an equipment to add it to your list", fontWeight = FontWeight.Bold)
         }
         SearchBar(placeholder = { Text("Search equipment by number or name") },
@@ -82,11 +79,11 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
             onSearch = { filtro = it; estado = false },
             active = estado,
             onActiveChange = { estado = !estado }) {
-            LazyColumn() {
+            LazyColumn {
                 items(equipment.size) {
 
-                    var mostrar = false
-                    var mostrar2 = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                     mostrar = if (busqueda.length == 1) {
                         equipment[it].name.startsWith(busqueda, true)
@@ -108,7 +105,7 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                 }
             }
         }
-        Row() {
+        Row {
             Text("Number of equipment shown: ")
             TextField(
                 value = valor,
@@ -116,7 +113,7 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 placeholder = { Text("Insert a number") })
         }
-        Row() {
+        Row {
             Text("Order by: ")
             ExposedDropdownMenuBox(expanded = activado,
                 onExpandedChange = { activado = !activado }) {
@@ -153,7 +150,7 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                 }
             }
         }
-        Row() {
+        Row {
             Text("Filter: ")
             ExposedDropdownMenuBox(expanded = activado2,
                 onExpandedChange = { activado2 = !activado2 }) {
@@ -442,7 +439,7 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                 }
             }
         }
-        Row() {
+        Row {
             Button(onClick = {
                 numero = valor.toLong()
                 if (filtroParametro == "none") {
@@ -455,15 +452,15 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
 
         LazyColumn {
 
-            if (aleatorio.value) {
-                listaMostrar = utensiliosRandom
+            listaMostrar = if (aleatorio.value) {
+                utensiliosRandom
             } else {
-                listaMostrar = equipment
+                equipment
             }
             items(listaMostrar.size) {
 
-                var mostrar = false
-                var mostrar2 = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                 mostrar = if (filtro.length == 1) {
                     (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))

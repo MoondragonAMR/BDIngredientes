@@ -27,8 +27,17 @@ import com.example.bdingredientes.clases.tipo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaModificar(id : String, name : String, type : String, flavor : String, holidayExclusive : Boolean, holiday : String, food : String
-, number : Int, game : String, part : String) {
+fun PantallaModificar(
+    name: String,
+    type: String,
+    flavor: String,
+    holidayExclusive: Boolean,
+    holiday: String,
+    food: String,
+    number: Int,
+    game: String,
+    part: String
+) {
     var nombreAdd by remember { mutableStateOf(name) }
     nombre = nombreAdd
     var tipoAdd by remember { mutableStateOf(type) }

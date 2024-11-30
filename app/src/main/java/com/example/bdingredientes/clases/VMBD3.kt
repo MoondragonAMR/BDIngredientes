@@ -8,33 +8,36 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.forEach
 
 class VMBD3 : ViewModel() {
     val conexion = FirebaseFirestore.getInstance()
     private lateinit var listener: ListenerRegistration
-    var _equipment = MutableStateFlow(mutableStateListOf<Equipment>())
+    private var _equipment = MutableStateFlow(mutableStateListOf<Equipment>())
     var equipment = _equipment.asStateFlow()
-    var _equipmentAleatorio = MutableStateFlow(mutableStateListOf<Equipment>())
+    private var _equipmentAleatorio = MutableStateFlow(mutableStateListOf<Equipment>())
     var equipmentAleatorio = _equipmentAleatorio.asStateFlow()
 
-    var _listaMostrar = MutableStateFlow(mutableStateListOf<Equipment>())
+    private var _listaMostrar = MutableStateFlow(mutableStateListOf<Equipment>())
     var listaMostrar = _listaMostrar.asStateFlow()
     fun crearListener() {
         listener = conexion.collection("Equipment").addSnapshotListener { datos, error ->
             if (error == null) {
                 datos?.documentChanges?.forEach { cambio ->
-                    if (cambio.type == DocumentChange.Type.ADDED) {
-                        var utensilio = cambio.document.toObject<Equipment>()
-                        utensilio.id = cambio.document.id
+                    when (cambio.type) {
+                        DocumentChange.Type.ADDED -> {
+                            val utensilio = cambio.document.toObject<Equipment>()
+                            utensilio.id = cambio.document.id
 
-                        _equipment.value.add(utensilio)
-                    } else if (cambio.type == DocumentChange.Type.MODIFIED) {
-                        var utensilio = cambio.document.toObject<Equipment>()
-                        _equipment.value[cambio.newIndex] = utensilio
-                    } else {
-                        var utensilio = cambio.document.toObject<Equipment>()
-                        _equipment.value.remove(utensilio)
+                            _equipment.value.add(utensilio)
+                        }
+                        DocumentChange.Type.MODIFIED -> {
+                            val utensilio = cambio.document.toObject<Equipment>()
+                            _equipment.value[cambio.newIndex] = utensilio
+                        }
+                        else -> {
+                            val utensilio = cambio.document.toObject<Equipment>()
+                            _equipment.value.remove(utensilio)
+                        }
                     }
                 }
             }

@@ -26,7 +26,7 @@ fun PantallaLogin(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    Column() {
+    Column {
         Text(texto)
         Text("Email: ")
         TextField(
@@ -39,23 +39,28 @@ fun PantallaLogin(navController: NavController) {
             onValueChange = { texto -> password = texto },
             visualTransformation = PasswordVisualTransformation(),
             placeholder = { Text("Insert your password") })
-        Button(onClick = { auth.signInWithEmailAndPassword(email, password).addOnCompleteListener() {
+        Button(onClick = { auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 task -> if (task.isSuccessful) {
                 user = auth.currentUser
-                if (user?.email == "aymaragamer14@gmail.com") {
+            when (user?.email) {
+                "aymaragamer14@gmail.com" -> {
                     usuario = "RDTQ7Q7OmNbcvu6n1hiC"
                     admin = true
-                } else if (user?.email == "nayaragamer14@gmail.com") {
+                }
+                "nayaragamer14@gmail.com" -> {
                     usuario = "53VeNd9JZizsabjCLtrM"
                     admin = true
-                } else if (user?.email == "alejandro@falso.com") {
+                }
+                "alejandro@falso.com" -> {
                     usuario = "5k8EK1sExXOs0twUjZWD"
                     admin = false
-                } else {
+                }
+                else -> {
                     usuario = "uRxr15PTS2TISErKZ8Hw"
                     admin = false
                 }
-                navController.navigate(Rutas.Menu.Ruta)
+            }
+                navController.navigate(Rutas.Menu.ruta)
                 } else {
                     texto = "Email and/or password incorrect. Please introduce them again"
                     email = ""
@@ -64,9 +69,9 @@ fun PantallaLogin(navController: NavController) {
         } }) {
             Text("Log in")
         }
-        Row() {
-            Text("You are not autenticated?")
-            Button(onClick = { navController.navigate(Rutas.Auth.Ruta) }) {
+        Row {
+            Text("You are not authenticated?")
+            Button(onClick = { navController.navigate(Rutas.Auth.ruta) }) {
                 Text("Sign in")
             }
         }

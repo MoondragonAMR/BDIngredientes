@@ -4,10 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -15,7 +11,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import com.example.bdingredientes.clases.celebracion
 import com.example.bdingredientes.clases.comida2
@@ -27,7 +22,6 @@ import com.example.bdingredientes.clases.parte2
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PantallaAñadirAdmin() {
     var nombreAdd by remember { mutableStateOf("") }

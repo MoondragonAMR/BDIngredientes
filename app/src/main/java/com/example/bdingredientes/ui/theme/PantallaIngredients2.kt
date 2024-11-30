@@ -51,8 +51,7 @@ import com.example.bdingredientes.clases.tipo
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavController){
-    //var db : VMBD2 = viewModel()
-    var ingredients = db.ingredients.collectAsState().value
+    val ingredients = db.ingredients.collectAsState().value
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
@@ -62,11 +61,10 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
     var filtroParametro by remember { mutableStateOf("None") }
     var activado by remember { mutableStateOf(false) }
     var activado2 by remember { mutableStateOf(false) }
-    //var sf : ViewModelScaffold = viewModel()
-    var aleatorio = sf.Aleatorio.collectAsState().value
-    var ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
-    var delete = sf.borrar2.collectAsState().value
-    var update = sf.modificar2.collectAsState().value
+    val aleatorio = sf.aleatorio1.collectAsState().value
+    val ingredientsRandom = db.ingredientsAleatorio.collectAsState().value
+    val delete = sf.borrar2.collectAsState().value
+    val update = sf.modificar2.collectAsState().value
     var listaMostrar: SnapshotStateList<Ingredient>
     var url by remember { mutableStateOf("") }
 
@@ -79,8 +77,8 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
         onDispose { db.borrarListener() }
     }
 
-    Column() {
-        Row() {
+    Column {
+        Row {
             Text(text =
                 if (delete.value) {
                     "Click on an ingredient to delete it, click the Delete button again to stop Delete Mode"
@@ -96,11 +94,11 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
             onSearch = { filtro = it; estado = false },
             active = estado,
             onActiveChange = { estado = !estado }) {
-            LazyColumn() {
+            LazyColumn {
                 items(ingredients.size) {
 
-                    var mostrar = false
-                    var mostrar2 = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                    @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                     mostrar = if (busqueda.length == 1) {
                         ingredients[it].name.startsWith(busqueda, true)
@@ -120,7 +118,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 }
             }
         }
-        Row() {
+        Row {
             Text("Number of ingredients shown: ")
             TextField(
                 value = valor,
@@ -128,7 +126,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 placeholder = { Text("Insert a number") })
         }
-        Row() {
+        Row {
             Text("Order by: ")
             ExposedDropdownMenuBox(expanded = activado,
                 onExpandedChange = { activado = !activado }) {
@@ -171,7 +169,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 }
             }
         }
-        Row() {
+        Row {
             Text("Filter: ")
             ExposedDropdownMenuBox(expanded = activado2,
                 onExpandedChange = { activado2 = !activado2 }) {
@@ -942,7 +940,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 }
             }
         }
-        Row() {
+        Row {
             Button(onClick = {
                 numero2 = valor.toLong()
                 if (filtroParametro == "None") {
@@ -964,18 +962,17 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                 Text("Apply conditions")
             }
         }
-        LazyColumn(
-        ) {
+        LazyColumn {
 
-            if (aleatorio.value) {
-                listaMostrar = ingredientsRandom
+            listaMostrar = if (aleatorio.value) {
+                ingredientsRandom
             } else {
-                listaMostrar = ingredients
+                ingredients
             }
             items(listaMostrar.size) {
 
-                var mostrar = false
-                var mostrar2 = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
+                @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
                 mostrar = if (filtro.length == 1) {
                     (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
@@ -5274,7 +5271,7 @@ fun PantallaIngredients2(db : VMBD2, sf: ViewModelScaffold,  navController: NavC
                                 if (delete.value) {
                                     db.borrarIngrediente(codigo)
                                 } else if (update.value) {
-                                    navController.navigate(Rutas.Update.Ruta)
+                                    navController.navigate(Rutas.Update.ruta)
                                 }
                             }) {
                         Text(text = "number = $numero")
