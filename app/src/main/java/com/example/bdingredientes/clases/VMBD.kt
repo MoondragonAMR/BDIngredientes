@@ -50,7 +50,7 @@ class VMBD : ViewModel() {
     }
 
     fun anyadirIngrediente(
-        name: String, flavor: String, type: String, holidayExclusive: Boolean, holiday: String, food : String
+        name: String, type: String, flavor: String, holidayExclusive: Boolean, holiday: String, food : String
         , number : Int, game : String, part : String
     ) {
         val newIngredient = Ingredient(name, type, flavor, holidayExclusive, holiday, food, number, game, part)

@@ -55,7 +55,7 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
     var estado by remember { mutableStateOf(false) }
     var busqueda by remember { mutableStateOf("") }
     var filtro by remember { mutableStateOf("") }
-    var numero2 by remember { mutableStateOf(1422L) }
+    var numero2 by remember { mutableStateOf(1426L) }
     var valor by remember { mutableStateOf(numero2.toString())}
     var parametro by remember { mutableStateOf("id") }
     var filtroParametro by remember { mutableStateOf("None") }
@@ -5261,6 +5261,18 @@ fun PantallaIngredientsAdmin(db : VMBD, sf: ViewModelScaffold, navController: Na
                         }
                         "Cranberry Chili Sauce" -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cranberry_Chili_Sauce.png?alt=media&token=265bce1f-ca31-408f-b7af-8533a123532e"
+                        }
+                        "Fresh Mozzarella" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Fresh_Mozzarella.png?alt=media&token=18649957-2ccf-413d-8675-a9cd21b78f12"
+                        }
+                        "Funnel Cake Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Funnel_Cake_Crust.png?alt=media&token=1a75aff6-5ee8-4fc2-95e3-cfc124fcb7c5"
+                        }
+                        "Corn Dog Slices" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Corn_Dog_Slices.png?alt=media&token=b95e183e-1674-4e7f-b2f4-ec127f364d6a"
+                        }
+                        "Cauliflower Crust" -> {
+                            url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Cauliflower_Crust.png?alt=media&token=e7aee8bd-77ad-43ae-a10b-0c3cf90c2621"
                         }
                         else -> {
                             url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Al%20azar.png?alt=media&token=ab58f4fe-3730-48ca-870d-439e3e65fb44"
