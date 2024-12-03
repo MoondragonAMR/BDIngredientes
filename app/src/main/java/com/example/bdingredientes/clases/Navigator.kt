@@ -70,58 +70,52 @@ fun Navigator() {
             Rutas.Admin.ruta -> {
                 BarraSuperiorAdmin(db, sf)
             }
+            Rutas.Add.ruta -> {
+                BarraSuperiorGenerica("Add a new ingredient", sf)
+            }
+
+            Rutas.Update.ruta -> {
+                BarraSuperiorGenerica("Modify the selected ingredient", sf)
+            }
+
+            Rutas.Login.ruta -> {
+                BarraSuperiorGenerica("Log in with your Firebase account", sf)
+            }
+
+            Rutas.Auth.ruta -> {
+                BarraSuperiorGenerica("Create a new Firebase user", sf)
+            }
+
+            Rutas.Menu.ruta -> {
+                BarraSuperiorGenerica("Choose a mode", sf)
+            }
+
+            Rutas.EquipmentAdd.ruta -> {
+                BarraSuperiorGenerica("Add a new equipment", sf)
+            }
+
+            Rutas.EquipmentUpdate.ruta -> {
+                BarraSuperiorGenerica("Modify the selected equipment", sf)
+            }
+
+            Rutas.AdminUpdate.ruta -> {
+                BarraSuperiorGenerica("Modify the selected ingredient", sf)
+            }
+
+            Rutas.AdminAdd.ruta -> {
+                BarraSuperiorGenerica("Add a new ingredient", sf)
+            }
+
+            Rutas.EquipmentAdminUpdate.ruta -> {
+                BarraSuperiorGenerica("Modify the selected equipment", sf)
+            }
+
+            Rutas.EquipmentAdminAdd.ruta -> {
+                BarraSuperiorGenerica("Add a new equipment", sf)
+            }
+
             else -> {
-                val texto: String
-                when (rutaActual) {
-                    Rutas.Add.ruta -> {
-                        texto = "Add a new ingredient"
-                    }
-
-                    Rutas.Update.ruta -> {
-                        texto = "Modify the selected ingredient"
-                    }
-
-                    Rutas.Login.ruta -> {
-                        texto = "Log in with your Firebase account"
-                    }
-
-                    Rutas.Auth.ruta -> {
-                        texto = "Create a new Firebase user"
-                    }
-
-                    Rutas.Menu.ruta -> {
-                        texto = "Choose a mode"
-                    }
-
-                    Rutas.EquipmentAdd.ruta -> {
-                        texto = "Add a new equipment"
-                    }
-
-                    Rutas.EquipmentUpdate.ruta -> {
-                        texto = "Modify the selected equipment"
-                    }
-
-                    Rutas.AdminUpdate.ruta -> {
-                        texto = "Modify the selected ingredient"
-                    }
-
-                    Rutas.AdminAdd.ruta -> {
-                        texto = "Add a new ingredient"
-                    }
-
-                    Rutas.EquipmentAdminUpdate.ruta -> {
-                        texto = "Modify the selected equipment"
-                    }
-
-                    Rutas.EquipmentAdminAdd.ruta -> {
-                        texto = "Add a new equipment"
-                    }
-
-                    else -> {
-                        texto = "Choose a game"
-                    }
-                }
-                BarraSuperiorGenerica(texto, sf)
+                BarraSuperiorGenerica("Choose a game", sf)
             }
         }
     }, bottomBar = {
