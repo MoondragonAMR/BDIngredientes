@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.DeleteForever
 import androidx.compose.material.icons.filled.EditOff
@@ -370,11 +371,30 @@ fun BarraSuperiorUsuario(navController: NavController) {
         R.drawable.baseline_music_note_24
     }
 
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
     TopAppBar(title = { Text(text = "My ingredients") }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
         }) {
-            //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
         }
         IconButton(onClick = { vm.pausarOSeguirMusica() }) {
@@ -405,7 +425,6 @@ fun BarraSuperiorUtensiliosAdmin(db: VMBD3, sf: ViewModelScaffold) {
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     iconoAleatorio = if (aleatorio.value) {
         R.drawable.baseline_shuffle_on_24
-        //db.mezclarIngredientes()
     } else {
         R.drawable.baseline_shuffle_24
     }
@@ -417,7 +436,27 @@ fun BarraSuperiorUtensiliosAdmin(db: VMBD3, sf: ViewModelScaffold) {
         R.drawable.baseline_music_note_24
     }
 
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
     TopAppBar(title = { Text(text = "All equipment") }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
             if(aleatorio.value) db.mezclarUtensilios()
@@ -448,7 +487,6 @@ fun BarraSuperiorUtensiliosGeneral(navController: NavController,db : VMBD3, sf: 
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     iconoAleatorio = if (aleatorio.value) {
         R.drawable.baseline_shuffle_on_24
-        //db.mezclarIngredientes()
     } else {
         R.drawable.baseline_shuffle_24
     }
@@ -460,12 +498,31 @@ fun BarraSuperiorUtensiliosGeneral(navController: NavController,db : VMBD3, sf: 
         R.drawable.baseline_music_note_24
     }
 
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
     TopAppBar(title = { Text(text = "All equipment") }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
             if(aleatorio.value) db.mezclarUtensilios()
         }) {
-            //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
         }
         IconButton(onClick = { vm.pausarOSeguirMusica() }) {
@@ -510,11 +567,30 @@ fun BarraSuperiorUtensiliosUsuario(navController: NavController) {
         R.drawable.baseline_music_note_24
     }
 
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
     TopAppBar(title = { Text(text = "My equipment") }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
         }) {
-            //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
         }
         IconButton(onClick = { vm.pausarOSeguirMusica() }) {
@@ -545,7 +621,6 @@ fun BarraSuperiorAdmin(db: VMBD, sf: ViewModelScaffold) {
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     iconoAleatorio = if (aleatorio.value) {
         R.drawable.baseline_shuffle_on_24
-        //db.mezclarIngredientes()
     } else {
         R.drawable.baseline_shuffle_24
     }
@@ -557,12 +632,31 @@ fun BarraSuperiorAdmin(db: VMBD, sf: ViewModelScaffold) {
         R.drawable.baseline_music_note_24
     }
 
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
     TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
             if(aleatorio.value) db.mezclarIngredientes()
         }) {
-            //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
         }
         IconButton(onClick = { vm.pausarOSeguirMusica() }) {
@@ -588,7 +682,6 @@ fun BarraSuperiorGeneral(navController: NavController,db : VMBD, sf: ViewModelSc
     var iconoAleatorio by remember {  mutableStateOf( R.drawable.baseline_shuffle_on_24) }
     iconoAleatorio = if (aleatorio.value) {
         R.drawable.baseline_shuffle_on_24
-        //db.mezclarIngredientes()
     } else {
         R.drawable.baseline_shuffle_24
     }
@@ -600,12 +693,31 @@ fun BarraSuperiorGeneral(navController: NavController,db : VMBD, sf: ViewModelSc
         R.drawable.baseline_music_note_24
     }
 
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
     TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
         IconButton(onClick = {
             aleatorio.value = !aleatorio.value
             if(aleatorio.value) db.mezclarIngredientes()
         }) {
-            //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
         }
         IconButton(onClick = { vm.pausarOSeguirMusica() }) {
@@ -613,6 +725,35 @@ fun BarraSuperiorGeneral(navController: NavController,db : VMBD, sf: ViewModelSc
         }
         IconButton(onClick = {
             navController.navigate(Rutas.Usuario.ruta)
+        }) {
+            Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
+        }
+    }
+    })
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BarraSuperiorGenerica(texto: String, sf: ViewModelScaffold) {
+
+    val idioma = sf.english.collectAsState().value
+
+    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+
+    iconoIdioma = if (idioma.value) {
+        R.mipmap.english
+    } else {
+        R.mipmap.espanol
+    }
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
+        IconButton(onClick = {
+
+        }) {
+            Icon(Icons.Default.DarkMode, contentDescription = "")
+        }
+        IconButton(onClick = {
+            idioma.value = !idioma.value
         }) {
             Icon(painterResource(id = R.drawable.baseline_list_alt_24), contentDescription = "")
         }

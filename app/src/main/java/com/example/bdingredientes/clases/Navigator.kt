@@ -5,14 +5,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -40,7 +38,6 @@ import com.example.bdingredientes.ui.theme.PantallaModificarAdmin
 import com.example.bdingredientes.ui.theme.PantallaModificarAdmin2
 import com.example.bdingredientes.ui.theme.PantallaRandom
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Navigator() {
     val navController = rememberNavController()
@@ -74,57 +71,57 @@ fun Navigator() {
                 BarraSuperiorAdmin(db, sf)
             }
             else -> {
-                TopAppBar(title = { Text(text = when (rutaActual) {
+                val texto: String
+                when (rutaActual) {
                     Rutas.Add.ruta -> {
-                        "Add a new ingredient"
+                        texto = "Add a new ingredient"
                     }
 
                     Rutas.Update.ruta -> {
-                        "Modify the selected ingredient"
+                        texto = "Modify the selected ingredient"
                     }
 
                     Rutas.Login.ruta -> {
-                        "Log in with your Firebase account"
+                        texto = "Log in with your Firebase account"
                     }
 
                     Rutas.Auth.ruta -> {
-                        "Create a new Firebase user"
+                        texto = "Create a new Firebase user"
                     }
 
                     Rutas.Menu.ruta -> {
-                        "Choose a mode"
+                        texto = "Choose a mode"
                     }
 
                     Rutas.EquipmentAdd.ruta -> {
-                        "Add a new equipment"
+                        texto = "Add a new equipment"
                     }
 
                     Rutas.EquipmentUpdate.ruta -> {
-                        "Modify the selected equipment"
+                        texto = "Modify the selected equipment"
                     }
 
                     Rutas.AdminUpdate.ruta -> {
-                        "Modify the selected ingredient"
+                        texto = "Modify the selected ingredient"
                     }
 
                     Rutas.AdminAdd.ruta -> {
-                        "Add a new ingredient"
+                        texto = "Add a new ingredient"
                     }
 
                     Rutas.EquipmentAdminUpdate.ruta -> {
-                        "Modify the selected equipment"
+                        texto = "Modify the selected equipment"
                     }
 
                     Rutas.EquipmentAdminAdd.ruta -> {
-                        "Add a new equipment"
+                        texto = "Add a new equipment"
                     }
 
                     else -> {
-                        "Choose a game"
+                        texto = "Choose a game"
                     }
                 }
-                )
-                })
+                BarraSuperiorGenerica(texto, sf)
             }
         }
     }, bottomBar = {

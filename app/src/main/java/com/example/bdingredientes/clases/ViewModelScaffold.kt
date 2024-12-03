@@ -46,4 +46,6 @@ class ViewModelScaffold : ViewModel() {
     var puedeBorrar4 = _puedeBorrar4.asStateFlow()
     private var _puedeModificar4 = MutableStateFlow(mutableStateOf(true))
     var puedeModificar4 = _puedeModificar4.asStateFlow()
+    private var _english = MutableStateFlow(mutableStateOf(false))
+    var english = _english.asStateFlow()
 }
