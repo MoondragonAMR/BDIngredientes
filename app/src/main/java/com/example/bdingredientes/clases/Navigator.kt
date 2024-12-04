@@ -12,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -48,18 +49,18 @@ fun Navigator() {
     val db3 : VMBD3 = viewModel()
     val db4 : VMBD4 = viewModel()
     val sf : ViewModelScaffold = viewModel()
-
+    val idioma = sf.english.collectAsState().value
 
     Scaffold(topBar = {
         when (rutaActual) {
             Rutas.Usuario.ruta -> {
-                BarraSuperiorUsuario(navController = navController)
+                BarraSuperiorUsuario(navController = navController, sf)
             }
             Rutas.General.ruta -> {
                 BarraSuperiorGeneral(navController = navController,db,sf)
             }
             Rutas.UtensiliosUsuario.ruta -> {
-                BarraSuperiorUtensiliosUsuario(navController = navController)
+                BarraSuperiorUtensiliosUsuario(navController = navController, sf)
             }
             Rutas.UtensiliosGeneral.ruta -> {
                 BarraSuperiorUtensiliosGeneral(navController = navController,db3,sf)
@@ -71,112 +72,148 @@ fun Navigator() {
                 BarraSuperiorAdmin(db, sf)
             }
             Rutas.Add.ruta -> {
-                BarraSuperiorGenerica("Add a new ingredient", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Add a new ingredient", sf)
+                } else BarraSuperiorGenerica("Añade un nuevo ingrediente", sf)
             }
 
             Rutas.Update.ruta -> {
-                BarraSuperiorGenerica("Modify the selected ingredient", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Modify the selected ingredient", sf)
+                } else BarraSuperiorGenerica("Modifica el ingrediente seleccionado", sf)
             }
 
             Rutas.Login.ruta -> {
-                BarraSuperiorGenerica("Log in with your Firebase account", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Log in with your Firebase account", sf)
+                } else BarraSuperiorGenerica("Inicia sesión con tu cuenta de Firebase", sf)
             }
 
             Rutas.Auth.ruta -> {
-                BarraSuperiorGenerica("Create a new Firebase user", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Create a new Firebase user", sf)
+                } else BarraSuperiorGenerica("Crea un nuevo usuario de Firebase", sf)
             }
 
             Rutas.Menu.ruta -> {
-                BarraSuperiorGenerica("Choose a mode", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Choose a mode", sf)
+                } else BarraSuperiorGenerica("Elige un modo", sf)
             }
 
             Rutas.EquipmentAdd.ruta -> {
-                BarraSuperiorGenerica("Add a new equipment", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Add a new equipment", sf)
+                } else BarraSuperiorGenerica("Añade un nuevo utensilio", sf)
             }
 
             Rutas.EquipmentUpdate.ruta -> {
-                BarraSuperiorGenerica("Modify the selected equipment", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Modify the selected equipment", sf)
+                } else BarraSuperiorGenerica("Modifica el utensilio seleccionado", sf)
             }
 
             Rutas.AdminUpdate.ruta -> {
-                BarraSuperiorGenerica("Modify the selected ingredient", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Modify the selected ingredient", sf)
+                } else BarraSuperiorGenerica("Modifica el ingrediente seleccionado", sf)
             }
 
             Rutas.AdminAdd.ruta -> {
-                BarraSuperiorGenerica("Add a new ingredient", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Add a new ingredient", sf)
+                } else BarraSuperiorGenerica("Añade un nuevo ingrediente", sf)
             }
 
             Rutas.EquipmentAdminUpdate.ruta -> {
-                BarraSuperiorGenerica("Modify the selected equipment", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Modify the selected equipment", sf)
+                } else BarraSuperiorGenerica("Modifica el utensilio seleccionado", sf)
             }
 
             Rutas.EquipmentAdminAdd.ruta -> {
-                BarraSuperiorGenerica("Add a new equipment", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Add a new equipment", sf)
+                } else BarraSuperiorGenerica("Añade un nuevo utensilio", sf)
             }
 
             else -> {
-                BarraSuperiorGenerica("Choose a game", sf)
+                if (idioma.value) {
+                    BarraSuperiorGenerica("Choose a game", sf)
+                } else BarraSuperiorGenerica("Elige un juego", sf)
             }
         }
     }, bottomBar = {
         when (rutaActual) {
             Rutas.Usuario.ruta -> {
-                BarraInferior(navController = navController)
+                BarraInferior(navController = navController, sf)
             }
             Rutas.Admin.ruta -> {
-                BarraInferiorAdmin(navController = navController)
+                BarraInferiorAdmin(navController = navController, sf)
             }
             Rutas.General.ruta -> {
+                val texto: String = if (idioma.value) {
+                    "By Aymara and Nayara Mendoza Rodríguez, 2024"
+                } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
                 BottomAppBar{
-                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                    Text(texto)
                 }
             }
             Rutas.Add.ruta -> {
-                BarraInferiorAdd(navController = navController)
+                BarraInferiorAdd(navController = navController, sf)
             }
             Rutas.AdminAdd.ruta -> {
-                BarraInferiorAdminAdd(navController = navController)
+                BarraInferiorAdminAdd(navController = navController, sf)
             }
             Rutas.Update.ruta -> {
-                BarraInferiorUpdate(navController = navController)
+                BarraInferiorUpdate(navController = navController, sf)
             }
             Rutas.AdminUpdate.ruta -> {
-                BarraInferiorAdminUpdate(navController = navController)
+                BarraInferiorAdminUpdate(navController = navController, sf)
             }
             Rutas.Menu.ruta -> {
+                val texto: String = if (idioma.value) {
+                    "By Aymara and Nayara Mendoza Rodríguez, 2024"
+                } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
                 BottomAppBar{
                     IconButton(onClick = { navController.navigate(Rutas.Login.ruta)}) {
                         Icon(Icons.AutoMirrored.Filled.Logout, "")
                     }
-                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                    Text(texto)
                 }
             }
             Rutas.UtensiliosUsuario.ruta -> {
-                BarraInferiorEquipment(navController = navController)
+                BarraInferiorEquipment(navController = navController, sf)
             }
             Rutas.UtensiliosGeneral.ruta -> {
+                val texto: String = if (idioma.value) {
+                    "By Aymara and Nayara Mendoza Rodríguez, 2024"
+                } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
                 BottomAppBar{
-                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                    Text(texto)
                 }
             }
             Rutas.EquipmentAdd.ruta -> {
-                BarraInferiorEquipmentAdd(navController = navController)
+                BarraInferiorEquipmentAdd(navController = navController, sf)
             }
             Rutas.EquipmentUpdate.ruta -> {
-                BarraInferiorEquipmentUpdate(navController = navController)
+                BarraInferiorEquipmentUpdate(navController = navController, sf)
             }
             Rutas.UtensiliosAdmin.ruta -> {
-                BarraInferiorEquipmentAdmin(navController = navController)
+                BarraInferiorEquipmentAdmin(navController = navController, sf)
             }
             Rutas.EquipmentAdminUpdate.ruta -> {
-                BarraInferiorEquipmentAdminUpdate(navController = navController)
+                BarraInferiorEquipmentAdminUpdate(navController = navController, sf)
             }
             Rutas.EquipmentAdminAdd.ruta -> {
-                BarraInferiorEquipmentAdminAdd(navController = navController)
+                BarraInferiorEquipmentAdminAdd(navController = navController, sf)
             }
             else -> {
+                val texto: String = if (idioma.value) {
+                    "By Aymara and Nayara Mendoza Rodríguez, 2024"
+                } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
                 BottomAppBar{
-                    Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+                    Text(texto)
                 }
             }
         }
@@ -215,7 +252,7 @@ fun Navigator() {
                     PantallaLogin(navController = navController)
                 }
                 composable(Rutas.Auth.ruta) {
-                    PantallaAuth(navController = navController)
+                    PantallaAuth(navController = navController, sf)
                 }
                 composable(Rutas.Menu.ruta) {
                     PantallaMenu(navController = navController)

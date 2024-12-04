@@ -31,12 +31,12 @@ import com.example.bdingredientes.ui.theme.ExoPlayerViewModel
 
 
 @Composable
-fun BarraInferiorAdmin(navController: NavController) {
-    val sf : ViewModelScaffold = viewModel()
+fun BarraInferiorAdmin(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val delete = sf.borrar3.collectAsState().value
     val update = sf.modificar3.collectAsState().value
     val deleted = sf.puedeBorrar3.collectAsState().value
     val updated = sf.puedeModificar3.collectAsState().value
+    val idioma = sf.english.collectAsState().value
 
     var iconoBorrar by remember {  mutableStateOf(Icons.Default.Delete) }
 
@@ -51,6 +51,11 @@ fun BarraInferiorAdmin(navController: NavController) {
     } else {
         Icons.Default.EditOff
     }
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+
     BottomAppBar(Modifier.fillMaxWidth()) {
             Row {
                 IconButton(onClick = {navController.navigate(Rutas.AdminAdd.ruta)}) {
@@ -69,17 +74,17 @@ fun BarraInferiorAdmin(navController: NavController) {
                     Icon(iconoModificar, contentDescription = "")
                 }
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
     }
 }
 
 @Composable
-fun BarraInferior(navController: NavController) {
-    val sf : ViewModelScaffold = viewModel()
+fun BarraInferior(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val delete = sf.borrar.collectAsState().value
     val update = sf.modificar.collectAsState().value
     val deleted = sf.puedeBorrar.collectAsState().value
     val updated = sf.puedeModificar.collectAsState().value
+    val idioma = sf.english.collectAsState().value
 
     var iconoBorrar by remember {  mutableStateOf(Icons.Default.Delete) }
 
@@ -94,6 +99,11 @@ fun BarraInferior(navController: NavController) {
     } else {
         Icons.Default.EditOff
     }
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {navController.navigate(Rutas.Add.ruta)}) {
@@ -112,44 +122,60 @@ fun BarraInferior(navController: NavController) {
                 Icon(iconoModificar, contentDescription = "")
             }
         }
-        Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+        Text(texto)
     }
 }
 
 @Composable
-fun BarraInferiorAdd(navController: NavController) {
+fun BarraInferiorAdd(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD2 = viewModel()
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion, comida2, numero, juego3, parte2)
                 navController.navigate(Rutas.Usuario.ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorAdminAdd(navController: NavController) {
+fun BarraInferiorAdminAdd(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD = viewModel()
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {db.anyadirIngrediente(nombre, tipo, sabor, deCelebracion, celebracion, comida2, numero, juego3, parte2)
                 navController.navigate(Rutas.Admin.ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorUpdate(navController: NavController) {
+fun BarraInferiorUpdate(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD2 = viewModel()
-    val sf : ViewModelScaffold = viewModel()
     val update = sf.modificar.collectAsState().value
     val deleted = sf.puedeBorrar.collectAsState().value
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
@@ -159,17 +185,21 @@ fun BarraInferiorUpdate(navController: NavController) {
                 navController.navigate(Rutas.Usuario.ruta)}) {
                 Icon(Icons.Default.ModeEdit, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorAdminUpdate(navController: NavController) {
+fun BarraInferiorAdminUpdate(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD = viewModel()
-    val sf : ViewModelScaffold = viewModel()
     val update = sf.modificar3.collectAsState().value
     val deleted = sf.puedeBorrar3.collectAsState().value
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
@@ -179,18 +209,22 @@ fun BarraInferiorAdminUpdate(navController: NavController) {
                 navController.navigate(Rutas.Admin.ruta)}) {
                 Icon(Icons.Default.ModeEdit, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorEquipment(navController: NavController) {
-    val sf : ViewModelScaffold = viewModel()
+fun BarraInferiorEquipment(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val delete = sf.borrar2.collectAsState().value
     val update = sf.modificar2.collectAsState().value
     val deleted = sf.puedeBorrar2.collectAsState().value
     val updated = sf.puedeModificar2.collectAsState().value
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
 
     var iconoBorrar by remember {  mutableStateOf(Icons.Default.Delete) }
 
@@ -198,7 +232,6 @@ fun BarraInferiorEquipment(navController: NavController) {
         Icons.Default.Delete
     } else {
         Icons.Default.DeleteForever
-        //(painterResource(id = R.drawable.baseline_delete_forever_24)) as ImageVector
     }
     var iconoModificar by remember {  mutableStateOf(Icons.Default.ModeEdit) }
     iconoModificar = if (update.value) {
@@ -224,17 +257,21 @@ fun BarraInferiorEquipment(navController: NavController) {
                 Icon(iconoModificar, contentDescription = "")
             }
         }
-        Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+        Text(texto)
     }
 }
 
 @Composable
-fun BarraInferiorEquipmentAdmin(navController: NavController) {
-    val sf : ViewModelScaffold = viewModel()
+fun BarraInferiorEquipmentAdmin(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val delete = sf.borrar4.collectAsState().value
     val update = sf.modificar4.collectAsState().value
     val deleted = sf.puedeBorrar4.collectAsState().value
     val updated = sf.puedeModificar4.collectAsState().value
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
 
     var iconoBorrar by remember {  mutableStateOf(Icons.Default.Delete) }
 
@@ -242,7 +279,6 @@ fun BarraInferiorEquipmentAdmin(navController: NavController) {
         Icons.Default.Delete
     } else {
         Icons.Default.DeleteForever
-        //(painterResource(id = R.drawable.baseline_delete_forever_24)) as ImageVector
     }
     var iconoModificar by remember {  mutableStateOf(Icons.Default.ModeEdit) }
     iconoModificar = if (update.value) {
@@ -268,44 +304,62 @@ fun BarraInferiorEquipmentAdmin(navController: NavController) {
                 Icon(iconoModificar, contentDescription = "")
             }
         }
-        Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+        Text(texto)
     }
 }
 
 @Composable
-fun BarraInferiorEquipmentAdd(navController: NavController) {
+fun BarraInferiorEquipmentAdd(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD4 = viewModel()
+
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, celebracion2, comida, juego2, parte, numero2)
                 navController.navigate(Rutas.UtensiliosUsuario.ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorEquipmentAdminAdd(navController: NavController) {
+fun BarraInferiorEquipmentAdminAdd(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD3 = viewModel()
+
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {db.anyadirUtensilio(nombre2, tipo2, celebracion2, comida, juego2, parte, numero2)
                 navController.navigate(Rutas.UtensiliosAdmin.ruta)}) {
                 Icon(Icons.Default.Add, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorEquipmentUpdate(navController: NavController) {
+fun BarraInferiorEquipmentUpdate(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD4 = viewModel()
-    val sf : ViewModelScaffold = viewModel()
     val update = sf.modificar2.collectAsState().value
     val deleted = sf.puedeBorrar2.collectAsState().value
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
@@ -315,17 +369,21 @@ fun BarraInferiorEquipmentUpdate(navController: NavController) {
                 navController.navigate(Rutas.UtensiliosUsuario.ruta)}) {
                 Icon(Icons.Default.ModeEdit, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @Composable
-fun BarraInferiorEquipmentAdminUpdate(navController: NavController) {
+fun BarraInferiorEquipmentAdminUpdate(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val db : VMBD3 = viewModel()
-    val sf : ViewModelScaffold = viewModel()
     val update = sf.modificar4.collectAsState().value
     val deleted = sf.puedeBorrar4.collectAsState().value
+    val idioma = sf.english.collectAsState().value
+
+    val texto: String = if (idioma.value) {
+        "By Aymara and Nayara Mendoza Rodríguez, 2024"
+    } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
 
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
@@ -335,18 +393,17 @@ fun BarraInferiorEquipmentAdminUpdate(navController: NavController) {
                 navController.navigate(Rutas.UtensiliosAdmin.ruta)}) {
                 Icon(Icons.Default.ModeEdit, contentDescription = "")
             }
-            Text("By Aymara and Nayara Mendoza Rodríguez, 2024")
+            Text(texto)
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperiorUsuario(navController: NavController) {
+fun BarraSuperiorUsuario(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
-    val sf : ViewModelScaffold = viewModel()
     val aleatorio = sf.aleatorio1.collectAsState().value
     val db : VMBD2 = viewModel()
 
@@ -381,7 +438,11 @@ fun BarraSuperiorUsuario(navController: NavController) {
         R.mipmap.espanol
     }
 
-    TopAppBar(title = { Text(text = "My ingredients") }, actions = {Row {
+    val texto: String = if (idioma.value) {
+        "My ingredients"
+    } else "Mis ingredientes"
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
         IconButton(onClick = {
 
         }) {
@@ -446,7 +507,11 @@ fun BarraSuperiorUtensiliosAdmin(db: VMBD3, sf: ViewModelScaffold) {
         R.mipmap.espanol
     }
 
-    TopAppBar(title = { Text(text = "All equipment") }, actions = {Row {
+    val texto: String = if (idioma.value) {
+        "All equipment"
+    } else "Todos los utensilios"
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
         IconButton(onClick = {
 
         }) {
@@ -461,7 +526,6 @@ fun BarraSuperiorUtensiliosAdmin(db: VMBD3, sf: ViewModelScaffold) {
             aleatorio.value = !aleatorio.value
             if(aleatorio.value) db.mezclarUtensilios()
         }) {
-            //Icon(iconoAleatorio, contentDescription = "")
             Icon(painterResource(iconoAleatorio), contentDescription = "")
         }
         IconButton(onClick = { vm.pausarOSeguirMusica() }) {
@@ -508,7 +572,11 @@ fun BarraSuperiorUtensiliosGeneral(navController: NavController,db : VMBD3, sf: 
         R.mipmap.espanol
     }
 
-    TopAppBar(title = { Text(text = "All equipment") }, actions = {Row {
+    val texto: String = if (idioma.value) {
+        "All equipment"
+    } else "Todos los utensilios"
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
         IconButton(onClick = {
 
         }) {
@@ -538,11 +606,10 @@ fun BarraSuperiorUtensiliosGeneral(navController: NavController,db : VMBD3, sf: 
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BarraSuperiorUtensiliosUsuario(navController: NavController) {
+fun BarraSuperiorUtensiliosUsuario(navController: NavController, sf : ViewModelScaffold = viewModel()) {
     val vm : ExoPlayerViewModel = viewModel()
     val contexto = LocalContext.current
     val exoplayer = vm.exoPlayer.collectAsState().value
-    val sf : ViewModelScaffold = viewModel()
     val aleatorio = sf.aleatorio2.collectAsState().value
     val db : VMBD4 = viewModel()
 
@@ -577,7 +644,11 @@ fun BarraSuperiorUtensiliosUsuario(navController: NavController) {
         R.mipmap.espanol
     }
 
-    TopAppBar(title = { Text(text = "My equipment") }, actions = {Row {
+    val texto: String = if (idioma.value) {
+        "My equipment"
+    } else "Mis utensilios"
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
         IconButton(onClick = {
 
         }) {
@@ -642,7 +713,11 @@ fun BarraSuperiorAdmin(db: VMBD, sf: ViewModelScaffold) {
         R.mipmap.espanol
     }
 
-    TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row {
+    val texto: String = if (idioma.value) {
+        "All ingredients"
+    } else "Todos los ingredientes"
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
         IconButton(onClick = {
 
         }) {
@@ -703,7 +778,11 @@ fun BarraSuperiorGeneral(navController: NavController,db : VMBD, sf: ViewModelSc
         R.mipmap.espanol
     }
 
-    TopAppBar(title = { Text(text = "All ingredients") }, actions = {Row {
+    val texto: String = if (idioma.value) {
+        "All ingredients"
+    } else "Todos los ingredientes"
+
+    TopAppBar(title = { Text(text = texto) }, actions = {Row {
         IconButton(onClick = {
 
         }) {
