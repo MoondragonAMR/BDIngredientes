@@ -430,12 +430,12 @@ fun BarraSuperiorUsuario(navController: NavController, sf : ViewModelScaffold = 
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     val texto: String = if (idioma.value) {
@@ -499,12 +499,12 @@ fun BarraSuperiorUtensiliosAdmin(db: VMBD3, sf: ViewModelScaffold) {
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     val texto: String = if (idioma.value) {
@@ -564,12 +564,12 @@ fun BarraSuperiorUtensiliosGeneral(navController: NavController,db : VMBD3, sf: 
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     val texto: String = if (idioma.value) {
@@ -636,12 +636,12 @@ fun BarraSuperiorUtensiliosUsuario(navController: NavController, sf : ViewModelS
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     val texto: String = if (idioma.value) {
@@ -705,12 +705,12 @@ fun BarraSuperiorAdmin(db: VMBD, sf: ViewModelScaffold) {
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     val texto: String = if (idioma.value) {
@@ -770,12 +770,12 @@ fun BarraSuperiorGeneral(navController: NavController,db : VMBD, sf: ViewModelSc
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     val texto: String = if (idioma.value) {
@@ -817,12 +817,12 @@ fun BarraSuperiorGenerica(texto: String, sf: ViewModelScaffold) {
 
     val idioma = sf.english.collectAsState().value
 
-    var iconoIdioma by remember {  mutableStateOf(R.mipmap.english) }
+    var iconoIdioma by remember {  mutableStateOf(R.drawable.united_kingdom_flag) }
 
     iconoIdioma = if (idioma.value) {
-        R.mipmap.english
+        R.drawable.united_kingdom_flag
     } else {
-        R.mipmap.espanol
+        R.drawable.bandera_espa_a
     }
 
     TopAppBar(title = { Text(text = texto) }, actions = {Row {

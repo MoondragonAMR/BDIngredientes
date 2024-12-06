@@ -233,7 +233,7 @@ fun Navigator() {
                     PantallaIngredients(db,sf, navController = navController)
                 }
                 composable(Rutas.Add.ruta) {
-                    PantallaAñadir()
+                    PantallaAñadir(sf)
                 }
                 composable(Rutas.Update.ruta) {
                     PantallaModificar(
@@ -249,7 +249,7 @@ fun Navigator() {
                     )
                 }
                 composable(Rutas.Login.ruta) {
-                    PantallaLogin(navController = navController)
+                    PantallaLogin(navController = navController, sf)
                 }
                 composable(Rutas.Auth.ruta) {
                     PantallaAuth(navController = navController, sf)
