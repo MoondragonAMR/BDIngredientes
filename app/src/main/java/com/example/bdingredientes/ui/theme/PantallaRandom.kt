@@ -13,29 +13,38 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bdingredientes.R
+import com.example.bdingredientes.clases.ViewModelScaffold
 
 var juego = ""
 var celebraciones = false
 
 @Composable
-fun PantallaRandom(navController: NavController) {
+fun PantallaRandom(navController: NavController, sf : ViewModelScaffold = viewModel()) {
 
     BackHandler{
         navController.popBackStack()
     }
 
     var elegido = false
+    val idioma = sf.english.collectAsState().value
 
     Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         Row {
-            Text("Holidays")
+            val textoHolidays = if (idioma.value) {
+                "Holidays"
+            } else {
+                "Celebraciones"
+            }
+            Text(textoHolidays)
             Switch(checked = celebraciones, onCheckedChange = { celebraciones = !celebraciones})
         }
         Row{
@@ -132,8 +141,13 @@ fun PantallaRandom(navController: NavController) {
                 ))
         }
         Row {
+            val textoConfirm = if (idioma.value) {
+                "Confirm"
+            } else {
+                "Confirmar"
+            }
             Button(onClick = {  }, Modifier.padding(4.dp), enabled = elegido) {
-                Text("Confirm")
+                Text(textoConfirm)
             }
         }
     }

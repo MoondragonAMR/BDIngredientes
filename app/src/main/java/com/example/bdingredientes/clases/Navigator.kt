@@ -255,10 +255,10 @@ fun Navigator() {
                     PantallaAuth(navController = navController, sf)
                 }
                 composable(Rutas.Menu.ruta) {
-                    PantallaMenu(navController = navController)
+                    PantallaMenu(navController = navController, sf)
                 }
                 composable(Rutas.Random.ruta) {
-                    PantallaRandom(navController = navController)
+                    PantallaRandom(navController = navController, sf)
                 }
                 composable(Rutas.UtensiliosUsuario.ruta) {
                     PantallaEquipment2(db4, sf, navController = navController)
