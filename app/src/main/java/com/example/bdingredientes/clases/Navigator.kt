@@ -245,7 +245,7 @@ fun Navigator() {
                         comida2,
                         numero,
                         juego3,
-                        parte2
+                        parte2, sf
                     )
                 }
                 composable(Rutas.Login.ruta) {
