@@ -9,11 +9,14 @@ import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.celebracion2
 import com.example.bdingredientes.clases.comida
 import com.example.bdingredientes.clases.juego2
@@ -31,8 +34,11 @@ fun PantallaModificar2(
     food: String,
     game: String,
     part: String,
-    number: Int
+    number: Int, sf : ViewModelScaffold = viewModel()
 ) {
+
+    val idioma = sf.english.collectAsState().value
+
     var nombreAdd by remember { mutableStateOf(name) }
     nombre2 = nombreAdd
     var tipoAdd by remember { mutableStateOf(type) }
@@ -54,14 +60,29 @@ fun PantallaModificar2(
 
     Column {
         Row {
-            Text ("Name: ")
+            val textoNombre = if (idioma.value) {
+                "Name: "
+            } else {
+                "Nombre: "
+            }
+            Text (textoNombre)
+            val textoPlaceholderNombre = if (idioma.value) {
+                "Insert the name of the equipment"
+            } else {
+                "Introduce el nombre del utensilio"
+            }
             TextField(
                 value = nombreAdd,
                 onValueChange = { texto -> nombreAdd = texto; nombre2 = nombreAdd },
-                placeholder = { Text("Insert the name of the equipment") })
+                placeholder = { Text(textoPlaceholderNombre) })
         }
         Row {
-            Text ("Type: ")
+            val textoTipo = if (idioma.value) {
+                "Type: "
+            } else {
+                "Tipo: "
+            }
+            Text (textoTipo)
             ExposedDropdownMenuBox(expanded = activado,
                 onExpandedChange = {activado = !activado} ) {
                 TextField(modifier = Modifier.menuAnchor(),
@@ -70,29 +91,64 @@ fun PantallaModificar2(
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado, onDismissRequest = { activado = false }) {
+                    val textoTipo1 = if (idioma.value) {
+                        "Alarm"
+                    } else {
+                        "Alarma"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Alarm") },
-                        onClick = { tipoAdd = "Alarm"; tipo2 = tipoAdd })
+                        text = { Text(textoTipo1) },
+                        onClick = { tipoAdd = textoTipo1; tipo2 = "Alarm" })
+                    val textoTipo2 = if (idioma.value) {
+                        "Bag Size"
+                    } else {
+                        "Tamaño de bolsa"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Bag Size") },
-                        onClick = { tipoAdd = "Bag Size"; tipo2 = tipoAdd })
+                        text = { Text(textoTipo2) },
+                        onClick = { tipoAdd = textoTipo2; tipo2 = "Bag Size" })
+                    val textoTipo3 = if (idioma.value) {
+                        "Cup Size"
+                    } else {
+                        "Tamaño de vaso"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Cup Size") },
-                        onClick = { tipoAdd = "Cup Size"; tipo2 = tipoAdd })
+                        text = { Text(textoTipo3) },
+                        onClick = { tipoAdd = textoTipo3; tipo2 = "Cup Size" })
+                    val textoTipo4 = if (idioma.value) {
+                        "Cut"
+                    } else {
+                        "Corte"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Cut") },
-                        onClick = { tipoAdd = "Cut"; tipo2 = tipoAdd })
+                        text = { Text(textoTipo4) },
+                        onClick = { tipoAdd = textoTipo4; tipo2 = "Cut" })
+                    val textoTipo5 = if (idioma.value) {
+                        "Liner"
+                    } else {
+                        "Envoltorio"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Liner") },
-                        onClick = { tipoAdd = "Liner"; tipo2 = tipoAdd })
+                        text = { Text(textoTipo5) },
+                        onClick = { tipoAdd = textoTipo5; tipo2 = "Liner" })
+                    val textoTipo6 = if (idioma.value) {
+                        "Position"
+                    } else {
+                        "Posición"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Position") },
-                        onClick = { tipoAdd = "Position"; tipo2 = tipoAdd })
+                        text = { Text(textoTipo6) },
+                        onClick = { tipoAdd = textoTipo6; tipo2 = "Position" })
                 }
             }
         }
+        val textoCelebracion = if (idioma.value) {
+            "Holiday: "
+        } else {
+            "Celebración: "
+        }
         Row {
-            Text("Holiday: ")
+            Text(textoCelebracion)
             ExposedDropdownMenuBox(expanded = activado2,
                 onExpandedChange = {activado2 = !activado2} ) {
                 TextField(modifier = Modifier.menuAnchor(),
@@ -101,68 +157,153 @@ fun PantallaModificar2(
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado2, onDismissRequest = { activado2 = false }) {
+                    val textoCelebracion1 = if (idioma.value) {
+                        "Standard"
+                    } else {
+                        "Estándar"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Standard") },
-                        onClick = { celebracionAdd = "Standard"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion1) },
+                        onClick = { celebracionAdd = textoCelebracion1; celebracion2 = "Standard" })
+                    val textoCelebracion2 = if (idioma.value) {
+                        "Baseball Season"
+                    } else {
+                        "Temporada de baseball"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Baseball Season") },
-                        onClick = { celebracionAdd = "Baseball Season"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion2) },
+                        onClick = { celebracionAdd = textoCelebracion2; celebracion2 = "Baseball Season" })
+                    val textoCelebracion3 = if (idioma.value) {
+                        "Big Top Carnival"
+                    } else {
+                        "Gran Feria"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Big Top Carnival") },
-                        onClick = { celebracionAdd = "Big Top Carnival"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion3) },
+                        onClick = { celebracionAdd = textoCelebracion3; celebracion2 = "Big Top Carnival" })
+                    val textoCelebracion4 = if (idioma.value) {
+                        "Cherry Blossom Festival"
+                    } else {
+                        "Festival de la flor de cerezo"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Cherry Blossom Festival") },
-                        onClick = { celebracionAdd = "Cherry Blossom Festival"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion4) },
+                        onClick = { celebracionAdd = textoCelebracion4; celebracion2 = "Cherry Blossom Festival" })
+                    val textoCelebracion5 = if (idioma.value) {
+                        "Christmas"
+                    } else {
+                        "Navidad"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Christmas") },
-                        onClick = { celebracionAdd = "Christmas"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion5) },
+                        onClick = { celebracionAdd = textoCelebracion5; celebracion2 = "Christmas" })
                     DropdownMenuItem(
                         text = { Text("Cinco de Mayo") },
                         onClick = { celebracionAdd = "Cinco de Mayo"; celebracion2 = celebracionAdd })
                     DropdownMenuItem(
                         text = { Text("Comet Con") },
                         onClick = { celebracionAdd = "Comet Con"; celebracion2 = celebracionAdd })
+                    val textoCelebracion6 = if (idioma.value) {
+                        "Easter"
+                    } else {
+                        "Pascua"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Easter") },
-                        onClick = { celebracionAdd = "Easter"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion6) },
+                        onClick = { celebracionAdd = textoCelebracion6; celebracion2 = "Easter" })
+                    val textoCelebracion7 = if (idioma.value) {
+                        "Film Fest"
+                    } else {
+                        "Festival de las películas"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Film Fest") },
-                        onClick = { celebracionAdd = "Film Fest"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion7) },
+                        onClick = { celebracionAdd = textoCelebracion7; celebracion2 = "Film Fest" })
                     DropdownMenuItem(
                         text = { Text("Halloween") },
                         onClick = { celebracionAdd = "Halloween"; celebracion2 = celebracionAdd })
+                    val textoCelebracion8 = if (idioma.value) {
+                        "Maple Mornings"
+                    } else {
+                        "Mañanas de arce"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Maple Mornings") },
-                        onClick = { celebracionAdd = "Maple Mornings"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion8) },
+                        onClick = { celebracionAdd = textoCelebracion8; celebracion2 = "Maple Mornings" })
+                    val textoCelebracion9 = if (idioma.value) {
+                        "New Year"
+                    } else {
+                        "Año Nuevo"
+                    }
                     DropdownMenuItem(
-                        text = { Text("New Year") },
-                        onClick = { celebracionAdd = "New Year"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion9) },
+                        onClick = { celebracionAdd = textoCelebracion9; celebracion2 = "New Year" })
+                    val textoCelebracion10 = if (idioma.value) {
+                        "Onionfest"
+                    } else {
+                        "Festival de las cebollas"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Onionfest") },
-                        onClick = { celebracionAdd = "Onionfest"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion10) },
+                        onClick = { celebracionAdd = textoCelebracion10; celebracion2 = "Onionfest" })
+                    val textoCelebracion11 = if (idioma.value) {
+                        "Pirate Bash"
+                    } else {
+                        "Fiesta de los piratas"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Pirate Bash") },
-                        onClick = { celebracionAdd = "Pirate Bash"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion11) },
+                        onClick = { celebracionAdd = textoCelebracion11; celebracion2 = "Pirate Bash" })
+                    val textoCelebracion12 = if (idioma.value) {
+                        "St Paddy"
+                    } else {
+                        "San Patricio"
+                    }
                     DropdownMenuItem(
-                        text = { Text("St Paddy") },
-                        onClick = { celebracionAdd = "St Paddy"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion12) },
+                        onClick = { celebracionAdd = textoCelebracion12; celebracion2 = "St Paddy" })
+                    val textoCelebracion13 = if (idioma.value) {
+                        "Starlight"
+                    } else {
+                        "Festival de las estrellas"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Starlight") },
-                        onClick = { celebracionAdd = "Starlight"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion13) },
+                        onClick = { celebracionAdd = textoCelebracion13; celebracion2 = "Starlight" })
+                    val textoCelebracion14 = if (idioma.value) {
+                        "Summer Luau"
+                    } else {
+                        "Luau de verano"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Summer Luau") },
-                        onClick = { celebracionAdd = "Summer Luau"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion14) },
+                        onClick = { celebracionAdd = textoCelebracion14; celebracion2 = "Summer Luau" })
+                    val textoCelebracion15 = if (idioma.value) {
+                        "Thanksgiving"
+                    } else {
+                        "Acción de gracias"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Thanksgiving") },
-                        onClick = { celebracionAdd = "Thanksgiving"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion15) },
+                        onClick = { celebracionAdd = textoCelebracion15; celebracion2 = "Thanksgiving" })
+                    val textoCelebracion16 = if (idioma.value) {
+                        "Valentines"
+                    } else {
+                        "San Valentín"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Valentines") },
-                        onClick = { celebracionAdd = "Valentines"; celebracion2 = celebracionAdd })
+                        text = { Text(textoCelebracion16) },
+                        onClick = { celebracionAdd = textoCelebracion16; celebracion2 = "Valentines" })
                 }
             }
         }
+        val textoComida = if (idioma.value) {
+            "Food: "
+        } else {
+            "Comida: "
+        }
         Row {
-            Text("Food: ")
+            Text(textoComida)
             ExposedDropdownMenuBox(expanded = activado3,
                 onExpandedChange = {activado3 = !activado3} ) {
                 TextField(modifier = Modifier.menuAnchor(),
@@ -171,24 +312,49 @@ fun PantallaModificar2(
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado3, onDismissRequest = { activado3 = false }) {
+                    val textoComida1 = if (idioma.value) {
+                        "Breakfast"
+                    } else {
+                        "Desayuno"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Breakfast") },
-                        onClick = { comidaAdd = "Breakfast"; comida = comidaAdd })
+                        text = { Text(textoComida1) },
+                        onClick = { comidaAdd = textoComida1; comida = "Breakfast" })
+                    val textoComida2 = if (idioma.value) {
+                        "Burger"
+                    } else {
+                        "Hamburguesa"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Burger") },
-                        onClick = { comidaAdd = "Burger"; comida = comidaAdd })
+                        text = { Text(textoComida2) },
+                        onClick = { comidaAdd = textoComida2; comida = "Burger" })
+                    val textoComida3 = if (idioma.value) {
+                        "Chicken Sandwich"
+                    } else {
+                        "Hamburguesa de pollo"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Chicken Sandwich") },
-                        onClick = { comidaAdd = "Chicken Sandwich"; comida = comidaAdd })
+                        text = { Text(textoComida3) },
+                        onClick = { comidaAdd = textoComida3; comida = "Chicken Sandwich" })
+                    val textoComida4 = if (idioma.value) {
+                        "Chicken Wings"
+                    } else {
+                        "Pollo frito"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Chicken Wings") },
-                        onClick = { comidaAdd = "Chicken Wings"; comida = comidaAdd })
+                        text = { Text(textoComida4) },
+                        onClick = { comidaAdd = textoComida4; comida = "Chicken Wings" })
                     DropdownMenuItem(
                         text = { Text("Cupcakes") },
                         onClick = { comidaAdd = "Cupcakes"; comida = comidaAdd })
+                    val textoComida5 = if (idioma.value) {
+                        "Hot Dog"
+                    } else {
+                        "Perrito caliente"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Hot Dog") },
-                        onClick = { comidaAdd = "Hot Dog"; comida = comidaAdd })
+                        text = { Text(textoComida5) },
+                        onClick = { comidaAdd = textoComida5; comida = "Hot Dog" })
                     DropdownMenuItem(
                         text = { Text("Mocha") },
                         onClick = { comidaAdd = "Mocha"; comida = comidaAdd })
@@ -198,23 +364,38 @@ fun PantallaModificar2(
                     DropdownMenuItem(
                         text = { Text("Pasta") },
                         onClick = { comidaAdd = "Pasta"; comida = comidaAdd })
+                    val textoComida6 = if (idioma.value) {
+                        "Pie"
+                    } else {
+                        "Pastel"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Pie") },
-                        onClick = { comidaAdd = "Pie"; comida = comidaAdd })
+                        text = { Text(textoComida6) },
+                        onClick = { comidaAdd = textoComida6; comida = "Pie" })
                     DropdownMenuItem(
                         text = { Text("Pizza") },
                         onClick = { comidaAdd = "Pizza"; comida = comidaAdd })
                     DropdownMenuItem(
                         text = { Text("Sandwich") },
                         onClick = { comidaAdd = "Sandwich"; comida = comidaAdd })
+                    val textoComida7 = if (idioma.value) {
+                        "Sundae"
+                    } else {
+                        "Helado"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Sundae") },
-                        onClick = { comidaAdd = "Sundae"; comida = comidaAdd })
+                        text = { Text(textoComida7) },
+                        onClick = { comidaAdd = textoComida7; comida = "Sundae" })
                 }
             }
         }
+        val textoJuego = if (idioma.value) {
+            "Game: "
+        } else {
+            "Juego: "
+        }
         Row {
-            Text("Game: ")
+            Text(textoJuego)
             ExposedDropdownMenuBox(expanded = activado4,
                 onExpandedChange = {activado4 = !activado4} ) {
                 TextField(modifier = Modifier.menuAnchor(),
@@ -322,8 +503,13 @@ fun PantallaModificar2(
                 }
             }
         }
+        val textoOP = if (idioma.value) {
+            "Order Part: "
+        } else {
+            "Parte del pedido: "
+        }
         Row {
-            Text("Order Part: ")
+            Text(textoOP)
             ExposedDropdownMenuBox(expanded = activado5,
                 onExpandedChange = {activado5 = !activado5} ) {
                 TextField(modifier = Modifier.menuAnchor(),
@@ -332,57 +518,142 @@ fun PantallaModificar2(
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado5, onDismissRequest = { activado5 = false }) {
+                    val textoOP1 = if (idioma.value) {
+                        "Bag Size"
+                    } else {
+                        "Tamaño de bolsa"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Bag Size") },
-                        onClick = { parteAdd = "Bag Size"; parte = parteAdd })
+                        text = { Text(textoOP1) },
+                        onClick = { parteAdd = textoOP1; parte = "Bag Size" })
+                    val textoOP2 = if (idioma.value) {
+                        "Burger Time"
+                    } else {
+                        "Tiempo para hamburguesa"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Burger Time") },
-                        onClick = { parteAdd = "Burger Time"; parte = parteAdd })
+                        text = { Text(textoOP2) },
+                        onClick = { parteAdd = textoOP2; parte = "Burger Time" })
+                    val textoOP3 = if (idioma.value) {
+                        "Chicken Wings Position"
+                    } else {
+                        "Posición para pollo frito"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Chicken Wings Position") },
-                        onClick = { parteAdd = "Chicken Wings Position"; parte = parteAdd })
+                        text = { Text(textoOP3) },
+                        onClick = { parteAdd = textoOP3; parte = "Chicken Wings Position" })
+                    val textoOP4 = if (idioma.value) {
+                        "Cut"
+                    } else {
+                        "Corte"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Cut") },
-                        onClick = { parteAdd = "Cut"; parte = parteAdd })
+                        text = { Text(textoOP4) },
+                        onClick = { parteAdd = textoOP4; parte = "Cut" })
+                    val textoOP5 = if (idioma.value) {
+                        "Drink Size"
+                    } else {
+                        "Tamaño de bebida"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Drink Size") },
-                        onClick = { parteAdd = "Drink Size"; parte = parteAdd })
+                        text = { Text(textoOP5) },
+                        onClick = { parteAdd = textoOP5; parte = "Drink Size" })
+                    val textoOP6 = if (idioma.value) {
+                        "Liner"
+                    } else {
+                        "Envoltorio"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Liner") },
-                        onClick = { parteAdd = "Liner"; parte = parteAdd })
+                        text = { Text(textoOP6) },
+                        onClick = { parteAdd = textoOP6; parte = "Liner" })
+                    val textoOP7 = if (idioma.value) {
+                        "Mocha Size"
+                    } else {
+                        "Tamaño de mocha"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Mocha Size") },
-                        onClick = { parteAdd = "Mocha Size"; parte = parteAdd })
+                        text = { Text(textoOP7) },
+                        onClick = { parteAdd = textoOP7; parte = "Mocha Size" })
+                    val textoOP8 = if (idioma.value) {
+                        "Paleta Topping Position"
+                    } else {
+                        "Posición para toppings para paletas"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Paleta Topping Position") },
-                        onClick = { parteAdd = "Paleta Topping Position"; parte = parteAdd })
+                        text = { Text(textoOP8) },
+                        onClick = { parteAdd = textoOP8; parte = "Paleta Topping Position" })
+                    val textoOP9 = if (idioma.value) {
+                        "Pasta Time"
+                    } else {
+                        "Tiempo para pasta"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Pasta Time") },
-                        onClick = { parteAdd = "Pasta Time"; parte = parteAdd })
+                        text = { Text(textoOP9) },
+                        onClick = { parteAdd = textoOP9; parte = "Pasta Time" })
+                    val textoOP10 = if (idioma.value) {
+                        "Pie Topping Position"
+                    } else {
+                        "Posición para toppings para pastel"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Pie Topping Position") },
-                        onClick = { parteAdd = "Pie Topping Position"; parte = parteAdd })
+                        text = { Text(textoOP10) },
+                        onClick = { parteAdd = textoOP10; parte = "Pie Topping Position" })
+                    val textoOP11 = if (idioma.value) {
+                        "Pizza Time"
+                    } else {
+                        "Tiempo para pizza"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Pizza Time") },
-                        onClick = { parteAdd = "Pizza Time"; parte = parteAdd })
+                        text = { Text(textoOP11) },
+                        onClick = { parteAdd = textoOP11; parte = "Pizza Time" })
+                    val textoOP12 = if (idioma.value) {
+                        "Pizza Topping Position"
+                    } else {
+                        "Posición para toppings para pizza"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Pizza Topping Position") },
-                        onClick = { parteAdd = "Pizza Topping Position"; parte = parteAdd })
+                        text = { Text(textoOP12) },
+                        onClick = { parteAdd = textoOP12; parte = "Pizza Topping Position" })
+                    val textoOP13 = if (idioma.value) {
+                        "Sandwich Time"
+                    } else {
+                        "Tiempo para sandwich"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Sandwich Time") },
-                        onClick = { parteAdd = "Sandwich Time"; parte = parteAdd })
+                        text = { Text(textoOP13) },
+                        onClick = { parteAdd = textoOP13; parte = "Sandwich Time" })
+                    val textoOP14 = if (idioma.value) {
+                        "Slush Size"
+                    } else {
+                        "Tamaño de batido"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Slush Size") },
-                        onClick = { parteAdd = "Slush Size"; parte = parteAdd })
+                        text = { Text(textoOP14) },
+                        onClick = { parteAdd = textoOP14; parte = "Slush Size" })
+                    val textoOP15 = if (idioma.value) {
+                        "Soda Size"
+                    } else {
+                        "Tamaño de refresco"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Soda Size") },
-                        onClick = { parteAdd = "Soda Size"; parte = parteAdd })
+                        text = { Text(textoOP15) },
+                        onClick = { parteAdd = textoOP15; parte = "Soda Size" })
+                    val textoOP16 = if (idioma.value) {
+                        "Sundae Size"
+                    } else {
+                        "Tamaño de helado"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Sundae Size") },
-                        onClick = { parteAdd = "Sundae Size"; parte = parteAdd })
+                        text = { Text(textoOP16) },
+                        onClick = { parteAdd = textoOP16; parte = "Sundae Size" })
+                    val textoOP17 = if (idioma.value) {
+                        "Sundae Time"
+                    } else {
+                        "Tiempo para helados"
+                    }
                     DropdownMenuItem(
-                        text = { Text("Sundae Time") },
-                        onClick = { parteAdd = "Sundae Time"; parte = parteAdd })
+                        text = { Text(textoOP17) },
+                        onClick = { parteAdd = textoOP17; parte = "Sundae Time" })
                 }
             }
         }

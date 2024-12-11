@@ -267,10 +267,10 @@ fun Navigator() {
                     PantallaEquipment(db3,sf, navController = navController)
                 }
                 composable(Rutas.EquipmentUpdate.ruta) {
-                    PantallaModificar2(nombre2, tipo2, comida, juego2, celebracion2, parte, numero2)
+                    PantallaModificar2(nombre2, tipo2, comida, juego2, celebracion2, parte, numero2, sf)
                 }
                 composable(Rutas.EquipmentAdd.ruta) {
-                    PantallaAñadir2()
+                    PantallaAñadir2(sf)
                 }
                 composable(Rutas.Admin.ruta) {
                     PantallaIngredientsAdmin(db,sf, navController = navController)

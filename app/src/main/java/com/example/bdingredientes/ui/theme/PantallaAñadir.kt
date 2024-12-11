@@ -91,7 +91,6 @@ fun PantallaAñadir(sf : ViewModelScaffold = viewModel()) {
             } else {
                 "Tipo: "
             }
-
             Text (textoTipo)
             ExposedDropdownMenuBox(expanded = activado,
                 onExpandedChange = {activado = !activado} ) {
