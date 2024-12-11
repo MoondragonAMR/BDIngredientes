@@ -302,11 +302,11 @@ fun Navigator() {
                         juego2,
                         celebracion2,
                         parte,
-                        numero2
+                        numero2, sf
                     )
                 }
                 composable(Rutas.EquipmentAdminAdd.ruta) {
-                    PantallaAñadirAdmin2()
+                    PantallaAñadirAdmin2(sf)
                 }
             }
         }
