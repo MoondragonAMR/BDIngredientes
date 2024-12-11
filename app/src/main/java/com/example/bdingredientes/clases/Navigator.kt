@@ -285,11 +285,11 @@ fun Navigator() {
                         comida2,
                         numero,
                         juego3,
-                        parte2
+                        parte2, sf
                     )
                 }
                 composable(Rutas.AdminAdd.ruta) {
-                    PantallaAñadirAdmin()
+                    PantallaAñadirAdmin(sf)
                 }
                 composable(Rutas.UtensiliosAdmin.ruta) {
                     PantallaEquipmentAdmin(db3,sf, navController = navController)
