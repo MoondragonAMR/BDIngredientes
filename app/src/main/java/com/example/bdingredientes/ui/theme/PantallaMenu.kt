@@ -18,7 +18,7 @@ fun PantallaMenu(navController: NavController, sf : ViewModelScaffold = viewMode
     val idioma = sf.english.collectAsState().value
 
     Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-        val textoIngredients = if (idioma.value) {
+        /*val textoIngredients = if (idioma.value) {
             "Ingredients"
         } else {
             "Ingredientes"
@@ -33,7 +33,7 @@ fun PantallaMenu(navController: NavController, sf : ViewModelScaffold = viewMode
         }
         Button(onClick = { navController.navigate(Rutas.Admin.ruta) }, enabled = admin) {
             Text(textoIngredientsAdmin)
-        }
+        }*/
         val textoEquipment = if (idioma.value) {
             "Equipment"
         } else {
@@ -50,7 +50,7 @@ fun PantallaMenu(navController: NavController, sf : ViewModelScaffold = viewMode
         Button(onClick = { navController.navigate(Rutas.UtensiliosAdmin.ruta) }, enabled = admin) {
             Text(textoEquipmentAdmin)
         }
-        val textoOrders = if (idioma.value) {
+        /*val textoOrders = if (idioma.value) {
             "Orders"
         } else {
             "Pedidos"
@@ -65,6 +65,6 @@ fun PantallaMenu(navController: NavController, sf : ViewModelScaffold = viewMode
         }
         Button(onClick = {}) {
             Text(textoHI)
-        }
+        }*/
     }
 }

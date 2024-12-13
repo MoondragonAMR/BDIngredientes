@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package com.example.bdingredientes.ui.theme
 
 import androidx.compose.foundation.border
@@ -709,8 +711,8 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
 
                     if (mostrar || mostrar2) {
                         ListItem(
-                            headlineContent = { Text(equipment[it].name) },
-                            Modifier.clickable { busqueda = equipment[it].name })
+                            headlineContent = { Text(nombreT) },
+                            Modifier.clickable { busqueda = nombreT })
                     }
                 }
             }
@@ -1367,10 +1369,610 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
                 @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar = false
                 @Suppress("VARIABLE_WITH_REDUNDANT_INITIALIZER") var mostrar2 = false
 
+                var nombreT = equipment[it].name
+                when (equipment[it].name) {
+                    "4-Cut" -> {
+                        if (!idioma.value) {
+                            nombreT = "Corte de 4"
+                        }
+                    }
+                    "6-Cut" -> {
+                        if (!idioma.value) {
+                            nombreT = "Corte de 6"
+                        }
+                    }
+                    "8-Cut" -> {
+                        if (!idioma.value) {
+                            nombreT = "Corte de 8"
+                        }
+                    }
+                    "Al Dente Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma Al Dente"
+                        }
+                    }
+                    "All but Bottom-Left" -> {
+                        if (!idioma.value) {
+                            nombreT = "Todo menos la esquina inferior izquierda"
+                        }
+                    }
+                    "All but Bottom-Right" -> {
+                        if (!idioma.value) {
+                            nombreT = "Todo menos la esquina inferior derecha"
+                        }
+                    }
+                    "All but Top-Left" -> {
+                        if (!idioma.value) {
+                            nombreT = "Todo menos la esquina superior izquierda"
+                        }
+                    }
+                    "All but Top-Right" -> {
+                        if (!idioma.value) {
+                            nombreT = "Todo menos la esquina superior derecha"
+                        }
+                    }
+                    "Around" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alrededor"
+                        }
+                    }
+                    "Baseball Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Baseball A"
+                        }
+                    }
+                    "Baseball Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Baseball B"
+                        }
+                    }
+                    "Baseball Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Baseball C"
+                        }
+                    }
+                    "Baseball Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Baseball D"
+                        }
+                    }
+                    "Bottom Half" -> {
+                        if (!idioma.value) {
+                            nombreT = "Mitad inferior"
+                        }
+                    }
+                    "Bottom-Left Corner" -> {
+                        if (!idioma.value) {
+                            nombreT = "Esquina inferior izquierda"
+                        }
+                    }
+                    "Bottom-Right Corner" -> {
+                        url = "https://firebasestorage.googleapis.com/v0/b/frutas-b0267.appspot.com/o/Equipment%2FBottom-right_Corner.png?alt=media&token=dcb8bd93-7f8f-48fe-9527-4c4ff0c5f8d5"
+                        if (!idioma.value) {
+                            nombreT = "Esquina inferior derecha"
+                        }
+                    }
+                    "Carnival Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Feria A"
+                        }
+                    }
+                    "Carnival Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Feria B"
+                        }
+                    }
+                    "Carnival Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Feria C"
+                        }
+                    }
+                    "Carnival Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Feria D"
+                        }
+                    }
+                    "Center" -> {
+                        if (!idioma.value) {
+                            nombreT = "Centro"
+                        }
+                    }
+                    "Cherry Blossom Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Flor de Cerezo A"
+                        }
+                    }
+                    "Cherry Blossom Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Flor de Cerezo B"
+                        }
+                    }
+                    "Cherry Blossom Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Flor de Cerezo C"
+                        }
+                    }
+                    "Cherry Blossom Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Flor de Cerezo D"
+                        }
+                    }
+                    "Christmas Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Navidad A"
+                        }
+                    }
+                    "Christmas Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Navidad B"
+                        }
+                    }
+                    "Christmas Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Navidad C"
+                        }
+                    }
+                    "Christmas Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Navidad D"
+                        }
+                    }
+                    "Chunky Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de poco batido"
+                        }
+                    }
+                    "Cinco de Mayo Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Cinco de Mayo A"
+                        }
+                    }
+                    "Cinco de Mayo Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Cinco de Mayo B"
+                        }
+                    }
+                    "Cinco de Mayo Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Cinco de Mayo C"
+                        }
+                    }
+                    "Cinco de Mayo Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Cinco de Mayo D"
+                        }
+                    }
+                    "Comet Con Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Comet Con A"
+                        }
+                    }
+                    "Comet Con Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Comet Con B"
+                        }
+                    }
+                    "Comet Con Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Comet Con C"
+                        }
+                    }
+                    "Comet Con Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Comet Con D"
+                        }
+                    }
+                    "Easter Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Pascua A"
+                        }
+                    }
+                    "Easter Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Pascua B"
+                        }
+                    }
+                    "Easter Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Pascua C"
+                        }
+                    }
+                    "Easter Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Pascua D"
+                        }
+                    }
+                    "Film Fest Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Festival de las Películas A"
+                        }
+                    }
+                    "Film Fest Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Festival de las Películas B"
+                        }
+                    }
+                    "Film Fest Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Festival de las Películas C"
+                        }
+                    }
+                    "Film Fest Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Festival de las Películas D"
+                        }
+                    }
+                    "Full-Bake Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de todo hecho"
+                        }
+                    }
+                    "Half-Quarter Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de medio cuarto"
+                        }
+                    }
+                    "Halloween Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Halloween A"
+                        }
+                    }
+                    "Halloween Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Halloween B"
+                        }
+                    }
+                    "Halloween Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Halloween C"
+                        }
+                    }
+                    "Halloween Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Halloween D"
+                        }
+                    }
+                    "Inner Ring" -> {
+                        if (!idioma.value) {
+                            nombreT = "Sección interior"
+                        }
+                    }
+                    "Inner Ring and Center" -> {
+                        if (!idioma.value) {
+                            nombreT = "Sección interior y centro"
+                        }
+                    }
+                    "Large Bag" -> {
+                        if (!idioma.value) {
+                            nombreT = "Bolsa grande"
+                        }
+                    }
+                    "Large Cup" -> {
+                        if (!idioma.value) {
+                            nombreT = "Vaso grande"
+                        }
+                    }
+                    "Left Diagonal" -> {
+                        if (!idioma.value) {
+                            nombreT = "Diagonal izquierda"
+                        }
+                    }
+                    "Left Half" -> {
+                        if (!idioma.value) {
+                            nombreT = "Mitad izquierda"
+                        }
+                    }
+                    "Light-Bake Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de poco hecho"
+                        }
+                    }
+                    "Maple Mornings Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Mañanas de Arce A"
+                        }
+                    }
+                    "Maple Mornings Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Mañanas de Arce B"
+                        }
+                    }
+                    "Maple Mornings Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Mañanas de Arce C"
+                        }
+                    }
+                    "Maple Mornings Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Mañanas de Arce D"
+                        }
+                    }
+                    "Medium Bag" -> {
+                        if (!idioma.value) {
+                            nombreT = "Bolsa mediana"
+                        }
+                    }
+                    "Medium Cup" -> {
+                        if (!idioma.value) {
+                            nombreT = "Vaso mediano"
+                        }
+                    }
+                    "New Year Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Año Nuevo A"
+                        }
+                    }
+                    "New Year Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Año Nuevo B"
+                        }
+                    }
+                    "New Year Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Año Nuevo C"
+                        }
+                    }
+                    "New Year Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Año Nuevo D"
+                        }
+                    }
+                    "Normal Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Normal A"
+                        }
+                    }
+                    "Normal Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Normal B"
+                        }
+                    }
+                    "Normal Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Normal C"
+                        }
+                    }
+                    "Normal Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Normal D"
+                        }
+                    }
+                    "Onionfest Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio del Festival de las Cebollas A"
+                        }
+                    }
+                    "Onionfest Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio del Festival de las Cebollas B"
+                        }
+                    }
+                    "Onionfest Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio del Festival de las Cebollas C"
+                        }
+                    }
+                    "Onionfest Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio del Festival de las Cebollas D"
+                        }
+                    }
+                    "Outer Ring" -> {
+                        if (!idioma.value) {
+                            nombreT = "Sección exterior"
+                        }
+                    }
+                    "Outer Ring and Center" -> {
+                        if (!idioma.value) {
+                            nombreT = "Sección exterior y centro"
+                        }
+                    }
+                    "Paddy Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Patricio A"
+                        }
+                    }
+                    "Paddy Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Patricio B"
+                        }
+                    }
+                    "Paddy Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Patricio C"
+                        }
+                    }
+                    "Paddy Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Patricio D"
+                        }
+                    }
+                    "Pirate Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Pirata A"
+                        }
+                    }
+                    "Pirate Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Pirata B"
+                        }
+                    }
+                    "Pirate Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Pirata C"
+                        }
+                    }
+                    "Pirate Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio Pirata D"
+                        }
+                    }
+                    "Quarter-and-Half Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de un cuarto y medio"
+                        }
+                    }
+                    "Regular Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma normal"
+                        }
+                    }
+                    "Right Diagonal" -> {
+                        if (!idioma.value) {
+                            nombreT = "Diagonal derecha"
+                        }
+                    }
+                    "Right Half" -> {
+                        if (!idioma.value) {
+                            nombreT = "Mitad derecha"
+                        }
+                    }
+                    "Small Bag" -> {
+                        if (!idioma.value) {
+                            nombreT = "Bolsa pequeña"
+                        }
+                    }
+                    "Small Cup" -> {
+                        if (!idioma.value) {
+                            nombreT = "Vaso pequeño"
+                        }
+                    }
+                    "Smooth Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de muy batido"
+                        }
+                    }
+                    "Square-Cut" -> {
+                        if (!idioma.value) {
+                            nombreT = "Corte de cuadrados"
+                        }
+                    }
+                    "Starlight Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Estrellas A"
+                        }
+                    }
+                    "Starlight Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Estrellas B"
+                        }
+                    }
+                    "Starlight Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Estrellas C"
+                        }
+                    }
+                    "Starlight Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Estrellas D"
+                        }
+                    }
+                    "Summer Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Verano A"
+                        }
+                    }
+                    "Summer Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Verano B"
+                        }
+                    }
+                    "Summer Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Verano C"
+                        }
+                    }
+                    "Summer Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Verano D"
+                        }
+                    }
+                    "Thanksgiving Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Acción de Gracias A"
+                        }
+                    }
+                    "Thanksgiving Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Acción de Gracias B"
+                        }
+                    }
+                    "Thanksgiving Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Acción de Gracias C"
+                        }
+                    }
+                    "Thanksgiving Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de Acción de Gracias D"
+                        }
+                    }
+                    "Three-Quarters-and-Half Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de tres cuartos y medio"
+                        }
+                    }
+                    "To the Left" -> {
+                        if (!idioma.value) {
+                            nombreT = "A la izquierda"
+                        }
+                    }
+                    "To the Right" -> {
+                        if (!idioma.value) {
+                            nombreT = "A la derecha"
+                        }
+                    }
+                    "Top Half" -> {
+                        if (!idioma.value) {
+                            nombreT = "Mitad superior"
+                        }
+                    }
+                    "Top-Left Corner" -> {
+                        if (!idioma.value) {
+                            nombreT = "Esquina superior izquierda"
+                        }
+                    }
+                    "Top-Right Corner" -> {
+                        if (!idioma.value) {
+                            nombreT = "Esquina superior derecha"
+                        }
+                    }
+                    "Two-Quarters-and-Half Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de dos cuartos y medio"
+                        }
+                    }
+                    "Valentine Liner A" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Valentín A"
+                        }
+                    }
+                    "Valentine Liner B" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Valentín B"
+                        }
+                    }
+                    "Valentine Liner C" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Valentín C"
+                        }
+                    }
+                    "Valentine Liner D" -> {
+                        if (!idioma.value) {
+                            nombreT = "Envoltorio de San Valentín C"
+                        }
+                    }
+                    "Well-Done Alarm" -> {
+                        if (!idioma.value) {
+                            nombreT = "Alarma de muy hecho"
+                        }
+                    }
+                }
+
                 mostrar = if (filtro.length == 1) {
-                    (listaMostrar[it].name.startsWith(filtro, ignoreCase = true))
+                    (nombreT.startsWith(filtro, ignoreCase = true))
                 } else {
-                    (listaMostrar[it].name.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
+                    (nombreT.contains(filtro, ignoreCase = true)) || (filtro.isBlank())
                 }
 
                 mostrar2 = ((listaMostrar[it].number.toString() == busqueda) || (filtro.isBlank()))
