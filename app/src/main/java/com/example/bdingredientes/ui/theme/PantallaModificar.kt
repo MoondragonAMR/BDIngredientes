@@ -1038,7 +1038,7 @@ fun PantallaModificar(
                 onExpandedChange = {activado5 = !activado5} ) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = saborAdd,
+                    value = juegoAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado5, onDismissRequest = { activado5 = false }) {
@@ -1179,7 +1179,7 @@ fun PantallaModificar(
                 onExpandedChange = { activado6 = !activado6 }) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = saborAdd,
+                    value = parteAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado6, onDismissRequest = { activado6 = false }) {

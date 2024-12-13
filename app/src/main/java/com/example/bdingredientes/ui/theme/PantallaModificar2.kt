@@ -529,7 +529,7 @@ fun PantallaModificar2(
                     val textoOP2 = if (idioma.value) {
                         "Burger Time"
                     } else {
-                        "Tiempo para hamburguesa"
+                        "Tiempo para hamburguesas"
                     }
                     DropdownMenuItem(
                         text = { Text(textoOP2) },

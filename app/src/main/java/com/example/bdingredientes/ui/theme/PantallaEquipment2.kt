@@ -486,9 +486,9 @@ fun PantallaEquipment2(db : VMBD4, sf: ViewModelScaffold, navController: NavCont
                     numero2 = listaMostrar[it].number
                     nombre2 = listaMostrar[it].name
                     tipo2 = listaMostrar[it].type
+                    celebracion2 = listaMostrar[it].holiday
                     comida = listaMostrar[it].food
                     juego2 = listaMostrar[it].game
-                    celebracion2 = listaMostrar[it].holiday
                     parte = listaMostrar[it].orderPart
                     codigo2 = listaMostrar[it].id
 

@@ -75,6 +75,10 @@ fun PantallaLogin(navController: NavController, sf : ViewModelScaffold = viewMod
                     usuario = "5k8EK1sExXOs0twUjZWD"
                     admin = false
                 }
+                "sofia@gmail.com" -> {
+                    usuario = "TmSc90miHnpHdz76gVdZ"
+                    admin = false
+                }
                 else -> {
                     usuario = "uRxr15PTS2TISErKZ8Hw"
                     admin = false

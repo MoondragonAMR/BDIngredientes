@@ -530,7 +530,7 @@ fun PantallaAñadir2(sf : ViewModelScaffold = viewModel()) {
                     val textoOP2 = if (idioma.value) {
                         "Burger Time"
                     } else {
-                        "Tiempo para hamburguesa"
+                        "Tiempo para hamburguesas"
                     }
                     DropdownMenuItem(
                         text = { Text(textoOP2) },

@@ -16,6 +16,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.bdingredientes.clases.ViewModelScaffold
 import com.example.bdingredientes.clases.celebracion
@@ -28,6 +29,7 @@ import com.example.bdingredientes.clases.parte2
 import com.example.bdingredientes.clases.sabor
 import com.example.bdingredientes.clases.tipo
 
+@Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PantallaAñadir(sf : ViewModelScaffold = viewModel()) {
@@ -1036,7 +1038,7 @@ fun PantallaAñadir(sf : ViewModelScaffold = viewModel()) {
                 onExpandedChange = {activado5 = !activado5} ) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = saborAdd,
+                    value = juegoAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado5, onDismissRequest = { activado5 = false }) {
@@ -1177,7 +1179,7 @@ fun PantallaAñadir(sf : ViewModelScaffold = viewModel()) {
                 onExpandedChange = { activado6 = !activado6 }) {
                 TextField(modifier = Modifier.menuAnchor(),
                     readOnly = true,
-                    value = saborAdd,
+                    value = parteAdd,
                     onValueChange = {}
                 )
                 DropdownMenu(expanded = activado6, onDismissRequest = { activado6 = false }) {
