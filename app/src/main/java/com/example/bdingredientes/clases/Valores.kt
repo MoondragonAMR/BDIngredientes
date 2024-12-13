@@ -1,5 +1,7 @@
 package com.example.bdingredientes.clases
 
+import androidx.compose.runtime.mutableStateOf
+
 var codigo : String = ""
 var nombre : String = ""
 var tipo : String = ""
@@ -18,3 +20,4 @@ var comida : String = ""
 var juego2 : String = ""
 var parte : String = ""
 var numero2 : Int = 0
+var recognizedTextState = mutableStateOf("Aquí aparecerá el texto transcrito")

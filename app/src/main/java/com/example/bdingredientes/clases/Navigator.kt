@@ -1,5 +1,7 @@
 package com.example.bdingredientes.clases
 
+import android.content.Intent
+import androidx.activity.result.ActivityResultLauncher
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -12,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -40,7 +43,7 @@ import com.example.bdingredientes.ui.theme.PantallaModificarAdmin2
 import com.example.bdingredientes.ui.theme.PantallaRandom
 
 @Composable
-fun Navigator() {
+fun Navigator(launcher: ActivityResultLauncher<Intent>) {
     val navController = rememberNavController()
     val entradaNavActual by navController.currentBackStackEntryAsState()
     val rutaActual = entradaNavActual?.destination?.route
