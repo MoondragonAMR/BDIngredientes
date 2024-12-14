@@ -1,6 +1,8 @@
 package com.example.bdingredientes.clases
 
 import androidx.compose.runtime.mutableStateOf
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 var codigo : String = ""
 var nombre : String = ""
@@ -20,4 +22,5 @@ var comida : String = ""
 var juego2 : String = ""
 var parte : String = ""
 var numero2 : Int = 0
-var recognizedTextState = mutableStateOf("Aquí aparecerá el texto transcrito")
+private var _recognizedTextState = MutableStateFlow(mutableStateOf("Aquí aparecerá el texto transcrito"))
+var recognizedTextState = _recognizedTextState.asStateFlow()

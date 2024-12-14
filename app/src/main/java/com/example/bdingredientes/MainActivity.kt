@@ -8,7 +8,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import com.example.bdingredientes.clases.Navigator
 import com.example.bdingredientes.clases.llenarImagenes
@@ -21,12 +20,12 @@ class MainActivity : ComponentActivity() {
         val speechRecognizerLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-            if (result.resultCode == ComponentActivity.RESULT_OK) {
+            if (result.resultCode == RESULT_OK) {
                 val recognizedText = result.data
                     ?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
                     ?.get(0)
                 recognizedText?.let {
-                    recognizedTextState.value = it
+                    recognizedTextState.value.value = it
                 }
             }
         }
