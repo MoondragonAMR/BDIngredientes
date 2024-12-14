@@ -1,6 +1,8 @@
 package com.example.bdingredientes.clases
 
 import android.content.Intent
+import android.speech.RecognizerIntent
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -14,15 +16,17 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.bdingredientes.R
 import com.example.bdingredientes.ui.theme.PantallaAuth
 import com.example.bdingredientes.ui.theme.PantallaAñadir
 import com.example.bdingredientes.ui.theme.PantallaAñadir2
@@ -41,6 +45,7 @@ import com.example.bdingredientes.ui.theme.PantallaModificar2
 import com.example.bdingredientes.ui.theme.PantallaModificarAdmin
 import com.example.bdingredientes.ui.theme.PantallaModificarAdmin2
 import com.example.bdingredientes.ui.theme.PantallaRandom
+import java.util.Locale
 
 @Composable
 fun Navigator(launcher: ActivityResultLauncher<Intent>) {
@@ -175,6 +180,55 @@ fun Navigator(launcher: ActivityResultLauncher<Intent>) {
                 BarraInferiorAdminUpdate(navController = navController, sf)
             }
             Rutas.Menu.ruta -> {
+                val contexto = LocalContext.current
+
+                val onStartListening = {
+                    val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                        putExtra(
+                            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                        )
+                        putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+                        val textoPrompt = if (idioma.value) {
+                            "Say the screen you want to navigate to"
+                        } else {
+                            "Di la pantalla a la que quieres navegar"
+                        }
+                        putExtra(RecognizerIntent.EXTRA_PROMPT, textoPrompt)
+                    }
+                    var textoError = if (idioma.value) {
+                        "Voice recognition is not available"
+                    } else {
+                        "El reconocimiento de voz no está disponible"
+                    }
+                    try {
+                        launcher.launch(intent)
+                        when (recognizedTextState.value.value) {
+                            "atrás" -> {
+                                navController.navigate(Rutas.Login.ruta)
+                            }
+                            "utensilios" -> {
+                                navController.navigate(Rutas.UtensiliosUsuario.ruta)
+                            }
+                            else -> {
+                                textoError = if (idioma.value) {
+                                    "The recognized text doesn't match any available screen"
+                                } else "El texto reconocido no se corresponde con ninguna pantalla disponible"
+                                Toast.makeText(
+                                    contexto,
+                                    textoError,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            contexto,
+                            textoError,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
                 val texto: String = if (idioma.value) {
                     "By Aymara and Nayara Mendoza Rodríguez, 2024"
                 } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
@@ -182,17 +236,76 @@ fun Navigator(launcher: ActivityResultLauncher<Intent>) {
                     IconButton(onClick = { navController.navigate(Rutas.Login.ruta)}) {
                         Icon(Icons.AutoMirrored.Filled.Logout, "")
                     }
+                    IconButton(onClick =
+                    onStartListening
+                    ) {
+                        Icon(painterResource(id = R.drawable.mic), contentDescription = "")
+                    }
                     Text(texto)
                 }
             }
             Rutas.UtensiliosUsuario.ruta -> {
-                BarraInferiorEquipment(navController = navController, sf)
+                BarraInferiorEquipment(navController = navController, sf, launcher)
             }
             Rutas.UtensiliosGeneral.ruta -> {
+                val contexto = LocalContext.current
+
+                val onStartListening = {
+                    val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                        putExtra(
+                            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                        )
+                        putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+                        val textoPrompt = if (idioma.value) {
+                            "Say the screen you want to navigate to"
+                        } else {
+                            "Di la pantalla a la que quieres navegar"
+                        }
+                        putExtra(RecognizerIntent.EXTRA_PROMPT, textoPrompt)
+                    }
+                    var textoError = if (idioma.value) {
+                        "Voice recognition is not available"
+                    } else {
+                        "El reconocimiento de voz no está disponible"
+                    }
+                    try {
+                        launcher.launch(intent)
+                        when (recognizedTextState.value.value) {
+                            "atrás" -> {
+                                navController.navigate(Rutas.Menu.ruta)
+                            }
+                            "usuario" -> {
+                                navController.navigate(Rutas.UtensiliosUsuario.ruta)
+                            }
+                            else -> {
+                                textoError = if (idioma.value) {
+                                    "The recognized text doesn't match any available screen"
+                                } else "El texto reconocido no se corresponde con ninguna pantalla disponible"
+                                Toast.makeText(
+                                    contexto,
+                                    textoError,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            contexto,
+                            textoError,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
                 val texto: String = if (idioma.value) {
                     "By Aymara and Nayara Mendoza Rodríguez, 2024"
                 } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
                 BottomAppBar{
+                    IconButton(onClick =
+                    onStartListening
+                    ) {
+                        Icon(painterResource(id = R.drawable.mic), contentDescription = "")
+                    }
                     Text(texto)
                 }
             }
@@ -203,13 +316,75 @@ fun Navigator(launcher: ActivityResultLauncher<Intent>) {
                 BarraInferiorEquipmentUpdate(navController = navController, sf)
             }
             Rutas.UtensiliosAdmin.ruta -> {
-                BarraInferiorEquipmentAdmin(navController = navController, sf)
+                BarraInferiorEquipmentAdmin(navController = navController, sf, launcher)
             }
             Rutas.EquipmentAdminUpdate.ruta -> {
                 BarraInferiorEquipmentAdminUpdate(navController = navController, sf)
             }
             Rutas.EquipmentAdminAdd.ruta -> {
                 BarraInferiorEquipmentAdminAdd(navController = navController, sf)
+            }
+            Rutas.UtensiliosUsuario.ruta -> {
+                BarraInferiorEquipment(navController = navController, sf, launcher)
+            }
+            Rutas.Login.ruta -> {
+                val contexto = LocalContext.current
+
+                val onStartListening = {
+                    val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                        putExtra(
+                            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                        )
+                        putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+                        val textoPrompt = if (idioma.value) {
+                            "Say the screen you want to navigate to"
+                        } else {
+                            "Di la pantalla a la que quieres navegar"
+                        }
+                        putExtra(RecognizerIntent.EXTRA_PROMPT, textoPrompt)
+                    }
+                    var textoError = if (idioma.value) {
+                        "Voice recognition is not available"
+                    } else {
+                        "El reconocimiento de voz no está disponible"
+                    }
+                    try {
+                        launcher.launch(intent)
+                        when (recognizedTextState.value.value) {
+                            "autenticación" -> {
+                                navController.navigate(Rutas.Auth.ruta)
+                            }
+                            else -> {
+                                textoError = if (idioma.value) {
+                                    "The recognized text doesn't match any available screen"
+                                } else "El texto reconocido no se corresponde con ninguna pantalla disponible"
+                                Toast.makeText(
+                                    contexto,
+                                    textoError,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            contexto,
+                            textoError,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                val texto: String = if (idioma.value) {
+                    "By Aymara and Nayara Mendoza Rodríguez, 2024"
+                } else "Por Aymara y Nayara Mendoza Rodríguez, 2024"
+                BottomAppBar{
+                    IconButton(onClick =
+                    onStartListening
+                    ) {
+                        Icon(painterResource(id = R.drawable.mic), contentDescription = "")
+                    }
+                    Text(texto)
+                }
             }
             else -> {
                 val texto: String = if (idioma.value) {
@@ -264,10 +439,10 @@ fun Navigator(launcher: ActivityResultLauncher<Intent>) {
                     PantallaRandom(navController = navController, sf)
                 }
                 composable(Rutas.UtensiliosUsuario.ruta) {
-                    PantallaEquipment2(db4, sf, navController = navController)
+                    PantallaEquipment2(db4, sf, navController = navController, launcher)
                 }
                 composable(Rutas.UtensiliosGeneral.ruta) {
-                    PantallaEquipment(db3,sf, navController = navController)
+                    PantallaEquipment(db3,sf, navController = navController, launcher)
                 }
                 composable(Rutas.EquipmentUpdate.ruta) {
                     PantallaModificar2(nombre2, tipo2, comida, juego2, celebracion2, parte, numero2, sf)
@@ -295,7 +470,7 @@ fun Navigator(launcher: ActivityResultLauncher<Intent>) {
                     PantallaAñadirAdmin(sf)
                 }
                 composable(Rutas.UtensiliosAdmin.ruta) {
-                    PantallaEquipmentAdmin(db3,sf, navController = navController)
+                    PantallaEquipmentAdmin(db3,sf, navController = navController, launcher)
                 }
                 composable(Rutas.EquipmentAdminUpdate.ruta) {
                     PantallaModificarAdmin2(

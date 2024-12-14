@@ -1,5 +1,9 @@
 package com.example.bdingredientes.clases
 
+import android.content.Intent
+import android.speech.RecognizerIntent
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -28,6 +32,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bdingredientes.R
 import com.example.bdingredientes.ui.theme.ExoPlayerViewModel
+import java.util.Locale
 
 
 @Composable
@@ -215,7 +220,7 @@ fun BarraInferiorAdminUpdate(navController: NavController, sf : ViewModelScaffol
 }
 
 @Composable
-fun BarraInferiorEquipment(navController: NavController, sf : ViewModelScaffold = viewModel()) {
+fun BarraInferiorEquipment(navController: NavController, sf : ViewModelScaffold = viewModel(), launcher: ActivityResultLauncher<Intent>) {
     val delete = sf.borrar2.collectAsState().value
     val update = sf.modificar2.collectAsState().value
     val deleted = sf.puedeBorrar2.collectAsState().value
@@ -239,6 +244,60 @@ fun BarraInferiorEquipment(navController: NavController, sf : ViewModelScaffold 
     } else {
         Icons.Default.EditOff
     }
+
+    val contexto = LocalContext.current
+
+    val onStartListening = {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(
+                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+            )
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+            val textoPrompt = if (idioma.value) {
+                "Say the screen you want to navigate to"
+            } else {
+                "Di la pantalla a la que quieres navegar"
+            }
+            putExtra(RecognizerIntent.EXTRA_PROMPT, textoPrompt)
+        }
+        var textoError = if (idioma.value) {
+            "Voice recognition is not available"
+        } else {
+            "El reconocimiento de voz no está disponible"
+        }
+        try {
+            launcher.launch(intent)
+            when (recognizedTextState.value.value) {
+                "atrás" -> {
+                    navController.navigate(Rutas.Menu.ruta)
+                }
+                "añadir" -> {
+                    navController.navigate(Rutas.EquipmentAdd.ruta)
+                }
+                "general" -> {
+                    navController.navigate(Rutas.UtensiliosGeneral.ruta)
+                }
+                else -> {
+                    textoError = if (idioma.value) {
+                        "The recognized text doesn't match any available screen"
+                    } else "El texto reconocido no se corresponde con ninguna pantalla disponible"
+                    Toast.makeText(
+                        contexto,
+                        textoError,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } catch (e: Exception) {
+            Toast.makeText(
+                contexto,
+                textoError,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {navController.navigate(Rutas.EquipmentAdd.ruta)}) {
@@ -256,13 +315,18 @@ fun BarraInferiorEquipment(navController: NavController, sf : ViewModelScaffold 
                 enabled = updated.value) {
                 Icon(iconoModificar, contentDescription = "")
             }
+            IconButton(onClick =
+            onStartListening
+            ) {
+                Icon(painterResource(id = R.drawable.mic), contentDescription = "")
+            }
         }
         Text(texto)
     }
 }
 
 @Composable
-fun BarraInferiorEquipmentAdmin(navController: NavController, sf : ViewModelScaffold = viewModel()) {
+fun BarraInferiorEquipmentAdmin(navController: NavController, sf : ViewModelScaffold = viewModel(), launcher: ActivityResultLauncher<Intent>) {
     val delete = sf.borrar4.collectAsState().value
     val update = sf.modificar4.collectAsState().value
     val deleted = sf.puedeBorrar4.collectAsState().value
@@ -286,6 +350,57 @@ fun BarraInferiorEquipmentAdmin(navController: NavController, sf : ViewModelScaf
     } else {
         Icons.Default.EditOff
     }
+
+    val contexto = LocalContext.current
+
+    val onStartListening = {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(
+                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+            )
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+            val textoPrompt = if (idioma.value) {
+                "Say the screen you want to navigate to"
+            } else {
+                "Di la pantalla a la que quieres navegar"
+            }
+            putExtra(RecognizerIntent.EXTRA_PROMPT, textoPrompt)
+        }
+        var textoError = if (idioma.value) {
+            "Voice recognition is not available"
+        } else {
+            "El reconocimiento de voz no está disponible"
+        }
+        try {
+            launcher.launch(intent)
+            when (recognizedTextState.value.value) {
+                "atrás" -> {
+                    navController.navigate(Rutas.Menu.ruta)
+                }
+                "añadir" -> {
+                    navController.navigate(Rutas.EquipmentAdminAdd.ruta)
+                }
+                else -> {
+                    textoError = if (idioma.value) {
+                        "The recognized text doesn't match any available screen"
+                    } else "El texto reconocido no se corresponde con ninguna pantalla disponible"
+                    Toast.makeText(
+                        contexto,
+                        textoError,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } catch (e: Exception) {
+            Toast.makeText(
+                contexto,
+                textoError,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
     BottomAppBar(Modifier.fillMaxWidth()) {
         Row {
             IconButton(onClick = {navController.navigate(Rutas.EquipmentAdminAdd.ruta)}) {
@@ -302,6 +417,11 @@ fun BarraInferiorEquipmentAdmin(navController: NavController, sf : ViewModelScaf
                 deleted.value = false},
                 enabled = updated.value) {
                 Icon(iconoModificar, contentDescription = "")
+            }
+            IconButton(onClick =
+            onStartListening
+            ) {
+                Icon(painterResource(id = R.drawable.mic), contentDescription = "")
             }
         }
         Text(texto)

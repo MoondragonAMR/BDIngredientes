@@ -2,6 +2,9 @@
 
 package com.example.bdingredientes.ui.theme
 
+import android.content.Intent
+import android.speech.RecognizerIntent
+import android.widget.Toast
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -35,16 +38,24 @@ import androidx.navigation.NavController
 import com.example.bdingredientes.clases.ImagenIngrediente
 import com.example.bdingredientes.clases.ViewModelScaffold
 import androidx.activity.compose.BackHandler
+import androidx.activity.result.ActivityResultLauncher
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import com.example.bdingredientes.R
 import com.example.bdingredientes.clases.Equipment
 import com.example.bdingredientes.clases.VMBD3
 import com.example.bdingredientes.clases.VMBD4
+import com.example.bdingredientes.clases.recognizedTextState
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
-fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavController) {
+fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavController, launcher: ActivityResultLauncher<Intent>) {
     val equipment = db.equipment.collectAsState().value
     val db4: VMBD4 = viewModel()
     var estado by remember { mutableStateOf(false) }
@@ -62,6 +73,39 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
     var url by remember { mutableStateOf("") }
 
     val idioma = sf.english.collectAsState().value
+
+    val contexto = LocalContext.current
+
+    val onStartListening = {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(
+                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+            )
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+            val textoPrompt = if (idioma.value) {
+                "Say the name of the equipment you want to search"
+            } else {
+                "Di el nombre del utensilio que quieres buscar"
+            }
+            putExtra(RecognizerIntent.EXTRA_PROMPT, textoPrompt)
+        }
+        val textoError = if (idioma.value) {
+            "Voice recognition is not available"
+        } else {
+            "El reconocimiento de voz no está disponible"
+        }
+        try {
+            launcher.launch(intent)
+            busqueda = recognizedTextState.value.value
+        } catch (e: Exception) {
+            Toast.makeText(
+                contexto,
+                textoError,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
 
     BackHandler{
         navController.popBackStack()
@@ -92,6 +136,11 @@ fun PantallaEquipment(db : VMBD3, sf: ViewModelScaffold, navController: NavContr
             onSearch = { filtro = it; estado = false },
             active = estado,
             onActiveChange = { estado = !estado }) {
+            IconButton(onClick =
+                onStartListening
+            ) {
+                Icon(painterResource(id = R.drawable.mic), contentDescription = "")
+            }
             LazyColumn {
                 items(equipment.size) {
 
